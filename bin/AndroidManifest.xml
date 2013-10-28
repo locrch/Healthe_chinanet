@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pangu.neusoft.healthe"
+    android:versionCode="3"
+    android:versionName="1.011" >
+	<supports-screens android:largeScreens="true"  
+            android:normalScreens="true"  
+            android:smallScreens="true"  
+            android:resizeable="true"  
+            android:anyDensity="true"/>
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" /> 
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--使用网络功能所需权限  -->  
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">  
+</uses-permission>  
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">  
+</uses-permission>  
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE">  
+</uses-permission>  
+
+<!-- 使用定位功能所需权限,demo已集成百度定位SDK,不使用定位功能可去掉以下6项 -->  
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">  
+</uses-permission>  
+<permission android:name="android.permission.BAIDU_LOCATION_SERVICE">  
+</permission>  
+<uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE">  
+</uses-permission>  
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">  
+</uses-permission>  
+<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION">  
+</uses-permission>  
+<uses-permission android:name="android.permission.ACCESS_GPS"/> 
+
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MyTheme" >
+        <activity
+            android:name="com.pangu.neusoft.healthe.MainActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.WelcomeActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.FristActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.TabHostActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.TabActivity1"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.TabActivity2"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.TabActivity3"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.TabActivity4"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.BookingMainActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_booking_main"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.AreaListActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_area_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.HospitalListActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_hospital_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.DepartmentListActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_department_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.DoctorListActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_doctor_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.DoctorDetailActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_doctor_detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.HospitalDetailActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_hospital_detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.ScheduleListActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_schedule_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.user.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.user.RegisterActivity"
+            android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.user.CreatePeopleActivity"
+            android:label="@string/title_activity_create_people" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.user.ListPeopleActivity"
+            android:label="@string/title_activity_list_people" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.user.CreateCardActivity"
+            android:label="@string/title_activity_create_card" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.user.PeopleInfoActivity"
+            android:label="@string/title_activity_people_info" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.user.HospitalChooseActivity"
+            android:label="@string/title_activity_hospital_choose" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.user.ShowHistoryActivity"
+            android:label="@string/title_activity_show_history" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.CancelbookingActivity"
+            android:label="@string/title_activity_cancelbooking" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.FavoriteActivity"
+            android:label="@string/title_activity_favorite" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.HealthActivityGroup"
+            android:label="@string/title_activity_health_activity_group" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.FatherActivity"
+            android:label="@string/title_activity_super" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.VersionInfoActivity"
+            android:label="@string/title_activity_version_info" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.HelpActivity"
+            android:label="@string/title_activity_help" >
+        </activity>
+         <activity
+            android:name="com.pangu.neusoft.user.HistoryViewActivity"
+            android:label="@string/title_activity_history_view" >
+        </activity>
+         <activity
+            android:name="com.pangu.neusoft.user.ConnectListActivity"
+            android:label="@string/title_activity_connect_list_view" >
+        </activity>
+         <activity
+            android:name="com.pangu.neusoft.healthe.MapActivity"
+                android:screenOrientation="sensor"  
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_map" >
+        </activity>
+         
+    </application>
+    
+         
+    
+
+</manifest>

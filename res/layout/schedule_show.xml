@@ -1,0 +1,24 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+<LinearLayout
+    android:id="@+id/layout_scheduling_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_black"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layout_scheduling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+    
+</LinearLayout>
+    
+</ScrollView>

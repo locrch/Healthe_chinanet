@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/cache_list_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cache_list_title"
+        android:layout_alignBottom="@+id/cache_list_title"
+        android:layout_toRightOf="@+id/cache_list_title"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/cache_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cache_list_address"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/cache_list_address"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/cache_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/cache_list_grade"
+        android:layout_toRightOf="@+id/cache_list_image"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/cache_list_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+		android:ellipsize="end"
+        android:layout_alignLeft="@+id/cache_list_level"
+        android:layout_below="@+id/cache_list_grade"
+        android:layout_toLeftOf="@+id/cache_list_moreinfo"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/cache_list_moreinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+       	android:layout_alignParentTop="true"
+       	android:layout_margin="10dp"
+       	android:focusable="false"
+       	android:clickable="true"
+        android:src="@drawable/more_info" />
+
+    <TextView
+        android:id="@+id/cache_list_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cache_list_title"
+        android:layout_toRightOf="@+id/cache_list_image"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/cache_list_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cache_list_id"
+        android:layout_toLeftOf="@+id/cache_list_moreinfo"
+        android:layout_toRightOf="@+id/cache_list_level"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/cache_list_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="4dp"
+        android:src="@drawable/booking_hosp" />
+
+</RelativeLayout>

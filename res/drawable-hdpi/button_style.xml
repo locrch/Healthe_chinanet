@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:state_pressed="true">
+		<shape>
+			<gradient android:startColor="#2894FF" android:endColor="#84C1FF"
+				android:angle="90" /><!-- 渐变： startColor开始颜色，endColor结束颜色 ，angle开始渐变的角度（值只能为90的倍数，0时为左到右渐变，90时为下到上渐变，依次逆时针类推） -->
+			<!-- <stroke android:width="1dip" android:color="#f403c9" /> --><!-- 边框 width 边框宽度，color 边框颜色 -->
+			<corners android:radius="4dp" /><!-- 圆角 radius 半径，0为直角 -->
+			<padding android:left="10dp" android:top="10dp"
+				android:right="10dp" android:bottom="10dp" />
+		</shape>
+	</item>
+ 
+	<item android:state_focused="true">				
+		<shape>
+			<gradient android:startColor="#9AFF9A" android:endColor="#9AFF9A"
+				android:angle="90" />
+			
+			<corners android:radius="4dp" />
+			<padding android:left="10dp" android:top="10dp"
+				android:right="10dp" android:bottom="10dp" />
+		</shape>
+	</item>
+ 
+	<item>
+		<shape>
+			<gradient android:startColor="#84C1FF" android:endColor="#D2E9FF"
+				android:angle="90" />
+			
+			<corners android:radius="4dp" />
+			<padding android:left="10dp" android:top="10dp"
+				android:right="10dp" android:bottom="10dp" />
+		</shape>
+	</item>
+	
+	
+</selector>

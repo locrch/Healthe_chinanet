@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent" >  
+      
+    <!-- 首字母 -->  
+    <TextView  
+        android:id="@+id/department_list_alpha"  
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"  
+        android:background="#CCCCCC"  
+        android:paddingLeft="10dip"  
+        android:textColor="#FFFFFF"  
+        android:visibility="gone" />  
+      
+    <!-- 科室信息 -->  
+
+  
+    <TextView  
+        android:id="@+id/department_list_name"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+         android:layout_below="@+id/department_list_alpha"
+        android:layout_marginLeft="2.0dip"  
+        android:layout_marginRight="5.0dip"  
+        android:layout_marginTop="6.0dip"  
+        android:layout_alignParentLeft="true"  
+        android:singleLine="true"  
+        android:textAppearance="?android:textAppearanceMedium" />  
+  
+    <TextView  
+        android:id="@+id/department_list_number"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:layout_alignLeft="@id/department_list_name"  
+        android:layout_alignWithParentIfMissing="true"  
+        android:layout_below="@id/department_list_name"  
+        android:ellipsize="marquee"  
+        android:singleLine="true"  
+        android:textAppearance="?android:textAppearanceSmall" />
+
+    <ImageView
+        android:id="@+id/department_more_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/department_list_name"
+        android:layout_marginRight="19dp"
+        android:src="@drawable/more_info" />
+  	
+</RelativeLayout>  

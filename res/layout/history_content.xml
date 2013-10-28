@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/his_hospitalid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/his_cancel_id"
+        android:layout_alignBottom="@+id/his_cancel_id"
+        android:layout_alignLeft="@+id/his_cancel_id"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/his_cancel_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hisdDepartment"
+        android:layout_below="@+id/his_date_time"
+        android:text="cancelid"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/his_hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="37dp"
+        android:text="Hospital" />
+
+    <TextView
+        android:id="@+id/seria_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/his_hospital"
+        android:layout_marginBottom="17dp"
+        android:layout_toRightOf="@+id/his_hospital"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/seria_num"
+        android:layout_alignBottom="@+id/seria_num"
+        android:layout_alignLeft="@+id/his_hospital"
+        android:text="流水号：" />
+
+    <TextView
+        android:id="@+id/hisdDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/his_date_time"
+        android:layout_below="@+id/his_hospital"
+        android:text="department" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/seria_num"
+        android:layout_alignBottom="@+id/seria_num"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="18dp"
+        android:text="现场取号" />
+
+    <TextView
+        android:id="@+id/his_doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/his_date_time"
+        android:layout_below="@+id/hisdDepartment"
+        android:text="doctor" />
+
+    <TextView
+        android:id="@+id/his_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/his_hospital"
+        android:layout_below="@+id/his_doctor"
+        android:text="Date Time" />
+
+</RelativeLayout>

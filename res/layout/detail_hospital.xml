@@ -1,0 +1,244 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_black"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/hospital_detail_pictureurl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/booking_hosp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/hospital_detail_booking_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="预约挂号" 
+                android:background="@drawable/button_style"
+                />
+			<TextView
+				    android:id="@+id/hospital_detail_id"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:text="TextView"
+				    android:visibility="invisible" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"  
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:id="@+id/hospital_detail_name_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:text="名称： " />
+
+                <TextView
+                    android:id="@+id/hospital_detail_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="加载中...." />
+
+				
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:id="@+id/hospital_detail_level_grade_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:text="级别： " />
+
+                <TextView
+                    android:id="@+id/hospital_detail_level_grade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="加载中...." />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"  
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:id="@+id/hospital_detail_intro_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:text="简介： " />
+			<ScrollView 
+			    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:scrollbars="vertical"
+			    >
+
+                <TextView
+                    android:id="@+id/hospital_detail_intro"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="加载中...." />
+
+				</ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:orientation="vertical"  
+                android:background="#FFFFFF">
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/hospital_detail_contact_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="联系方式" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_linear_layout"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                 >
+
+                <RelativeLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                <TextView
+                    android:id="@+id/hospital_detail_address_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:text="地址： "
+                    />
+
+                <ImageButton
+                    android:id="@+id/dingwei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/dingwei"
+                    />
+				<TextView
+                    android:id="@+id/hospital_detail_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_below="@+id/hospital_detail_address_label"
+                    android:text="加载中...."
+                     />
+                </RelativeLayout>
+
+                
+
+                
+                
+                <TextView
+                    android:id="@+id/hospital_detail_zipcode_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:text="邮编： " />
+                <TextView
+                    android:id="@+id/hospital_detail_zipcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:text="加载中...." />
+                
+            </LinearLayout>
+
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_linear_layout"
+                android:layout_margin="5dp"
+                android:orientation="vertical" >
+                <RelativeLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                <TextView
+                    android:id="@+id/hospital_detail_phone_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:text="电话： " />
+                <TextView
+                    android:id="@+id/hospital_detail_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_below="@+id/hospital_detail_phone_label"
+                    android:text="加载中...." />
+                <ImageButton
+                    android:id="@+id/hospital_tell" 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/phone_1"
+                    />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/hospital_detail_fax_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:text="传真： " />
+                <TextView
+                    android:id="@+id/hospital_detail_fax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:text="加载中...." />
+                <TextView
+                    android:id="@+id/hospital_detail_website_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:text="网址： " />
+                <TextView
+                    android:id="@+id/hospital_detail_website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:text="加载中...." />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

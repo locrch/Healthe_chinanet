@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="bottom"
+    android:background="@drawable/background_black"
+     >
+<Button
+    android:id="@+id/login_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/reg_button"
+    android:layout_alignLeft="@+id/reg_button"
+    android:layout_marginBottom="54dp"
+    android:text="登录" />
+
+<Button
+    android:id="@+id/reg_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="175dp"
+    android:text="注册" />
+
+<TextView
+    android:id="@+id/qingxiandenglu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/login_button"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="50dp"
+    android:gravity="center"
+    android:text="请先登录！"
+    android:textColor="@color/red"
+    android:textSize="30sp" />
+
+</RelativeLayout>

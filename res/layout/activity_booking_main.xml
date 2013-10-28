@@ -1,0 +1,203 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1" 
+            android:background="@drawable/button_style"
+            />
+		
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical" >
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginTop="1dp"
+            android:ems="10"
+            android:hint="请输入医生名称"
+            android:background="@drawable/edittext_style"
+            android:paddingLeft="4dp"
+             >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/search_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/search_btn"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+         >
+		
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:text="欢迎您" />
+
+        <Button
+            android:id="@+id/select_area_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+  			android:layout_alignParentRight="true"
+  			 android:layout_alignLeft="@+id/booking_btn"
+            android:text="地区" 
+            android:background="@drawable/button_style"
+            />
+
+        <LinearLayout
+            android:id="@+id/welcomelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/select_area_btn"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true" 
+            android:orientation="vertical"
+            >
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/cashe_list_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/welcomelayout"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/booking_hosp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/cashe_list_image"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/booking_dep" />
+
+        <EditText
+            android:id="@+id/department"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/cashe_list_image"
+            android:layout_toRightOf="@+id/imageView2"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="4dp"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="选择地区" 
+            android:background="@drawable/edittext_style"/>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/imageView2"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/booking_doc" />
+
+        <EditText
+            android:id="@+id/doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/imageView2"
+            android:layout_toRightOf="@+id/imageView3"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="选择医生" 
+            android:background="@drawable/edittext_style"
+            android:paddingLeft="4dp"
+            />
+
+        <Button
+            android:id="@+id/booking_confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/imageView3"
+            android:text="预约挂号" 
+            android:gravity="center"
+            android:background="@drawable/button_style"
+            />
+
+        <EditText
+            android:id="@+id/hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/department"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/cashe_list_image"
+            android:background="@drawable/edittext_style"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="选择医院"
+            android:paddingLeft="4dp" />
+
+        <SlidingDrawer
+            android:id="@+id/slidingDrawer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:content="@+id/content"
+            android:handle="@+id/handle" >
+
+            <ImageView
+                android:id="@+id/handle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/handle_down" />
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff" >
+
+                <TextView
+                    android:id="@+id/messages"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/yuyueguize" />
+            </LinearLayout>
+        </SlidingDrawer>
+
+    </RelativeLayout>
+
+</LinearLayout>

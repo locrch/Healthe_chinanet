@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:layout_margin="3dp"
+    android:background="@drawable/schedule_btn_style_layout"
+    android:paddingLeft="3dp" >
+
+    <TextView
+        android:id="@+id/schedule_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/schedule_day"
+        android:background="#F00"
+        android:text="TextView"
+        android:textColor="#FFF"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/schedule_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="18dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/reg_username"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="用户名：" />
+
+    <EditText
+        android:id="@+id/reg_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView3"
+        android:background="@drawable/edittext_style"
+        android:digits="1234567890"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingLeft="5dp"
+        android:hint="请输入手机号码"
+         />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/reg_username"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:text="密码：" />
+
+    <EditText
+        android:id="@+id/reg_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toRightOf="@+id/textView3"
+        android:background="@drawable/edittext_style"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingLeft="5dp"
+         >
+
+        <requestFocus android:layout_width="wrap_content" />
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/reg_password"
+        android:layout_marginTop="20dp"
+        android:text="确认密码" />
+
+    <EditText
+        android:id="@+id/reg_password_con"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/reg_password"
+        android:layout_alignTop="@+id/textView1"
+        android:background="@drawable/edittext_style"
+        android:ems="10"
+        android:inputType="textPassword"
+        />
+
+    <EditText
+        android:id="@+id/card_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/reg_password_con"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/reg_password_con"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:background="@drawable/edittext_style" />
+
+    <Spinner
+        android:id="@+id/reg_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/reg_name"
+        android:entries="@array/sex" />
+
+    <TextView
+        android:id="@+id/seria_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/card_num"
+        android:layout_alignBottom="@+id/card_num"
+        android:layout_alignParentLeft="true"
+        android:text="身份证号" />
+
+    <Button
+        android:id="@+id/reg_reg_btn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/reg_sex"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_style"
+        android:text="注册" />
+
+    <EditText
+        android:id="@+id/reg_name"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/card_num"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/seria_num"
+        android:ems="10"
+        android:background="@drawable/edittext_style" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/reg_name"
+        android:layout_alignBottom="@+id/reg_name"
+        android:layout_alignParentLeft="true"
+        android:text="姓名" />
+	
+</RelativeLayout>
+</ScrollView>

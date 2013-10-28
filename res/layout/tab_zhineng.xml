@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:background="@drawable/background_black" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tab2_booking"
+        android:layout_alignRight="@+id/tab2_booking"
+        android:layout_below="@+id/tab2_booking"
+        android:gravity="center"
+        android:text="预约挂号"
+        android:textSize="20sp" 
+        android:textColor="@color/tab_text"/>
+
+    <ImageButton
+        android:id="@+id/tab2_booking"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/yuyue" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_above="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/foler" />
+
+    <TextView
+        android:id="@+id/seria_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="健康档案"
+        android:textSize="20sp" 
+        android:textColor="@color/tab_text"/>
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tab2_booking"
+        android:background="@drawable/car" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignLeft="@+id/imageButton3"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="费用查询"
+        android:textColor="@color/tab_text"
+        android:textSize="20sp" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="43dp"
+        android:background="@drawable/stethoscope" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/imageButton4"
+        android:layout_below="@+id/imageButton4"
+        android:gravity="center"
+        android:text="医患互动"
+        android:textSize="20sp" 
+        android:textColor="@color/tab_text"/>
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_above="@+id/textView3"
+        android:layout_alignLeft="@+id/imageButton2"
+        android:background="@drawable/paste" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton5"
+        android:layout_alignRight="@+id/imageButton5"
+        android:layout_below="@+id/imageButton5"
+        android:gravity="center"
+        android:text="健康大全"
+        android:textSize="20sp" 
+        android:textColor="@color/tab_text"/>
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/nurse" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/imageButton6"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="一键拨号 "
+        android:textSize="20sp" 
+        android:textColor="@color/tab_text"/>
+
+    <TextView
+        android:id="@+id/huoqu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/tab_text"
+        />
+
+    <TextView
+        android:id="@+id/title_zhineng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageButton2"
+        android:layout_alignLeft="@+id/imageButton2"
+        android:layout_alignRight="@+id/imageButton2"
+        android:text="智能健康"
+        android:textColor="@color/tab_text"
+        android:textSize="20dp"
+        android:gravity="center" />
+
+</RelativeLayout>

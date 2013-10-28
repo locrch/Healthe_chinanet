@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/doctor_list_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/doctor_list_title"
+        android:layout_alignBottom="@+id/doctor_list_title"
+        android:layout_toRightOf="@+id/doctor_list_title"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/doctor_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/doctor_list_address"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/doctor_list_address"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/doctor_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/doctor_list_grade"
+        android:layout_toRightOf="@+id/doctor_list_image"
+        android:text="TextView" />
+
+
+
+    <ImageView
+        android:id="@+id/doctor_list_moreinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+       	android:layout_alignParentTop="true"
+       	android:layout_margin="10dp"
+       	android:focusable="false"
+       	android:clickable="true"
+        android:src="@drawable/more_info" />
+
+    <TextView
+        android:id="@+id/doctor_list_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctor_list_title"
+        android:layout_toRightOf="@+id/doctor_list_image"
+        android:text="TextView" />
+
+
+    <ImageView
+        android:id="@+id/doctor_list_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="4dp"
+        android:src="@drawable/booking_doc" />
+
+    <LinearLayout
+        android:id="@+id/schedule_list_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/doctor_list_image"
+        android:layout_toLeftOf="@+id/doctor_list_moreinfo"
+        android:layout_below="@+id/doctor_list_level"
+        android:orientation="vertical"
+         >
+    </LinearLayout>
+
+</RelativeLayout>

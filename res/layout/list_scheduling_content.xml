@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff"
+    android:layout_margin="2dp"
+     >
+
+    <TextView
+        android:id="@+id/schedule_list_timeRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:padding="20dp"
+        android:text="TextView"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/schedule_list_regid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:text="TextView"
+        android:textColor="#fff"
+        android:textSize="0sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/schedule_list_schstate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/schedule_list_regid"
+        android:layout_toRightOf="@+id/schedule_list_regid"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/scheduling_list_scheduleid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/schedule_list_schstate"
+        android:layout_alignBottom="@+id/schedule_list_schstate"
+        android:layout_toRightOf="@+id/schedule_list_schstate"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/schedule_list_timeRange"
+        android:layout_alignBottom="@+id/schedule_list_timeRange"
+        android:layout_toRightOf="@+id/schedule_list_timeRange"
+        android:text="剩：" />
+
+    <TextView
+        android:id="@+id/schedule_list_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="TextView"
+        android:textColor="#F00" />
+
+</RelativeLayout>
