@@ -184,7 +184,13 @@ public class TabActivity3 extends Activity {
 		     }
 		}      
 	} 
-	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		
+	}
 	
 	@Override  
 	protected void onDestroy() {  
