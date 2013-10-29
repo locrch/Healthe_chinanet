@@ -24,9 +24,9 @@ public class HistoryViewActivity extends FatherActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tab2_history);
 
-		button2=(Button)findViewById(R.id.button2);
-		button3=(Button)findViewById(R.id.button3);
-		button4=(Button)findViewById(R.id.button4);
+		button2=(Button)findViewById(R.id.tab3_login);
+		button3=(Button)findViewById(R.id.tab3_peopleinfo);
+		button4=(Button)findViewById(R.id.tab3_bookinghist);
 		
 		button2.setOnClickListener(history_2);
 		button3.setOnClickListener(history_3);

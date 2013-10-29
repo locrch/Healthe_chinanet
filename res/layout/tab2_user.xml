@@ -20,7 +20,7 @@
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/tab3_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
@@ -28,7 +28,7 @@
             android:text="登录" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/tab3_peopleinfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
@@ -36,7 +36,7 @@
             android:text="就诊人信息" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/tab3_bookinghist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
@@ -44,7 +44,7 @@
             android:text="预约记录" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/tab3_showhist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
@@ -52,7 +52,7 @@
             android:text="个人收藏" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/tab3_userchange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
@@ -60,7 +60,7 @@
             android:text="切换账号" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/tab3_cleanDB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"

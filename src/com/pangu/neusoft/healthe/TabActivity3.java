@@ -41,12 +41,12 @@ public class TabActivity3 extends Activity {
 	private SharedPreferences sp;
 	private Editor editor;
 	
-	Button button2;//登录
-	Button button3;//就诊人信息
-	Button button4;//预约记录
-	Button button5;//个人收藏
-	Button button6;//切换账户
-	Button button7;//清除缓存
+	Button tab3_login;//登录
+	Button tab3_peopleinfo;//就诊人信息
+	Button tab3_bookinghist;//预约记录
+	Button tab3_showhist;//个人收藏
+	Button tab3_userchange;//切换账户
+	Button tab3_cleanDB;//清除缓存
 	TextView textview1;
 	DBManager mgr;
 	
@@ -58,32 +58,32 @@ public class TabActivity3 extends Activity {
 		editor = sp.edit();
 		mgr=new DBManager(TabActivity3.this);
 		
-		button2=(Button)findViewById(R.id.button2);
-		button3=(Button)findViewById(R.id.button3);
-		button4=(Button)findViewById(R.id.button4);
-		button5=(Button)findViewById(R.id.button5);
-		button6=(Button)findViewById(R.id.button6);
-		button7=(Button)findViewById(R.id.button7);
+		tab3_login=(Button)findViewById(R.id.tab3_login);
+		tab3_peopleinfo=(Button)findViewById(R.id.tab3_peopleinfo);
+		tab3_bookinghist=(Button)findViewById(R.id.tab3_bookinghist);
+		tab3_showhist=(Button)findViewById(R.id.tab3_showhist);
+		tab3_userchange=(Button)findViewById(R.id.tab3_userchange);
+		tab3_cleanDB=(Button)findViewById(R.id.tab3_cleanDB);
 		
-		button2.setOnClickListener(button2_click);
-		button3.setOnClickListener(button3_click);
-		button4.setOnClickListener(button4_click);
-		button5.setOnClickListener(button5_click);
-		button6.setOnClickListener(button6_click);
-		button7.setOnClickListener(button7_click);
+		tab3_login.setOnClickListener(login_click);
+		tab3_peopleinfo.setOnClickListener(peopleinfo_click);
+		tab3_bookinghist.setOnClickListener(bookinghist_click);
+		tab3_showhist.setOnClickListener(showhist_click);
+		tab3_userchange.setOnClickListener(userchange_click);
+		tab3_cleanDB.setOnClickListener(cleanDB_click);
 		
 	}
 	
-	OnClickListener button2_click=new OnClickListener(){
+	OnClickListener login_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
 			Intent intent=getIntent();
 			intent.setClass(TabActivity3.this, LoginActivity.class);
 			startActivity(intent);
-			
+			startActivityForResult(intent, 0);
 		}
 	};
-	OnClickListener button3_click=new OnClickListener(){
+	OnClickListener peopleinfo_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
 			Intent intent=getIntent();
@@ -91,7 +91,7 @@ public class TabActivity3 extends Activity {
 			startActivity(intent);
 		}
 	};
-	OnClickListener button4_click=new OnClickListener(){
+	OnClickListener bookinghist_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
@@ -101,7 +101,7 @@ public class TabActivity3 extends Activity {
 			startActivity(intent);
 		}
 	};
-	OnClickListener button5_click=new OnClickListener(){
+	OnClickListener showhist_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
 			
@@ -110,7 +110,7 @@ public class TabActivity3 extends Activity {
 			startActivity(intent);
 		}
 	};
-	OnClickListener button6_click=new OnClickListener(){
+	OnClickListener userchange_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
 			editor.putBoolean("loginsuccess", false);
@@ -118,7 +118,7 @@ public class TabActivity3 extends Activity {
 			startActivity(new Intent(TabActivity3.this,LoginActivity.class));
 		}
 	};
-	OnClickListener button7_click=new OnClickListener(){
+	OnClickListener cleanDB_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
 			//删除数据库记录

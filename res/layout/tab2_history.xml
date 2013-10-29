@@ -20,7 +20,7 @@
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/tab3_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
@@ -28,7 +28,7 @@
             android:text="预约记录" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/tab3_peopleinfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
@@ -36,7 +36,7 @@
             android:text="预约取消记录" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/tab3_bookinghist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
