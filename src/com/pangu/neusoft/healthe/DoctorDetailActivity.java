@@ -121,9 +121,9 @@ public class DoctorDetailActivity extends FatherActivity {
 				editor.putString("doctorId", doctorId);
 				editor.putString("doctorName", doctorNameText.getText().toString());
 				editor.commit();
-				startActivity(new Intent (DoctorDetailActivity.this, BookingMainActivity.class));
+				startActivity(new Intent (DoctorDetailActivity.this, ScheduleListActivity.class));
 			}else{
-				startActivity(new Intent (DoctorDetailActivity.this, BookingMainActivity.class));
+				startActivity(new Intent (DoctorDetailActivity.this, ScheduleListActivity.class));
 			}
 		}
 	};

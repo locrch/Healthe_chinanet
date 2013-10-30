@@ -57,6 +57,7 @@ public class LoginActivity extends FatherActivity {
 		editor = sp.edit();
 		if(sp.getBoolean("loginsuccess", false)){
 			startActivity(new Intent(LoginActivity.this,ListPeopleActivity.class));
+			finish();
 		}
 		
 		

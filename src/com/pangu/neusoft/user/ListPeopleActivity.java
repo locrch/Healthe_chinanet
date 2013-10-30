@@ -145,6 +145,7 @@ public class ListPeopleActivity extends FatherActivity {
 			editor.putBoolean("loginsuccess", false);
 			editor.commit();
 			startActivity(new Intent(ListPeopleActivity.this,LoginActivity.class));
+			finish();
 		}
 	};
 	

@@ -5,6 +5,7 @@ import com.pangu.neusoft.tools.SysApplication;
 import com.pangu.neusoft.user.LoginActivity;
 
 import android.os.Bundle;
+import android.provider.ContactsContract.CommonDataKinds.Event;
 import android.R.anim;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -20,7 +21,7 @@ import android.widget.Toast;
 
 public class FatherActivity extends Activity
 {
-	Button back_index;
+	Button back_index,back_back;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -28,8 +29,8 @@ public class FatherActivity extends Activity
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.activity_father);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_back);
-		
 		back_index = (Button)findViewById(R.id.back_index);
+		back_back = (Button)findViewById(R.id.back_back);
 		
 		back_index.setOnClickListener(new OnClickListener()
 		{
@@ -40,38 +41,22 @@ public class FatherActivity extends Activity
 				// TODO Auto-generated method stub
 				startActivity(new Intent(getApplicationContext(),TabHostActivity.class));
 				
-				
 				finish();
-				
-				System.exit(0);
-				
-				
-				
-			}
+				}
+		});
+		
+		back_back.setOnClickListener(new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				// TODO Auto-generated method stub
+
+				finish();
+				}
 		});
 	}
-	/*private long exitTime = 0;
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event)  {
-		if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){   
-	        if((System.currentTimeMillis()-exitTime) > 2000){  
-	            Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();                                
-	            exitTime = System.currentTimeMillis();   
-	        } else {
-	            //finish();
-	            //System.exit(0);
-	        	//android.os.Process.killProcess(android.os.Process.myPid());  
-	        	ActivityManager am= (ActivityManager) this
-	        			.getSystemService(Context.ACTIVITY_SERVICE);
-	        			am.killBackgroundProcesses(this.getPackageName());
-
-	        	
-	        }
-	        return true;   
-	    }
-
-	    
-	    return super.onKeyDown(keyCode, event);
-	}*/
+	
 
 }

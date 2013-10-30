@@ -53,7 +53,7 @@ public class TabActivity3 extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.tab2_user);
+		setContentView(R.layout.tab3_user);
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		mgr=new DBManager(TabActivity3.this);
@@ -80,7 +80,7 @@ public class TabActivity3 extends Activity {
 			Intent intent=getIntent();
 			intent.setClass(TabActivity3.this, LoginActivity.class);
 			startActivity(intent);
-			startActivityForResult(intent, 0);
+			
 		}
 	};
 	OnClickListener peopleinfo_click=new OnClickListener(){

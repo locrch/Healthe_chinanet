@@ -112,7 +112,10 @@ public class FristActivity extends Activity {
 		SysApplication.getInstance().addActivity(this);
 		
 		UpdateOperation update=new UpdateOperation(FristActivity.this);
+		
     	update.checkUpdate();
+    	
+    	
 	}
 
 	@Override
