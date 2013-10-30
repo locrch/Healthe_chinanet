@@ -143,9 +143,9 @@ public class HospitalDetailActivity extends FatherActivity {
 				editor.putString("doctorName", "请选择医生");
 				
 				editor.commit();
-				startActivity(new Intent (HospitalDetailActivity.this, BookingMainActivity.class));
+				startActivity(new Intent (HospitalDetailActivity.this, DepartmentListActivity.class));
 			}else{
-				startActivity(new Intent (HospitalDetailActivity.this, BookingMainActivity.class));
+				startActivity(new Intent (HospitalDetailActivity.this, DepartmentListActivity.class));
 			}
 		}
 	};
