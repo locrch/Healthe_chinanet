@@ -47,6 +47,7 @@ public class TabActivity3 extends Activity {
 	Button tab3_showhist;//个人收藏
 	Button tab3_userchange;//切换账户
 	Button tab3_cleanDB;//清除缓存
+	Button tab3_settextsize;//设置字体
 	TextView textview1;
 	DBManager mgr;
 	
@@ -64,6 +65,7 @@ public class TabActivity3 extends Activity {
 		tab3_showhist=(Button)findViewById(R.id.tab3_showhist);
 		tab3_userchange=(Button)findViewById(R.id.tab3_userchange);
 		tab3_cleanDB=(Button)findViewById(R.id.tab3_cleanDB);
+		tab3_settextsize=(Button)findViewById(R.id.tab3_settextsize);
 		
 		tab3_login.setOnClickListener(login_click);
 		tab3_peopleinfo.setOnClickListener(peopleinfo_click);

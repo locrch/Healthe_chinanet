@@ -66,6 +66,14 @@
             android:background="@drawable/button_style"
             android:gravity="left"
             android:text="清除缓存" />
+        
+        <Button
+            android:id="@+id/tab3_settextsize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:gravity="left"
+            android:text="字体设置" />
     </LinearLayout>
 
     <TextView

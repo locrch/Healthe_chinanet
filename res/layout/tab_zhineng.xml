@@ -108,12 +108,12 @@
         android:textColor="@color/tab_text"/>
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/tab2_tellphone"
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:layout_above="@+id/textView4"
         android:layout_alignParentRight="true"
-        android:background="@drawable/nurse" />
+        android:background="@drawable/yijian" />
 
     <TextView
         android:layout_width="wrap_content"

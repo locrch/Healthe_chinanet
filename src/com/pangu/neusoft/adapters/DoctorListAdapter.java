@@ -71,7 +71,16 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
                 viewCache = (DoctorListViewHolder) rowView.getTag();  
             }  
             final DoctorList doctorlist = getItem(position);  
-  
+            
+          //设置列表隔行换色
+            if (position%2!=0)
+			{
+            	//灰色
+            	rowView.setBackgroundColor(Color.LTGRAY);
+			}
+            else {
+            	rowView.setBackgroundColor(Color.WHITE);
+			}
             // Load the image and set it on the ImageView  
             String imageUrl = doctorlist.getImageUrl();  
             ImageView imageView = viewCache.getImageView();  

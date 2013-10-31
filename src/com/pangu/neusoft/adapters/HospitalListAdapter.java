@@ -5,14 +5,22 @@ package com.pangu.neusoft.adapters;
 import java.util.List;  
 
 
+
+
+
 import com.pangu.neusoft.healthe.HospitalDetailActivity;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.Setting;
+import com.pangu.neusoft.healthe.R.color;
 import com.pangu.neusoft.tools.AsyncBitmapLoader;
 import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
   
   
   
+
+
+
+import android.R.integer;
 import android.app.Activity;  
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -20,6 +28,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;  
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -34,7 +43,7 @@ import android.widget.ListView;
 import android.widget.TextView;  
   
 public class HospitalListAdapter extends ArrayAdapter<HospitalList> {  
-  
+		
           
         private AsyncBitmapLoader asyncImageLoader;  
         
@@ -61,7 +70,19 @@ public class HospitalListAdapter extends ArrayAdapter<HospitalList> {
                 viewCache = (HospitalListViewHolder) rowView.getTag();  
             }  
             final HospitalList imageAndText = getItem(position);  
-  
+            
+            
+            //设置列表隔行换色
+            if (position%2!=0)
+			{
+            	//灰色
+            	rowView.setBackgroundColor(Color.LTGRAY);
+			}
+            else {
+            	rowView.setBackgroundColor(Color.WHITE);
+			}
+            
+            
             // Load the image and set it on the ImageView  
             String imageUrl = imageAndText.getImageUrl();  
             ImageView imageView = viewCache.getImageView();  
@@ -78,7 +99,7 @@ public class HospitalListAdapter extends ArrayAdapter<HospitalList> {
             
       
             if (bitmap == null) {  
-                imageView.setImageResource(R.drawable.da);  
+                imageView.setImageResource(R.drawable.booking_hosp);  
             }else{  
             	imageView.setImageBitmap(bitmap); 
             }  

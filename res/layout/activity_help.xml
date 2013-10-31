@@ -76,19 +76,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="3.如何预约挂号？"
-        android:textStyle="bold" />
-	<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/zhinan_title"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="25dp"
-        android:text="答：用户需注册登录，填写就诊人信息，然后选择地区→选择医院→选择科室→选择医生→选择就诊时间，最后点击“预约挂号”即可成功预约挂号。" />
-	<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="4.预约成功的订单可以修改吗？"
         android:textStyle="bold" />
 	<TextView

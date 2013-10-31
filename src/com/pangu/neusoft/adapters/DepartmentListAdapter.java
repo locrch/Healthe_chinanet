@@ -27,12 +27,14 @@ import com.pangu.neusoft.user.LoginActivity;
 
 
 
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -153,7 +155,18 @@ public class DepartmentListAdapter extends BaseAdapter implements SectionIndexer
 	        holder.name.setText(name);  
 	        holder.number.setText(number); 	        
 	        holder.number.setVisibility(View.INVISIBLE);
-	
+	      
+	        
+	        //设置列表隔行换色
+            if (position%2!=0)
+			{
+            	//灰色
+            	convertView.setBackgroundColor(Color.LTGRAY);
+			}
+            else {
+            	convertView.setBackgroundColor(Color.WHITE);
+			}
+            
 	        // 当前联系人的sortKey   
 	        String currentStr = getAlpha(list.get(position).getSortKey());  
 	        // 上一个联系人的sortKey   
@@ -238,7 +251,7 @@ public class DepartmentListAdapter extends BaseAdapter implements SectionIndexer
 	    	};
 	    	holder.detail.setOnClickListener(detail);
 	       
-	        
+	    	
 	        
 	        return convertView;  
 	}
