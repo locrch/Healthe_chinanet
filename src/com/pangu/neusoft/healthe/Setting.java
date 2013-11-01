@@ -2,8 +2,8 @@ package com.pangu.neusoft.healthe;
 
 public class Setting {
 	public final static int fontsizel=15;
-	public final static int fontsizex=20;
-	public final static int fontsizes=25;
+	public static int fontsizex=20;
+	public static int fontsizes=25;
 	public final static String spfile="healthE";
 	public final static int dialogtimeout=2000;
 	public final static String catche_dir="/mnt/sdcard/healthE/";

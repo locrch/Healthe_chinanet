@@ -73,8 +73,19 @@ public class TabActivity3 extends Activity {
 		tab3_showhist.setOnClickListener(showhist_click);
 		tab3_userchange.setOnClickListener(userchange_click);
 		tab3_cleanDB.setOnClickListener(cleanDB_click);
-		
+		tab3_settextsize.setOnClickListener(settextsize_click);
 	}
+	OnClickListener settextsize_click = new OnClickListener()
+	{
+		
+		@Override
+		public void onClick(View v)
+		{
+			// TODO Auto-generated method stub
+			startActivity(new Intent(TabActivity3.this, SetTextSizeActivity.class));
+		}
+	};
+	
 	
 	OnClickListener login_click=new OnClickListener(){
 		@Override

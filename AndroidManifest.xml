@@ -3,44 +3,49 @@
     package="com.pangu.neusoft.healthe"
     android:versionCode="3"
     android:versionName="1.011" >
-	<supports-screens android:largeScreens="true"  
-            android:normalScreens="true"  
-            android:smallScreens="true"  
-            android:resizeable="true"  
-            android:anyDensity="true"/>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
-	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" /> 
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!--使用网络功能所需权限  -->  
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">  
-</uses-permission>  
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">  
-</uses-permission>  
-<uses-permission android:name="android.permission.CHANGE_WIFI_STATE">  
-</uses-permission>  
+    <!-- 使用网络功能所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
 
-<!-- 使用定位功能所需权限,demo已集成百度定位SDK,不使用定位功能可去掉以下6项 -->  
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">  
-</uses-permission>  
-<permission android:name="android.permission.BAIDU_LOCATION_SERVICE">  
-</permission>  
-<uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE">  
-</uses-permission>  
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">  
-</uses-permission>  
-<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION">  
-</uses-permission>  
-<uses-permission android:name="android.permission.ACCESS_GPS"/> 
+    <!-- 使用定位功能所需权限,demo已集成百度定位SDK,不使用定位功能可去掉以下6项 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
 
-    
+    <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </permission>
+
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -203,24 +208,28 @@
             android:name="com.pangu.neusoft.healthe.HelpActivity"
             android:label="@string/title_activity_help" >
         </activity>
-         <activity
+        <activity
             android:name="com.pangu.neusoft.user.HistoryViewActivity"
             android:label="@string/title_activity_history_view" >
         </activity>
-         <activity
+        <activity
             android:name="com.pangu.neusoft.user.ConnectListActivity"
             android:label="@string/title_activity_connect_list_view" >
         </activity>
-         <activity
+        <activity
             android:name="com.pangu.neusoft.healthe.MapActivity"
-                android:screenOrientation="sensor"  
             android:configChanges="orientation|keyboardHidden"
-            android:label="@string/title_activity_map" >
+            android:label="@string/title_activity_map"
+            android:screenOrientation="sensor" >
         </activity>
-         
+        
+        <activity 
+            android:name="com.pangu.neusoft.healthe.SetTextSizeActivity"
+            android:label="@string/title_activity_textsize"
+            >
+        </activity>
     </application>
-    
-         
-    
 
 </manifest>
+
+

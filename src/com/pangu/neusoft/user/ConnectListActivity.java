@@ -68,7 +68,7 @@ public class ConnectListActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
-		doctorlistView=(ListView)findViewById(R.id.area_list);
+		doctorlistView=(ListView)findViewById(R.id.list);
 		service=new WebService();
 		doctorList=new ArrayList<DoctorList>();	
 		

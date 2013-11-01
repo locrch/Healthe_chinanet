@@ -31,9 +31,8 @@ public class TabActivity1 extends Activity
 		}*/
 		setContentView(R.layout.tab_zhineng);
 		
-		TextView huoqu = (TextView) findViewById(R.id.huoqu);
-
-		huoqu.setText("欢迎你");
+		
+		
 
 		ImageButton yuyue = (ImageButton) findViewById(R.id.tab2_booking);
 

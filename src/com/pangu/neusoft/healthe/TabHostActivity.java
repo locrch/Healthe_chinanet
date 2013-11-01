@@ -40,7 +40,7 @@ public class TabHostActivity extends ActivityGroup {
 		
 		Intent intent;
 		
-		intent = new Intent(this, TabActivity1.class);
+		intent = new Intent(this, TabActivity2.class);
 		intent.putExtra("extra", Value);
 		View tab1Spec = mInflater.inflate(R.layout.tab1_spec, null);
 		tabHost.addTab(tabHost

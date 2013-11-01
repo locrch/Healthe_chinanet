@@ -52,7 +52,7 @@ public class DepartmentListActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
-		departmentlistView=(ListView)findViewById(R.id.area_list);
+		departmentlistView=(ListView)findViewById(R.id.list);
 		service=new WebService();
 		departmentList=new ArrayList<Department>();	
 		  

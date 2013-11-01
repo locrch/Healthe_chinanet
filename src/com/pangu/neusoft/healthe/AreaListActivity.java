@@ -51,7 +51,7 @@ public class AreaListActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
-		arealistView=(ListView)findViewById(R.id.area_list);
+		arealistView=(ListView)findViewById(R.id.list);
 		service=new WebService();
 		areaArrayList=new ArrayList<HashMap<String,String>>();	
 		

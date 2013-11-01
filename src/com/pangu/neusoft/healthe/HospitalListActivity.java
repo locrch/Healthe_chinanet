@@ -56,7 +56,7 @@ public class HospitalListActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
-		hospitallistView=(ListView)findViewById(R.id.area_list);
+		hospitallistView=(ListView)findViewById(R.id.list);
 		service=new WebService();
 		hospitalList=new ArrayList<HospitalList>();	
 		
