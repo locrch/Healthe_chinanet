@@ -15,7 +15,7 @@ public class DoctorListViewHolder {
         private TextView idView;
         private TextView levelView;
         private LinearLayout scheduleView;
-        
+        private TextView scheduletext;
         private TextView versionView;
         
         private ImageView moreInfoView;
@@ -31,6 +31,12 @@ public class DoctorListViewHolder {
             return idView;  
         }  
         
+        public TextView getScheduleText(){
+        	if (scheduletext == null) {  
+        		scheduletext = (TextView) baseView.findViewById(R.id.schedule_text);  
+            }  
+            return scheduletext;
+        }
         
         public TextView getTextView() {  
             if (textView == null) {  

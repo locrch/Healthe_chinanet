@@ -75,4 +75,14 @@
          >
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/schedule_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctor_list_level"
+        android:layout_toRightOf="@+id/doctor_list_image"
+        android:text="没有排班表"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#0000FF" />
+
 </RelativeLayout>

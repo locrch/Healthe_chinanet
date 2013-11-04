@@ -31,12 +31,14 @@ public class AsyncBitmapLoader {
 
 	public Bitmap loadBitmap(final ImageView imageView, final String imageURL,
 			final ImageCallBack imageCallBack) {
+		
+		final String imageURL_de=URLDecoder.decode(imageURL);
 		// 在内存缓存中，则返回Bitmap对象
-		if (imageCache.containsKey(imageURL)) {
-			SoftReference<Bitmap> reference = imageCache.get(imageURL);
+		if (imageCache.containsKey(imageURL_de)) {
+			SoftReference<Bitmap> reference = imageCache.get(imageURL_de);
 			Bitmap bitmap = reference.get();
 			if (bitmap != null) {
-				Log.e("Loging image ", " From Cache Map "+imageURL);
+				Log.e("Loging image ", " From Cache Map "+imageURL_de);
 				return bitmap;
 			}
 		} else {
@@ -45,17 +47,13 @@ public class AsyncBitmapLoader {
 			 */
 			if(hasSdcard()){
 			
-				String[] array=imageURL.split("/");
+				String[] array=imageURL_de.split("/");
 				
 				if(array.length>2){
 				
 					//String bitmapName = imageURL.substring(imageURL.lastIndexOf("/") + 1);
 					String bitmapName = array[array.length-1]+Setting.image_;
-					
-					String folder = URLDecoder.decode(array[array.length-2]);
-					
-					//Log.e("TTTTTTTTTTTTTTTTTTTTTT","bitmapName"+bitmapName);
-					
+					String folder = array[array.length-2];
 					File cacheDir = new File(Setting.catche_dir+"/"+folder);
 					
 					 if(!cacheDir.exists()){
@@ -72,7 +70,7 @@ public class AsyncBitmapLoader {
 						}
 		
 						if (i < cacheFiles.length) {
-							Log.e("Loging image ", " From Cache file");
+							Log.e("Loging image ", " From Cache file"+Setting.catche_dir+"/"+folder+"/"+ bitmapName);
 							return BitmapFactory.decodeFile(Setting.catche_dir+"/"+folder+"/"+ bitmapName);
 						}
 					}
@@ -108,7 +106,7 @@ public class AsyncBitmapLoader {
 				if(bitmapIs!=null){
 					//放到缓存中
 					Bitmap bitmap = BitmapFactory.decodeStream(bitmapIs);
-					imageCache.put(imageURL, new SoftReference<Bitmap>(bitmap));
+					imageCache.put(imageURL_de, new SoftReference<Bitmap>(bitmap));
 					Message msg = handler.obtainMessage(0, bitmap);
 					handler.sendMessage(msg);
 	
@@ -120,10 +118,10 @@ public class AsyncBitmapLoader {
 							dir.mkdirs();
 						}
 						
-						String[] array=imageURL.split("/");
+						String[] array=imageURL_de.split("/");
 						if(array.length>2){
 							String bitmapName = array[array.length-1]+Setting.image_;
-							String folder = URLDecoder.decode(array[array.length-2]);
+							String folder = array[array.length-2];
 			
 							 File folder_dir = new File(Setting.catche_dir+"/"+folder);
 							 

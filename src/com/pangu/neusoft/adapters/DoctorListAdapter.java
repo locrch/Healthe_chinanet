@@ -71,16 +71,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
                 viewCache = (DoctorListViewHolder) rowView.getTag();  
             }  
             final DoctorList doctorlist = getItem(position);  
-            
-          //设置列表隔行换色
-            if (position%2!=0)
-			{
-            	//灰色
-            	rowView.setBackgroundColor(Color.LTGRAY);
-			}
-            else {
-            	rowView.setBackgroundColor(Color.WHITE);
-			}
+  
             // Load the image and set it on the ImageView  
             String imageUrl = doctorlist.getImageUrl();  
             ImageView imageView = viewCache.getImageView();  
@@ -91,11 +82,14 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
                 @Override  
                 public void imageLoad(ImageView imageView, Bitmap bitmap) {  
                     // TODO Auto-generated method stub  
-                	if(bitmap!=null)
                 		imageView.setImageBitmap(bitmap);  
                 }  
             });  
-            
+            if (bitmap == null) {  
+                imageView.setImageResource(R.drawable.da);  
+            }else{  
+            	imageView.setImageBitmap(bitmap); 
+            }  
             SharedPreferences sp = activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
             int width=sp.getInt("screen_width", 0);
             int height=sp.getInt("screen_height", 0);            
@@ -111,6 +105,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             TextView idView = viewCache.getIdView();
             idView.setText(doctorlist.getId());
             
+          
             
             TextView levelView = viewCache.getLevelView();  
             levelView.setText(doctorlist.getLevel());  
@@ -134,7 +129,8 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             
             List<Schedule> scheduleList=doctorlist.getScheduleList();
             scheduleList=sort.sortScheduleByDay(scheduleList);
-            if(scheduleList!=null){
+            if(scheduleList!=null&&scheduleList.size()>0){
+            	
             	Map<String,String> maps=new LinkedHashMap<String,String>();
             
 	            for(Schedule schedule:scheduleList){
@@ -147,23 +143,33 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
 	            	}
 	            	maps.put(day, number);
 	            }
-	            maps.clear();//暂时不在列表显示排班表
-	            int count=0;
-	            for (String key : maps.keySet()) {
-	            	if(count==Setting.schedule_show_num)
-	            		break;
-	                String value= maps.get(key);
-	                
-	                LayoutInflater inflater = activity.getLayoutInflater();  
-	                View scheduleView = inflater.inflate(R.layout.schedule_day_number, null); 
-	                TextView day=(TextView) scheduleView.findViewById(R.id.schedule_day);
-	                TextView number=(TextView) scheduleView.findViewById(R.id.schedule_number);
-	                day.setText(key);
-	                number.setText(value);                
-	                scheduleView.setPadding(2, 2, 2, 2);
-	                
-	                scheduleLayout.addView(scheduleView);
-	               count++;                
+	            //maps.clear();//暂时不在列表显示排班表
+	            
+	            if(maps.size()>0){
+	            //int count=0;
+	            String scheduletext="可预约日期：\n";
+		            for (String key : maps.keySet()) {
+		            	scheduletext+=key+" ";
+		            	/*
+		            	if(count==Setting.schedule_show_num)
+		            		break;
+		                String value= maps.get(key);
+		                
+		                LayoutInflater inflater = activity.getLayoutInflater();  
+		                View scheduleView = inflater.inflate(R.layout.schedule_day_number, null); 
+		                TextView day=(TextView) scheduleView.findViewById(R.id.schedule_day);
+		                TextView number=(TextView) scheduleView.findViewById(R.id.schedule_number);
+		                day.setText(key);
+		                number.setText(value);                
+		                scheduleView.setPadding(2, 2, 2, 2);
+		                
+		                scheduleLayout.addView(scheduleView);
+		                
+		               count++;
+		               */                
+		            }
+		            TextView scheduleText=viewCache.getScheduleText();
+		            scheduleText.setText(scheduletext);//显示有排班的日期：
 	            }
             }
            

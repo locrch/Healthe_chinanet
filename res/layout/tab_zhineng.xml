@@ -112,8 +112,7 @@
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:layout_above="@+id/textView4"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/yijian" />
+        android:layout_alignParentRight="true"/>
 
     <TextView
         android:layout_width="wrap_content"

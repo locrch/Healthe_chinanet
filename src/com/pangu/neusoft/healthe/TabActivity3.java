@@ -82,7 +82,7 @@ public class TabActivity3 extends Activity {
 		public void onClick(View v)
 		{
 			// TODO Auto-generated method stub
-			startActivity(new Intent(TabActivity3.this, SetTextSizeActivity.class));
+			//startActivity(new Intent(TabActivity3.this, SetTextSizeActivity.class));
 		}
 	};
 	
