@@ -107,7 +107,6 @@ public class HospitalListAdapter extends ArrayAdapter<HospitalList> {
             int width=sp.getInt("screen_width", 0);
             int height=sp.getInt("screen_height", 0);            
             imageView.getLayoutParams().width=width/6;
-            
             imageView.getLayoutParams().height=height/6;
             //imageView.getLayoutParams().height=width/4;
             // Set the text on the TextView  
