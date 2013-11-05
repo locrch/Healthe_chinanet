@@ -23,7 +23,7 @@ import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.Setting;
 import com.pangu.neusoft.tools.DialogShow;
 import com.pangu.neusoft.tools.SortListByItem;
-import com.pangu.neusoft.user.LoginActivity;
+import com.pangu.neusoft.healthcard.LoginActivity;
 
 
 
