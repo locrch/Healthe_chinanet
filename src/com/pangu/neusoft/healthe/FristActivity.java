@@ -19,6 +19,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
@@ -32,7 +34,8 @@ public class FristActivity extends Activity {
 	ImageButton zhineng, shuzi,phone;
 	
 	Button zhuce, denglu;
-	
+	private SharedPreferences sp;
+	private Editor editor;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,6 +56,13 @@ public class FristActivity extends Activity {
 
 		denglu = (Button) findViewById(R.id.denglu);
 
+		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
+		editor = sp.edit();
+		if(sp.getInt("fontsize", 0)==0){
+			editor.putInt("fontsize", 16);
+			editor.commit();
+		}
+		
 		zhuce.setOnClickListener(new OnClickListener() {
 
 			@Override
