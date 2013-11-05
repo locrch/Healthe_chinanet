@@ -25,6 +25,7 @@ import com.pangu.neusoft.core.models.Area;
 import com.pangu.neusoft.core.models.AreaReq;
 import com.pangu.neusoft.core.models.AreaResponse;
 import com.pangu.neusoft.core.models.BookingReq;
+import com.pangu.neusoft.core.models.CardListReq;
 import com.pangu.neusoft.core.models.DeleteCardReq;
 import com.pangu.neusoft.core.models.DepartmentReq;
 import com.pangu.neusoft.core.models.DoctorInfoReq;
@@ -67,6 +68,15 @@ public class WebService implements GET{
 		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 	     envelope.addMapping(NAMESPACE, "req", HospitalReq.class);
 		 return getSoapObject(request,"getHospitalList",envelope);
+	}
+	
+	public SoapObject getCardList(CardListReq req){		 
+		 //获得医院列表
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName("getMemberCardList"));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", CardListReq.class);
+		 return getSoapObject(request,"getMemberCardList",envelope);
 	}
 	
 	public SoapObject getHospitalDetail(HospitalInfoReq req){		 
