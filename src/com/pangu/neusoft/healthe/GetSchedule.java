@@ -71,7 +71,7 @@ public class GetSchedule {
             	}else{
             		parts="PM";
             	}
-            	timetable.add(date+"|"+parts+"|"+schedule.getTimeRange());
+            	timetable.add(date+"|"+parts+"|"+schedule.getTimeRange()+"|"+schedule.getAvailableNum());
             	
             	
             	String now=maps.get(date+"|"+parts+"|"+day);
@@ -206,15 +206,24 @@ public class GetSchedule {
       				String[] dat=res.split("\\|");
       				if(dat[0].equals(schedule.getOutcallDate())){
       					if(Integer.parseInt(dat[2].substring(0,2))<12&&dat[1].equals("AM")){
-      						data.add(dat[1]+" "+dat[2]);	
+      						data.add(dat[1]+" "+dat[2]+" 剩("+dat[3]+")个号");
       	            	}
       				}
       			}
+      			
+      			//排序
+      			SortListByItem sort=new SortListByItem();
+      			 
+      			data=sort.sortScheduleByTime(data);
+      			
+      			
       			selectdate.setText( schedule.getOutcallDate());
-      			ListAdapter adapter=new ArrayAdapter<String>(activity,android.R.layout.simple_expandable_list_item_1,data);
+      			//ListAdapter adapter1=new ArrayAdapter<String>(activity,android.R.layout.simple_expandable_list_item_1,data);
+      			ListAdapter adapter=new ArrayAdapter<String>(activity,R.layout.schedule_timetable,data);
       			list.setAdapter(adapter);
+      			
       			list.setOnItemClickListener(new OnItemClickListener(){
-
+      			
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View arg1,
 							int arg2, long arg3) {
@@ -252,12 +261,19 @@ public class GetSchedule {
        				String[] dat=res.split("\\|");
        				if(dat[0].equals(schedule.getOutcallDate())){
        					if(Integer.parseInt(dat[2].substring(0,2))>=12&&dat[1].equals("PM")){
-       						data.add(dat[1]+" "+dat[2]);	
+       						data.add(dat[1]+" "+dat[2]+" 剩("+dat[3]+")个号");	
        	            	}
        				}
        			}
+       			
+       			//排序
+      			SortListByItem sort=new SortListByItem();
+      			 
+      			data=sort.sortScheduleByTime(data);
+      			
        			selectdate.setText( schedule.getOutcallDate());
-       			ListAdapter adapter=new ArrayAdapter<String>(activity,android.R.layout.simple_expandable_list_item_1,data);
+       			//ListAdapter adapter=new ArrayAdapter<String>(activity,android.R.layout.simple_expandable_list_item_1,data);
+       			ListAdapter adapter=new ArrayAdapter<String>(activity,R.layout.schedule_timetable,data);
        			list.setAdapter(adapter);
        			list.setOnItemClickListener(new OnItemClickListener(){
 
