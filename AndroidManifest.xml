@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pangu.neusoft.healthe"
-    android:versionCode="3"
-    android:versionName="1.011" >
+    android:versionCode="4"
+    android:versionName="1.02" >
 
     <supports-screens
         android:anyDensity="true"
@@ -153,35 +153,23 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.user.LoginActivity"
+            android:name="com.pangu.neusoft.healthcard.LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.user.RegisterActivity"
+            android:name="com.pangu.neusoft.healthcard.RegisterActivity"
             android:label="@string/title_activity_register" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.user.CreatePeopleActivity"
-            android:label="@string/title_activity_create_people" >
-        </activity>
-        <activity
-            android:name="com.pangu.neusoft.user.ListPeopleActivity"
+            android:name="com.pangu.neusoft.healthcard.ListCardActivity"
             android:label="@string/title_activity_list_people" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.user.CreateCardActivity"
-            android:label="@string/title_activity_create_card" >
-        </activity>
-        <activity
-            android:name="com.pangu.neusoft.user.PeopleInfoActivity"
+            android:name="com.pangu.neusoft.healthcard.CardInfoActivity"
             android:label="@string/title_activity_people_info" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.user.HospitalChooseActivity"
-            android:label="@string/title_activity_hospital_choose" >
-        </activity>
-        <activity
-            android:name="com.pangu.neusoft.user.ShowHistoryActivity"
+            android:name="com.pangu.neusoft.healthcard.ShowHistoryActivity"
             android:label="@string/title_activity_show_history" >
         </activity>
         <activity
@@ -209,11 +197,11 @@
             android:label="@string/title_activity_help" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.user.HistoryViewActivity"
+            android:name="com.pangu.neusoft.healthcard.HistoryViewActivity"
             android:label="@string/title_activity_history_view" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.user.ConnectListActivity"
+            android:name="com.pangu.neusoft.healthcard.ConnectListActivity"
             android:label="@string/title_activity_connect_list_view" >
         </activity>
         <activity
@@ -222,14 +210,14 @@
             android:label="@string/title_activity_map"
             android:screenOrientation="sensor" >
         </activity>
-        
-        <activity 
+        <activity
             android:name="com.pangu.neusoft.healthe.SetTextSizeActivity"
-            android:label="@string/title_activity_textsize"
-            >
+            android:label="@string/title_activity_textsize" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthcard.CreateCardActivity"
+            android:label="@string/title_activity_create_card" >
         </activity>
     </application>
 
 </manifest>
-
-
