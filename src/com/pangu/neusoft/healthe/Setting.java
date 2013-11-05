@@ -9,7 +9,9 @@ public class Setting {
 	public final static String catche_dir="/mnt/sdcard/healthE/";
 	public final static String image_="pangu";
 	//public final static String default_pic_url="http://publimedic.mx/wp-content/themes/directorypress/thumbs/hospital_icon-1.jpg";
-	public final static String default_pic_url="http://demo.sc.chinaz.com/Files/pic/icons/2724/%E7%88%B1%E5%BF%83%E5%8C%BB%E7%96%97%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E4%B8%8B%E8%BD%BD6.png";
+	public final static String DEFAULT_DOC_url="http://cdn-img.easyicon.net/png/122/12279.png";
+	public final static String TEST_url="http://cdn-img.easyicon.net/png/120/12012.png";
+	
 	public static final String parcelableKey = "com.pangu.neusoft.healthe"; 
 	public static final int schedule_show_num=6;
 	public static final String mapkey="36a773d43634b75464e03e17f65dd3bf";
@@ -18,4 +20,7 @@ public class Setting {
 	public static final int map_zoom=16;
 	public static String check_url = "http://202.103.160.158:678/V1/HealthE.apk";
 	public static String SerialNumber;
+	public static String link="http://219.130.221.120:10804/smjkfw/wsyygh/pages/jkw_login_dx.jsp?redirect=http://202.103.160.158:1001/MedicalCardPage/receive.aspx&wxid=";
+	
+	
 }
