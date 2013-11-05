@@ -84,6 +84,7 @@ public class DoctorDetailActivity extends FatherActivity {
 		editor=sp.edit();
 		service=new WebService();
 		setContentView(R.layout.detail_doctor);
+		super.setactivitytitle("医生信息");
 		doctorId=this.getIntent().getStringExtra("doctorId");
 		doctorVersion=this.getIntent().getStringExtra("doctorVersion");
 		
