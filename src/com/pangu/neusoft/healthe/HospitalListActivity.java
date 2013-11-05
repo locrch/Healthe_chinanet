@@ -56,6 +56,7 @@ public class HospitalListActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
+		super.setactivitytitle("选择医院");
 		hospitallistView=(ListView)findViewById(R.id.list);
 		service=new WebService();
 		hospitalList=new ArrayList<HospitalList>();	
@@ -100,13 +101,13 @@ public class HospitalListActivity extends FatherActivity {
 						String imageUrl;
 						try{
 							if(soapChilds.getProperty("pictureUrl")==null){
-								imageUrl=Setting.default_pic_url;
+								imageUrl=Setting.DEFAULT_DOC_url;
 								
 							}else{
 								imageUrl=soapChilds.getProperty("pictureUrl").toString();
 							}
 						}catch(Exception ex){
-							imageUrl=Setting.default_pic_url;
+							imageUrl=Setting.DEFAULT_DOC_url;
 						}
 						
 						HospitalList map=new HospitalList();						
