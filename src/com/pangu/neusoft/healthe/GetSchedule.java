@@ -2,6 +2,7 @@ package com.pangu.neusoft.healthe;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -20,11 +21,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.pangu.neusoft.core.models.Schedule;
+import com.pangu.neusoft.healthcard.ListCardActivity;
 import com.pangu.neusoft.tools.SortListByItem;
-import com.pangu.neusoft.user.ListPeopleActivity;
 
 public class GetSchedule {
 	private Activity activity;
@@ -32,8 +38,15 @@ public class GetSchedule {
 	private SharedPreferences sp;
 	private Editor editor;
 	Map<String,Schedule> schedules;
+	private List<Schedule> scheduleList;
+	
+	TextView selectdate;
+	
+	private List<String> timetable=new ArrayList<String>();
 	public View getScheduleView(Activity activity,List<Schedule> scheduleList){
 		this.activity=activity;
+		this.scheduleList=scheduleList;
+		
 		sp = activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		schedules=new HashMap<String,Schedule>();
@@ -58,7 +71,7 @@ public class GetSchedule {
             	}else{
             		parts="PM";
             	}
-            	
+            	timetable.add(date+"|"+parts+"|"+schedule.getTimeRange());
             	
             	
             	String now=maps.get(date+"|"+parts+"|"+day);
@@ -71,7 +84,10 @@ public class GetSchedule {
             		}
             	}
             	maps.put(date+"|"+parts+"|"+day, number);
+            	schedule.setTimeRange(parts);
             	schedules.put(date+"|"+parts+"|"+day,schedule);
+            	
+            	
             	if(firstdate.equals("")){
             		firstdate=date+"|"+parts+"|"+day;
             	}
@@ -80,8 +96,9 @@ public class GetSchedule {
             
             LayoutInflater inflater = activity.getLayoutInflater();  
             View scheduleView = inflater.inflate(R.layout.schedule_table, null); 
+                       
             
-            
+            ListView list=(ListView) scheduleView.findViewById(R.id.timetable);
             TextView day1=(TextView) scheduleView.findViewById(R.id.day1);
             TextView day2=(TextView) scheduleView.findViewById(R.id.day2);
             TextView day3=(TextView) scheduleView.findViewById(R.id.day3);
@@ -108,6 +125,7 @@ public class GetSchedule {
             TextView day8am=(TextView) scheduleView.findViewById(R.id.day8am);
             TextView day8pm=(TextView) scheduleView.findViewById(R.id.day8pm);
             
+            selectdate=(TextView)scheduleView.findViewById(R.id.selectdate);
             
             Date dt=new Date();
             if(maps.size()>0){
@@ -140,14 +158,14 @@ public class GetSchedule {
                 /*
 	                * 第二到七个
 	                * */ 
-                setTable(dt,sdf,maps,day1,day1am,day1pm,0);
-                setTable(dt,sdf,maps,day2,day2am,day2pm,1);
-                setTable(dt,sdf,maps,day3,day3am,day3pm,2);
-                setTable(dt,sdf,maps,day4,day4am,day4pm,3);
-                setTable(dt,sdf,maps,day5,day5am,day5pm,4);
-                setTable(dt,sdf,maps,day6,day6am,day6pm,5);
-                setTable(dt,sdf,maps,day7,day7am,day7pm,6);
-                setTable(dt,sdf,maps,day8,day8am,day8pm,7);
+                setTable(dt,sdf,maps,day1,day1am,day1pm,0,list);
+                setTable(dt,sdf,maps,day2,day2am,day2pm,1,list);
+                setTable(dt,sdf,maps,day3,day3am,day3pm,2,list);
+                setTable(dt,sdf,maps,day4,day4am,day4pm,3,list);
+                setTable(dt,sdf,maps,day5,day5am,day5pm,4,list);
+                setTable(dt,sdf,maps,day6,day6am,day6pm,5,list);
+                setTable(dt,sdf,maps,day7,day7am,day7pm,6,list);
+                setTable(dt,sdf,maps,day8,day8am,day8pm,7,list);
                 
                 /*
                 Calendar daysCal = Calendar.getInstance();			                
@@ -171,14 +189,109 @@ public class GetSchedule {
 		
 	}
 	
-	public void setTable(Date dt,SimpleDateFormat sdf,Map maps,TextView dayX,TextView dayXam,TextView dayXpm,int x){
+	public void setTable(Date dt,SimpleDateFormat sdf,Map maps,TextView dayX,TextView dayXam,TextView dayXpm,int x,final ListView list){
 		   Calendar daysCal = Calendar.getInstance();			                
          daysCal.setTime(dt);			                
          daysCal.add(Calendar.DATE,x);
          Date dtx=daysCal.getTime();			                
          String datasX=sdf.format(dtx);
-         dayX.setText(datasX.substring(8,10)+"\n周"+dtx.getDay());
+         OnClickListener clickam=new OnClickListener(){
+
+      		@Override
+      		public void onClick(View v) {
+      			// TODO Auto-generated method stub
+      			final Schedule schedule=(Schedule)v.getTag();
+      			List<String> data=new ArrayList<String>();
+      			for(String res:timetable){
+      				String[] dat=res.split("\\|");
+      				if(dat[0].equals(schedule.getOutcallDate())){
+      					if(Integer.parseInt(dat[2].substring(0,2))<12&&dat[1].equals("AM")){
+      						data.add(dat[1]+" "+dat[2]);	
+      	            	}
+      				}
+      			}
+      			selectdate.setText( schedule.getOutcallDate());
+      			ListAdapter adapter=new ArrayAdapter<String>(activity,android.R.layout.simple_expandable_list_item_1,data);
+      			list.setAdapter(adapter);
+      			list.setOnItemClickListener(new OnItemClickListener(){
+
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View arg1,
+							int arg2, long arg3) {
+						// TODO Auto-generated method stub
+						
+						Intent intent=new Intent();
+						String timerange=(String)list.getItemAtPosition(arg2);
+						String[] timerangearr=timerange.split(" ");
+		      			intent.setClass(activity, ListCardActivity.class);
+		      			editor.putString("SchState", schedule.getSchState());
+		      			editor.putString("ScheduleID", schedule.getScheduleID());
+		      			editor.putString("RegId", schedule.getRegId());
+		      			editor.putString("ReserveDate", schedule.getOutcallDate());
+		      			editor.putString("ReserveTime", timerangearr[1]);
+		      			editor.putString("IdType", "");
+		      			editor.putString("IdCode", "");
+		      			editor.commit();
+		      			activity.startActivity(intent);
+		      			Log.e("timerange",timerangearr[1]);
+					}
+      				
+      			});
+
+      		}
+
+      	};
+      	 OnClickListener clickpm=new OnClickListener(){
+
+       		@Override
+       		public void onClick(View v) {
+       			// TODO Auto-generated method stub
+       			final Schedule schedule=(Schedule)v.getTag();
+       			List<String> data=new ArrayList<String>();
+       			for(String res:timetable){
+       				String[] dat=res.split("\\|");
+       				if(dat[0].equals(schedule.getOutcallDate())){
+       					if(Integer.parseInt(dat[2].substring(0,2))>=12&&dat[1].equals("PM")){
+       						data.add(dat[1]+" "+dat[2]);	
+       	            	}
+       				}
+       			}
+       			selectdate.setText( schedule.getOutcallDate());
+       			ListAdapter adapter=new ArrayAdapter<String>(activity,android.R.layout.simple_expandable_list_item_1,data);
+       			list.setAdapter(adapter);
+       			list.setOnItemClickListener(new OnItemClickListener(){
+
+ 					@Override
+ 					public void onItemClick(AdapterView<?> arg0, View arg1,
+ 							int arg2, long arg3) {
+ 						// TODO Auto-generated method stub
+ 						Intent intent=new Intent();
+ 						String timerange=(String)list.getItemAtPosition(arg2);
+ 						String[] timerangearr=timerange.split(" ");
+ 		      			intent.setClass(activity, ListCardActivity.class);
+ 		      			editor.putString("SchState", schedule.getSchState());
+ 		      			editor.putString("ScheduleID", schedule.getScheduleID());
+ 		      			editor.putString("RegId", schedule.getRegId());
+ 		      			editor.putString("ReserveDate", schedule.getOutcallDate());
+ 		      			editor.putString("ReserveTime", timerangearr[1]);
+ 		      			editor.putString("IdType", "");
+ 		      			editor.putString("IdCode", "");
+ 		      			editor.commit();
+ 		      			activity.startActivity(intent);
+ 		      			Log.e("timerange",timerangearr[1]);
+ 					}
+       				
+       			});
+
+       		}
+
+       	};
          
+         if(dtx.getDay()==0){
+        	 dayX.setText(datasX.substring(8,10)+"\n周日");	 
+         }else{
+        	 dayX.setText(datasX.substring(8,10)+"\n周"+dtx.getDay());
+         }
          if(maps.get(datasX+"|AM|"+dtx.getDay())!=null){
         	 String counta=maps.get(datasX+"|AM|"+dtx.getDay()).toString();
          	 dayXam.setText(counta);
@@ -187,7 +300,7 @@ public class GetSchedule {
          	 if(Integer.parseInt(counta)>0){
          		dayXam.setBackgroundColor(Color.GREEN);
           		dayXam.setTag(schedules.get(datasX+"|AM|"+dtx.getDay()));
-          		dayXam.setOnClickListener(click);
+          		dayXam.setOnClickListener(clickam);
          	 }else{
          		dayXam.setBackgroundColor(Color.RED);
          	 }
@@ -201,7 +314,7 @@ public class GetSchedule {
           	 if(Integer.parseInt(countp)>0){          		
           		dayXpm.setBackgroundColor(Color.GREEN);
           		dayXpm.setTag(schedules.get(datasX+"|PM|"+dtx.getDay()));
-          		dayXpm.setOnClickListener(click);
+          		dayXpm.setOnClickListener(clickpm);
           	 }else{
           		dayXpm.setBackgroundColor(Color.RED);
           	 }
@@ -209,29 +322,11 @@ public class GetSchedule {
          }else{
         	 dayXpm.setBackgroundColor(Color.GRAY);
          }
-		
+         
+         
 	}
 	
-	public OnClickListener click=new OnClickListener(){
-
-		@Override
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
-			Schedule schedule=(Schedule)v.getTag();
-			Intent intent=new Intent();
-			
-			intent.setClass(activity, ListPeopleActivity.class);
-			editor.putString("SchState", schedule.getSchState());
-			editor.putString("ScheduleID", schedule.getScheduleID());
-			editor.putString("RegId", schedule.getRegId());
-			editor.putString("ReserveDate", schedule.getOutcallDate());
-			editor.putString("ReserveTime", schedule.getTimeRange());
-			editor.putString("IdType", "");
-			editor.putString("IdCode", "");
-			editor.commit();
-			activity.startActivity(intent);
-		}
+	
 		
-	};
 	
 }
