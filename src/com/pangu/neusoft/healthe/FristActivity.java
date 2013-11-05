@@ -3,6 +3,8 @@ package com.pangu.neusoft.healthe;
 import java.net.ContentHandler;
 
 import com.baidu.platform.comapi.map.r;
+import com.pangu.neusoft.healthcard.LoginActivity;
+import com.pangu.neusoft.healthcard.RegisterActivity;
 import com.pangu.neusoft.tools.SysApplication;
 import com.pangu.neusoft.tools.update.UpdateOperation;
 
@@ -57,7 +59,7 @@ public class FristActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				startActivity(new Intent(FristActivity.this,
-						com.pangu.neusoft.user.RegisterActivity.class));
+						RegisterActivity.class));
 			}
 		});
 		
@@ -67,7 +69,7 @@ public class FristActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				startActivity(new Intent(FristActivity.this,
-						com.pangu.neusoft.user.LoginActivity.class));
+						LoginActivity.class));
 			}
 		});
 		
