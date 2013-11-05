@@ -12,8 +12,7 @@ import com.pangu.neusoft.core.WebService;
 import com.pangu.neusoft.core.models.Area;
 import com.pangu.neusoft.core.models.AreaReq;
 import com.pangu.neusoft.core.models.AreaResponse;
-import com.pangu.neusoft.user.CreateCardActivity;
-import com.pangu.neusoft.user.HospitalChooseActivity;
+
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -40,7 +39,7 @@ public class AreaListActivity extends FatherActivity {
 	String xname;
 	
 	ArrayList<HashMap<String,String>> areaArrayList;
-	String type="";
+	//String type="";
 	private ProgressDialog mProgressDialog; 
 	
 	public final class ViewHolder{  
@@ -61,7 +60,7 @@ public class AreaListActivity extends FatherActivity {
         mProgressDialog.setCanceledOnTouchOutside(false);//设置进度条是否可以按退回键取消  
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		
-        type=getIntent().getStringExtra("choosetype");
+       // type=getIntent().getStringExtra("choosetype");
 		xname=getIntent().getStringExtra("xname");
 		
 		new AsyncTask<Void, Void, Boolean>(){
@@ -183,7 +182,7 @@ public class AreaListActivity extends FatherActivity {
 						editor.putString("doctorName", "请选择医生");
 						
 						editor.commit();
-						if(type!=null&&type.equals("userchoose")){
+						/*if(type!=null&&type.equals("userchoose")){
 							
 							Intent intent=getIntent();
 							intent.setClass(AreaListActivity.this, HospitalChooseActivity.class);
@@ -191,8 +190,9 @@ public class AreaListActivity extends FatherActivity {
 							startActivity(intent);
 							
 						}else{
+						*/
 							startActivity(new Intent (AreaListActivity.this, BookingMainActivity.class));
-						}
+						//}
 					}
 				});
 			}
