@@ -74,6 +74,10 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
   
             // Load the image and set it on the ImageView  
             String imageUrl = doctorlist.getImageUrl();  
+            
+            String level=doctorlist.getLevel();
+            
+            
             ImageView imageView = viewCache.getImageView();  
             imageView.setTag(imageUrl);  
             
@@ -86,7 +90,15 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
                 }  
             });  
             if (bitmap == null) {  
-                imageView.setImageResource(R.drawable.da);  
+            	if(level.contains("(男)")){
+            		imageView.setImageResource(R.drawable.doc_man_img);            		
+            	}else if(level.contains("(女)")){
+            		imageView.setImageResource(R.drawable.doc_women_img);
+            	}else{
+            		imageView.setImageResource(R.drawable.doc_def_img);
+            	}
+            	
+                  
             }else{  
             	imageView.setImageBitmap(bitmap); 
             }  
