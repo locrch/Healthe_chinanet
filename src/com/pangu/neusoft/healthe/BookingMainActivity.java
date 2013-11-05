@@ -5,7 +5,6 @@ import java.util.TimerTask;
 
 import com.pangu.neusoft.tools.DensityUtil;
 import com.pangu.neusoft.tools.DialogShow;
-import com.pangu.neusoft.user.LoginActivity;
 
 import android.os.Bundle;
 import android.annotation.SuppressLint;
@@ -77,7 +76,7 @@ public class BookingMainActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_booking_main);
-		
+		this.setactivitytitle("预约挂号");
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 
