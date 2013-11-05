@@ -308,7 +308,7 @@ public class HospitalDetailActivity extends FatherActivity {
 			            
 			      
 			            if (bitmap == null) {  
-			                pic.setImageResource(R.drawable.da);  
+			                pic.setImageResource(R.drawable.booking_hosp);  
 			            }else{  
 			            	pic.setImageBitmap(bitmap); 
 			            }  
