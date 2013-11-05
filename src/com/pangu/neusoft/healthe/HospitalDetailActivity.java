@@ -76,6 +76,7 @@ public class HospitalDetailActivity extends FatherActivity {
 		editor=sp.edit();
 		service=new WebService();
 		setContentView(R.layout.detail_hospital);
+		super.setactivitytitle("医院信息");
 		hospitalId=this.getIntent().getStringExtra("hospitalId");
 		hospitalVersion=this.getIntent().getStringExtra("hospitalVersion");
 		
@@ -247,12 +248,12 @@ public class HospitalDetailActivity extends FatherActivity {
 						String imageUrl;
 						try{
 							if(areaObject.getProperty("pictureUrl")==null){
-								imageUrl=Setting.default_pic_url;
+								imageUrl=Setting.DEFAULT_DOC_url;
 							}else{
 								imageUrl=areaObject.getProperty("pictureUrl").toString();
 							}
 						}catch(Exception ex){
-							imageUrl=Setting.default_pic_url;
+							imageUrl=Setting.DEFAULT_DOC_url;
 						}
 						
 						hospital.setHospitalId(hospitalId);
