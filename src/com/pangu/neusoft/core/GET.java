@@ -56,7 +56,7 @@ public interface GET
 			
 			MethodName.put("deleteMemberCard", "RemoveMemberMedicalCard");
 			
-			
+			MethodName.put("getMemberCardList", "GetMemberMedicalCard");
 			
 			return MethodName.get(i);
 		}
