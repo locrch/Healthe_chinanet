@@ -1,9 +1,8 @@
 package com.pangu.neusoft.healthe;
 
 
+import com.pangu.neusoft.healthcard.LoginActivity;
 import com.pangu.neusoft.tools.update.UpdateOperation;
-import com.pangu.neusoft.user.LoginActivity;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
