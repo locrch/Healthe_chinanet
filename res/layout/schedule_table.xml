@@ -8,14 +8,14 @@
     <TableLayout
         android:id="@+id/table_scheduling"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="176dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/round_linear_layout"
         android:paddingLeft="10px"
         android:paddingRight="10px"
         android:paddingTop="20px"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
         android:stretchColumns="*" >
 
         <TableRow
@@ -201,5 +201,36 @@
                 android:text=" " />
         </TableRow>
     </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="3dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/selectdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="请选择" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@layout/round_linear_layout"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/timetable"
+            android:layout_width="match_parent"
+            android:layout_height="500dp" >
+        </ListView>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -19,7 +19,6 @@
     <string name="title_activity_people_info">就诊人信息</string>
     <string name="title_activity_hospital_choose">选择医院</string>
     <string name="title_activity_show_history">ShowHistoryActivity</string>
-    
     <string name="title_activity_cancelbooking">CancelbookingActivity</string>
     <string name="title_activity_favorite">FavoriteActivity</string>
     <string name="title_activity_health_activity_group">HealthActivityGroup</string>
@@ -40,5 +39,6 @@
     <string name="soft_update_cancel">取消</string>
     <string name="serverurl">http://202.103.160.158:678/update.xml</string>
     <string name="title_activity_set_text_size">字体设置</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
