@@ -8,7 +8,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 
 import com.pangu.neusoft.healthe.Setting;
-import com.pangu.neusoft.user.CreatePeopleActivity;
 
 public class DialogShow {
 
