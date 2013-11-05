@@ -11,10 +11,10 @@ import com.pangu.neusoft.core.WebService;
 import com.pangu.neusoft.core.models.HandleBooking;
 import com.pangu.neusoft.db.DBManager;
 import com.pangu.neusoft.tools.DialogShow;
-import com.pangu.neusoft.user.ConnectListActivity;
-import com.pangu.neusoft.user.ListPeopleActivity;
-import com.pangu.neusoft.user.LoginActivity;
-import com.pangu.neusoft.user.ShowHistoryActivity;
+import com.pangu.neusoft.healthcard.ConnectListActivity;
+import com.pangu.neusoft.healthcard.ListCardActivity;
+import com.pangu.neusoft.healthcard.LoginActivity;
+import com.pangu.neusoft.healthcard.ShowHistoryActivity;
 
 import android.app.Activity;
 
@@ -100,7 +100,7 @@ public class TabActivity3 extends Activity {
 		@Override
 		public void onClick(View v) {
 			Intent intent=getIntent();
-			intent.setClass(TabActivity3.this, ListPeopleActivity.class);
+			intent.setClass(TabActivity3.this, ListCardActivity.class);
 			startActivity(intent);
 		}
 	};
@@ -110,7 +110,7 @@ public class TabActivity3 extends Activity {
 			// TODO Auto-generated method stub
 			Intent intent=getIntent();
 			intent.putExtra("action", "history");
-			intent.setClass(TabActivity3.this, ListPeopleActivity.class);
+			intent.setClass(TabActivity3.this, ListCardActivity.class);
 			startActivity(intent);
 		}
 	};
