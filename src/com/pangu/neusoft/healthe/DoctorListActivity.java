@@ -58,6 +58,7 @@ public class DoctorListActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
+		super.setactivitytitle("选择医生");
 		doctorlistView=(ListView)findViewById(R.id.list);
 		service=new WebService();
 		doctorList=new ArrayList<DoctorList>();	
@@ -101,14 +102,21 @@ public class DoctorListActivity extends FatherActivity {
 						String version=soapChilds.getProperty("version").toString();
 						
 						String imageUrl;
+						
+						
+						
 						try{
 							if(soapChilds.getProperty("pictureUrl")==null){
-								imageUrl=Setting.default_pic_url;
+								
+								imageUrl=Setting.DEFAULT_DOC_url;
 							}else{
+								
+								
 								imageUrl=soapChilds.getProperty("pictureUrl").toString();
 							}
+							
 						}catch(Exception ex){
-							imageUrl=Setting.default_pic_url;
+							imageUrl=Setting.TEST_url;
 						}
 						
 						SoapObject scheduleListObject=(SoapObject)soapChilds.getProperty("scheduleList");
