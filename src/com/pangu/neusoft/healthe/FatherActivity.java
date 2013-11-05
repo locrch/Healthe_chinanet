@@ -2,8 +2,6 @@ package com.pangu.neusoft.healthe;
 
 import com.baidu.mapapi.search.c;
 import com.pangu.neusoft.tools.SysApplication;
-import com.pangu.neusoft.user.LoginActivity;
-
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -17,12 +15,14 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class FatherActivity extends Activity
@@ -35,6 +35,7 @@ public class FatherActivity extends Activity
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.activity_father);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_back);
+		
 		back_index = (Button)findViewById(R.id.back_index);
 		back_back = (Button)findViewById(R.id.back_back);
 		
@@ -65,6 +66,17 @@ public class FatherActivity extends Activity
 		
 		this.NetWorkStatus(this);
 	}
+	
+	public void setactivitytitle(String title){
+		
+		TextView title_title = (TextView)findViewById(R.id.title_title);
+		
+		title_title.setTextColor(Color.WHITE);
+		
+		title_title.setText(title);
+	}
+	
+	
 	
 	public void NetWorkStatus(Context context) {
 		/*
