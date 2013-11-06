@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.ksoap2.serialization.SoapObject;
 
@@ -75,8 +77,8 @@ public class ListCardActivity extends FatherActivity {
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		if(!sp.getBoolean("loginsuccess", false)){
-			finish();
 			startActivity(new Intent(ListCardActivity.this,LoginActivity.class));
+			finish();
 		}
 		service=new WebService();
 		mProgressDialog = new ProgressDialog(ListCardActivity.this);   
@@ -207,8 +209,22 @@ public class ListCardActivity extends FatherActivity {
 			@Override
 			protected void onPostExecute(Boolean result){
 				super.onPostExecute(result);
+				final Timer t = new Timer();
+				t.schedule(new TimerTask() {
+					public void run() {
+						runOnUiThread(new Runnable()    
+				        {    
+				            public void run()    
+				            {    
+				            	
+								showInList();   
+				            }    
+				    
+				        });   
+						t.cancel(); 
+					}
+				}, Setting.dialogtimeout+1000);
 				
-				showInList();
 			}
 			@Override
 			protected void onCancelled()
@@ -216,11 +232,7 @@ public class ListCardActivity extends FatherActivity {
 				super.onCancelled();
 		
 			}
-			
-		
-			
-			
-			
+
 			public void showInList(){
 				if(mProgressDialog.isShowing()){
 					mProgressDialog.dismiss();
