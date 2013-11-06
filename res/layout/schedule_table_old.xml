@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+
+    <TableLayout
+        android:id="@+id/table_scheduling"
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_linear_layout"
+        android:paddingLeft="10px"
+        android:paddingRight="10px"
+        android:paddingTop="20px"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF" >
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/day2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="2" />
+
+            <TextView
+                android:id="@+id/day3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="3" />
+
+            <TextView
+                android:id="@+id/day4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="4" />
+
+            <TextView
+                android:id="@+id/day5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="5" />
+
+            <TextView
+                android:id="@+id/day6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="6" />
+
+            <TextView
+                android:id="@+id/day7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="7" />
+
+            <TextView
+                android:id="@+id/day8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="8" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/dayam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF" >
+
+            <TextView
+                android:id="@+id/seria_num"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="AM\n上午" />
+
+            <TextView
+                android:id="@+id/day1am"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day2am"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day3am"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day4am"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day5am"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day6am"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day7am"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day8am"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/daypm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="PM\n下午" />
+
+            <TextView
+                android:id="@+id/day1pm"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day2pm"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day3pm"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day4pm"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day5pm"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day6pm"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day7pm"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+
+            <TextView
+                android:id="@+id/day8pm"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" " />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="3dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/selectdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="请选择" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@layout/round_linear_layout"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/timetable"
+            android:layout_width="match_parent"
+            android:layout_height="500dp" >
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>
