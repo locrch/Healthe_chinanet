@@ -97,8 +97,9 @@ public class GetSchedule {
 	
 	public View getScheduleView(Activity activity,List<Schedule> scheduleList){
 		this.activity=activity;
-		this.scheduleList=scheduleList;
 		
+		SortListByItem sort=new SortListByItem();
+		this.scheduleList=sort.sortScheduleByDay(scheduleList);
 		sp = activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		schedules=new HashMap<String,Schedule>();
@@ -264,12 +265,23 @@ public class GetSchedule {
 		layContent2 = createLayout(LinearLayout.VERTICAL);
 		// layContent.setPadding(1, 0, 1, 0);
 		// layContent2.setBackgroundColor(Color.argb(255, 105, 105, 103));
-		
+		List<Schedule> schedulesort = new ArrayList<Schedule>();
 		for(Schedule schedule:scheduleList){
 	    	 if(schedule.getOutcallDate().equals(date)){
-	    		 layContent2.addView(generateScheduleRow(schedule) );	    		 
+	    		 schedulesort.add(schedule);
+	    		 	    		 
 	    	 }
-	   }
+		}
+		
+		SortListByItem sort=new SortListByItem();
+		schedulesort=sort.sortScheduleByTimeRange(schedulesort);
+		
+		for(Schedule schedule:schedulesort){
+	    	 
+	    		 layContent2.addView(generateScheduleRow(schedule) );
+	    	
+		}
+		
 		return layContent2;
 	}
 	

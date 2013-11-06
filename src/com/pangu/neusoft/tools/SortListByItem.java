@@ -22,6 +22,12 @@ public class SortListByItem {
 		 return list;
 	}	
 	
+	public List<Schedule> sortScheduleByTimeRange(List<Schedule> list){
+		 if(list!=null)
+		 Collections.sort(list, new ComparatorSchedultTimeUtil());
+		 return list;
+	}
+	
 	public List<String> sortScheduleByTime(List<String> list){
 		 if(list!=null)
 		 Collections.sort(list, new ComparatorSchedultTime());
@@ -69,6 +75,27 @@ class ComparatorSchedultUtil implements Comparator<Schedule>
     }
     
 }
+
+class ComparatorSchedultTimeUtil implements Comparator<Schedule>
+{
+
+    public int compare(Schedule o1, Schedule o2) { 
+        if (o1.getTimeRange().compareTo(o2.getTimeRange()) > 0)
+        {
+            return 1;
+        }
+        else if (o1.getTimeRange().compareTo(o2.getTimeRange()) < 0)
+        {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    
+}
+
 
 class ComparatorSchedultTime implements Comparator<String>
 {
