@@ -46,8 +46,8 @@ public class GetSchedule {
 	TextView selectdate;
 	private List<String> timetable=new ArrayList<String>();
 	
-	
-	private final static int showRows=3;
+	//排班表日历显示行数
+	private final static int showRows=4;
 	// 生成日历，外层容器
 	private LinearLayout layContent = null;
 	private LinearLayout layContent2 = null;

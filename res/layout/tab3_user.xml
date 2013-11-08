@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="就诊人信息" />
+            android:text="健康卡信息" />
 
         <Button
             android:id="@+id/tab3_bookinghist"
@@ -73,7 +73,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="字体设置" />
+            android:text="字体设置"
+            android:visibility="gone" />
     </LinearLayout>
 
     <TextView

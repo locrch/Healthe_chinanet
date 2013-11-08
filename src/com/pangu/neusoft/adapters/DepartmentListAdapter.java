@@ -141,8 +141,8 @@ public class DepartmentListAdapter extends BaseAdapter implements SectionIndexer
 	            holder.name = (TextView) convertView.findViewById(R.id.department_list_name);  
 	            holder.number = (TextView) convertView.findViewById(R.id.department_list_number);
 	            holder.detail = (ImageView) convertView.findViewById(R.id.department_more_info);
-	            holder.detail.getLayoutParams().width=width/12;
-	            holder.detail.getLayoutParams().height=height/12;
+	            holder.detail.getLayoutParams().width=width/Setting.fontsizey;
+	            holder.detail.getLayoutParams().height=height/Setting.fontsizey;
 	            holder.detail.setClickable(true);
 	            convertView.setTag(holder);  
 	        } else {  

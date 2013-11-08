@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.TabHost.OnTabChangeListener;
@@ -20,10 +21,19 @@ public class TabHostActivity extends ActivityGroup {
 	private TabHost tabHost = null;
 	private LayoutInflater mInflater = null;
 	TextView tab2_text;
+	Button back_index,back_back;
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.acitivty_tabhost);
+		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_back);
+		back_back = (Button)findViewById(R.id.back_back);
+		back_index = (Button)findViewById(R.id.back_index);
+		back_index.setVisibility(8);
+		back_back.setVisibility(8);
+		
+		
+		
 		tab2_text = (TextView)findViewById(R.id.tab2_text);
 		Intent getintent = getIntent();
 		String Value=getintent.getStringExtra("extra");

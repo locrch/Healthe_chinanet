@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.ksoap2.serialization.SoapObject;
 
+import com.pangu.neusoft.adapters.DoctorList;
 import com.pangu.neusoft.adapters.HospitalList;
 import com.pangu.neusoft.adapters.HospitalListAdapter;
 import com.pangu.neusoft.core.GET;
@@ -265,17 +266,14 @@ public class DoctorDetailActivity extends FatherActivity {
 			                @Override  
 			                public void imageLoad(ImageView imageView, Bitmap bitmap) {  
 			                    // TODO Auto-generated method stub  
-			                    imageView.setImageBitmap(bitmap);  
+			                    imageView.setImageBitmap(bitmap); 
+			                    
+			                    
 			                }  
 			            });  
+					   
+					  
 			            
-			      
-			            if (bitmap == null) {  
-			            	//pic.setBackgroundResource(R.drawable.booking_doc);  
-			            }else{  
-			            	pic.setImageBitmap(bitmap); 
-			            	//pic.setBackgroundResource(R.drawable.booking_doc);
-			            }  
 				}
 			}
 			@Override

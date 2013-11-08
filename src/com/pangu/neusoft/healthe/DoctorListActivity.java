@@ -167,6 +167,10 @@ public class DoctorListActivity extends FatherActivity {
 						map.setId(doctorId);
 						map.setText(doctorName);
 						map.setImageUrl(imageUrl);
+						//获取未知性别医生有错，返回值为"anyType{}"，下面判定为暂时解决办法，希望服务器端能解决
+						if (sex.equals("anyType{}")) {
+							sex = "";
+						}
 						
 						map.setLevel("("+sex+") "+title);
 						

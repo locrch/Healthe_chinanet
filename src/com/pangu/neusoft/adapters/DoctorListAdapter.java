@@ -94,7 +94,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             		imageView.setImageResource(R.drawable.doc_man_img);            		
             	}else if(level.contains("(女)")){
             		imageView.setImageResource(R.drawable.doc_women_img);
-            	}else{
+            	}else {
             		imageView.setImageResource(R.drawable.doc_def_img);
             	}
             	
@@ -129,8 +129,8 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             versionView.setText(doctorlist.getVersion());  
             
             ImageView moreInfo = viewCache.getMoreInfoView();
-            moreInfo.getLayoutParams().width=width/10;
-            moreInfo.getLayoutParams().height=height/10;
+            moreInfo.getLayoutParams().width=width/Setting.fontsizey;
+            moreInfo.getLayoutParams().height=height/Setting.fontsizey;
             moreInfo.setClickable(true);
             
             //动态生成按钮

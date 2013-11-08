@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"  
         android:background="#CCCCCC"  
         android:paddingLeft="10dip"  
-        android:textColor="#FFFFFF"  
+        android:textColor="#E0E0E0"  
         android:visibility="gone" />  
       
     <!-- 科室信息 -->  

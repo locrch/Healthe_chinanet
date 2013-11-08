@@ -81,11 +81,7 @@ public class ListCardActivity extends FatherActivity {
 			finish();
 		}
 		service=new WebService();
-		mProgressDialog = new ProgressDialog(ListCardActivity.this);   
-        mProgressDialog.setMessage("正在加载数据...");   
-        mProgressDialog.setIndeterminate(false);  
-        mProgressDialog.setCanceledOnTouchOutside(false);//设置进度条是否可以按退回键取消  
-        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		
 
 		Intent intent = getIntent();		
 		action=intent.getStringExtra("action");		
@@ -124,7 +120,11 @@ public class ListCardActivity extends FatherActivity {
 	
 	public void showListView(){
 		arr.clear();
-		
+		mProgressDialog = new ProgressDialog(ListCardActivity.this);   
+        mProgressDialog.setMessage("正在加载数据...");   
+        mProgressDialog.setIndeterminate(false);  
+        mProgressDialog.setCanceledOnTouchOutside(false);//设置进度条是否可以按退回键取消  
+        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		new AsyncTask<Void, Void, Boolean>(){
 		    
 			@Override  
@@ -191,7 +191,7 @@ public class ListCardActivity extends FatherActivity {
 					
 					}catch(Exception ex){
 						Log.e("error",ex.toString());
-						arr.add("没有诊疗卡");
+						arr.add("没有健康卡");
 					}
 					String resultCode=obj.getProperty("resultCode").toString();//0000成功1111报错
 					String msg=obj.getProperty("msg").toString();//返回的信息
@@ -235,6 +235,7 @@ public class ListCardActivity extends FatherActivity {
 
 			public void showInList(){
 				if(mProgressDialog.isShowing()){
+					
 					mProgressDialog.dismiss();
 				} 
 			
@@ -261,7 +262,7 @@ public class ListCardActivity extends FatherActivity {
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			String namecard=(String)list.getItemAtPosition(arg2);
-			if(!namecard.equals("没有诊疗卡")){			
+			if(!namecard.equals("没有健康卡")){			
 				showCardDialog(namecard);
 			}
 		     
@@ -285,7 +286,7 @@ public class ListCardActivity extends FatherActivity {
 		Dialog dialog = new AlertDialog.Builder(this)
 				.setIcon(android.R.drawable.btn_star)
 				.setTitle("提示")
-				.setMessage("诊疗卡？")
+				.setMessage("以下是针对健康卡的操作，请选择：")
 				.setPositiveButton("预约及详情",
 						new android.content.DialogInterface.OnClickListener() {
 							@Override
@@ -316,7 +317,7 @@ public class ListCardActivity extends FatherActivity {
 								
 							}
 						})
-				.setNeutralButton("删除诊疗卡",
+				.setNeutralButton("删除健康卡",
 						new android.content.DialogInterface.OnClickListener() {
 
 							@Override
@@ -341,7 +342,7 @@ public class ListCardActivity extends FatherActivity {
 		final String num=card.getMedicalCardCode();
 		
 		AlertDialog.Builder builder = new Builder(ListCardActivity.this);
-		builder.setMessage("确认要删除诊疗卡吗？");
+		builder.setMessage("确认要删除健康卡吗？");
 		builder.setTitle("提示");
 		builder.setPositiveButton("确认",
 				new android.content.DialogInterface.OnClickListener() {
@@ -398,14 +399,15 @@ public class ListCardActivity extends FatherActivity {
 					msg=obj.getProperty("msg").toString();//0000成功1111报错
 					
 					if(IsAddSuccess.equals("true")){
-						msg="删除诊疗卡成功";
+						msg="删除健康卡成功";
+						
 						return true;
 					}else{
 						return false;
 					}
 				}
 				else{
-					msg="删除诊疗卡失败";
+					msg="删除健康卡失败";
 					return false;
 				}
 			}
@@ -418,8 +420,14 @@ public class ListCardActivity extends FatherActivity {
 					mProgressDialog.dismiss();
 				}
 				DialogShow.showDialog(ListCardActivity.this, msg);
-				
-										
+				final Timer t = new Timer();
+				t.schedule(new TimerTask() {
+					public void run() {
+						showListView();
+						t.cancel(); 
+					}
+				}, Setting.dialogtimeout+1000);
+							
 			}
 			@SuppressWarnings("deprecation")
 			@Override
@@ -434,6 +442,11 @@ public class ListCardActivity extends FatherActivity {
 	}.execute();
 	}
 	
-	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		mProgressDialog.dismiss();
+	}
 	
 }

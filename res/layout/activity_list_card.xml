@@ -28,7 +28,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/list_card"
         android:layout_marginTop="1dp"
-        android:text="添加诊疗卡" />
+        android:text="添加健康卡" />
 
     <Button
         android:id="@+id/refresh"

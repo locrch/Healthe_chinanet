@@ -2,6 +2,7 @@ package com.pangu.neusoft.healthe;
 
 import com.baidu.mapapi.search.c;
 import com.pangu.neusoft.tools.SysApplication;
+
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -36,6 +38,9 @@ public class FatherActivity extends Activity
 		setContentView(R.layout.activity_father);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_back);
 		
+		
+		
+		
 		back_index = (Button)findViewById(R.id.back_index);
 		back_back = (Button)findViewById(R.id.back_back);
 		
@@ -46,9 +51,13 @@ public class FatherActivity extends Activity
 			public void onClick(View v)
 			{
 				// TODO Auto-generated method stub
-				startActivity(new Intent(getApplicationContext(),TabHostActivity.class));
+				Intent intent = new Intent(getApplicationContext(),TabHostActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
 				
 				finish();
+				
+				
 				}
 		});
 		

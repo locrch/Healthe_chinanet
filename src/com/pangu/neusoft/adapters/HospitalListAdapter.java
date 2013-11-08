@@ -137,8 +137,8 @@ public class HospitalListAdapter extends ArrayAdapter<HospitalList> {
             versionView.setText(imageAndText.getVersion());  
             
             ImageView moreInfo = viewCache.getMoreInfoView();
-            moreInfo.getLayoutParams().width=width/10;
-            moreInfo.getLayoutParams().height=height/10;
+            moreInfo.getLayoutParams().width=width/Setting.fontsizey;
+            moreInfo.getLayoutParams().height=height/Setting.fontsizey;
             moreInfo.setClickable(true);
            // moreInfo.setFocusable(true);
             moreInfo.setOnClickListener(new OnClickListener(){

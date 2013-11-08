@@ -138,7 +138,7 @@ public class UpdateOperation {
 	            break;  
 	        case GET_UNDATAINFO_ERROR:  
 	            //服务器超时   
-	            Toast.makeText(activity.getApplicationContext(), "获取服务器更新信息失败", 1).show();  
+	            //Toast.makeText(activity.getApplicationContext(), "获取服务器更新信息失败", 1).show();  
 	            
 	            break;    
 	        case DOWN_ERROR:  
@@ -146,6 +146,7 @@ public class UpdateOperation {
 	            Toast.makeText(activity.getApplicationContext(), "下载新版本失败", 1).show();  
 	              
 	            break;    
+	            
 	        }  
 	    }  
 	};  
