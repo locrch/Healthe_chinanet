@@ -94,16 +94,6 @@
         android:ems="10"
         android:background="@drawable/edittext_style" />
 
-    <Spinner
-        android:id="@+id/reg_sex"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/reg_name"
-        android:entries="@array/sex"
-        android:background="@drawable/button_style"
-         />
-
     <TextView
         android:id="@+id/seria_num"
         android:layout_width="wrap_content"
@@ -142,6 +132,26 @@
         android:layout_alignBottom="@+id/reg_name"
         android:layout_alignParentLeft="true"
         android:text="姓名" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/reg_sex"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="14dp"
+        android:text="性别" />
+
+    <Spinner
+        android:id="@+id/reg_sex"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/reg_name"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@+id/seria_num"
+        android:background="@drawable/edittext_style"
+        android:entries="@array/sex" />
 	
 </RelativeLayout>
 </ScrollView>
