@@ -117,8 +117,8 @@ public class GetSchedule {
     		// 制定布局文件，并设置属性
     		mainLayout = (LinearLayout) activity.getLayoutInflater().inflate(
     				R.layout.schedule_table, null);
-    		// mainLayout.setPadding(2, 0, 2, 0);
-  
+    		//mainLayout.setPadding(0, 0, 0, 0);
+    		
 
     		// 声明控件，并绑定事件
     		Top_Date = (TextView) mainLayout.findViewById(R.id.Top_Date);

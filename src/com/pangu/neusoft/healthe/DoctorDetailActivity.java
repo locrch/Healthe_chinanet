@@ -259,8 +259,11 @@ public class DoctorDetailActivity extends FatherActivity {
 					View scheduleView=sch.getScheduleView(DoctorDetailActivity.this, doctor.getScheduleList());
 					
 			                scheduleTableLayout.addView(scheduleView);
-
-					
+			                
+			                
+			                
+			                
+			                
 					  Bitmap bitmap=asyncImageLoader.loadBitmap(pic, doctor.getPictureUrl(), new ImageCallBack() {  
 			                
 			                @Override  

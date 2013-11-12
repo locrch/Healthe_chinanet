@@ -319,6 +319,7 @@
     <color name="sunday_saturday_color">#FF0000</color>
     <color name="sunday_saturday_prev_next_month_day_color">#990000</color>
     <color name="transparent">#50000000</color>
+   	<color name="scheduleonclick">#46A3FF</color>
    
     <color name="bgcolor">#ffffff</color>
     <color name="txtcolor">#000000</color>

@@ -11,7 +11,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:text="用户名：" />
+        android:text="用户名："
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:id="@+id/username"
@@ -24,7 +25,10 @@
         android:digits="1234567890"
          android:inputType="number"
         android:ems="10" 
-        android:background="@drawable/edittext_style"/>
+        android:background="@drawable/edittext_style"
+        android:layout_marginTop="10dp">
+        <requestFocus />
+        </EditText>
 
     <TextView
         android:id="@+id/seria_num"
@@ -49,18 +53,8 @@
         android:inputType="textPassword" 
         android:background="@drawable/edittext_style">
 
-        <requestFocus />
+        
     </EditText>
-
-    <Button
-        android:id="@+id/reg_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:layout_marginTop="18dp"
-        android:layout_toRightOf="@+id/login_btn"
-        android:text="注册" 
-        android:background="@drawable/button_style"/>
 
     <Button
         android:id="@+id/login_btn"
@@ -72,5 +66,15 @@
         android:text="登陆" 
         android:background="@drawable/button_style"
         />
+
+    <Button
+        android:id="@+id/reg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/password"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/button_style"
+        android:text="注册" />
 
 </RelativeLayout>

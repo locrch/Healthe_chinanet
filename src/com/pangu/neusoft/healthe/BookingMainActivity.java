@@ -99,7 +99,7 @@ public class BookingMainActivity extends FatherActivity {
 
 		selecttext.getLayoutParams().width=width / 2;
 		selecttext.getLayoutParams().height= height / 9;
-		selecttext.setTextSize(width / fontsizex);
+		//selecttext.setTextSize(width / fontsizex);
 		selecttext.clearFocus();
 
 		//search_btn.getLayoutParams().width=(height / 10);
@@ -109,7 +109,7 @@ public class BookingMainActivity extends FatherActivity {
 		//欢迎您和地区选择部分
 		welcome = (TextView) findViewById(R.id.welcome);
 		welcome.getLayoutParams().height = height / 10;
-		welcome.setTextSize(width / fontsizex);
+		//welcome.setTextSize(width / fontsizex);
 
 		select_area_btn = (Button) findViewById(R.id.select_area_btn);
 		select_area_btn.setTextSize(width / fontsizex);

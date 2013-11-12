@@ -55,7 +55,7 @@ public class ScheduleListActivity extends FatherActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.schedule_show);
 		//schedulelistView=(ListView)findViewById(R.id.area_list);
-		
+		this.setactivitytitle("选择就诊时间");
 		layout=(LinearLayout)findViewById(R.id.layout_scheduling);
 		
 		

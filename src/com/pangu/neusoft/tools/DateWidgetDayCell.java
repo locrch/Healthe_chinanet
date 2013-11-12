@@ -3,9 +3,12 @@ package com.pangu.neusoft.tools;
 import java.util.Calendar;
 
 import com.pangu.neusoft.healthe.GetSchedule;
+import com.pangu.neusoft.healthe.R;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -31,6 +34,7 @@ import android.widget.LinearLayout.LayoutParams;
 
  * @Version V1.0
  */
+@SuppressLint("ResourceAsColor")
 public class DateWidgetDayCell extends View {
 	// 字体大小
 	private static final int fTextSize = 18;
@@ -111,19 +115,21 @@ public class DateWidgetDayCell extends View {
 	}
 
 	// 绘制日历方格
+	
 	private void drawDayView(Canvas canvas, boolean bFocused) {
 
 		if (bSelected || bFocused) {
 			LinearGradient lGradBkg = null;
 
 			if (bFocused) {
-				lGradBkg = new LinearGradient(rect.left, 0, rect.right, 0,
-						0xffaa5500, 0xffffddbb, Shader.TileMode.CLAMP);
+				//lGradBkg = new LinearGradient(rect.left, 0, rect.right, 0,0xffaa5500, 0xffffddbb, Shader.TileMode.CLAMP);
+				pt.setColor(Color.parseColor("#46A3FF"));
 			}
 
 			if (bSelected) {
-				lGradBkg = new LinearGradient(rect.left, 0, rect.right, 0,
-						0xff225599, 0xffbbddff, Shader.TileMode.CLAMP);
+				//lGradBkg = new LinearGradient(rect.left, 0, rect.right, 0,0xff225599, 0xffbbddff, Shader.TileMode.CLAMP);
+				
+				pt.setColor(Color.parseColor("#46A3FF"));
 			}
 
 			if (lGradBkg != null) {
@@ -131,8 +137,8 @@ public class DateWidgetDayCell extends View {
 				canvas.drawRect(rect, pt);
 			}
 
-			pt.setShader(null);
-
+			//pt.setShader(null);
+			canvas.drawRect(rect, pt);
 		} else {
 			pt.setColor(getColorBkg(bHoliday, bToday));
 			canvas.drawRect(rect, pt);
@@ -253,12 +259,14 @@ public class DateWidgetDayCell extends View {
 	public void CreateReminder(Canvas canvas, int Color) {
 		pt.setStyle(Paint.Style.FILL_AND_STROKE);
 		pt.setColor(Color);
+		
 		Path path = new Path();
 		path.moveTo(rect.right - rect.width() / 4, rect.top);
 		path.lineTo(rect.right, rect.top);
 		path.lineTo(rect.right, rect.top + rect.width() / 4);
 		path.lineTo(rect.right - rect.width() / 4, rect.top);
 		path.close();
+		
 		canvas.drawPath(path, pt);
 	}
 }

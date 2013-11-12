@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -21,7 +22,7 @@ public class TabActivity2 extends Activity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-
+		
 		// 点击后加载不同的layout
 		/*
 		 * Intent intent = getIntent();
@@ -32,13 +33,13 @@ public class TabActivity2 extends Activity
 		 * 
 		 * } else { setContentView(R.layout.tab_shuzi); }
 		 */
-
+		
 		setContentView(R.layout.tab_zhineng);
-
+		
 		TextView huoqu = (TextView) findViewById(R.id.huoqu);
-
 		huoqu.setText("欢迎你");
-
+		huoqu.setVisibility(8);
+		
 		tab2_booking = (ImageButton) findViewById(R.id.tab2_booking);
 		tab2_tellphone = (ImageButton) findViewById(R.id.tab2_tellphone);
 		tab2_healthfoler = (ImageButton) findViewById(R.id.tab2_healthfoler);

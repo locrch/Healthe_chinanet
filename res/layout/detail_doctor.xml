@@ -7,7 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_black"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+         >
 
         <ImageView
             android:id="@+id/doctor_detail_pictureurl"
@@ -125,16 +126,13 @@
                 android:layout_margin="5dp"
                 android:text="排班信息：" />
 
-            <LinearLayout
-                android:id="@+id/doctor_detail_schedule_table"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
+        </LinearLayout>
 
-               
-
-            </LinearLayout>
-
+        <LinearLayout
+            android:id="@+id/doctor_detail_schedule_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
         </LinearLayout>
 
     </LinearLayout>

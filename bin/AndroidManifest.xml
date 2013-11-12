@@ -154,69 +154,84 @@
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthcard.LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthcard.RegisterActivity"
-            android:label="@string/title_activity_register" >
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthcard.ListCardActivity"
-            android:label="@string/title_activity_list_people" >
+            android:label="@string/title_activity_list_people"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthcard.CardInfoActivity"
-            android:label="@string/title_activity_people_info" >
+            android:label="@string/title_activity_people_info"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthcard.ShowHistoryActivity"
-            android:label="@string/title_activity_show_history" >
+            android:label="@string/title_activity_show_history"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.CancelbookingActivity"
-            android:label="@string/title_activity_cancelbooking" >
+            android:label="@string/title_activity_cancelbooking"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.FavoriteActivity"
-            android:label="@string/title_activity_favorite" >
+            android:label="@string/title_activity_favorite"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.HealthActivityGroup"
-            android:label="@string/title_activity_health_activity_group" >
+            android:label="@string/title_activity_health_activity_group"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.FatherActivity"
-            android:label="@string/title_activity_super" >
+            android:label="@string/title_activity_super"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.VersionInfoActivity"
-            android:label="@string/title_activity_version_info" >
+            android:label="@string/title_activity_version_info"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.HelpActivity"
-            android:label="@string/title_activity_help" >
+            android:label="@string/title_activity_help"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthcard.HistoryViewActivity"
-            android:label="@string/title_activity_history_view" >
+            android:label="@string/title_activity_history_view"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthcard.ConnectListActivity"
-            android:label="@string/title_activity_connect_list_view" >
+            android:label="@string/title_activity_connect_list_view"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.MapActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_map"
-            android:screenOrientation="sensor" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.SetTextSizeActivity"
-            android:label="@string/title_activity_textsize" >
+            android:label="@string/title_activity_textsize"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthcard.CreateCardActivity"
-            android:label="@string/title_activity_create_card" >
+            android:label="@string/title_activity_create_card"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

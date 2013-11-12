@@ -1,4 +1,3 @@
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,23 +10,23 @@
      <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       	android:layout_marginLeft="5dp"
-       	android:layout_marginRight="5dp"
+               android:layout_marginLeft="5dp"
+               android:layout_marginRight="5dp"
          >
-	<LinearLayout 
-	    android:layout_width="match_parent"
-    	android:layout_height="match_parent"
-    	android:orientation="vertical" >
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-		<TextView
-		    android:id="@+id/zhinan"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_marginTop="22dp"
-		    android:gravity="center"
-		    android:text="@string/yuyuezhinan"
-		    android:textSize="20dp"
-		    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/zhinan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:gravity="center"
+                    android:text="@string/yuyuezhinan"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
     <TextView
         android:id="@+id/zhinan_title"
@@ -52,54 +51,131 @@
         android:layout_marginTop="24dp"
         android:text="2.“健康E园”如何收费？"
         android:textStyle="bold" />
-	<TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
         android:text="答：“健康E园”注册会员享有免费预约挂号服务（挂号费按医院实际情况到医院现场支付）。" />
-	<TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="3.如何预约挂号？"
         android:textStyle="bold" />
-	<TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
         android:text="答：用户需注册登录，绑定健康卡，然后选择地区→选择医院→选择科室→选择医生→选择就诊时间，最后点击“预约挂号”即可成功预约挂号。" />
-	<TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="4.关于健康卡信息。"
+        android:text="3.如何预约挂号？"
         android:textStyle="bold" />
-	<TextView
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhinan_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="答：用户需注册登录，填写就诊人信息，然后选择地区→选择医院→选择科室→选择医生→选择就诊时间，最后点击“预约挂号”即可成功预约挂号。" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="4.预约成功的订单可以修改吗？"
+        android:textStyle="bold" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhinan_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="答：预约成功的订单不能进行修改，但可以选择取消此订单，重新进行预约挂号。每月爽约次数超过3次，将被限制挂号2个自然月。每周累计主动取消次数超过3次，将被限制挂号2个自然月。" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="5.如何取消预约挂号？"
+        android:textStyle="bold" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhinan_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="答：取消订单操作，用户点击“个人中心”→“预约记录”，会出现用户历史预约记录的详细信息，点击“取消预约”按钮，如需取消，请在就诊前一个工作日下午4点前取消。" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="6.关于健康卡信息。"
+        android:textStyle="bold" />
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
         android:text="答：健康卡分佛山健康卡和居民健康卡两种，健康卡信息包括姓名、卡号、类型及身份证，绑定健康卡只需填写健康卡号及密码即可，无需再次输入个人信息。" />
-	<TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="5.预约挂号有次数限制吗？"
+        android:text="7.如何支付订单？"
         android:textStyle="bold" />
-	<TextView
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhinan_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="答：本客户端暂时只支持现场支付，但我们会逐渐完善银联支付、手机支付、翼支付功能。" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="8.关于就诊时间？"
+        android:textStyle="bold" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhinan_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="答：预约挂号成功后，如医生正常出诊，我们保证您就诊，但不确保就诊时间，就诊均需按医院秩序进行。" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="9.预约成功后如何至医院就诊？"
+        android:textStyle="bold" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhinan_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        android:text="答：预约成功后，在“个人中心”—“预约记录”里面有预约的信息，根据信息上的流水号到医院挂号处交费取号，为了您能顺利就诊，请提前半小时至医院取号，各医院取号的地点在医院现场会有相应的指引。" />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="10.预约挂号有次数限制吗？"
+        android:textStyle="bold" />
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
         android:text="答：有。①同一健康卡在同一就诊日、同一医院、同一医生只能预约1次。②同一健康卡在同一就诊日、同一医院只能预约2次。③同一健康卡每月预约不能超过6次（医院临时停改诊除外）。" />
-	
-	
-	</LinearLayout>
-	</ScrollView>
+        
+        </LinearLayout>
+        </ScrollView>
 </LinearLayout>

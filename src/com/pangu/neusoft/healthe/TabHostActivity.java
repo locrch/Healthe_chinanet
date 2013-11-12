@@ -24,13 +24,14 @@ public class TabHostActivity extends ActivityGroup {
 	Button back_index,back_back;
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+        //requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.acitivty_tabhost);
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_back);
-		back_back = (Button)findViewById(R.id.back_back);
+		//getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_tabhost);
+		/*back_back = (Button)findViewById(R.id.back_back);
 		back_index = (Button)findViewById(R.id.back_index);
 		back_index.setVisibility(8);
-		back_back.setVisibility(8);
+		back_back.setVisibility(8);*/
 		
 		
 		
@@ -95,6 +96,7 @@ public class TabHostActivity extends ActivityGroup {
 				.setIndicator(tab4Spec)
 				.setContent(intent));
 	
+		
     }
 	
 	

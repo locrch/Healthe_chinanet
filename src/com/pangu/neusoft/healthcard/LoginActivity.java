@@ -73,8 +73,10 @@ public class LoginActivity extends FatherActivity {
 		 OnClickListener reg=new OnClickListener(){//注册
 				@Override
 				public void onClick(View v) {
-					startActivity(new Intent(LoginActivity.this,
-							RegisterActivity.class));
+					Intent intent = new Intent(LoginActivity.this,
+							RegisterActivity.class);
+					startActivity(intent);
+					finish();
 				}
 		  };
 		  Button reg_btn=(Button)findViewById(R.id.reg_btn);

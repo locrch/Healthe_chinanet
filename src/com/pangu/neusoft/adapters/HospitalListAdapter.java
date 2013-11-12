@@ -112,7 +112,7 @@ public class HospitalListAdapter extends ArrayAdapter<HospitalList> {
             // Set the text on the TextView  
             TextView textView = viewCache.getTextView();  
             textView.setText(imageAndText.getText());  
-            textView.setTextSize(width/Setting.fontsizex);
+            //textView.setTextSize(width/Setting.fontsizex);
             
             TextView idView = viewCache.getIdView();
             idView.setText(imageAndText.getId());
@@ -120,17 +120,17 @@ public class HospitalListAdapter extends ArrayAdapter<HospitalList> {
             
             TextView levelView = viewCache.getLevelView();  
             levelView.setText(imageAndText.getLevel());  
-            levelView.setTextSize(width/Setting.fontsizes);
+            //levelView.setTextSize(width/Setting.fontsizes);
             levelView.setTextColor(Color.RED);
             
             TextView gradeView = viewCache.getGradeView();  
             gradeView.setText(imageAndText.getGrade());   
-            gradeView.setTextSize(width/Setting.fontsizes);
+            //gradeView.setTextSize(width/Setting.fontsizes);
             gradeView.setTextColor(Color.RED);
             
             TextView addressView = viewCache.getAddressView();  
             addressView.setText("地址："+imageAndText.getAddress());  
-            addressView.setTextSize(width/Setting.fontsizes);
+            //addressView.setTextSize(width/Setting.fontsizes);
             addressView.setTextColor(Color.GRAY);
             
             TextView versionView = viewCache.getVersionView();  

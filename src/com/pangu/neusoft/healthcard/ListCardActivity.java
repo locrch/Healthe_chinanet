@@ -73,7 +73,7 @@ public class ListCardActivity extends FatherActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		this.setactivitytitle("选择健康卡");
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		if(!sp.getBoolean("loginsuccess", false)){
@@ -446,7 +446,9 @@ public class ListCardActivity extends FatherActivity {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		mProgressDialog.dismiss();
+		if(mProgressDialog.isShowing()){
+			mProgressDialog.dismiss();
+		}
 	}
 	
 }

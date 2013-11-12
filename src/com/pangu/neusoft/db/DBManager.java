@@ -278,7 +278,7 @@ public class DBManager {
 	    	}
 	        db.beginTransaction();  //开始事务  
 	        try {  
-	            db.execSQL("INSERT INTO history VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", new Object[]{
+	            db.execSQL("INSERT INTO history VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", new Object[]{
 	            		bookingdata.getHospitalid(),
 	            		bookingdata.getHospitalname(),
 	            		bookingdata.getDepartmentid(),
@@ -296,7 +296,8 @@ public class DBManager {
 	            		bookingdata.getIdtype(),
 	            		bookingdata.getIdcode(),
 	            		bookingdata.getCardnumber(),
-	            		bookingdata.getCancelid()
+	            		bookingdata.getCancelid(),
+	            		bookingdata.getSerialNumber()
 	            	});  
 	            db.setTransactionSuccessful();  //设置事务成功完成  
 	         
@@ -326,6 +327,8 @@ public class DBManager {
 	        	history.setDoctorname(c.getString(c.getColumnIndex("doctorname")));
 	        	history.setReservedate(c.getString(c.getColumnIndex("reservedate")));
 	        	history.setReservetime(c.getString(c.getColumnIndex("reservetime")));
+	        	history.setSerialNumber(c.getString(c.getColumnIndex("serialnumber")));
+	        	
 	        	history.setMedicalCardTypeID("");
 	        	histories.add(history);  
 	        }  

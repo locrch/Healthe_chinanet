@@ -25,7 +25,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="预约记录" />
+            android:text="预约记录"
+            android:textSize="@dimen/button_textsize"
+             />
 
         <Button
             android:id="@+id/tab3_peopleinfo"
@@ -33,7 +35,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="预约取消记录" />
+            android:text="预约取消记录"
+            android:textSize="@dimen/button_textsize" />
 
         <Button
             android:id="@+id/tab3_bookinghist"
@@ -41,7 +44,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="过期预约" />
+            android:text="过期预约"
+            android:textSize="@dimen/button_textsize" />
     </LinearLayout>
 
     <TextView
@@ -51,6 +55,7 @@
         android:layout_alignLeft="@+id/linearLayout1"
         android:layout_alignParentTop="true"
         android:layout_marginTop="44dp"
+        android:textColor="@color/white"
         android:text="尊敬的用户，欢迎您" />
 
 </RelativeLayout>

@@ -7,16 +7,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_black" >
-
+	<TextView
+        android:id="@+id/title_zhineng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="个人中心"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="700dp"
         android:layout_height="900dp"
-        android:layout_alignTop="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:orientation="vertical" >
 
         <Button
@@ -25,7 +34,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="登录" />
+            android:text="登录"
+            android:textSize="@dimen/button_textsize" />
 
         <Button
             android:id="@+id/tab3_peopleinfo"
@@ -33,7 +43,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="健康卡信息" />
+            android:text="健康卡信息"
+            android:textSize="@dimen/button_textsize" />
 
         <Button
             android:id="@+id/tab3_bookinghist"
@@ -41,7 +52,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="预约记录" />
+            android:text="预约记录"
+            android:textSize="@dimen/button_textsize" />
 
         <Button
             android:id="@+id/tab3_showhist"
@@ -49,7 +61,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="个人收藏" />
+            android:text="个人收藏"
+            android:textSize="@dimen/button_textsize" />
 
         <Button
             android:id="@+id/tab3_userchange"
@@ -57,7 +70,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="切换账号" />
+            android:text="切换账号"
+            android:textSize="@dimen/button_textsize" />
 
         <Button
             android:id="@+id/tab3_cleanDB"
@@ -65,7 +79,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="清除缓存" />
+            android:text="清除缓存"
+            android:textSize="@dimen/button_textsize" />
         
         <Button
             android:id="@+id/tab3_settextsize"
@@ -74,17 +89,19 @@
             android:background="@drawable/button_style"
             android:gravity="left"
             android:text="字体设置"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:textSize="@dimen/button_textsize" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_alignLeft="@+id/linearLayout1"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="40dp"
         android:text="尊敬的用户，欢迎您"
+        android:gravity="center"
         android:textColor="#FFFFFF"
          />
 

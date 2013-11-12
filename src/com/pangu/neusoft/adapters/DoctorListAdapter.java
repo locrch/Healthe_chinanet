@@ -112,7 +112,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             // Set the text on the TextView  
             TextView textView = viewCache.getTextView();  
             textView.setText(doctorlist.getText());  
-            textView.setTextSize(width/Setting.fontsizex);
+            //textView.setTextSize(width/Setting.fontsizex);
             
             TextView idView = viewCache.getIdView();
             idView.setText(doctorlist.getId());
@@ -121,7 +121,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             
             TextView levelView = viewCache.getLevelView();  
             levelView.setText(doctorlist.getLevel());  
-            levelView.setTextSize(width/Setting.fontsizes);
+            //levelView.setTextSize(width/Setting.fontsizes);
             levelView.setTextColor(Color.RED);
             
             

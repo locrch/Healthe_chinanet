@@ -24,7 +24,7 @@ public class DBConn extends SQLiteOpenHelper{
 		//db.close();
 		String sql_history="create table history(hospitalid varchar(45),hospitalname varchar(45)," +
 				"departmentid varchar(45),departmentname varchar(45),doctorid varchar(45),doctorname varchar(45),memberid varchar(45)," +
-				"scheduleid varchar(45),schstate varchar(45),phonenumber varchar(45),username varchar(45),regid varchar(45),reservedate varchar(45),reservetime varchar(45),idtype varchar(45),idcode varchar(45),cardnumber varchar(45),cancleid varchar(45))";
+				"scheduleid varchar(45),schstate varchar(45),phonenumber varchar(45),username varchar(45),regid varchar(45),reservedate varchar(45),reservetime varchar(45),idtype varchar(45),idcode varchar(45),cardnumber varchar(45),cancleid varchar(45),serialnumber varchar(45))";
 		db.execSQL(sql_history);
 		String sql_doctor="create table doctor(hospitalid varchar(45),hospitalname varchar(45)," +
 				"departmentid varchar(45),departmentname varchar(45),doctorid varchar(45),doctorname varchar(45),url varchar(1000),version varchar(45),level varchar(45))";

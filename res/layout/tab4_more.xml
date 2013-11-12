@@ -4,13 +4,23 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_black"
      >
-
+	<TextView
+        android:id="@+id/title_zhineng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="更多"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
     <LinearLayout
         android:layout_width="400dp"
         android:layout_height="800dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="160dp"
         android:layout_marginLeft="50dp"
         android:orientation="vertical" >
 
@@ -20,7 +30,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="预约指南" />
+            android:text="预约指南"
+            android:textSize="@dimen/button_textsize" />
 
 		<Button
             android:id="@+id/more_info"
@@ -29,6 +40,7 @@
             android:text="版本信息"
             android:gravity="left"
             android:background="@drawable/button_style"
+            android:textSize="@dimen/button_textsize"
              />
 		<Button
             android:id="@+id/more_update"
@@ -37,6 +49,7 @@
             android:text="检查更新"
             android:gravity="left"
             android:background="@drawable/button_style"
+            android:textSize="@dimen/button_textsize"
              />
     </LinearLayout>
 
