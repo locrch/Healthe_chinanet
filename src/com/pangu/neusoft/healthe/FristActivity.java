@@ -141,13 +141,21 @@ public class FristActivity extends Activity {
 	
 	
 	
+	private long exitTime = 1;
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event)
-	{
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		// TODO Auto-generated method stub
-		this.onDestroy();
-		
-		
+		if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){   
+	        if((System.currentTimeMillis()-exitTime) > 2000){  
+	            Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();                                
+	            exitTime = System.currentTimeMillis();   
+	        } else {
+	            finish();
+	            System.exit(0);
+	        }
+	        return true;   
+	    }
+
 		return super.onKeyDown(keyCode, event);
 	}
 	
@@ -195,4 +203,6 @@ public class FristActivity extends Activity {
 	     }
 		
     }
+	
+	
 }

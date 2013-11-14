@@ -17,97 +17,75 @@ import android.widget.TabHost.OnTabChangeListener;
 import android.widget.Toast;
 
 public class TabHostActivity extends ActivityGroup {
-    /** Called when the activity is first created. */
+	/** Called when the activity is first created. */
 	private TabHost tabHost = null;
 	private LayoutInflater mInflater = null;
 	TextView tab2_text;
-	Button back_index,back_back;
+	Button back_index, back_back;
+
 	public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+		super.onCreate(savedInstanceState);
+		// requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.acitivty_tabhost);
-		//getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_tabhost);
-		/*back_back = (Button)findViewById(R.id.back_back);
-		back_index = (Button)findViewById(R.id.back_index);
-		back_index.setVisibility(8);
-		back_back.setVisibility(8);*/
-		
-		
-		
-		tab2_text = (TextView)findViewById(R.id.tab2_text);
+		// getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
+		// R.layout.title_tabhost);
+		/*
+		 * back_back = (Button)findViewById(R.id.back_back); back_index =
+		 * (Button)findViewById(R.id.back_index); back_index.setVisibility(8);
+		 * back_back.setVisibility(8);
+		 */
+
+		tab2_text = (TextView) findViewById(R.id.tab2_text);
 		Intent getintent = getIntent();
-		String Value=getintent.getStringExtra("extra");
-		/*if (Value.equals("zhineng"))
-		{
-			tab2_text.setText("智能健康");
-		}
-		else {
-			tab2_text.setText("数字医院");
-		}*/
+		String Value = getintent.getStringExtra("extra");
+		/*
+		 * if (Value.equals("zhineng")) { tab2_text.setText("智能健康"); } else {
+		 * tab2_text.setText("数字医院"); }
+		 */
 		mInflater = LayoutInflater.from(this);
-        tabHost = (TabHost) findViewById(R.id.mytabhost);
+		tabHost = (TabHost) findViewById(R.id.mytabhost);
 		tabHost.setup(this.getLocalActivityManager());
-		
+
 		Intent intent;
-		
+
 		intent = new Intent(this, TabActivity2.class);
 		intent.putExtra("extra", Value);
 		View tab1Spec = mInflater.inflate(R.layout.tab1_spec, null);
-		tabHost.addTab(tabHost
-				.newTabSpec("tab1")
-				.setIndicator(tab1Spec)
+		tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator(tab1Spec)
 				.setContent(intent));
-		
-		tab1Spec.setOnClickListener(new OnClickListener()
-		{
-			
+
+		tab1Spec.setOnClickListener(new OnClickListener() {
+
 			@Override
-			public void onClick(View v)
-			{
+			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				startActivity(new Intent(TabHostActivity.this,FristActivity.class));
+				Intent intent = new Intent(TabHostActivity.this,
+						FristActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
 				finish();
-				
+
 			}
 		});
-		
-		
+
 		intent = new Intent(this, TabActivity2.class);
 		intent.putExtra("extra", Value);
 		View tab2Spec = mInflater.inflate(R.layout.tab2_spec, null);
-		tabHost.addTab(tabHost
-				.newTabSpec("tab2")
-				.setIndicator(tab2Spec)
+		tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator(tab2Spec)
 				.setContent(intent));
-		
-		
+
 		intent = new Intent(this, TabActivity3.class);
 		View tab3Spec = mInflater.inflate(R.layout.tab3_spec, null);
-		tabHost.addTab(tabHost
-				.newTabSpec("tab3")
-				.setIndicator(tab3Spec)
+		tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator(tab3Spec)
 				.setContent(intent));
-		
+
 		intent = new Intent(this, TabActivity4.class);
 		View tab4Spec = mInflater.inflate(R.layout.tab4_spec, null);
-		tabHost.addTab(tabHost
-				.newTabSpec("tab4")
-				.setIndicator(tab4Spec)
+		tabHost.addTab(tabHost.newTabSpec("tab4").setIndicator(tab4Spec)
 				.setContent(intent));
-	
-		
-    }
-	
-	
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event)
-	{
-		// TODO Auto-generated method stub
-		this.onDestroy();
-		
-		
-		return super.onKeyDown(keyCode, event);
+
 	}
 	
+
 }
