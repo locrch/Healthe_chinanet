@@ -2,6 +2,8 @@ package com.pangu.neusoft.healthe;
 
 import com.baidu.mapapi.search.c;
 import com.pangu.neusoft.tools.SysApplication;
+import com.baidu.mobstat.StatService;
+import com.hp.hpl.sparta.xpath.ThisNodeTest;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -38,9 +40,6 @@ public class FatherActivity extends Activity
 		setContentView(R.layout.activity_father);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_back);
 		
-		
-		
-		
 		back_index = (Button)findViewById(R.id.back_index);
 		back_back = (Button)findViewById(R.id.back_back);
 		
@@ -74,6 +73,20 @@ public class FatherActivity extends Activity
 		});
 		
 		this.NetWorkStatus(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		StatService.onResume(this);
+	}
+	
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		StatService.onPause(this);
 	}
 	
 	public void setactivitytitle(String title){

@@ -1,5 +1,7 @@
 package com.pangu.neusoft.healthe;
 
+import com.baidu.mobstat.StatService;
+
 import android.app.ActivityGroup;
 import android.content.Intent;
 import android.os.Bundle;
@@ -87,5 +89,17 @@ public class TabHostActivity extends ActivityGroup {
 
 	}
 	
-
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		StatService.onResume(this);
+	}
+	
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		StatService.onPause(this);
+	}
 }

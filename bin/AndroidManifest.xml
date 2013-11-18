@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pangu.neusoft.healthe"
-    android:versionCode="6"
-    android:versionName="1.04" >
+    android:versionCode="7"
+    android:versionName="1.05" >
 
     <supports-screens
         android:anyDensity="true"
@@ -30,7 +30,8 @@
     </uses-permission>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
     </uses-permission>
-
+	<uses-permission android:name="android.permission.WRITE_SETTINGS">
+	</uses-permission>
     <!-- 使用定位功能所需权限,demo已集成百度定位SDK,不使用定位功能可去掉以下6项 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
     </uses-permission>
@@ -45,12 +46,40 @@
     <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" >
     </uses-permission>
     <uses-permission android:name="android.permission.ACCESS_GPS" />
-
+	
+    
+    
+    
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/MyTheme" >
+       
+        <!-- 您从百度网站获取的APP KEY -->
+		<meta-data android:name="BaiduMobAd_STAT_ID" android:value="b68b8716d0" /> <!-- abcd1234 -->
+		<!-- 渠道商编号 -->
+		<meta-data android:name="BaiduMobAd_CHANNEL" android:value="Baidu Market" />
+
+		<!-- 是否开启错误日志统计，默认为false -->
+		<meta-data android:name="BaiduMobAd_EXCEPTION_LOG" android:value="true" />
+		<!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
+		<meta-data android:name="BaiduMobAd_SEND_STRATEGY" android:value="APP_START" />
+		<!-- 日志发送策略 为SET_TIME_INTERVAL时，需设定时间间隔(取消下行注释)。取值为1-24的整数，默认为1 -->
+		<!-- <meta-data android:name="BaiduMobAd_TIME_INTERVAL" android:value="2" />  -->
+		<!-- 日志仅在wifi网络下发送，默认为false -->
+		<meta-data android:name="BaiduMobAd_ONLY_WIFI" android:value="false" />
+		<!-- 是否获取基站位置信息 ,默认为true-->
+		<meta-data android:name="BaiduMobAd_CELL_LOCATION" android:value="true" />
+		<!-- 是否获取GPS位置信息，默认为true -->
+		<meta-data android:name="BaiduMobAd_GPS_LOCATION" android:value="true" />
+		<!-- 是否获取WIFI位置信息，默认为true -->
+		<meta-data android:name="BaiduMobAd_WIFI_LOCATION" android:value="true" />
+        
+        
+        
+        
         <activity
             android:name="com.pangu.neusoft.healthe.MainActivity"
             android:icon="@drawable/ic_launcher"

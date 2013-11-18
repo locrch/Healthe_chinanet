@@ -2,6 +2,7 @@ package com.pangu.neusoft.healthe;
 
 import java.net.ContentHandler;
 
+import com.baidu.mobstat.StatService;
 import com.baidu.platform.comapi.map.r;
 import com.pangu.neusoft.healthcard.LoginActivity;
 import com.pangu.neusoft.healthcard.RegisterActivity;
@@ -139,7 +140,19 @@ public class FristActivity extends Activity {
     	this.NetWorkStatus(this);
 	}
 	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		StatService.onResume(this);
+	}
 	
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		StatService.onPause(this);
+	}
 	
 	private long exitTime = 1;
 	@Override

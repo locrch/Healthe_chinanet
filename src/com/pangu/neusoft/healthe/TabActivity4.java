@@ -3,7 +3,10 @@ package com.pangu.neusoft.healthe;
 import java.util.Random;
 
 import com.baidu.mapapi.search.c;
+import com.pangu.neusoft.tools.SysApplication;
 import com.pangu.neusoft.tools.update.UpdateOperation;
+
+
 
 
 import android.app.Activity;
@@ -43,48 +46,11 @@ public class TabActivity4 extends Activity  {
 			public void onClick(View v)
 			{
 				// TODO Auto-generated method stub
-				/*pd = ProgressDialog.show(TabActivity4.this, "新版本检测", "检查更新中....");
-				handler = new Handler()  
 				
-		        {  
-		                 @Override  
-		                 public void handleMessage(Message msg)  
-		                 {  
-		                     if(msg.what == 1) 
-		                          {  
-		                    	 pd.dismiss();
-		                    	 
-		                    	 Toast.makeText(getApplicationContext(), "该版本已经是最新！", Toast.LENGTH_LONG).show();
-		                         
-		                    	 
-		                          }  
-		                 }  
-		        };  
-				Runnable runnable = new Runnable()  
-		        {  
-		                 public void run()  
-		                 {  
-		                          try  
-		                          {  
-		                                    Thread.sleep(2500);
-		                                    
-		                          }   
-		                          catch (InterruptedException e)  
-		                          {  
-		                                    e.printStackTrace();  
-		                          }  
-		                          handler.sendEmptyMessage(1);
-		                 }  
-		        };  
-		        Thread thread = new Thread(runnable);  
-		        thread.start(); */
-		        //上面为更新界面，没有功能
 				UpdateOperation update=new UpdateOperation(TabActivity4.this);
+				
 		    	update.checkUpdate();
-				
-						
-					
-				
+		    	
 				
 			}
 		});
