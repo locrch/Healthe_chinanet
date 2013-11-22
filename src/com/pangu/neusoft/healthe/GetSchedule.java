@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -29,8 +30,18 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 
+
+
+
+
+
+
 import com.pangu.neusoft.core.models.Schedule;
 import com.pangu.neusoft.healthcard.ListCardActivity;
+import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.R.color;
+import com.pangu.neusoft.healthe.R.id;
+import com.pangu.neusoft.healthe.R.layout;
 import com.pangu.neusoft.tools.DateWidgetDayCell;
 import com.pangu.neusoft.tools.DateWidgetDayHeader;
 import com.pangu.neusoft.tools.DayStyle;
@@ -47,7 +58,7 @@ public class GetSchedule {
 	private List<String> timetable=new ArrayList<String>();
 	
 	//排班表日历显示行数
-	private final static int showRows=4;
+	private final static int showRows=5;
 	// 生成日历，外层容器
 	private LinearLayout layContent = null;
 	private LinearLayout layContent2 = null;

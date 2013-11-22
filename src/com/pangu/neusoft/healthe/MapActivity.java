@@ -19,6 +19,7 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;  
 import android.widget.Toast;  
+
 import com.baidu.mapapi.BMapManager;  
 import com.baidu.mapapi.map.ItemizedOverlay;
 import com.baidu.mapapi.map.MKMapViewListener;  
@@ -40,6 +41,11 @@ import com.baidu.mapapi.search.MKSuggestionResult;
 import com.baidu.mapapi.search.MKTransitRouteResult;
 import com.baidu.mapapi.search.MKWalkingRouteResult;
 import com.baidu.platform.comapi.basestruct.GeoPoint;
+import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.R.drawable;
+import com.pangu.neusoft.healthe.R.id;
+import com.pangu.neusoft.healthe.R.layout;
+import com.pangu.neusoft.healthe.R.menu;
 
 
 public class MapActivity extends Activity {

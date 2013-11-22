@@ -9,6 +9,12 @@ import java.util.List;
 import java.util.Map;
 
 
+
+
+
+
+
+
 import com.pangu.neusoft.core.models.ConnectDoctor;
 import com.pangu.neusoft.core.models.Schedule;
 import com.pangu.neusoft.healthe.DoctorDetailActivity;
@@ -21,6 +27,12 @@ import com.pangu.neusoft.tools.SortListByItem;
   
   
   
+
+
+
+
+
+
 import android.R.integer;
 import android.app.Activity;  
 import android.content.Context;
@@ -129,8 +141,8 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             versionView.setText(doctorlist.getVersion());  
             
             ImageView moreInfo = viewCache.getMoreInfoView();
-            moreInfo.getLayoutParams().width=width/Setting.fontsizey;
-            moreInfo.getLayoutParams().height=height/Setting.fontsizey;
+            //moreInfo.getLayoutParams().width=width/Setting.fontsizey;
+            //moreInfo.getLayoutParams().height=height/Setting.fontsizey;
             moreInfo.setClickable(true);
             
             //动态生成按钮

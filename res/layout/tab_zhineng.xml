@@ -3,9 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
-    android:background="@drawable/background_black"
-     >
-	
+    android:background="@drawable/background_black" >
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -15,8 +14,8 @@
         android:layout_below="@+id/tab2_booking"
         android:gravity="center"
         android:text="预约挂号"
-        android:textSize="20sp" 
-        android:textColor="@color/tab_text"/>
+        android:textColor="@color/tab_text"
+        android:textSize="20sp" />
 
     <ImageButton
         android:id="@+id/tab2_booking"
@@ -44,8 +43,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="健康档案"
-        android:textSize="20sp" 
-        android:textColor="@color/tab_text"/>
+        android:textColor="@color/tab_text"
+        android:textSize="20sp" />
 
     <ImageButton
         android:id="@+id/tab2_moneycheck"
@@ -85,8 +84,8 @@
         android:layout_below="@+id/tab2_eachother"
         android:gravity="center"
         android:text="医患互动"
-        android:textSize="20sp" 
-        android:textColor="@color/tab_text"/>
+        android:textColor="@color/tab_text"
+        android:textSize="20sp" />
 
     <ImageButton
         android:id="@+id/tab2_healthinfo"
@@ -105,8 +104,8 @@
         android:layout_below="@+id/tab2_healthinfo"
         android:gravity="center"
         android:text="健康大全"
-        android:textSize="20sp" 
-        android:textColor="@color/tab_text"/>
+        android:textColor="@color/tab_text"
+        android:textSize="20sp" />
 
     <ImageButton
         android:id="@+id/tab2_tellphone"
@@ -114,19 +113,7 @@
         android:layout_height="100sp"
         android:layout_above="@+id/textView4"
         android:layout_alignParentRight="true"
-        android:background="@drawable/yijian"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/imageButton6"
-        android:layout_alignParentRight="true"
-        android:gravity="center"
-        android:text="一键拨号 "
-        android:textSize="20sp" 
-        android:textColor="@color/tab_text"/>
+        android:background="@drawable/yijian" />
 
     <TextView
         android:id="@+id/huoqu"
@@ -134,8 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:textColor="@color/tab_text"
-        />
+        android:textColor="@color/tab_text" />
 
     <TextView
         android:id="@+id/title_zhineng"
@@ -148,5 +134,16 @@
         android:text="智能健康"
         android:textColor="@color/white"
         android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="药房优惠 "
+        android:textColor="@color/tab_text"
+        android:textSize="20sp" />
 
 </RelativeLayout>

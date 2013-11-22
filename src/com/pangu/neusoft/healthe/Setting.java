@@ -2,9 +2,9 @@ package com.pangu.neusoft.healthe;
 
 public class Setting {
 	public final static int fontsizel=15;
-	public static int fontsizex=15;
-	public static int fontsizes=18;
-	public static int fontsizey=7;
+	public static int fontsizex=12;
+	public static int fontsizes=10;
+	public static int fontsizey=8;
 	public final static String spfile="healthE";
 	public final static int dialogtimeout=2000;
 	public final static String catche_dir="/mnt/sdcard/healthE/";
@@ -15,10 +15,15 @@ public class Setting {
 	
 	public static final String parcelableKey = "com.pangu.neusoft.healthe"; 
 	public static final int schedule_show_num=6;
-	public static final String mapkey="36a773d43634b75464e03e17f65dd3bf";
+	//public static final String mapkey="36a773d43634b75464e03e17f65dd3bf";
+	public static final String mapkey="849b6fcf128aaff2549fda5df98dff56";
+	
+    
+	
 	public static final double default_lat=23.026947*1E6;
 	public static final double default_lon=113.129067*1E6;
 	public static final int map_zoom=16;
+	
 	public static String check_url = "http://202.103.160.158:678/V1/HealthE.apk";
 	public static String SerialNumber;
 	public static String link="http://219.130.221.120:10804/smjkfw/wsyygh/pages/jkw_login_dx.jsp?redirect=http://202.103.160.158:1001/MedicalCardPage/receive.aspx&wxid=";

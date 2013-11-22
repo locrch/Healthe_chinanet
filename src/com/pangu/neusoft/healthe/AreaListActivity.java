@@ -14,6 +14,12 @@ import com.pangu.neusoft.core.models.AreaReq;
 import com.pangu.neusoft.core.models.AreaResponse;
 
 
+
+import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.R.id;
+import com.pangu.neusoft.healthe.R.layout;
+import com.pangu.neusoft.healthe.R.menu;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -49,6 +55,7 @@ public class AreaListActivity extends FatherActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setactivitytitle("选择地区");
 		setContentView(R.layout.activity_list);
 		arealistView=(ListView)findViewById(R.id.list);
 		service=new WebService();

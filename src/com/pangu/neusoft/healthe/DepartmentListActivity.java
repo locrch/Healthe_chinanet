@@ -2,6 +2,7 @@ package com.pangu.neusoft.healthe;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.ksoap2.serialization.SoapObject;
 
 import com.pangu.neusoft.adapters.DepartmentListAdapter;
@@ -9,7 +10,12 @@ import com.pangu.neusoft.core.GET;
 import com.pangu.neusoft.core.WebService;
 import com.pangu.neusoft.core.models.Department;
 import com.pangu.neusoft.core.models.DepartmentReq;
+import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.R.id;
+import com.pangu.neusoft.healthe.R.layout;
+import com.pangu.neusoft.healthe.R.menu;
 import com.pangu.neusoft.tools.GB2Alpha;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;

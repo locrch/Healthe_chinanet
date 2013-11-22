@@ -15,7 +15,7 @@ public class VersionInfoActivity extends FatherActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_version_info);
-		
+		setactivitytitle("版本信息");
 		TextView version_num = (TextView)findViewById(R.id.verison_num);
 		
 		try

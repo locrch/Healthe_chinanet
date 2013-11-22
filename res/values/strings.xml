@@ -40,5 +40,7 @@
     <string name="serverurl">http://202.103.160.158:678/update.xml</string>
     <string name="title_activity_set_text_size">字体设置</string>
     <string name="hello_world">Hello world!</string>
-	
+    <string name="title_activity_tab_activity4">增值服务</string>
+    <string name="title_activity_tab_activity5">增值服务</string>
+
 </resources>

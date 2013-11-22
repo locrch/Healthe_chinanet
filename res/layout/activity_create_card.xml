@@ -51,6 +51,7 @@
         android:id="@+id/create_card_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/button_textsize"
         android:text="添加诊疗卡" />
 
 </LinearLayout>

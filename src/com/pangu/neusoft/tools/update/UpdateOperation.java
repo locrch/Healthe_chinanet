@@ -8,17 +8,26 @@ import java.net.URL;
 import org.xmlpull.v1.XmlPullParser;
 
 
+
+
+
 import com.pangu.neusoft.healthe.R;
 
 
+
+
+
+import com.pangu.neusoft.healthe.TabActivity4;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.app.AlertDialog.Builder;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -55,6 +64,7 @@ public class UpdateOperation {
 			localVersion = getVersionName();
 			CheckVersionTask cv = new CheckVersionTask();
 			new Thread(cv).start();
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			Log.e("error",e.toString());
@@ -104,16 +114,18 @@ public class UpdateOperation {
 	            HttpURLConnection conn =  (HttpURLConnection) url.openConnection();   
 	            conn.setConnectTimeout(5000);  
 	            InputStream is =conn.getInputStream();   
-	            info =  UpdataInfoParser.getUpdataInfo(is);  
-	              
+	            info =  UpdataInfoParser.getUpdataInfo(is);
+	           
 	            if(info.getVersion().equals(localVersion)){  
 	                Log.i(TAG,"版本号相同无需升级");  
+	                TabActivity4.updated=1;
 	                
 	            }else{  
 	                Log.i(TAG,"版本号不同 ,提示用户升级 ");  
 	                Message msg = new Message();  
 	                msg.what = UPDATA_CLIENT;  
-	                handler.sendMessage(msg);  
+	                handler.sendMessage(msg); 
+	                TabActivity4.updated=2;
 	            }  
 	        } catch (Exception e) {  
 	            // 待处理   

@@ -3,6 +3,12 @@ package com.pangu.neusoft.healthe;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.R.color;
+import com.pangu.neusoft.healthe.R.drawable;
+import com.pangu.neusoft.healthe.R.id;
+import com.pangu.neusoft.healthe.R.layout;
+import com.pangu.neusoft.healthe.R.menu;
 import com.pangu.neusoft.tools.DensityUtil;
 import com.pangu.neusoft.tools.DialogShow;
 
@@ -112,7 +118,7 @@ public class BookingMainActivity extends FatherActivity {
 		//welcome.setTextSize(width / fontsizex);
 
 		select_area_btn = (Button) findViewById(R.id.select_area_btn);
-		select_area_btn.setTextSize(width / fontsizex);
+		//select_area_btn.setTextSize(width / fontsizex);
 		
 		select_area_btn.setOnClickListener(select_area_click);
 
@@ -133,29 +139,29 @@ public class BookingMainActivity extends FatherActivity {
 
 		
 		hospital = (EditText) findViewById(R.id.hospital);
-		hospital.setTextSize(width / fontsizex);
+	//	hospital.setTextSize(width / fontsizex);
 		hospital.getLayoutParams().height= height / 8;
 		hospital.setOnClickListener(select_hospital_click);
 
 		department = (EditText) findViewById(R.id.department);
-		department.setTextSize(width / fontsizex);
+		//department.setTextSize(width / fontsizex);
 		department.getLayoutParams().height= height / 8;
 		department.setOnClickListener(select_department_click);
 
 		doctor = (EditText) findViewById(R.id.doctor);
-		doctor.setTextSize(width / fontsizex);
+		//doctor.setTextSize(width / fontsizex);
 		doctor.getLayoutParams().height= height / 8;
 		doctor.setOnClickListener(select_doctor_click);
 		
 		booking = (Button) findViewById(R.id.booking_confirm_btn);
-		booking.setTextSize(width / fontsizex);
+		//booking.setTextSize(width / fontsizex);
 		booking.setHeight(height / 10);
 		booking.setOnClickListener(booking_btn_click);
 		
 		message = (TextView) findViewById(R.id.messages);
 		message.setText("1.每月爽约次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"2.每周累计主动取消次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"3.同一就诊人在同一就诊日、同一医院、同一医生只能预约1次。"+"\n"+"\n"+"4.同一就诊人在同一就诊日、同一医院只能预约2次。"+"\n"+"\n"+"5.同一就诊人每月预约不能超过6次（医院临时停改诊除外）。");
-		message.setTextColor(R.color.honeydew);
-		message.setTextSize(width / fontsizex);
+		message.setTextColor(R.color.black_overlay);
+		//message.setTextSize(width / fontsizex);
 
 		welcome.setFocusable(true);
 		welcome.setFocusableInTouchMode(true);
@@ -174,9 +180,10 @@ public class BookingMainActivity extends FatherActivity {
 		slidingDrawer1.setOnDrawerOpenListener(new android.widget.SlidingDrawer.OnDrawerOpenListener() {		 
             public void onDrawerOpened() {// 当抽屉打开时执行此操作  
             	handler.setImageResource(R.drawable.handle_up); 
+            	
             }  
         }); 
- 
+		
 		slidingDrawer1.setOnDrawerCloseListener(new android.widget.SlidingDrawer.OnDrawerCloseListener() { 
             public void onDrawerClosed() {// 抽屉关闭时执行此操作 
             	handler.setImageResource(R.drawable.handle_down);

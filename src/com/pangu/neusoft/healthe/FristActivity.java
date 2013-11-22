@@ -126,9 +126,14 @@ public class FristActivity extends Activity {
 			{
 				// TODO Auto-generated method stub
 				
-				Intent tell = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+"12320"));
-				
-				FristActivity.this.startActivity(tell);
+				try {
+					Intent tell = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+"12320"));
+					
+					FristActivity.this.startActivity(tell);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Toast.makeText(getApplicationContext(), "请允许拨打电话请求！", Toast.LENGTH_SHORT).show();			}
 			}
 		});
 		SysApplication.getInstance().addActivity(this);

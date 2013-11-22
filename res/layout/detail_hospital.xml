@@ -26,10 +26,11 @@
                 android:id="@+id/hospital_detail_booking_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/button_textsize"
                 android:text="预约挂号" 
                 android:background="@drawable/button_style"
                 />
-			<TextView
+			<TextView android:textSize="@dimen/detail_content_textsize"
 				    android:id="@+id/hospital_detail_id"
 				    android:layout_width="match_parent"
 				    android:layout_height="wrap_content"
@@ -41,19 +42,20 @@
                 android:orientation="horizontal"  
                 android:layout_margin="2dp">
 
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_name_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
                     android:text="名称： " />
 
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:text="加载中...." />
+                    android:text="加载中...."
+                     />
 
 				
 
@@ -65,14 +67,14 @@
                 android:orientation="horizontal" 
                 android:layout_margin="2dp">
 
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_level_grade_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
                     android:text="级别： " />
 
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_level_grade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -87,7 +89,7 @@
                 android:orientation="horizontal"  
                 android:layout_margin="2dp">
 
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_intro_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -99,7 +101,7 @@
                     android:scrollbars="vertical"
 			    >
 
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_intro"
                     android:layout_width="206dp"
                     android:layout_height="wrap_content"
@@ -117,12 +119,13 @@
                 android:background="#FFFFFF">
             </LinearLayout>
 
-            <TextView
+            <TextView android:textSize="@dimen/detail_content_textsize"
                 android:id="@+id/hospital_detail_contact_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="联系方式" />
+                android:text="联系方式"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -136,7 +139,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     >
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_address_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -151,7 +154,7 @@
                     android:layout_alignParentRight="true"
                     android:background="@drawable/dingwei"
                     />
-				<TextView
+				<TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -165,13 +168,13 @@
 
                 
                 
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_zipcode_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:text="邮编： " />
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_zipcode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -190,13 +193,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     >
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_phone_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:text="电话： " />
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -211,25 +214,25 @@
                     android:background="@drawable/phone_1"
                     />
                 </RelativeLayout>
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_fax_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:text="传真： " />
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_fax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:text="加载中...." />
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_website_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:text="网址： " />
-                <TextView
+                <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/hospital_detail_website"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

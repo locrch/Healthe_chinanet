@@ -55,6 +55,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
 import com.pangu.neusoft.healthe.FatherActivity;
 import com.pangu.neusoft.tools.DialogShow;
 public class ListCardActivity extends FatherActivity {

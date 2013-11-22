@@ -12,6 +12,7 @@ public class FavoriteActivity extends FatherActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
+		
 	}
 
 	

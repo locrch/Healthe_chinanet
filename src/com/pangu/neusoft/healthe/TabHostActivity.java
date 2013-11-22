@@ -81,12 +81,28 @@ public class TabHostActivity extends ActivityGroup {
 		View tab3Spec = mInflater.inflate(R.layout.tab3_spec, null);
 		tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator(tab3Spec)
 				.setContent(intent));
-
+		
+		intent = new Intent(this, TabActivity5.class);
+		View tab5Spec = mInflater.inflate(R.layout.tab5_spec, null);
+		tabHost.addTab(tabHost.newTabSpec("tab5").setIndicator(tab5Spec)
+				.setContent(intent));
+		
 		intent = new Intent(this, TabActivity4.class);
 		View tab4Spec = mInflater.inflate(R.layout.tab4_spec, null);
 		tabHost.addTab(tabHost.newTabSpec("tab4").setIndicator(tab4Spec)
 				.setContent(intent));
+		
+		
+		
+		tab5Spec.setOnClickListener(new OnClickListener() {
 
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Toast.makeText(getApplicationContext(), "该功能正在建设中，敬请期待", Toast.LENGTH_SHORT).show();
+
+			}
+		});
 	}
 	
 	@Override

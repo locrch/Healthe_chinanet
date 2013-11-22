@@ -59,16 +59,6 @@
         android:text="department" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/seria_num"
-        android:layout_alignBottom="@+id/seria_num"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="18dp"
-        android:text="现场取号" />
-
-    <TextView
         android:id="@+id/his_doctor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,5 +73,14 @@
         android:layout_alignLeft="@+id/his_hospital"
         android:layout_below="@+id/his_doctor"
         android:text="Date Time" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hisdDepartment"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:text="现场取号" />
 
 </RelativeLayout>

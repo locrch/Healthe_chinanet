@@ -63,6 +63,7 @@
         android:layout_alignBaseline="@+id/reg_btn"
         android:layout_alignBottom="@+id/reg_btn"
         android:layout_alignParentLeft="true"
+        android:textSize="@dimen/button_textsize"
         android:text="登陆" 
         android:background="@drawable/button_style"
         />
@@ -75,6 +76,7 @@
         android:layout_below="@+id/password"
         android:layout_marginTop="19dp"
         android:background="@drawable/button_style"
+        android:textSize="@dimen/button_textsize"
         android:text="注册" />
 
 </RelativeLayout>

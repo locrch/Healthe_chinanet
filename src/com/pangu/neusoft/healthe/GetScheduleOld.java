@@ -30,6 +30,9 @@ import android.widget.TextView;
 
 import com.pangu.neusoft.core.models.Schedule;
 import com.pangu.neusoft.healthcard.ListCardActivity;
+import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.R.id;
+import com.pangu.neusoft.healthe.R.layout;
 import com.pangu.neusoft.tools.SortListByItem;
 
 public class GetScheduleOld {

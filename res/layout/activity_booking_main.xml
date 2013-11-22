@@ -71,6 +71,7 @@
   			android:layout_alignParentRight="true"
   			 android:layout_alignLeft="@+id/booking_btn"
             android:text="地区" 
+            android:textSize="@dimen/button_textsize"
             android:background="@drawable/button_style"
             />
 
@@ -117,7 +118,8 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:hint="选择地区" 
-            android:background="@drawable/edittext_style"/>
+            android:background="@drawable/edittext_style"
+            android:textSize="@dimen/button_textsize"/>
 
         <ImageView
             android:id="@+id/imageView3"
@@ -142,6 +144,9 @@
             android:hint="选择医生" 
             android:background="@drawable/edittext_style"
             android:paddingLeft="4dp"
+            android:singleLine="true"
+			android:ellipsize="end"
+			android:textSize="@dimen/button_textsize"
             />
 
         <Button
@@ -153,6 +158,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/imageView3"
             android:text="预约挂号" 
+            android:textSize="@dimen/button_textsize"
             android:gravity="center"
             android:background="@drawable/button_style"
             />
@@ -169,7 +175,8 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:hint="选择医院"
-            android:paddingLeft="4dp" />
+            android:paddingLeft="4dp"
+            android:textSize="@dimen/button_textsize" />
 
         <SlidingDrawer
             android:id="@+id/slidingDrawer1"
@@ -194,6 +201,8 @@
                     android:id="@+id/messages"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textSize="@dimen/button_textsize"
+                    
                     />
             </LinearLayout>
         </SlidingDrawer>

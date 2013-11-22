@@ -8,6 +8,12 @@ import java.util.List;
 
 
 
+
+
+
+
+
+
 import com.pangu.neusoft.healthe.HospitalDetailActivity;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.Setting;
@@ -17,6 +23,12 @@ import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
   
   
   
+
+
+
+
+
+
 
 
 
@@ -137,8 +149,8 @@ public class HospitalListAdapter extends ArrayAdapter<HospitalList> {
             versionView.setText(imageAndText.getVersion());  
             
             ImageView moreInfo = viewCache.getMoreInfoView();
-            moreInfo.getLayoutParams().width=width/Setting.fontsizey;
-            moreInfo.getLayoutParams().height=height/Setting.fontsizey;
+            //moreInfo.getLayoutParams().width=width/Setting.fontsizey;
+            //moreInfo.getLayoutParams().height=height/Setting.fontsizey;
             moreInfo.setClickable(true);
            // moreInfo.setFocusable(true);
             moreInfo.setOnClickListener(new OnClickListener(){

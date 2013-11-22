@@ -31,15 +31,19 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/doctor_list_grade"
         android:layout_toRightOf="@+id/doctor_list_image"
-        android:text="TextView" />
+        android:layout_marginRight="@dimen/margin_right"
+        android:singleLine="true"
+		android:ellipsize="end"
+        android:text="TextView" 
+        android:textSize="@dimen/listtitle_textsize"/>
 
     <ImageView
         android:id="@+id/doctor_list_moreinfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="70dp"
         android:layout_alignParentRight="true"
        	android:layout_alignParentTop="true"
-       	android:layout_margin="10dp"
+       	android:layout_margin="@dimen/list_detailimg_margin"
        	android:focusable="false"
        	android:clickable="true"
         android:src="@drawable/more_info" />

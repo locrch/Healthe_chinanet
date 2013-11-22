@@ -8,7 +8,7 @@
         android:id="@+id/department_list_alpha"  
         android:layout_width="fill_parent"  
         android:layout_height="wrap_content"  
-        android:background="#CCCCCC"  
+        android:background="#3C3C3C"  
         android:paddingLeft="10dip"  
         android:textColor="#E0E0E0"  
         android:visibility="gone" />  
@@ -23,29 +23,33 @@
          android:layout_below="@+id/department_list_alpha"
         android:layout_marginLeft="2.0dip"  
         android:layout_marginRight="5.0dip"  
-        android:layout_marginTop="6.0dip"  
+        android:layout_marginTop="15.0dip"
         android:layout_alignParentLeft="true"  
         android:singleLine="true"  
-        android:textAppearance="?android:textAppearanceMedium" />  
-  
-    <TextView  
-        android:id="@+id/department_list_number"  
-        android:layout_width="wrap_content"  
-        android:layout_height="wrap_content"  
-        android:layout_alignLeft="@id/department_list_name"  
-        android:layout_alignWithParentIfMissing="true"  
-        android:layout_below="@id/department_list_name"  
-        android:ellipsize="marquee"  
-        android:singleLine="true"  
-        android:textAppearance="?android:textAppearanceSmall" />
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textSize="@dimen/listtitle_textsize"
+         />  
+  		
+    <TextView
+        android:id="@+id/department_list_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/department_list_name"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_below="@id/department_list_name"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/department_more_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="70dp"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/department_list_name"
-        android:layout_marginRight="19dp"
-        android:src="@drawable/more_info" />
+        android:layout_below="@+id/department_list_alpha"
+        android:layout_margin="@dimen/list_detailimg_margin"
+        android:src="@drawable/more_info"
+        android:visibility="gone" />
   	
 </RelativeLayout>  

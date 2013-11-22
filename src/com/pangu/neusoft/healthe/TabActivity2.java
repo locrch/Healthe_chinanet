@@ -92,7 +92,7 @@ public class TabActivity2 extends Activity
 			public void onClick(View v)
 			{
 				// TODO Auto-generated method stub
-				final String[] args = new String[]
+				/*final String[] args = new String[]
 				{ "12320", "114" };
 
 				new AlertDialog.Builder(TabActivity2.this).setTitle("电话表")
@@ -112,7 +112,9 @@ public class TabActivity2 extends Activity
 								TabActivity2.this.startActivity(myIntentDial);
 
 							}
-						}).setNegativeButton("确定", null).show();
+						}).setNegativeButton("确定", null).show();*/
+				
+				Toast.makeText(getApplicationContext(), "该功能正在建设中，敬请期待", Toast.LENGTH_SHORT).show();
 			}
 		});
 		

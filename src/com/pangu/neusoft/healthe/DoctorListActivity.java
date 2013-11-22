@@ -16,6 +16,10 @@ import com.pangu.neusoft.core.WebService;
 import com.pangu.neusoft.core.models.Doctor;
 import com.pangu.neusoft.core.models.DoctorReq;
 import com.pangu.neusoft.core.models.Schedule;
+import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.R.id;
+import com.pangu.neusoft.healthe.R.layout;
+import com.pangu.neusoft.healthe.R.menu;
 import com.pangu.neusoft.tools.AsyncBitmapLoader;
 import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
 

@@ -9,6 +9,10 @@ import com.pangu.neusoft.tools.update.UpdateOperation;
 
 
 
+
+
+
+import android.R.integer;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -29,6 +33,9 @@ public class TabActivity4 extends Activity  {
 	ProgressDialog pd;
 	
 	Handler handler;
+	
+	public static int updated = 1;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
@@ -51,7 +58,30 @@ public class TabActivity4 extends Activity  {
 				
 		    	update.checkUpdate();
 		    	
-				
+				new Thread(new Runnable() {
+					
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						
+						
+						switch (updated) {
+						case 1:
+							runOnUiThread(new Runnable() {
+								public void run() {
+									Toast.makeText(getApplicationContext(), "已经是最新版本！", Toast.LENGTH_SHORT).show();
+								}
+							});
+							
+							break;
+						case 2:
+						   break;
+						default:
+							break;
+						}
+						
+					}
+				}).run();
 			}
 		});
 		

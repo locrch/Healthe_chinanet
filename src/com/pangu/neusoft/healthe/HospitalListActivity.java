@@ -13,7 +13,11 @@ import com.pangu.neusoft.core.GET;
 import com.pangu.neusoft.core.WebService;
 import com.pangu.neusoft.core.models.Hospital;
 import com.pangu.neusoft.core.models.HospitalReq;
+import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.R.color;
+import com.pangu.neusoft.healthe.R.id;
+import com.pangu.neusoft.healthe.R.layout;
+import com.pangu.neusoft.healthe.R.menu;
 import com.pangu.neusoft.tools.AsyncBitmapLoader;
 import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
 

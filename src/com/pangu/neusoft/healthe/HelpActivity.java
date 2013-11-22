@@ -13,7 +13,7 @@ public class HelpActivity extends FatherActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_help);
 		
-		
+		setactivitytitle("预约指南");
 	}
 
 	
