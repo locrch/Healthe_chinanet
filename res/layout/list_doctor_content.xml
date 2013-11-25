@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     >
 
     <TextView
@@ -70,18 +70,59 @@
         android:id="@+id/schedule_list_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/doctor_list_image"
-        android:layout_toLeftOf="@+id/doctor_list_moreinfo"
-        android:layout_below="@+id/doctor_list_level"
-        android:orientation="vertical"
-         >
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/doctor_list_image"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:id="@+id/scheduledays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/scheduledetail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/doctor_list_image"
+        android:layout_below="@id/schedule_list_layout"
+        android:orientation="vertical" >
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/schedule_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/doctor_list_level"
+        android:layout_alignBottom="@+id/doctor_list_moreinfo"
         android:layout_toRightOf="@+id/doctor_list_image"
         android:text="没有排班表"
         android:textAppearance="?android:attr/textAppearanceSmall"

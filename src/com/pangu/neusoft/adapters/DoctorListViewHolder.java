@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;  
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;  
   
 public class DoctorListViewHolder {  
@@ -15,8 +16,10 @@ public class DoctorListViewHolder {
         private TextView idView;
         private TextView levelView;
         private LinearLayout scheduleView;
+        private LinearLayout scheduleDetailView;
         private TextView scheduletext;
         private TextView versionView;
+        private TableLayout scheduledays;
         
         private ImageView moreInfoView;
         
@@ -78,5 +81,20 @@ public class DoctorListViewHolder {
             }  
             return scheduleView;  
         } 
+        
+        public LinearLayout getScheduleDetailView() {  
+            if (scheduleDetailView == null) {  
+            	scheduleDetailView = (LinearLayout) baseView.findViewById(R.id.scheduledetail);  
+            }  
+            return scheduleDetailView;  
+        } 
+        
+        public TableLayout getScheduledays(){
+        	if (scheduledays == null) {  
+        		scheduledays = (TableLayout) baseView.findViewById(R.id.scheduledays);  
+            }  
+            return scheduledays;
+        	
+        }
   
 }  

@@ -15,6 +15,7 @@
         android:background="#F00"
         android:text="TextView"
         android:textColor="#FFF"
+        android:textSize="6dp"
         android:textStyle="bold" />
 
     <TextView
@@ -25,6 +26,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="18dp"
         android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+      />
 
 </RelativeLayout>

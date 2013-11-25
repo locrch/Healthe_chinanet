@@ -198,7 +198,7 @@ public class AreaListActivity extends FatherActivity {
 							
 						}else{
 						*/
-							startActivity(new Intent (AreaListActivity.this, BookingMainActivity.class));
+							startActivity(new Intent (AreaListActivity.this, HospitalListActivity.class));
 						//}
 					}
 				});

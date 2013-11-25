@@ -74,6 +74,10 @@ public class TabActivity3 extends Activity {
 		tab3_userchange.setOnClickListener(userchange_click);
 		tab3_cleanDB.setOnClickListener(cleanDB_click);
 		tab3_settextsize.setOnClickListener(settextsize_click);
+		
+		
+		editor.putString("now_state", "usersetting");
+		editor.commit();
 	}
 	OnClickListener settextsize_click = new OnClickListener()
 	{
@@ -100,6 +104,7 @@ public class TabActivity3 extends Activity {
 		@Override
 		public void onClick(View v) {
 			Intent intent=getIntent();
+			intent.putExtra("action", "info");
 			intent.setClass(TabActivity3.this, ListCardActivity.class);
 			startActivity(intent);
 		}

@@ -4,9 +4,12 @@ package com.pangu.neusoft.adapters;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;  
 import java.util.Map;
+import java.util.TreeMap;
 
 
 
@@ -17,6 +20,11 @@ import java.util.Map;
 
 import com.pangu.neusoft.core.models.ConnectDoctor;
 import com.pangu.neusoft.core.models.Schedule;
+import com.pangu.neusoft.core.models.ScheduleButton;
+import com.pangu.neusoft.healthcard.BookingAction;
+import com.pangu.neusoft.healthcard.CreateCardActivity;
+import com.pangu.neusoft.healthcard.ListCardActivity;
+import com.pangu.neusoft.healthcard.LoginActivity;
 import com.pangu.neusoft.healthe.DoctorDetailActivity;
 import com.pangu.neusoft.healthe.HospitalDetailActivity;
 import com.pangu.neusoft.healthe.R;
@@ -50,17 +58,27 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;  
 import android.widget.ArrayAdapter;  
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;  
 import android.widget.LinearLayout;
 import android.widget.ListView;  
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;  
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.Toast;
   
 public class DoctorListAdapter extends ArrayAdapter<DoctorList> {  
   
-          
-        private AsyncBitmapLoader asyncImageLoader;  
-  
+	 	SharedPreferences sp;
+	 	Editor editor;
+	 	 SortListByItem sort=new SortListByItem();
+	    
+        private AsyncBitmapLoader asyncImageLoader;
+      //  LinearLayout scheduleDetailLayout;
+       // private List<Schedule> scheduleListx;
+        
         public DoctorListAdapter(Activity activity, List<DoctorList> imageAndTexts) {  
             super(activity, 0, imageAndTexts);  
             
@@ -74,6 +92,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             // Inflate the views from XML  
             View rowView = convertView;  
             DoctorListViewHolder viewCache;  
+            
             if (rowView == null) {  
                 LayoutInflater inflater = activity.getLayoutInflater();  
                 rowView = inflater.inflate(R.layout.list_doctor_content, null);  
@@ -83,7 +102,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
                 viewCache = (DoctorListViewHolder) rowView.getTag();  
             }  
             final DoctorList doctorlist = getItem(position);  
-  
+            LayoutInflater inflater = activity.getLayoutInflater();
             // Load the image and set it on the ImageView  
             String imageUrl = doctorlist.getImageUrl();  
             
@@ -114,7 +133,9 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             }else{  
             	imageView.setImageBitmap(bitmap); 
             }  
-            SharedPreferences sp = activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
+            sp = activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
+            editor=sp.edit();
+            
             int width=sp.getInt("screen_width", 0);
             int height=sp.getInt("screen_height", 0);            
             imageView.getLayoutParams().width=width/6;
@@ -147,54 +168,245 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             
             //动态生成按钮
             
-            LinearLayout scheduleLayout=viewCache.getScheduleView();
+            //LinearLayout scheduleLayout=viewCache.getScheduleView();
+            TableLayout scheduleLayout=viewCache.getScheduledays();
             scheduleLayout.removeAllViews();
-            SortListByItem sort=new SortListByItem();
+            
+            LinearLayout scheduleDetailLayout=viewCache.getScheduleDetailView();
+            scheduleDetailLayout.removeAllViews();
+            
+           
             
             List<Schedule> scheduleList=doctorlist.getScheduleList();
             scheduleList=sort.sortScheduleByDay(scheduleList);
+            
             if(scheduleList!=null&&scheduleList.size()>0){
             	
-            	Map<String,String> maps=new LinkedHashMap<String,String>();
+            	
+            	//Map<String,String> maps=new LinkedHashMap<String,String>();
             
+            	List<String> daylist=new ArrayList<String>();
+            	
 	            for(Schedule schedule:scheduleList){
 	            	String day=schedule.getOutcallDate();
-	            	String number=schedule.getAvailableNum();
-	            	String now=maps.get(day);
-	            	if(now!=null){
-	            		int res=Integer.parseInt(now)+Integer.parseInt(number);
-	            		number=res+"";
-	            	}
-	            	maps.put(day, number);
+//	            	String number=schedule.getAvailableNum();
+//	            	String now=maps.get(day);
+//	            	if(now!=null){
+//	            		int res=Integer.parseInt(now)+Integer.parseInt(number);
+//	            		number=res+"";
+//	            	}
+//	            	maps.put(day, number);
+	            	daylist.add(day);
 	            }
 	            //maps.clear();//暂时不在列表显示排班表
 	            
-	            if(maps.size()>0){
-	            //int count=0;
-	            String scheduletext="可预约日期：\n";
-		            for (String key : maps.keySet()) {
-		            	scheduletext+=key+" ";
-		            	/*
-		            	if(count==Setting.schedule_show_num)
-		            		break;
-		                String value= maps.get(key);
-		                
-		                LayoutInflater inflater = activity.getLayoutInflater();  
-		                View scheduleView = inflater.inflate(R.layout.schedule_day_number, null); 
-		                TextView day=(TextView) scheduleView.findViewById(R.id.schedule_day);
-		                TextView number=(TextView) scheduleView.findViewById(R.id.schedule_number);
-		                day.setText(key);
-		                number.setText(value);                
-		                scheduleView.setPadding(2, 2, 2, 2);
-		                
-		                scheduleLayout.addView(scheduleView);
-		                
-		               count++;
-		               */                
-		            }
-		            TextView scheduleText=viewCache.getScheduleText();
-		            scheduleText.setText(scheduletext);//显示有排班的日期：
+	            
+//	            TreeMap<String,String> treemap = new TreeMap<String,String>(maps);
+//	            String[] alldays=new String[maps.size()];
+//	            Iterator it = treemap.entrySet().iterator();
+//	            int dayx=0;
+//	           
+//	    		  while (it.hasNext()){ 
+//		    		   Map.Entry entry =(Map.Entry) it.next();
+//		    		   String key = (String) entry.getKey();
+//		    		   alldays[dayx]=key;
+//		    		   dayx++;
+//	    		  }
+	            
+	         
+	            HashSet h  =   new  HashSet(daylist); 
+	            daylist.clear(); 
+	            daylist.addAll(h); 
+	            daylist=sort.sortScheduleByTime(daylist);
+	            
+	            int totaldays=daylist.size();
+	            
+	            
+	            int totalrows=totaldays/Setting.cols;
+	            if(totalrows%Setting.cols!=0){
+	            	totalrows+=1;
 	            }
+	            if(totalrows==0)
+	            	totalrows=1;
+	            
+	            int count=0;
+	            for(int i=0;i<totalrows;i++){
+	            	TableRow row = new TableRow(getContext());
+	            	row.setId(i);  
+	            	for(int j=0;j<Setting.cols;j++){
+	            		if(count<daylist.size()){	            		
+	            			String day=daylist.get(count);
+	            			
+	    	            	//TextView days=new TextView(getContext());
+	            			  
+	 		                View days = inflater.inflate(R.layout.schedule_day, null); 
+	 		                
+	 		                TextView dayview=(TextView) days.findViewById(R.id.schedule_day);
+	 		                
+	 		                dayview.setText(day);
+	    	            	
+	    	            	
+	    	            	final ScheduleButton newButtonInfo=new ScheduleButton();
+	   		                newButtonInfo.setScheduleList(scheduleList);
+	   		                newButtonInfo.setDay(day);
+	   		                newButtonInfo.setScheduleDetailLayout(scheduleDetailLayout);
+	    	            	
+	    	            	//days.setTag(newButtonInfo);
+	    	            	days.setOnClickListener(new OnClickListener(){
+	 							@Override
+	 							public void onClick(View arg0) {
+	 								  
+	 								// ScheduleButton newButtonInfo=( ScheduleButton)arg0.getTag();
+	 								 LinearLayout scheduleDetailLayout=newButtonInfo.getScheduleDetailLayout();
+	 								 scheduleDetailLayout.removeAllViews();
+	 								 List<Schedule> scheduleList=newButtonInfo.getScheduleList();
+	 								 String day=newButtonInfo.getDay();
+	 								//显示当日可排班内容
+	 								 
+	 								
+	 								//获得schedule内容。写到列表中
+	 								for(Schedule schedule:scheduleList){
+	 									Log.e("ScheduleList:",schedule.getDoctorName()+schedule.getDoctorId()+":"+schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
+	 									 scheduleList=sort.sortScheduleByDay(scheduleList);
+	 									if(schedule.getOutcallDate().equals(day)){
+	 										Button oneButton=new Button(scheduleDetailLayout.getContext());
+	 										oneButton.setPadding(10, 5, 10, 5);
+	 										oneButton.setText(schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
+	 										oneButton.setTag(schedule);
+	 										oneButton.setOnClickListener(new OnClickListener(){
+	 											@Override
+	 											public void onClick(View arg0) {
+	 												Schedule schedule=(Schedule)arg0.getTag();
+	 												String doctorId=schedule.getDoctorId();
+	 												String doctorName=schedule.getDoctorName();
+	 												editor.putString("now_state", "booking");
+	 												//记录医生信息要清空					 
+	 												editor.putString("doctorId", doctorId);
+	 												editor.putString("doctorName", doctorName);
+	 												editor.putString("SchState", schedule.getSchState());
+	 								      			editor.putString("ScheduleID", schedule.getScheduleID());
+	 								      			editor.putString("RegId", schedule.getRegId());
+	 								      			editor.putString("ReserveDate", schedule.getOutcallDate());
+	 								      			editor.putString("ReserveTime", schedule.getTimeRange());
+	 								      			editor.putString("IdType", "");
+	 								      			editor.putString("IdCode", "");
+													editor.commit();
+	 												//Log.e("erorr",schedule.getDoctorName()+schedule.getDoctorId()+":"+schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
+	 												if(sp.getString("username", "").equals("")){
+	 													Toast.makeText(activity, "请先登录", Toast.LENGTH_SHORT);
+	 													//if(!sp.getBoolean("loginsuccess", false)){
+	 														activity.startActivity(new Intent(activity,LoginActivity.class));
+	 													//}
+	 												}else{
+		 												if(!sp.getString("defaultcardno","").equals("")){
+		 													
+		 													editor.putString("owner", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner",""));
+		 													editor.putString("cardnum", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"cardnum",""));
+		 													editor.putString("cardtype", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"cardtype",""));
+		 													editor.putString("idnumber", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"idnumber",""));
+		 													editor.putString("idtype", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"idtype",""));
+		 													editor.putString("phonenumber", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"phonenumber",""));
+		 													editor.commit();
+		 													BookingAction action=new BookingAction(activity);
+		 													action.confirmBooking();
+		 												}else{
+	 														activity.startActivity(new Intent(activity,ListCardActivity.class));
+		 												}
+	 												}
+	 											}
+	 										});
+	 									
+	 										scheduleDetailLayout.addView(oneButton);
+	 										
+	 									}
+	 								}
+	 							}});
+	    	            	
+	    	            	row.addView(days);
+	    	            	count++;
+	            		}
+	            	}
+	            	scheduleLayout.addView(row);
+	            }
+	            
+//		            int count=0;
+//		            //int rowid=-1;
+//		            //String scheduletext="可预约日期：\n";
+//		           // TableRow row = new TableRow(getContext());
+//		            
+//		            for (String key : maps.keySet()) {
+//		            	//scheduletext+=key+" ";
+//		            	
+//		            	if(count==Setting.schedule_show_num)
+//		            		break;
+//		                String value= maps.get(key);
+//		                
+//		                LayoutInflater inflater = activity.getLayoutInflater();  
+//		                View scheduleView = inflater.inflate(R.layout.schedule_day_number, null); 
+//		                
+//		                TextView day=(TextView) scheduleView.findViewById(R.id.schedule_day);
+//		                TextView number=(TextView) scheduleView.findViewById(R.id.schedule_number);
+//		                day.setText(key);
+//		                
+//		                number.setText(value);
+//		                scheduleView.setPadding(2, 2, 2, 2);
+//		                
+//		                TableRow row = new TableRow(getContext());
+//		                row.addView(scheduleView);
+//		                row.setId(count);  
+//		                scheduleLayout.addView(row);
+//		                
+//		                
+//		                ScheduleButton newButtonInfo=new ScheduleButton();
+//		                newButtonInfo.setScheduleList(scheduleList);
+//		                newButtonInfo.setDay(key);
+//		                newButtonInfo.setScheduleDetailLayout(scheduleDetailLayout);
+//		                
+//		                scheduleView.setTag(newButtonInfo);
+//		                scheduleView.setOnClickListener(new OnClickListener(){
+//							@Override
+//							public void onClick(View arg0) {
+//								  
+//								 ScheduleButton newButtonInfo=( ScheduleButton)arg0.getTag();
+//								 LinearLayout scheduleDetailLayout=newButtonInfo.getScheduleDetailLayout();
+//								 scheduleDetailLayout.removeAllViews();
+//								 List<Schedule> scheduleList=newButtonInfo.getScheduleList();
+//								 String day=newButtonInfo.getDay();
+//								//显示当日可排班内容
+//								 
+//								
+//								//获得schedule内容。写到列表中
+//								for(Schedule schedule:scheduleList){
+//									Log.e("ScheduleList:",schedule.getDoctorName()+schedule.getDoctorId()+":"+schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
+//									if(schedule.getOutcallDate().equals(day)){
+//										Button oneButton=new Button(getContext());
+//										oneButton.setPadding(10, 5, 10, 5);
+//										oneButton.setText(schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
+//										oneButton.setTag(schedule);
+//										oneButton.setOnClickListener(new OnClickListener(){
+//											@Override
+//											public void onClick(View arg0) {
+//												Schedule schedule=(Schedule)arg0.getTag();
+//												Log.e("erorr",schedule.getDoctorName()+schedule.getDoctorId()+":"+schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
+//											}
+//										});
+//									
+//										scheduleDetailLayout.addView(oneButton);
+//									}
+//								}
+//							}});
+//		               count++;
+//		                  
+//		            }
+		            TextView scheduleText=viewCache.getScheduleText();
+		            scheduleText.setText("");//显示有排班的日期：
+		           // scheduleText.setVisibility(View.GONE);
+		            
+	           
+            } else{
+            	TextView scheduleText=viewCache.getScheduleText();
+	            scheduleText.setText("没有排班表");//显示有排班的日期：
+	          //  scheduleDetailLayout.setVisibility(View.GONE);
             }
            
            
@@ -250,6 +462,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             return rowView;  
         }  
   
+
      
-        
+ 
 }  

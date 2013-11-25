@@ -8,34 +8,46 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ListPeopleActivity" >
 
+    <LinearLayout
+        android:id="@+id/listcardbuttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/create_card_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_style"
+            android:text="添加健康卡" />
+
+        <Button
+            android:id="@+id/login_btn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_style"
+            android:text="更改用户" />
+
+    </LinearLayout>
+
     <ListView
         android:id="@+id/list_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/create_card_btn"
+        android:layout_below="@+id/listcardbuttons"
+        android:layout_marginTop="7dp"
         android:divider="#CFCFCF"
         android:dividerHeight="2dp" >
 
     </ListView>
 
-    <Button
-        android:id="@+id/create_card_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/list_card"
-        android:layout_marginTop="1dp"
-        android:text="添加健康卡" />
-
-    <Button
-        android:id="@+id/refresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/list_card"
-        android:layout_alignParentLeft="true"
-        android:text="刷新" />
-   
 </RelativeLayout>

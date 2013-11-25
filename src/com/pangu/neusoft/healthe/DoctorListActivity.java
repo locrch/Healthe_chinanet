@@ -243,7 +243,7 @@ public class DoctorListActivity extends FatherActivity {
 							editor.putString("doctorName", doctorName);
 							
 							editor.commit();
-							startActivity(new Intent (DoctorListActivity.this, ScheduleListActivity.class));
+							//startActivity(new Intent (DoctorListActivity.this, ScheduleListActivity.class));
 						
 					}
 				});

@@ -100,11 +100,11 @@ public class BookingMainActivity extends FatherActivity {
 		selecttext = (EditText) findViewById(R.id.search_text);
 		search_btn = (ImageButton) findViewById(R.id.search_btn);
 
-		select_spinner.getLayoutParams().width = width / 3;
-		select_spinner.getLayoutParams().height = height / 8;
+		//select_spinner.getLayoutParams().width = width / 3;
+		//select_spinner.getLayoutParams().height = height / 8;
 
-		selecttext.getLayoutParams().width=width / 2;
-		selecttext.getLayoutParams().height= height / 9;
+		//selecttext.getLayoutParams().width=width / 2;
+		//selecttext.getLayoutParams().height= height / 9;
 		//selecttext.setTextSize(width / fontsizex);
 		selecttext.clearFocus();
 
@@ -209,6 +209,8 @@ public class BookingMainActivity extends FatherActivity {
 				DialogShow.showDialog(BookingMainActivity.this, "请先选择医生");
 			} else {
 				// 启动预约
+				editor.putString("now_state", "booking");
+				editor.commit();
 				startActivity(new Intent(BookingMainActivity.this,
 						ScheduleListActivity.class));
 				

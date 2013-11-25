@@ -55,10 +55,10 @@ public class LoginActivity extends FatherActivity {
 		super.onCreate(savedInstanceState);
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
-		if(sp.getBoolean("loginsuccess", false)){
+		//if(sp.getBoolean("loginsuccess", false)){
 		//	startActivity(new Intent(LoginActivity.this,ListPeopleActivity.class));
 		//	finish();
-		}
+		//}
 		
 		
 		setContentView(R.layout.login_layout);

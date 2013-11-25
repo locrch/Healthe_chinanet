@@ -64,8 +64,7 @@ public class ListCardActivity extends FatherActivity {
 	private ProgressDialog mProgressDialog;
 	private ListView list; 
 	private Button create_card_btn;
-	private Button refresh_btn;
-	
+	private Button login_btn;
 	private Map<String,MedicalCard> cards=new HashMap<String,MedicalCard>();
 	
 	WebService service;
@@ -89,9 +88,9 @@ public class ListCardActivity extends FatherActivity {
 		setContentView(R.layout.activity_list_card);		
 		create_card_btn=(Button)findViewById(R.id.create_card_btn);
 		create_card_btn.setOnClickListener(addcard);
+		login_btn=(Button)findViewById(R.id.login_btn);
+		login_btn.setOnClickListener(login);
 		
-		refresh_btn=(Button)findViewById(R.id.refresh);
-		refresh_btn.setOnClickListener(refresh_click);
 		showListView();
 			
 
@@ -109,11 +108,14 @@ public class ListCardActivity extends FatherActivity {
 		
 	};
 	
-	OnClickListener refresh_click=new OnClickListener(){
+
+	OnClickListener login=new OnClickListener(){
 
 		@Override
 		public void onClick(View arg0) {
-			showListView();
+			// TODO Auto-generated method stub
+			 
+			 startActivity(new Intent(ListCardActivity.this,LoginActivity.class));
 		}
 		
 	};
@@ -184,7 +186,16 @@ public class ListCardActivity extends FatherActivity {
 							//showing+=(MedicalCardCode+"\n");//卡号
 							showing=Owner+showing;
 							cards.put(showing, card);
-							
+							editor.putString("card"+i+"_"+"owner", card.getOwner());
+							editor.putString("card"+i+"_"+"cardnum", card.getMedicalCardCode());
+							editor.putString("card"+i+"_"+"cardtype", card.getMedicalCardTypeID()+"");
+							editor.putString("card"+i+"_"+"idnumber", card.getOwnerIDCard());
+							editor.putString("card"+i+"_"+"idtype", "1");
+							editor.putString("card"+i+"_"+"phonenumber", card.getOwnerPhone());
+							if(sp.getString("defaultcardno", "").equals("")){
+								editor.putString("defaultcardno", "0");
+							}
+							editor.commit();
 							arr.add(showing);
 						
 							//hospitalList.add(map);
@@ -217,8 +228,11 @@ public class ListCardActivity extends FatherActivity {
 				        {    
 				            public void run()    
 				            {    
-				            	
-								showInList();   
+				            	showInList();
+				            	if( sp.getString("bookingcard", "").equals("yes")){
+				            		 editor.putString("bookingcard", "no");
+				            		 
+				            	}
 				            }    
 				    
 				        });   
@@ -263,8 +277,33 @@ public class ListCardActivity extends FatherActivity {
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			String namecard=(String)list.getItemAtPosition(arg2);
-			if(!namecard.equals("没有健康卡")){			
-				showCardDialog(namecard);
+			
+			
+			
+			if(!namecard.equals("没有健康卡")){
+				MedicalCard card=cards.get(namecard);
+				editor.putString("owner", card.getOwner());
+				editor.putString("cardnum", card.getMedicalCardCode());
+				editor.putString("cardtype", card.getMedicalCardTypeID()+"");
+				editor.putString("idnumber", card.getOwnerIDCard());
+				editor.putString("idtype", "1");
+				editor.putString("phonenumber", card.getOwnerPhone());
+				editor.commit();
+				
+				Log.e("erxsd:",sp.getString("now_state", ""));
+				if(sp.getString("now_state", "").equals("booking")){
+					BookingAction action=new BookingAction(ListCardActivity.this);
+					action.confirmBooking();
+				}else{
+					if(action!=null&&action.equals("history")){
+						Intent intent=new Intent();
+						intent.setClass(ListCardActivity.this, HistoryViewActivity.class);
+						intent.putExtra("username", sp.getString("owner", ""));
+						startActivity(intent);
+					}else{
+						showCardDialog(namecard);
+					}
+				}
 			}
 		     
 		}
@@ -288,7 +327,7 @@ public class ListCardActivity extends FatherActivity {
 				.setIcon(android.R.drawable.btn_star)
 				.setTitle("提示")
 				.setMessage("以下是针对健康卡的操作，请选择：")
-				.setPositiveButton("预约及详情",
+				.setPositiveButton("详情",
 						new android.content.DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog,
@@ -296,15 +335,6 @@ public class ListCardActivity extends FatherActivity {
 								dialog.dismiss();
 								Intent intent=new Intent();
 								intent.setClass(ListCardActivity.this, CardInfoActivity.class);
-								MedicalCard card=cards.get(name);
-								editor.putString("owner", card.getOwner());
-								editor.putString("cardnum", card.getMedicalCardCode());
-								editor.putString("cardtype", card.getMedicalCardTypeID()+"");
-								editor.putString("idnumber", card.getOwnerIDCard());
-								editor.putString("idtype", "1");
-								editor.putString("phonenumber", card.getOwnerPhone());
-								editor.commit();
-								
 								startActivity(intent);
 							}
 						})
