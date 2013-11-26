@@ -57,7 +57,7 @@
         <meta-data
             android:name="BaiduMobAd_STAT_ID"
             android:value="b68b8716d0" />
- <!-- abcd1234 -->
+        <!-- abcd1234 -->
         <!-- 渠道商编号 -->
         <meta-data
             android:name="BaiduMobAd_CHANNEL"
@@ -275,6 +275,14 @@
         <activity
             android:name="com.pangu.neusoft.healthe.TabActivity5"
             android:label="@string/title_activity_tab_activity5" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.SearchResActivity"
+            android:label="@string/title_activity_search_res"
+            android:parentActivityName="com.pangu.neusoft.healthe.FatherActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pangu.neusoft.healthe.FatherActivity" />
         </activity>
     </application>
 

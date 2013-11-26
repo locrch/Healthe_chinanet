@@ -30,12 +30,14 @@ import com.pangu.neusoft.core.models.DeleteCardReq;
 import com.pangu.neusoft.core.models.DepartmentReq;
 import com.pangu.neusoft.core.models.DoctorInfoReq;
 import com.pangu.neusoft.core.models.DoctorReq;
+import com.pangu.neusoft.core.models.FindDoctorListReq;
 import com.pangu.neusoft.core.models.HandleBooking;
 import com.pangu.neusoft.core.models.HospitalInfoReq;
 import com.pangu.neusoft.core.models.HospitalReq;
 import com.pangu.neusoft.core.models.Member;
 import com.pangu.neusoft.core.models.MemberReg;
 import com.pangu.neusoft.core.models.SchedulingReq;
+
 
 
 import android.util.Log;
@@ -151,6 +153,14 @@ public class WebService implements GET{
 		 return getSoapObject(request,"cancleBooking",envelope);
 	}
 	
+	public SoapObject findDoctorList(FindDoctorListReq req){		 
+		 //搜索医生列表
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName("findDoctorList"));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", FindDoctorListReq.class);
+		 return getSoapObject(request,"findDoctorList",envelope);
+	}
 	
 	public SoapObject getSoapObject(SoapObject request,String method,SoapSerializationEnvelope envelope){	         
 	        envelope.implicitTypes = true;

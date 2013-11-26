@@ -142,7 +142,7 @@ public class ListCardActivity extends FatherActivity {
 				req.setUserName(sp.getString("username", ""));
 				req.setAucode(GET.Aucode);
 				SoapObject  obj = service.getCardList(req);
-				Log.e("t",sp.getString("username", ""));
+				Log.e("user",sp.getString("username", ""));
 				if(obj!=null){
 					try{
 						SoapObject areaObject=(SoapObject)obj.getProperty("MedicalCards");

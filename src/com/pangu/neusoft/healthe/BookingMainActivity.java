@@ -3,6 +3,10 @@ package com.pangu.neusoft.healthe;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import org.ksoap2.serialization.SoapObject;
+
+import com.pangu.neusoft.core.WebService;
+import com.pangu.neusoft.core.models.FindDoctorListReq;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.R.color;
 import com.pangu.neusoft.healthe.R.drawable;
@@ -12,11 +16,13 @@ import com.pangu.neusoft.healthe.R.menu;
 import com.pangu.neusoft.tools.DensityUtil;
 import com.pangu.neusoft.tools.DialogShow;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -45,7 +51,7 @@ public class BookingMainActivity extends FatherActivity {
 	private EditText selecttext;
 	private ImageButton search_btn;
 	private Spinner select_spinner;
-
+	
 	private TextView welcome;
 	private Button select_area_btn;
 	
@@ -77,7 +83,7 @@ public class BookingMainActivity extends FatherActivity {
 	private String doctorName;
 	private ImageView handler;
 	private SlidingDrawer slidingDrawer1;
-	
+	private ProgressDialog mProgressDialog;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -85,7 +91,7 @@ public class BookingMainActivity extends FatherActivity {
 		this.setactivitytitle("预约挂号");
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
-
+		
 		getScreenSize();
 
 		select_spinner = (Spinner) findViewById(R.id.spinner1);
@@ -153,6 +159,8 @@ public class BookingMainActivity extends FatherActivity {
 		doctor.getLayoutParams().height= height / 8;
 		doctor.setOnClickListener(select_doctor_click);
 		
+		search_btn.setOnClickListener(search_btn_click);
+		
 		booking = (Button) findViewById(R.id.booking_confirm_btn);
 		//booking.setTextSize(width / fontsizex);
 		booking.setHeight(height / 10);
@@ -199,7 +207,29 @@ public class BookingMainActivity extends FatherActivity {
 		getDataFromSP();
 
 	}
-	
+	//搜索功能
+	OnClickListener search_btn_click=new OnClickListener()
+	{
+		
+		@Override
+		public void onClick(View v)
+		{
+			// TODO Auto-generated method stub
+			String serachdoctorname = selecttext.getText().toString();
+			
+			editor.putString("serach_doc", serachdoctorname);
+			
+			editor.commit();
+			
+			Intent intent = new Intent(BookingMainActivity.this,DoctorListActivity.class);
+			
+			intent.setFlags(0);
+			
+			intent.putExtra("who", "serach");
+			
+			startActivity(intent);
+		}
+	};
 	//Booking
 	OnClickListener booking_btn_click=new OnClickListener(){
 
@@ -260,8 +290,11 @@ public class BookingMainActivity extends FatherActivity {
 							DialogShow.showDialog(BookingMainActivity.this, "请先选择科室");
 						} else {
 							// 启动选择医生
-							startActivity(new Intent(BookingMainActivity.this,
-									DoctorListActivity.class));
+							Intent intent = new Intent(BookingMainActivity.this,
+									DoctorListActivity.class);
+							
+							intent.putExtra("who", "");
+							startActivity(intent);
 						}
 					}
 				};

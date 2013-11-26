@@ -42,5 +42,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_tab_activity4">增值服务</string>
     <string name="title_activity_tab_activity5">增值服务</string>
+    <string name="title_activity_search_res">搜索结果</string>
 
 </resources>

@@ -176,8 +176,14 @@ public class DepartmentListActivity extends FatherActivity {
 							editor.putString("doctorName", "请选择医生");
 							
 							editor.commit();
-							startActivity(new Intent (DepartmentListActivity.this, DoctorListActivity.class));
+							
+							Intent intent = new Intent (DepartmentListActivity.this, DoctorListActivity.class);
+							
+							intent.putExtra("who", "dep");
+							
+							startActivity(intent);
 						
+							
 					}
 				});
 			}

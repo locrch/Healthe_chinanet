@@ -58,6 +58,10 @@ public interface GET
 			
 			MethodName.put("getMemberCardList", "GetMemberMedicalCard");
 			
+			MethodName.put("findDoctorList", "FindDoctorList");
+			
+			MethodName.put("findHospitalList", "FindHospitalList");
+			
 			return MethodName.get(i);
 		}
 		
