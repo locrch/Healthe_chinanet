@@ -31,12 +31,14 @@ import com.pangu.neusoft.core.models.DepartmentReq;
 import com.pangu.neusoft.core.models.DoctorInfoReq;
 import com.pangu.neusoft.core.models.DoctorReq;
 import com.pangu.neusoft.core.models.FindDoctorListReq;
+import com.pangu.neusoft.core.models.FindHospitalListReq;
 import com.pangu.neusoft.core.models.HandleBooking;
 import com.pangu.neusoft.core.models.HospitalInfoReq;
 import com.pangu.neusoft.core.models.HospitalReq;
 import com.pangu.neusoft.core.models.Member;
 import com.pangu.neusoft.core.models.MemberReg;
 import com.pangu.neusoft.core.models.SchedulingReq;
+
 
 
 
@@ -160,6 +162,15 @@ public class WebService implements GET{
 		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 	     envelope.addMapping(NAMESPACE, "req", FindDoctorListReq.class);
 		 return getSoapObject(request,"findDoctorList",envelope);
+	}
+	
+	public SoapObject findHospitalList(FindHospitalListReq req){		 
+		 //搜索医院列表
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName("findHospitalList"));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", FindHospitalListReq.class);
+		 return getSoapObject(request,"findHospitalList",envelope);
 	}
 	
 	public SoapObject getSoapObject(SoapObject request,String method,SoapSerializationEnvelope envelope){	         

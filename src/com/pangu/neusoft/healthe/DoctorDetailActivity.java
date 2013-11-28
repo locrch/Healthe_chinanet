@@ -76,7 +76,7 @@ public class DoctorDetailActivity extends FatherActivity {
 	private TextView doctorlevelText;
 	private TextView doctorInfoText;
 	private LinearLayout scheduleTableLayout;
-	
+	private TextView doctor_detail_department_grade,doctor_detail_hospital_grade;
 	private AsyncBitmapLoader asyncImageLoader; 
 	
 	
@@ -99,6 +99,8 @@ public class DoctorDetailActivity extends FatherActivity {
 		doctorlevelText=(TextView)findViewById(R.id.doctor_detail_level_grade);
 		doctorInfoText=(TextView)findViewById(R.id.doctor_detail_intro);
 		scheduleTableLayout=(LinearLayout)findViewById(R.id.doctor_detail_schedule_table);
+		doctor_detail_department_grade=(TextView)findViewById(R.id.doctor_detail_department_grade);
+		doctor_detail_hospital_grade=(TextView)findViewById(R.id.doctor_detail_hospital_grade);
 		
 		pic=(ImageView)findViewById(R.id.doctor_detail_pictureurl);
 		asyncImageLoader = new AsyncBitmapLoader();  
@@ -168,6 +170,7 @@ public class DoctorDetailActivity extends FatherActivity {
 						String doctorName=areaObject.getProperty("doctorName").toString();
 						String sex=areaObject.getProperty("sex").toString();
 						String title=areaObject.getProperty("title").toString();
+						
 						String info="";
 						try{
 							info = areaObject.getProperty("info").toString();

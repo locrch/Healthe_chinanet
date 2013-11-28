@@ -11,6 +11,7 @@ import com.pangu.neusoft.adapters.HospitalList;
 import com.pangu.neusoft.adapters.HospitalListAdapter;
 import com.pangu.neusoft.core.GET;
 import com.pangu.neusoft.core.WebService;
+import com.pangu.neusoft.core.models.FindHospitalListReq;
 import com.pangu.neusoft.core.models.Hospital;
 import com.pangu.neusoft.core.models.HospitalReq;
 import com.pangu.neusoft.healthe.R;
@@ -51,7 +52,7 @@ public class HospitalListActivity extends FatherActivity {
 	SharedPreferences sp;
 	private ProgressDialog mProgressDialog;
 	Editor editor;
-	
+	private String who;
 	public final class ViewHolder{  
         TextView texta;  
     }
@@ -83,6 +84,71 @@ public class HospitalListActivity extends FatherActivity {
 	        }			
 			@Override
 			protected Boolean doInBackground(Void... params){
+				
+				Intent intent = getIntent();
+
+				who = intent.getExtras().getString("who");
+				
+				if (who.equals("serach")){
+					FindHospitalListReq req=new FindHospitalListReq();
+					
+					req.setHospitalName(sp.getString("serach_hosp", ""));
+					
+					
+					req.setAucode(GET.Aucode);
+					
+					SoapObject  obj = service.findHospitalList(req);
+					
+					if(obj!=null){
+						
+						SoapObject areaObject=(SoapObject)obj.getProperty("hospitalList");
+						for(int i=0;i <areaObject.getPropertyCount();i++){ 
+							
+							SoapObject soapChilds =(SoapObject)areaObject.getProperty(i); 
+							String hospitalId=soapChilds.getProperty("hospitalId").toString();
+							String hospitalName=soapChilds.getProperty("hospitalName").toString();
+							String grade=soapChilds.getProperty("grade").toString();
+							String level=soapChilds.getProperty("level").toString();
+							String address=soapChilds.getProperty("address").toString();
+							String version=soapChilds.getProperty("version").toString();
+							
+							String imageUrl;
+							try{
+								if(soapChilds.getProperty("pictureUrl")==null){
+									imageUrl=Setting.DEFAULT_DOC_url;
+									
+								}else{
+									imageUrl=soapChilds.getProperty("pictureUrl").toString();
+								}
+							}catch(Exception ex){
+								imageUrl=Setting.DEFAULT_DOC_url;
+							}
+							
+							HospitalList map=new HospitalList();						
+							map.setId(hospitalId);
+							map.setText(hospitalName);
+							map.setImageUrl(imageUrl);
+							map.setGrade(grade);
+							map.setLevel(level);
+							map.setAddress(address);
+							map.setVersion(version);
+							
+							hospitalList.add(map);
+						}					
+						String resultCode=obj.getProperty("resultCode").toString();//0000成功1111报错
+						String msg=obj.getProperty("msg").toString();//返回的信息
+						
+						
+						Log.e("error1", resultCode);
+						Log.e("error2", msg);
+						
+						return true;
+					}
+					else
+						return false;
+					
+				}
+				
 				HospitalReq req=new HospitalReq();
 				
 				req.setAreaID(sp.getString("areaId", ""));

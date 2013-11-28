@@ -42,8 +42,10 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -128,7 +130,35 @@ public class BookingMainActivity extends FatherActivity {
 		select_spinner.setAdapter(adapter);
 		selecttext = (EditText) findViewById(R.id.search_text);
 		search_btn = (ImageButton) findViewById(R.id.search_btn);
+		
+		select_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+		{
 
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3)
+			{
+				// TODO Auto-generated method stub
+				if (arg2 ==0)
+				{
+					selecttext.setHint("请输入医生姓名");
+					search_btn.setOnClickListener(search_btn_doctor_click);
+				}
+				else {
+					selecttext.setHint("请输入医院名称");
+					search_btn.setOnClickListener(search_btn_hospital_click);
+				}
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0)
+			{
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		
 		//select_spinner.getLayoutParams().width = width / 3;
 		//select_spinner.getLayoutParams().height = height / 8;
 
@@ -182,7 +212,7 @@ public class BookingMainActivity extends FatherActivity {
 		doctor.getLayoutParams().height= height / 8;
 		doctor.setOnClickListener(select_doctor_click);
 		
-		search_btn.setOnClickListener(search_btn_click);
+		search_btn.setOnClickListener(search_btn_doctor_click);
 		
 		//booking = (Button) findViewById(R.id.booking_confirm_btn);
 		//booking.setTextSize(width / fontsizex);
@@ -449,8 +479,8 @@ public class BookingMainActivity extends FatherActivity {
 			setHistory();
 		}
 	}
-	//搜索功能
-	OnClickListener search_btn_click=new OnClickListener()
+	//搜索医生功能
+	OnClickListener search_btn_doctor_click=new OnClickListener()
 	{
 		
 		@Override
@@ -472,6 +502,30 @@ public class BookingMainActivity extends FatherActivity {
 			startActivity(intent);
 		}
 	};
+	//搜索医院功能
+		OnClickListener search_btn_hospital_click=new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				// TODO Auto-generated method stub
+				String serachhospitalname = selecttext.getText().toString();
+				
+				editor.putString("serach_hosp", serachhospitalname);
+				
+				editor.commit();
+				
+				Intent intent = new Intent(BookingMainActivity.this,HospitalListActivity.class);
+				
+				intent.setFlags(0);
+				
+				intent.putExtra("who", "serach");
+				
+				startActivity(intent);
+			}
+		};
+	
 	//Booking
 	OnClickListener booking_btn_click=new OnClickListener(){
 

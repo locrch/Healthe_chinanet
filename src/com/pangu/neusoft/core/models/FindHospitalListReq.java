@@ -5,49 +5,37 @@ import java.util.Hashtable;
 import org.ksoap2.serialization.KvmSerializable;
 import org.ksoap2.serialization.PropertyInfo;
 
-public class FindDoctorListReq implements KvmSerializable 
+public class FindHospitalListReq implements KvmSerializable
 {
-	private String HospitalId,DepartmentId,DoctorName,Aucode;
-	
-	
-	
-	public String getHospitalId()
+	private String AreaID,HospitalName,Aucode;
+	public String getAreaID()
 	{
-		return HospitalId;
+		return AreaID;
 	}
 
-	public void setHospitalId(String hospitalId)
+	public void setAreaID(String areaID)
 	{
-		HospitalId = hospitalId;
+		AreaID = areaID;
 	}
 
-	public String getDepartmentId()
+	public String getHospitalName()
 	{
-		return DepartmentId;
+		return HospitalName;
 	}
 
-	public void setDepartmentId(String departmentId)
+	public void setHospitalName(String hospitalName)
 	{
-		DepartmentId = departmentId;
+		HospitalName = hospitalName;
 	}
 
-	public String getDoctorName()
+	public String getAucode()
 	{
-		return DoctorName;
-	}
-
-	public void setDoctorName(String doctorName)
-	{
-		DoctorName = doctorName;
-	}
-	
-	
-	public String getAucode() { 
 		return Aucode;
 	}
 
-	public void setAucode(String Aucode) { 
-		this.Aucode = Aucode;
+	public void setAucode(String aucode)
+	{
+		Aucode = aucode;
 	}
 
 	@Override
@@ -56,14 +44,12 @@ public class FindDoctorListReq implements KvmSerializable
 		// TODO Auto-generated method stub
 		switch(arg0) {
 		case 0:
-			return HospitalId;
+			return AreaID;
 		case 1:
-			return DepartmentId;
+			return HospitalName;
 		case 2:
-			return DoctorName;
-		case 3:
 			return Aucode;
-	}
+		}
 		return null;
 	}
 
@@ -71,7 +57,7 @@ public class FindDoctorListReq implements KvmSerializable
 	public int getPropertyCount()
 	{
 		// TODO Auto-generated method stub
-		return 4;
+		return 3;
 	}
 
 	@Override
@@ -81,17 +67,13 @@ public class FindDoctorListReq implements KvmSerializable
 		switch (index) {
 		case 0:
 			info.type = PropertyInfo.STRING_CLASS;
-			info.name = "HospitalId";
+			info.name = "AreaID";
 			break;
 		case 1:
 			info.type = PropertyInfo.STRING_CLASS;
-			info.name = "DepartmentId";
+			info.name = "HospitalName";
 			break;
 		case 2:
-			info.type = PropertyInfo.STRING_CLASS;
-			info.name = "DoctorName";
-			break;
-		case 3:
 			info.type = PropertyInfo.STRING_CLASS;
 			info.name = "Aucode";
 			break;
@@ -106,15 +88,12 @@ public class FindDoctorListReq implements KvmSerializable
 		// TODO Auto-generated method stub
 		switch (index) {
 		case 0:
-			HospitalId = value.toString();
+			AreaID = value.toString();
 		break;
 		case 1:
-			DepartmentId = value.toString();
+			HospitalName = value.toString();
 		break;
 		case 2:
-			DoctorName = value.toString();
-		break;
-		case 3:
 			Aucode = value.toString();
 		break;
 		default:

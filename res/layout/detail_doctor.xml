@@ -30,7 +30,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/button_textsize"
                 android:text="预约挂号" 
-                android:background="@drawable/button_style"/>
+                android:background="@drawable/button_style"
+                android:visibility="gone"/>
 			<TextView android:textSize="@dimen/detail_content_textsize"
 				    android:id="@+id/doctor_detail_id"
 				    android:layout_width="match_parent"
@@ -48,7 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
-                    android:text="名称： " />
+                    android:text="姓名： " />
 
                 <TextView android:textSize="@dimen/detail_content_textsize"
                     android:id="@+id/doctor_detail_name"
@@ -82,7 +83,51 @@
                     android:text="加载中...." />
 
             </LinearLayout>
+			
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:layout_margin="2dp">
 
+                <TextView android:textSize="@dimen/detail_content_textsize"
+                    android:id="@+id/doctor_detail_department_grade_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:text="科室： " />
+
+                <TextView android:textSize="@dimen/detail_content_textsize"
+                    android:id="@+id/doctor_detail_department_grade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="加载中...." />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:layout_margin="2dp">
+
+                <TextView android:textSize="@dimen/detail_content_textsize"
+                    android:id="@+id/doctor_detail_hospital_grade_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:text="医院： " />
+
+                <TextView android:textSize="@dimen/detail_content_textsize"
+                    android:id="@+id/doctor_detail_hospital_grade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="加载中...." />
+
+            </LinearLayout>
+            
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,7 +172,12 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="排班信息：" />
-
+			<TextView android:textSize="@dimen/detail_content_textsize"
+                android:id="@+id/doctor_detail_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="(暂无排班信息)" />
         </LinearLayout>
 
         <LinearLayout

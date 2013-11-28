@@ -142,7 +142,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/button_style"
-                    android:text="预约挂号" />
+                    android:text="预约挂号"
+                    android:visibility="gone" />
 
                 <Button
                     android:id="@+id/showhistory"
@@ -150,7 +151,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/button_style"
-                    android:text="预约记录" />
+                    android:text="预约记录"
+                    android:visibility="gone" />
 
             </LinearLayout>
 

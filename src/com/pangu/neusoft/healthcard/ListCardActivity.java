@@ -46,6 +46,7 @@ import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -53,8 +54,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.SlidingDrawer;
 
 import com.pangu.neusoft.healthe.FatherActivity;
 import com.pangu.neusoft.tools.DialogShow;
@@ -66,7 +71,10 @@ public class ListCardActivity extends FatherActivity {
 	private Button create_card_btn;
 	private Button login_btn;
 	private Map<String,MedicalCard> cards=new HashMap<String,MedicalCard>();
-	
+	private LinearLayout add_card_help;
+	private RelativeLayout activity_list_card;
+	private SlidingDrawer slidingDrawer1;
+	private ImageView handler_btn;
 	WebService service;
 	String action="history";
 	  List<String> arr=new ArrayList<String>();
@@ -82,10 +90,14 @@ public class ListCardActivity extends FatherActivity {
 		}
 		service=new WebService();
 		
-
 		Intent intent = getIntent();		
 		action=intent.getStringExtra("action");		
-		setContentView(R.layout.activity_list_card);		
+		setContentView(R.layout.activity_list_card);
+		
+		activity_list_card = (RelativeLayout)findViewById(R.id.activity_list_card);
+		add_card_help = (LinearLayout)findViewById(R.id.add_card_help);
+		slidingDrawer1=(SlidingDrawer)findViewById(R.id.slidingDrawer2);
+		handler_btn = (ImageView)findViewById(R.id.handle_btn);
 		create_card_btn=(Button)findViewById(R.id.create_card_btn);
 		create_card_btn.setOnClickListener(addcard);
 		login_btn=(Button)findViewById(R.id.login_btn);
@@ -93,7 +105,18 @@ public class ListCardActivity extends FatherActivity {
 		
 		showListView();
 			
-
+		slidingDrawer1.setOnDrawerOpenListener(new android.widget.SlidingDrawer.OnDrawerOpenListener() {		 
+            public void onDrawerOpened() {// 当抽屉打开时执行此操作  
+            	handler_btn.setImageResource(R.drawable.button_style);
+            	
+            }  
+        }); 
+		
+		slidingDrawer1.setOnDrawerCloseListener(new android.widget.SlidingDrawer.OnDrawerCloseListener() { 
+            public void onDrawerClosed() {// 抽屉关闭时执行此操作 
+            	handler_btn.setImageResource(R.drawable.button_style);
+            } 
+        });
 	}
 
 	
@@ -197,13 +220,15 @@ public class ListCardActivity extends FatherActivity {
 							}
 							editor.commit();
 							arr.add(showing);
-						
+							
 							//hospitalList.add(map);
 						}		
 					
 					}catch(Exception ex){
 						Log.e("error",ex.toString());
-						arr.add("没有健康卡");
+						arr.add("请添加健康卡");
+						
+						
 					}
 					String resultCode=obj.getProperty("resultCode").toString();//0000成功1111报错
 					String msg=obj.getProperty("msg").toString();//返回的信息
@@ -239,6 +264,7 @@ public class ListCardActivity extends FatherActivity {
 						t.cancel(); 
 					}
 				}, Setting.dialogtimeout+1000);
+				
 				
 			}
 			@Override
@@ -280,7 +306,7 @@ public class ListCardActivity extends FatherActivity {
 			
 			
 			
-			if(!namecard.equals("没有健康卡")){
+			if(!namecard.equals("请添加健康卡")){
 				MedicalCard card=cards.get(namecard);
 				editor.putString("owner", card.getOwner());
 				editor.putString("cardnum", card.getMedicalCardCode());

@@ -56,7 +56,7 @@ public class DoctorListActivity extends FatherActivity
 	SharedPreferences sp;
 	private ProgressDialog mProgressDialog;
 	Editor editor;
-	String who;
+	private String who;
 
 	public final class ViewHolder
 	{
