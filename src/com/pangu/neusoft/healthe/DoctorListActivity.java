@@ -108,6 +108,8 @@ public class DoctorListActivity extends FatherActivity
 
 					req.setDoctorName(sp.getString("serach_doc", ""));
 					
+					req.setAucode(GET.Aucode);
+
 					SoapObject obj = service.findDoctorList(req);
 
 					if (obj != null)
