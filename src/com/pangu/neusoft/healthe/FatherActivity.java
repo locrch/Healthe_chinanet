@@ -115,6 +115,8 @@ public class FatherActivity extends Activity
 		}
 	}
 	
+	
+	
 	public void NetWorkStatus(Context context) {
 		/*
 		 * 本方法实现判断网络连接功能，并可点击跳转到网络设置
@@ -158,3 +160,4 @@ public class FatherActivity extends Activity
 		
     }
 }
+	
