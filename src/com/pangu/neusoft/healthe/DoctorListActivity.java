@@ -102,8 +102,7 @@ public class DoctorListActivity extends FatherActivity
 
 				who = intent.getExtras().getString("who");
 				
-				if (who.equals("serach"))
-				{
+				if (who.equals("serach")){
 					FindDoctorListReq req = new FindDoctorListReq();
 
 					req.setDoctorName(sp.getString("serach_doc", ""));

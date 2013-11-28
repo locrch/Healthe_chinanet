@@ -284,6 +284,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pangu.neusoft.healthe.FatherActivity" />
         </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.BookingConfirmActivity"
+            android:label="@string/title_activity_booking_confirm" >
+        </activity>
     </application>
 
 </manifest>

@@ -42,6 +42,7 @@ import com.pangu.neusoft.tools.SortListByItem;
 
 
 import android.R.integer;
+import android.annotation.SuppressLint;
 import android.app.Activity;  
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -74,6 +75,9 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
 	 	SharedPreferences sp;
 	 	Editor editor;
 	 	 SortListByItem sort=new SortListByItem();
+	 	 View nowButton;
+	 	 boolean showing=false;
+	    List<LinearLayout> alllayout=new ArrayList<LinearLayout>();
 	    
         private AsyncBitmapLoader asyncImageLoader;
       //  LinearLayout scheduleDetailLayout;
@@ -175,7 +179,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             LinearLayout scheduleDetailLayout=viewCache.getScheduleDetailView();
             scheduleDetailLayout.removeAllViews();
             
-           
+                     
             
             List<Schedule> scheduleList=doctorlist.getScheduleList();
             scheduleList=sort.sortScheduleByDay(scheduleList);
@@ -250,15 +254,28 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
 	   		                newButtonInfo.setScheduleList(scheduleList);
 	   		                newButtonInfo.setDay(day);
 	   		                newButtonInfo.setScheduleDetailLayout(scheduleDetailLayout);
-	    	            	
+	   		                alllayout.add((LinearLayout)days.findViewById(R.id.schedule_day_btn_set));
+	   		                
 	    	            	//days.setTag(newButtonInfo);
 	    	            	days.setOnClickListener(new OnClickListener(){
-	 							@Override
+	 							@SuppressLint("NewApi")
+								@Override
 	 							public void onClick(View arg0) {
-	 								  
-	 								// ScheduleButton newButtonInfo=( ScheduleButton)arg0.getTag();
 	 								 LinearLayout scheduleDetailLayout=newButtonInfo.getScheduleDetailLayout();
 	 								 scheduleDetailLayout.removeAllViews();
+	 								 for(LinearLayout layout:alllayout){
+	 									layout.setBackgroundDrawable(layout.getResources().getDrawable(R.drawable.schedule_btn_style_layout));
+	 								 }
+	 								 LinearLayout layout=(LinearLayout)arg0.findViewById(R.id.schedule_day_btn_set);
+	 								  if(arg0.equals(nowButton)&&showing==true){
+	 									 nowButton=arg0;
+	 									  showing=false;
+	 								  }else{
+	 								 nowButton=arg0;
+	 								showing=true;
+	 								layout.setBackgroundDrawable(layout.getResources().getDrawable(R.drawable.schedule_btn_style_layout_click));
+	 								// ScheduleButton newButtonInfo=( ScheduleButton)arg0.getTag();
+	 								
 	 								 List<Schedule> scheduleList=newButtonInfo.getScheduleList();
 	 								 String day=newButtonInfo.getDay();
 	 								//显示当日可排班内容
@@ -315,10 +332,11 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
 	 												}
 	 											}
 	 										});
-	 									
-	 										scheduleDetailLayout.addView(oneButton);
-	 										
-	 									}
+		 									
+		 										scheduleDetailLayout.addView(oneButton);
+		 										
+		 									}
+		 								}
 	 								}
 	 							}});
 	    	            	
@@ -416,7 +434,7 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
 				@Override
 				public void onClick(View v) {
 					// 显示详细内容
-					if(activity.getLocalClassName().equals("DoctorListActivity")){
+					if(activity.getLocalClassName().equals("DoctorListActivity")||activity.getLocalClassName().equals("BookingMainActivity")){
 						Intent intent=new Intent(activity,DoctorDetailActivity.class);
 						intent.putExtra("doctorId", doctorlist.getId());
 						intent.putExtra("doctorVersion", doctorlist.getVersion());

@@ -1,12 +1,22 @@
 package com.pangu.neusoft.healthe;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import org.ksoap2.serialization.SoapObject;
 
+import com.pangu.neusoft.adapters.DoctorList;
+import com.pangu.neusoft.adapters.DoctorListAdapter;
+import com.pangu.neusoft.core.GET;
 import com.pangu.neusoft.core.WebService;
+import com.pangu.neusoft.core.models.DoctorInfoReq;
+import com.pangu.neusoft.core.models.DoctorReq;
 import com.pangu.neusoft.core.models.FindDoctorListReq;
+import com.pangu.neusoft.core.models.Schedule;
+import com.pangu.neusoft.db.DBManager;
+import com.pangu.neusoft.healthcard.ShowHistoryActivity;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.R.color;
 import com.pangu.neusoft.healthe.R.drawable;
@@ -29,20 +39,24 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.SlidingDrawer;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 @SuppressLint("ResourceAsColor")
 public class BookingMainActivity extends FatherActivity {
@@ -61,9 +75,9 @@ public class BookingMainActivity extends FatherActivity {
 	private EditText department;
 	private ImageView third;
 	private EditText doctor;
-	
-	private Button booking;
-
+	private DBManager mgr;
+	//private Button booking;
+	private int countTimes=0;
 	private SlidingDrawer sd;
 	private TextView message;
 	private int width;
@@ -72,7 +86,8 @@ public class BookingMainActivity extends FatherActivity {
 	
 	private SharedPreferences sp;
 	private Editor editor;
-
+	List<DoctorList> doctorList;
+	ListView doctorlistView;
 	private String areaId;
 	private String areaName;
 	private String hospitalId;
@@ -84,6 +99,9 @@ public class BookingMainActivity extends FatherActivity {
 	private ImageView handler;
 	private SlidingDrawer slidingDrawer1;
 	private ProgressDialog mProgressDialog;
+	
+	WebService service;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -91,12 +109,17 @@ public class BookingMainActivity extends FatherActivity {
 		this.setactivitytitle("预约挂号");
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
-		
+		doctorlistView = (ListView) findViewById(R.id.listHistory);
+		doctorList = new ArrayList<DoctorList>();
+		service = new WebService();
 		getScreenSize();
 
 		select_spinner = (Spinner) findViewById(R.id.spinner1);
 		SpinnerAdapter adapter = new SpinnerAdapter(this,
 				android.R.layout.simple_spinner_item, select);
+		
+		
+		mgr=new DBManager(BookingMainActivity.this);
 		
 		
 		
@@ -161,10 +184,10 @@ public class BookingMainActivity extends FatherActivity {
 		
 		search_btn.setOnClickListener(search_btn_click);
 		
-		booking = (Button) findViewById(R.id.booking_confirm_btn);
+		//booking = (Button) findViewById(R.id.booking_confirm_btn);
 		//booking.setTextSize(width / fontsizex);
-		booking.setHeight(height / 10);
-		booking.setOnClickListener(booking_btn_click);
+		//booking.setHeight(height / 10);
+		//booking.setOnClickListener(booking_btn_click);
 		
 		message = (TextView) findViewById(R.id.messages);
 		message.setText("1.每月爽约次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"2.每周累计主动取消次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"3.同一就诊人在同一就诊日、同一医院、同一医生只能预约1次。"+"\n"+"\n"+"4.同一就诊人在同一就诊日、同一医院只能预约2次。"+"\n"+"\n"+"5.同一就诊人每月预约不能超过6次（医院临时停改诊除外）。");
@@ -196,16 +219,235 @@ public class BookingMainActivity extends FatherActivity {
             public void onDrawerClosed() {// 抽屉关闭时执行此操作 
             	handler.setImageResource(R.drawable.handle_down);
             } 
-        }); 
+        });
+		
+		
 		
 		
 	}
 
+	public void setHistory(){
+		doctorList.clear();
+	
+		mProgressDialog = new ProgressDialog(BookingMainActivity.this);
+		mProgressDialog.setMessage("正在加载数据...");
+		mProgressDialog.setIndeterminate(false);
+		mProgressDialog.setCanceledOnTouchOutside(false);// 设置进度条是否可以按退回键取消
+		mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		
+		new AsyncTask<Void, Void, Boolean>()
+		{
+
+			@Override
+			protected void onPreExecute()
+			{
+				super.onPreExecute();
+				mProgressDialog.show();
+			}
+
+			@Override
+			protected Boolean doInBackground(Void... params)
+			{
+				DoctorInfoReq req=new DoctorInfoReq();
+				req.setHospitalId(hospitalId);
+				req.setDoctorId(doctorId);
+				req.setAucode(GET.Aucode);
+				SoapObject  obj = service.getDoctorDetail(req);
+				
+						
+				
+				if (obj != null)
+				{
+					SoapObject areaObject=(SoapObject)obj.getProperty("doctordetail");					
+					String doctorId=areaObject.getProperty("doctorId").toString();
+					String doctorName=areaObject.getProperty("doctorName").toString();
+					String sex=areaObject.getProperty("sex").toString();
+					String title=areaObject.getProperty("title").toString();
+					String info="";
+			
+
+					//SoapObject areaObject = (SoapObject) obj.getProperty("doctorList");
+				//	for (int i = 0; i < areaObject.getPropertyCount(); i++)	{
+
+						//SoapObject soapChilds = (SoapObject) areaObject.getProperty(i);
+						//String doctorId = soapChilds.getProperty("doctorId").toString();
+						//String doctorName = soapChilds.getProperty("doctorName").toString();
+						//String sex = soapChilds.getProperty("sex").toString();
+						//String title = soapChilds.getProperty("title").toString();
+						// String
+						// info=soapChilds.getProperty("info").toString();
+						String version = areaObject.getProperty("version").toString();
+
+						String imageUrl;
+
+						try
+						{
+							if (areaObject.getProperty("pictureUrl") == null)
+							{
+
+								imageUrl = Setting.DEFAULT_DOC_url;
+							} else
+							{
+
+								imageUrl = areaObject.getProperty("pictureUrl")
+										.toString();
+							}
+
+						} catch (Exception ex)
+						{
+							imageUrl = Setting.TEST_url;
+						}
+
+						SoapObject scheduleListObject = (SoapObject) areaObject
+								.getProperty("scheduleList");
+						List<Schedule> schedulelist = new ArrayList<Schedule>();
+						for (int j = 0; j < scheduleListObject.getPropertyCount(); j++)
+						{
+							SoapObject scheduleObject = (SoapObject) scheduleListObject.getProperty(j);
+							Schedule sch = new Schedule();
+							if (scheduleObject.getProperty("availableNum") != null)
+								sch.setAvailableNum(scheduleObject.getProperty(
+										"availableNum").toString());
+
+							if (scheduleObject.getProperty("consultationFee") != null)
+								sch.setConsultationFee(scheduleObject
+										.getProperty("consultationFee")
+										.toString());
+
+							if (scheduleObject.getProperty("dayOfWeek") != null)
+								sch.setDayOfWeek(scheduleObject.getProperty(
+										"dayOfWeek").toString());
+
+							if (scheduleObject.getProperty("doctorId") != null)
+								sch.setDoctorId(scheduleObject.getProperty(
+										"doctorId").toString());
+
+							if (scheduleObject.getProperty("doctorName") != null)
+								sch.setDoctorName(scheduleObject.getProperty(
+										"doctorName").toString());
+
+							if (scheduleObject.getProperty("isSuspend") != null)
+								sch.setIsSuspend(scheduleObject.getProperty(
+										"isSuspend").toString());
+
+							if (scheduleObject.getProperty("outcallDate") != null)
+								sch.setOutcallDate(scheduleObject.getProperty(
+										"outcallDate").toString());
+
+							if (scheduleObject.getProperty("regId") != null)
+								sch.setRegId(scheduleObject
+										.getProperty("regId").toString());
+
+							if (scheduleObject.getProperty("regName") != null)
+								sch.setRegName(scheduleObject.getProperty(
+										"regName").toString());
+
+							if (scheduleObject.getProperty("scheduleID") != null)
+								sch.setScheduleID(scheduleObject.getProperty(
+										"scheduleID").toString());
+
+							if (scheduleObject.getProperty("schState") != null)
+								sch.setSchState(scheduleObject.getProperty(
+										"schState").toString());
+
+							if (scheduleObject.getProperty("timeRange") != null)
+								sch.setTimeRange(scheduleObject.getProperty(
+										"timeRange").toString());
+							schedulelist.add(sch);
+						}
+
+						DoctorList map = new DoctorList();
+						map.setId(doctorId);
+						map.setText(doctorName);
+						map.setImageUrl(imageUrl);
+						// 获取未知性别医生有错，返回值为"anyType{}"，下面判定为暂时解决办法，希望服务器端能解决
+						if (sex.equals("anyType{}"))
+						{
+							sex = "";
+						}
+
+						map.setLevel("(" + sex + ") " + title);
+
+						map.setVersion(version);
+						map.setScheduleList(schedulelist);
+						doctorList.add(map);
+					//}
+					String resultCode = obj.getProperty("resultCode")
+							.toString();// 0000成功1111报错
+					String msg = obj.getProperty("msg").toString();// 返回的信息
+
+					Log.e("error1", resultCode);
+					Log.e("error2", msg);
+
+					return true;
+				} else
+					return false;
+
+			}
+
+			@Override
+			protected void onPostExecute(Boolean result)
+			{
+				super.onPostExecute(result);
+				showInList();
+			}
+
+			@Override
+			protected void onCancelled()
+			{
+				super.onCancelled();
+
+			}
+
+			public void showInList()
+			{
+				if (mProgressDialog.isShowing())
+				{
+					mProgressDialog.dismiss();
+				}
+
+				DoctorListAdapter adapter = new DoctorListAdapter(
+						BookingMainActivity.this, doctorList);
+
+				doctorlistView.setAdapter(adapter);
+				doctorlistView.setClickable(true);
+				doctorlistView.setFocusable(true);
+				doctorlistView.setOnItemClickListener(new OnItemClickListener()
+				{
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View arg1,
+							int arg2, long arg3)
+					{
+						DoctorList map = (DoctorList) doctorlistView
+								.getItemAtPosition(arg2);
+
+						String doctorId = map.getId(); // 获得Areaid
+						String doctorName = map.getText(); // 获得AreaName
+						String version = map.getVersion();
+
+						// 记录医生信息要清空
+						editor.putString("doctorId", doctorId);
+						editor.putString("doctorName", doctorName);
+
+						editor.commit();
+						// startActivity(new Intent (DoctorListActivity.this,
+						// ScheduleListActivity.class));
+
+					}
+				});
+				doctorlistView.getLayoutParams().height+=300;
+				 
+			}
+		}.execute();
+	}
+	
 	@Override
 	public void onStart() {
 		super.onStart();
 		getDataFromSP();
-
+		if(!doctorId.equals("NG")){
+			setHistory();
+		}
 	}
 	//搜索功能
 	OnClickListener search_btn_click=new OnClickListener()
@@ -420,5 +662,13 @@ public class BookingMainActivity extends FatherActivity {
 			return convertView;
 		}
 	}
+	
+	@Override  
+	protected void onDestroy() {  
+	    super.onDestroy();  
+	    if (mgr  != null) {  
+	    	mgr.closeDB();  
+	    }  
+	}  
 
 }

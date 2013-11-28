@@ -148,20 +148,6 @@
 			android:textSize="@dimen/button_textsize"
             />
 
-        <Button
-            android:id="@+id/booking_confirm_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="10dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/imageView3"
-            android:text="预约挂号" 
-            android:textSize="@dimen/button_textsize"
-            android:gravity="center"
-            android:background="@drawable/button_style"
-            />
-
         <EditText
             android:id="@+id/hospital"
             android:layout_width="wrap_content"
@@ -176,6 +162,23 @@
             android:hint="选择医院"
             android:paddingLeft="4dp"
             android:textSize="@dimen/button_textsize" />
+   		<TextView
+            android:id="@+id/history_list_message"
+            android:layout_below="@+id/doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="预约历史记录："
+            android:textSize="@dimen/button_textsize"
+             android:layout_marginTop="10dp"
+        />
+        <ListView
+            android:id="@+id/listHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_below="@+id/history_list_message"
+            android:layout_marginTop="10dp"
+            >
+        </ListView>
 
         <SlidingDrawer
             android:id="@+id/slidingDrawer1"

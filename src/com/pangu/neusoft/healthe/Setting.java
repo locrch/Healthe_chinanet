@@ -28,6 +28,6 @@ public class Setting {
 	public static String SerialNumber;
 	public static String link="http://219.130.221.120:10804/smjkfw/wsyygh/pages/jkw_login_dx.jsp?redirect=http://202.103.160.158:1001/MedicalCardPage/receive.aspx&wxid=";
 	
-	public static int cols=3;
+	public static int cols=2;//一行显示多少个 医生排班日期
 	
 }

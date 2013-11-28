@@ -194,7 +194,7 @@ public class BookingAction {
 			}
 
 			protected void dialogBooking() {
-				
+			    
 				AlertDialog.Builder builder = new Builder(activity);
 				builder.setMessage("预约成功:\n"
 						+"就诊人："+bookingdata.getUsername()+"\n"

@@ -1,0 +1,227 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".BookingConfirmActivity"
+    android:background="@drawable/background_black" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/booking_confirm_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   就诊人："
+                android:textSize="@dimen/detail_content_textsize" />
+
+            <TextView
+                android:id="@+id/booking_confirm_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载中..."
+                android:textSize="@dimen/detail_content_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/booking_confirm_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="健康卡号："
+                android:textSize="@dimen/detail_content_textsize" />
+
+            <TextView
+                android:id="@+id/booking_confirm_healthcard"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.32"
+                android:text="加载中..."
+                android:textSize="@dimen/detail_content_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/booking_confirm_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约医院："
+                android:textSize="@dimen/detail_content_textsize" />
+
+            <TextView
+                android:id="@+id/booking_confirm_hospitalname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载中..."
+                android:textSize="@dimen/detail_content_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/booking_confirm_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约科室："
+                android:textSize="@dimen/detail_content_textsize" />
+
+            <TextView
+                android:id="@+id/booking_confirm_departmentname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载中..."
+                android:textSize="@dimen/detail_content_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/booking_confirm_text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约医院："
+                android:textSize="@dimen/detail_content_textsize" />
+
+            <TextView
+                android:id="@+id/booking_confirm_doctorname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载中..."
+                android:textSize="@dimen/detail_content_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/booking_confirm_text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约日期："
+                android:textSize="@dimen/detail_content_textsize" />
+
+            <TextView
+                android:id="@+id/booking_confirm_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载中..."
+                android:textSize="@dimen/detail_content_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/booking_confirm_text7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约时间："
+                android:textSize="@dimen/detail_content_textsize" />
+
+            <TextView
+                android:id="@+id/booking_confirm_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加载中..."
+                android:textSize="@dimen/detail_content_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/booking_confirm_text8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="取号地点："
+                android:textSize="@dimen/detail_content_textsize" />
+
+            <TextView
+                android:id="@+id/booking_confirm_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="现场挂号处"
+                android:textSize="@dimen/detail_content_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/booking_confirm_text9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="支付方式："
+                android:textSize="@dimen/detail_content_textsize" />
+
+            <TextView
+                android:id="@+id/booking_confirm_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="现场支付"
+                android:textSize="@dimen/detail_content_textsize" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/booking_confirm_conbbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_centerVertical="true"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:background="@drawable/button_style"
+        android:text="确认"
+        android:textSize="@dimen/button_textsize" />
+
+    <Button
+        android:id="@+id/booking_confirm_changecard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/linearLayout1"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/linearLayout1"
+        android:background="@drawable/button_style"
+        android:text="变更"
+        android:textSize="@dimen/button_textsize" />
+
+    <Button
+        android:id="@+id/booking_confirm_conbbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/booking_confirm_changecard"
+        android:layout_centerVertical="true"
+        android:background="@drawable/button_style"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="取消"
+        android:textSize="@dimen/button_textsize" />
+
+</RelativeLayout>

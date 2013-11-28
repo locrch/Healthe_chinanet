@@ -32,6 +32,7 @@ import android.widget.Toast;
 public class FatherActivity extends Activity
 {
 	Button back_index,back_back;
+	TextView notice;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -39,6 +40,9 @@ public class FatherActivity extends Activity
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.activity_father);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_back);
+		
+		
+		notice = (TextView)findViewById(R.id.notice);
 		
 		back_index = (Button)findViewById(R.id.back_index);
 		back_back = (Button)findViewById(R.id.back_back);
@@ -98,7 +102,18 @@ public class FatherActivity extends Activity
 		title_title.setText(title);
 	}
 	
-	
+	public Boolean SetNotice(String notice_Str)
+	{
+		notice.setText(notice_Str);
+		
+		if (notice.getText().equals(notice_Str))
+		{
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 	public void NetWorkStatus(Context context) {
 		/*

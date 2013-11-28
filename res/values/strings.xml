@@ -43,5 +43,6 @@
     <string name="title_activity_tab_activity4">增值服务</string>
     <string name="title_activity_tab_activity5">增值服务</string>
     <string name="title_activity_search_res">搜索结果</string>
+    <string name="title_activity_booking_confirm">预约信息确认</string>
 
 </resources>
