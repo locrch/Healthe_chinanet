@@ -134,6 +134,7 @@ public class BookingMainActivity extends FatherActivity {
 		
 		select_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
 		{
+			
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3)
