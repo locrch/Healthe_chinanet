@@ -59,6 +59,7 @@ import android.widget.SlidingDrawer;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 @SuppressLint("ResourceAsColor")
 public class BookingMainActivity extends FatherActivity {
@@ -157,105 +158,94 @@ public class BookingMainActivity extends FatherActivity {
 				
 			}
 		});
-		
-		
-		//select_spinner.getLayoutParams().width = width / 3;
-		//select_spinner.getLayoutParams().height = height / 8;
-
-		//selecttext.getLayoutParams().width=width / 2;
-		//selecttext.getLayoutParams().height= height / 9;
-		//selecttext.setTextSize(width / fontsizex);
 		selecttext.clearFocus();
-
-		//search_btn.getLayoutParams().width=(height / 10);
-		//search_btn.getLayoutParams().height=(width / 10);
-		//search_btn.setTextSize(width / fontsizex);
-
 		//欢迎您和地区选择部分
 		welcome = (TextView) findViewById(R.id.welcome);
-		welcome.getLayoutParams().height = height / 10;
-		//welcome.setTextSize(width / fontsizex);
-
 		select_area_btn = (Button) findViewById(R.id.select_area_btn);
-		//select_area_btn.setTextSize(width / fontsizex);
-		
 		select_area_btn.setOnClickListener(select_area_click);
-
-		welcome.setWidth(width - select_area_btn.getWidth());
 		welcome.setText("欢迎您");
-
-		
 		//选择医院、科室、医生部分
 		first = (ImageView) findViewById(R.id.cashe_list_image);
 		second = (ImageView) findViewById(R.id.imageView2);
 		third = (ImageView) findViewById(R.id.imageView3);
-		first.getLayoutParams().width = height / 10;
-		first.getLayoutParams().height = height / 10;
-		second.getLayoutParams().width = height / 10;
-		second.getLayoutParams().height = height / 10;
-		third.getLayoutParams().width = height / 10;
-		third.getLayoutParams().height = height / 10;
-
-		
 		hospital = (EditText) findViewById(R.id.hospital);
-	//	hospital.setTextSize(width / fontsizex);
-		hospital.getLayoutParams().height= height / 8;
 		hospital.setOnClickListener(select_hospital_click);
-
+			
 		department = (EditText) findViewById(R.id.department);
-		//department.setTextSize(width / fontsizex);
-		department.getLayoutParams().height= height / 8;
 		department.setOnClickListener(select_department_click);
-
-		doctor = (EditText) findViewById(R.id.doctor);
-		//doctor.setTextSize(width / fontsizex);
-		doctor.getLayoutParams().height= height / 8;
-		doctor.setOnClickListener(select_doctor_click);
-		
+		doctor = (EditText) findViewById(R.id.doctor);	
+		doctor.setOnClickListener(select_doctor_click);		
 		search_btn.setOnClickListener(search_btn_doctor_click);
-		
-		//booking = (Button) findViewById(R.id.booking_confirm_btn);
-		//booking.setTextSize(width / fontsizex);
-		//booking.setHeight(height / 10);
-		//booking.setOnClickListener(booking_btn_click);
+
 		
 		message = (TextView) findViewById(R.id.messages);
 		message.setText("1.每月爽约次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"2.每周累计主动取消次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"3.同一就诊人在同一就诊日、同一医院、同一医生只能预约1次。"+"\n"+"\n"+"4.同一就诊人在同一就诊日、同一医院只能预约2次。"+"\n"+"\n"+"5.同一就诊人每月预约不能超过6次（医院临时停改诊除外）。");
 		message.setTextColor(R.color.black_overlay);
-		//message.setTextSize(width / fontsizex);
-
+		
 		welcome.setFocusable(true);
 		welcome.setFocusableInTouchMode(true);
 		welcome.requestFocus();
 		
 		slidingDrawer1=(SlidingDrawer)findViewById(R.id.slidingDrawer1);
-		handler = (ImageView)findViewById(R.id.handle);
-		int o_width=width/4;
-		int o_height=height/12;
-		
-		
-		handler.getLayoutParams().width=o_width;
-		handler.getLayoutParams().height=o_height;
-		
-		//handler.getLayoutParams().height=handler.getLayoutParams().width;
+		handler = (ImageView)findViewById(R.id.handle);		
+	
 		slidingDrawer1.setOnDrawerOpenListener(new android.widget.SlidingDrawer.OnDrawerOpenListener() {		 
             public void onDrawerOpened() {// 当抽屉打开时执行此操作  
             	handler.setImageResource(R.drawable.handle_up); 
-            	
             }  
-        }); 
-		
+        }); 		
 		slidingDrawer1.setOnDrawerCloseListener(new android.widget.SlidingDrawer.OnDrawerCloseListener() { 
             public void onDrawerClosed() {// 抽屉关闭时执行此操作 
             	handler.setImageResource(R.drawable.handle_down);
             } 
         });
 		
-		
+		setItemSize();
 		
 		
 	}
 
+	public void setItemSize(){		
+		//search_btn.getLayoutParams().width=(height / 10);
+		//search_btn.getLayoutParams().height=(width / 10);
+		//search_btn.setTextSize(width / fontsizex);
+		//select_spinner.getLayoutParams().width = width / 3;
+		//select_spinner.getLayoutParams().height = height / 8;
+
+		//selecttext.getLayoutParams().width=width / 2;
+		//selecttext.getLayoutParams().height= height / 9;
+		//selecttext.setTextSize(width / fontsizex);
+		//welcome.setTextSize(width / fontsizex);
+		//select_area_btn.setTextSize(width / fontsizex);
+		
+		welcome.setWidth(width - select_area_btn.getWidth());
+		welcome.getLayoutParams().height = height / 10;		
+		first.getLayoutParams().width = height / 10;
+		first.getLayoutParams().height = height / 10;
+		second.getLayoutParams().width = height / 10;
+		second.getLayoutParams().height = height / 10;
+		third.getLayoutParams().width = height / 10;
+		third.getLayoutParams().height = height / 10;
+		hospital.getLayoutParams().height= height / 8;
+		//hospital.setTextSize(width / fontsizex);
+		//department.setTextSize(width / fontsizex);
+		department.getLayoutParams().height= height / 8;
+		doctor.getLayoutParams().height= height / 8;
+		//doctor.setTextSize(width / fontsizex);		
+		//booking = (Button) findViewById(R.id.booking_confirm_btn);
+		//booking.setTextSize(width / fontsizex);
+		//booking.setHeight(height / 10);
+		//booking.setOnClickListener(booking_btn_click);
+		//message.setTextSize(width / fontsizex);
+		//handler.getLayoutParams().height=handler.getLayoutParams().width;
+		
+		int o_width=width/4;
+		int o_height=height/12;		
+		handler.getLayoutParams().width=o_width;
+		handler.getLayoutParams().height=o_height;
+	}
+	
+	
 	public void setHistory(){
 		doctorList.clear();
 	
@@ -488,18 +478,16 @@ public class BookingMainActivity extends FatherActivity {
 		{
 			// TODO Auto-generated method stub
 			String serachdoctorname = selecttext.getText().toString();
-			
-			editor.putString("serach_doc", serachdoctorname);
-			
-			editor.commit();
-			
-			Intent intent = new Intent(BookingMainActivity.this,DoctorListActivity.class);
-			
-			intent.setFlags(0);
-			
-			intent.putExtra("who", "serach");
-			
-			startActivity(intent);
+			if(serachdoctorname.equals("")){
+				Toast.makeText(BookingMainActivity.this, "请先输入医生姓名", Toast.LENGTH_SHORT);
+			}else{
+				editor.putString("serach_doc", serachdoctorname);			
+				editor.commit();			
+				Intent intent = new Intent(BookingMainActivity.this,DoctorListActivity.class);			
+				intent.setFlags(0);			
+				intent.putExtra("who", "serach");			
+				startActivity(intent);
+			}
 		}
 	};
 	//搜索医院功能
@@ -511,18 +499,16 @@ public class BookingMainActivity extends FatherActivity {
 			{
 				// TODO Auto-generated method stub
 				String serachhospitalname = selecttext.getText().toString();
-				
-				editor.putString("serach_hosp", serachhospitalname);
-				
-				editor.commit();
-				
-				Intent intent = new Intent(BookingMainActivity.this,HospitalListActivity.class);
-				
-				intent.setFlags(0);
-				
-				intent.putExtra("who", "serach");
-				
-				startActivity(intent);
+				if(serachhospitalname.equals("")){
+					Toast.makeText(BookingMainActivity.this, "请先输入医院姓名", Toast.LENGTH_SHORT);
+				}else{
+					editor.putString("serach_hosp", serachhospitalname);				
+					editor.commit();				
+					Intent intent = new Intent(BookingMainActivity.this,HospitalListActivity.class);				
+					intent.setFlags(0);				
+					intent.putExtra("who", "serach");				
+					startActivity(intent);
+				}
 			}
 		};
 	
