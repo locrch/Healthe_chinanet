@@ -56,6 +56,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 @SuppressLint("SimpleDateFormat")
@@ -76,11 +77,13 @@ public class DoctorDetailActivity extends FatherActivity {
 	private TextView doctorlevelText;
 	private TextView doctorInfoText;
 	private LinearLayout scheduleTableLayout;
-	private TextView doctor_detail_department_grade,doctor_detail_hospital_grade;
+	private TextView doctor_detail_department_grade,doctor_detail_hospital_grade,doctor_detail_grade;
 	private AsyncBitmapLoader asyncImageLoader; 
 	
-	
-	private Button booking_btn;
+	private LinearLayout schedule_list_layout;
+	private LinearLayout scheduledetail;
+	private TableLayout scheduledays;
+	//private Button booking_btn;
 	private Button connect;
 	
 	@Override
@@ -99,15 +102,24 @@ public class DoctorDetailActivity extends FatherActivity {
 		doctorlevelText=(TextView)findViewById(R.id.doctor_detail_level_grade);
 		doctorInfoText=(TextView)findViewById(R.id.doctor_detail_intro);
 		scheduleTableLayout=(LinearLayout)findViewById(R.id.doctor_detail_schedule_table);
+		
+		schedule_list_layout=(LinearLayout)findViewById(R.id.schedule_list_layout);
+		scheduledetail=(LinearLayout)findViewById(R.id.scheduledetail);
+		doctor_detail_grade=(TextView)findViewById(R.id.doctor_detail_grade);
+		
+		scheduledays=(TableLayout)findViewById(R.id.scheduledays);
+		
 		doctor_detail_department_grade=(TextView)findViewById(R.id.doctor_detail_department_grade);
 		doctor_detail_hospital_grade=(TextView)findViewById(R.id.doctor_detail_hospital_grade);
+		doctor_detail_hospital_grade.setText(sp.getString("hospitalName", ""));
+		doctor_detail_department_grade.setText(sp.getString("departmentName", ""));
 		
 		pic=(ImageView)findViewById(R.id.doctor_detail_pictureurl);
 		asyncImageLoader = new AsyncBitmapLoader();  
 		
 		hosiptalId=sp.getString("hospitalId", "NG");
 		
-		booking_btn = (Button)findViewById(R.id.doctor_detail_booking_btn);
+		//booking_btn = (Button)findViewById(R.id.doctor_detail_booking_btn);
 		connect=(Button)findViewById(R.id.connect);
 		connect.setOnClickListener(connect_click);
 		int width=sp.getInt("screen_width", 0);
@@ -116,26 +128,13 @@ public class DoctorDetailActivity extends FatherActivity {
 		pic.getLayoutParams().width=width;
 		pic.getLayoutParams().height=height/3;
 		
-		booking_btn.setOnClickListener(booking);
+		//booking_btn.setOnClickListener(booking);
 		getDataFromInternet(); 
 	}
 
 	
 	
-	OnClickListener booking=new OnClickListener(){
-		@Override
-		public void onClick(View v) {
-			//记录地区信息。其他医院、科室、医生信息要清空		
-			if(doctorId!=null&&!doctorNameText.getText().equals("TextView")){
-				editor.putString("doctorId", doctorId);
-				editor.putString("doctorName", doctorNameText.getText().toString());
-				editor.commit();
-				startActivity(new Intent (DoctorDetailActivity.this, ScheduleListActivity.class));
-			}else{
-				startActivity(new Intent (DoctorDetailActivity.this, ScheduleListActivity.class));
-			}
-		}
-	};
+	
 	
 
 	
@@ -209,26 +208,18 @@ public class DoctorDetailActivity extends FatherActivity {
 							s.setTimeRange(timeRange);
 							scheduleList.add(s);
 						}
-							
-							
 							int version=0;
 							try{
-							
 								version=Integer.parseInt(areaObject.getProperty("version").toString());		
 							}catch(Exception ex){
 								
 							}
 						String imageUrl ="";
 						try{
-							if(areaObject.getProperty("pictureUrl")==null){
-								//imageUrl=Setting.default_pic_url;
-								
-							}else{
+							if(areaObject.getProperty("pictureUrl")!=null){
 								imageUrl=areaObject.getProperty("pictureUrl").toString();
-								
 							}
 						}catch(Exception ex){
-								//imageUrl=Setting.default_pic_url;
 							pic.setBackgroundResource(R.drawable.booking_doc);
 						}
 						
@@ -263,15 +254,10 @@ public class DoctorDetailActivity extends FatherActivity {
 					doctorlevelText.setText("("+doctor.getSex()+")  "+doctor.getTitle());
 					doctorInfoText.setText(doctor.getInfo());
 					//pic.setText(doctor.getHospitalId());
-					GetSchedule sch=new GetSchedule();
-					View scheduleView=sch.getScheduleView(DoctorDetailActivity.this, doctor.getScheduleList());
-					
-			                scheduleTableLayout.addView(scheduleView);
-			                
-			                
-			                
-			                
-			                
+					//GetSchedule sch=new GetSchedule();
+				//	View scheduleView=sch.getScheduleView(DoctorDetailActivity.this, doctor.getScheduleList());
+				//	scheduleTableLayout.addView(scheduleView);
+    
 					  Bitmap bitmap=asyncImageLoader.loadBitmap(pic, doctor.getPictureUrl(), new ImageCallBack() {  
 			                
 			                @Override  
@@ -283,7 +269,8 @@ public class DoctorDetailActivity extends FatherActivity {
 			                }  
 			            });  
 					   
-					  
+					  SchedultLayout schedule=new SchedultLayout(DoctorDetailActivity.this,doctor.getScheduleList(),scheduledetail,scheduledays,doctor_detail_grade);
+			          schedule.getView();  
 			            
 				}
 			}

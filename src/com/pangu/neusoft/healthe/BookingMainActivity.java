@@ -67,7 +67,10 @@ public class BookingMainActivity extends FatherActivity {
 
 	private EditText selecttext;
 	private ImageButton search_btn;
-	private Spinner select_spinner;
+	//private Spinner select_spinner;
+	private Button doctor_hospital1;
+	private Button doctor_hospital2;
+	private Button doctor_hospital3;
 	
 	private TextView welcome;
 	private Button select_area_btn;
@@ -117,7 +120,7 @@ public class BookingMainActivity extends FatherActivity {
 		service = new WebService();
 		getScreenSize();
 
-		select_spinner = (Spinner) findViewById(R.id.spinner1);
+		//select_spinner = (Spinner) findViewById(R.id.spinner1);
 		SpinnerAdapter adapter = new SpinnerAdapter(this,
 				android.R.layout.simple_spinner_item, select);
 		
@@ -126,37 +129,56 @@ public class BookingMainActivity extends FatherActivity {
 		
 		
 		
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		//adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		//搜索部分
-		select_spinner.setAdapter(adapter);
+		//select_spinner.setAdapter(adapter);
 		selecttext = (EditText) findViewById(R.id.search_text);
 		search_btn = (ImageButton) findViewById(R.id.search_btn);
+		search_btn.setOnClickListener(search_btn_doctor_click);
 		
-		select_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+		
+		doctor_hospital1=(Button)findViewById(R.id.doctor_hospital1);
+		doctor_hospital2=(Button)findViewById(R.id.doctor_hospital2);
+	
+		doctor_hospital3=(Button)findViewById(R.id.doctor_hospital3);
+		
+		doctor_hospital1.setOnClickListener(new OnClickListener()
 		{
 			@Override
-			public void onItemSelected(AdapterView<?> arg0, View arg1,
-					int arg2, long arg3)
+			public void onClick(View arg0)
 			{
-				// TODO Auto-generated method stub
-				if (arg2 ==0)
-				{
-					selecttext.setHint("请输入医生姓名");
-					search_btn.setOnClickListener(search_btn_doctor_click);
-				}
-				else {
-					selecttext.setHint("请输入医院名称");
-					search_btn.setOnClickListener(search_btn_hospital_click);
-				}
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> arg0)
-			{
-				// TODO Auto-generated method stub
-				
+				doctor_hospital2.setVisibility(View.VISIBLE);
+				doctor_hospital3.setVisibility(View.VISIBLE);
 			}
 		});
+		doctor_hospital2.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View arg0)
+			{
+				doctor_hospital1.setText("医生");
+				selecttext.setHint("请输入医生姓名");
+				search_btn.setOnClickListener(search_btn_doctor_click);
+				doctor_hospital2.setVisibility(View.INVISIBLE);
+				doctor_hospital3.setVisibility(View.INVISIBLE);
+			}
+		});
+		doctor_hospital3.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View arg0)
+			{
+				doctor_hospital1.setText("医院");
+				selecttext.setHint("请输入医院名称");
+				search_btn.setOnClickListener(search_btn_hospital_click);
+				doctor_hospital2.setVisibility(View.INVISIBLE);
+				doctor_hospital3.setVisibility(View.INVISIBLE);
+			}
+		});
+		
+
+		
+		
 		selecttext.clearFocus();
 		//欢迎您和地区选择部分
 		welcome = (TextView) findViewById(R.id.welcome);
@@ -174,7 +196,7 @@ public class BookingMainActivity extends FatherActivity {
 		department.setOnClickListener(select_department_click);
 		doctor = (EditText) findViewById(R.id.doctor);	
 		doctor.setOnClickListener(select_doctor_click);		
-		search_btn.setOnClickListener(search_btn_doctor_click);
+		
 
 		
 		message = (TextView) findViewById(R.id.messages);
@@ -212,24 +234,28 @@ public class BookingMainActivity extends FatherActivity {
 		//select_spinner.getLayoutParams().height = height / 8;
 
 		//selecttext.getLayoutParams().width=width / 2;
-		//selecttext.getLayoutParams().height= height / 9;
+		//selecttext.getLayoutParams().height= search_btn.getHeight();
+		//doctor_hospital1.setHeight(search_btn.getHeight());
+		//doctor_hospital2.setHeight(search_btn.getHeight());
+		//doctor_hospital3.setHeight(search_btn.getHeight());
+		
 		//selecttext.setTextSize(width / fontsizex);
 		//welcome.setTextSize(width / fontsizex);
 		//select_area_btn.setTextSize(width / fontsizex);
 		
 		welcome.setWidth(width - select_area_btn.getWidth());
-		welcome.getLayoutParams().height = height / 10;		
-		first.getLayoutParams().width = height / 10;
-		first.getLayoutParams().height = height / 10;
-		second.getLayoutParams().width = height / 10;
-		second.getLayoutParams().height = height / 10;
-		third.getLayoutParams().width = height / 10;
-		third.getLayoutParams().height = height / 10;
-		hospital.getLayoutParams().height= height / 8;
+		welcome.getLayoutParams().height = height / 12;		
+		first.getLayoutParams().width = height / 12;
+		first.getLayoutParams().height = height / 12;
+		second.getLayoutParams().width = height / 12;
+		second.getLayoutParams().height = height / 12;
+		third.getLayoutParams().width = height / 12;
+		third.getLayoutParams().height = height / 12;
+		hospital.getLayoutParams().height= height / 10;
 		//hospital.setTextSize(width / fontsizex);
 		//department.setTextSize(width / fontsizex);
-		department.getLayoutParams().height= height / 8;
-		doctor.getLayoutParams().height= height / 8;
+		department.getLayoutParams().height= height / 10;
+		doctor.getLayoutParams().height= height / 10;
 		//doctor.setTextSize(width / fontsizex);		
 		//booking = (Button) findViewById(R.id.booking_confirm_btn);
 		//booking.setTextSize(width / fontsizex);
@@ -454,7 +480,7 @@ public class BookingMainActivity extends FatherActivity {
 
 					}
 				});
-				doctorlistView.getLayoutParams().height+=300;
+				doctorlistView.getLayoutParams().height+=600;
 				 
 			}
 		}.execute();
@@ -471,7 +497,7 @@ public class BookingMainActivity extends FatherActivity {
 	//搜索医生功能
 	OnClickListener search_btn_doctor_click=new OnClickListener()
 	{
-		
+		@SuppressLint("ShowToast")
 		@Override
 		public void onClick(View v)
 		{
@@ -493,6 +519,7 @@ public class BookingMainActivity extends FatherActivity {
 		OnClickListener search_btn_hospital_click=new OnClickListener()
 		{
 			
+			@SuppressLint("ShowToast")
 			@Override
 			public void onClick(View v)
 			{

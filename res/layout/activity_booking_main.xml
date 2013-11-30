@@ -1,72 +1,64 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <LinearLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal" >
+        android:layout_height="wrap_content"        
+         >
+         <ScrollView
+              android:layout_width="fill_parent" 
+    			android:layout_height="wrap_content" >
+	<RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"        
+         >
+        <Button
+            android:id="@+id/doctor_hospital1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_style"
+            android:textSize="@dimen/button_textsize"
+            android:text="医生" />
 
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_weight="0.20"
-            android:background="@drawable/button_style" />
-		
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:orientation="vertical" >
-
-        </LinearLayout>
-
+        
+        
         <EditText
             android:id="@+id/search_text"
-            android:layout_width="167dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="1dp"
-            android:layout_weight="0.57"
-            android:background="@drawable/edittext_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/search_btn"
+            android:layout_toRightOf="@+id/doctor_hospital1"
             android:ems="10"
-            android:hint="请输入医生名称"
-            android:paddingLeft="4dp" >
+            android:textSize="@dimen/button_textsize"
+            android:hint="请输入医生名字" >
 
             <requestFocus />
         </EditText>
-
+        
         <ImageButton
             android:id="@+id/search_btn"
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="2dp"
-            android:layout_weight="1"
-            android:background="@drawable/search_btn" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/search_btn" >
 
-    </LinearLayout>
+        </ImageButton>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        
-         >
 		
         <TextView
             android:id="@+id/welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
+            android:layout_below="@+id/search_btn"
             android:text="欢迎您" />
 
         <Button
             android:id="@+id/select_area_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/search_btn"
   			android:layout_alignParentRight="true"
   			 android:layout_alignLeft="@+id/booking_btn"
             android:text="地区" 
@@ -180,7 +172,34 @@
             >
         </ListView>
 
-        <SlidingDrawer
+        
+        
+
+        <Button
+            android:id="@+id/doctor_hospital2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/doctor_hospital1"
+            android:background="@drawable/button_style"
+            android:text="医生"
+            android:textSize="@dimen/button_textsize"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/doctor_hospital3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/doctor_hospital2"
+            android:background="@drawable/button_style"
+            android:textSize="@dimen/button_textsize"
+            android:text="医院"
+            android:visibility="gone" />
+        </RelativeLayout>
+        </ScrollView>
+        
+		<SlidingDrawer
             android:id="@+id/slidingDrawer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -208,7 +227,4 @@
                     />
             </LinearLayout>
         </SlidingDrawer>
-
     </RelativeLayout>
-
-</LinearLayout>

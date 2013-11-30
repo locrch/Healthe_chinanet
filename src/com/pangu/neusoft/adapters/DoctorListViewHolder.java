@@ -20,7 +20,8 @@ public class DoctorListViewHolder {
         private TextView scheduletext;
         private TextView versionView;
         private TableLayout scheduledays;
-        
+        private TextView hospital_text;
+        private TextView department_text;
         private ImageView moreInfoView;
         
         public DoctorListViewHolder(View baseView) {  
@@ -40,6 +41,21 @@ public class DoctorListViewHolder {
             }  
             return scheduletext;
         }
+        
+        public TextView getHospitalText(){
+        	if (hospital_text == null) {  
+        		hospital_text = (TextView) baseView.findViewById(R.id.hospital_text);  
+            }  
+            return hospital_text;
+        }
+        
+        public TextView getDepartmentText(){
+        	if (department_text == null) {  
+        		department_text = (TextView) baseView.findViewById(R.id.department_text);  
+            }  
+            return department_text;
+        }
+        
         
         public TextView getTextView() {  
             if (textView == null) {  

@@ -74,6 +74,7 @@ public class HospitalListActivity extends FatherActivity {
         mProgressDialog.setIndeterminate(false);  
         mProgressDialog.setCanceledOnTouchOutside(false);//设置进度条是否可以按退回键取消  
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+       
 		
 		new AsyncTask<Void, Void, Boolean>(){
 		    
@@ -86,10 +87,9 @@ public class HospitalListActivity extends FatherActivity {
 			protected Boolean doInBackground(Void... params){
 				
 				Intent intent = getIntent();
-
-				who = intent.getExtras().getString("who");
+				who=intent.getStringExtra("who");
 				
-				if (who.equals("serach")){
+				if (who!=null&&who.equals("serach")){
 					FindHospitalListReq req=new FindHospitalListReq();
 					
 					req.setHospitalName(sp.getString("serach_hosp", ""));

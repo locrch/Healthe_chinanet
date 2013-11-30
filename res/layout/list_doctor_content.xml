@@ -66,13 +66,24 @@
         android:layout_margin="4dp"
         android:src="@drawable/booking_doc" />
 
+ <TextView
+     android:id="@+id/schedule_text"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignLeft="@+id/doctor_list_image"
+     android:layout_alignParentRight="true"
+     android:layout_below="@+id/doctor_list_image"
+     android:text="没有排班"
+     android:textAppearance="?android:attr/textAppearanceSmall"
+     android:textColor="#0000FF" />
+
     <LinearLayout
         android:id="@+id/schedule_list_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/doctor_list_image"
+        android:layout_below="@+id/schedule_text"
         android:orientation="vertical" >
 
         <TableLayout
@@ -122,13 +133,19 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/schedule_text"
+        android:id="@+id/hospital_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/doctor_list_moreinfo"
-        android:layout_toRightOf="@+id/doctor_list_image"
-        android:text="没有排班表"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#0000FF" />
+        android:layout_alignLeft="@+id/doctor_list_level"
+        android:layout_below="@+id/doctor_list_level"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/department_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hospital_text"
+        android:layout_below="@+id/hospital_text"
+        android:text="TextView" />
 
 </RelativeLayout>
