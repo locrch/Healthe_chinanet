@@ -49,7 +49,7 @@ public class ShowHistoryActivity extends FatherActivity {
 	private ProgressDialog mProgressDialog; 
 	String cancleid;
 	String hospitalid;
-	String type;
+	//String type;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -58,10 +58,12 @@ public class ShowHistoryActivity extends FatherActivity {
 		mgr=new DBManager(ShowHistoryActivity.this);
 		
 		Intent intent=getIntent();
-		type=intent.getStringExtra("type");
+		
+		//type=intent.getStringExtra("type");
 		username=getIntent().getStringExtra("username");
+		
 		hist_array=new ArrayList<HashMap<String,String>> ();
-		list=mgr.getBookingList(username,type);
+		//list=mgr.getBookingList(username,type);
 		mgr.closeDB();
 		
 		mProgressDialog = new ProgressDialog(ShowHistoryActivity.this);   
@@ -100,8 +102,8 @@ public class ShowHistoryActivity extends FatherActivity {
 		  HashMap<String,String> map=(HashMap<String,String>)booking_history_list.getItemAtPosition(arg2);
 		  cancleid=map.get("cancleid");
 		  hospitalid=map.get("hospitalid");
-		  if(type.equals("booking"))
-			  dialog();
+		 // if(type.equals("booking"))
+		//	  dialog();
 		
 		}
 	};

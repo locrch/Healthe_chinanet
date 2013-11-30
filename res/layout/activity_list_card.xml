@@ -9,6 +9,13 @@
         android:orientation="vertical"
         android:padding="5dp" >
 
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="请选择当前的健康卡：" />
+
         <ListView
             android:id="@+id/list_card"
             android:layout_width="match_parent"
@@ -17,6 +24,13 @@
             android:divider="#CFCFCF"
             android:dividerHeight="2dp" >
         </ListView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="（打勾为当前默认使用的健康卡）" />
 
         <LinearLayout
             android:id="@+id/listcardbuttons"
