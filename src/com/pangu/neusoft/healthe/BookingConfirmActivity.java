@@ -1,7 +1,11 @@
 package com.pangu.neusoft.healthe;
 
+import com.pangu.neusoft.healthcard.BookingAction;
+import com.pangu.neusoft.healthcard.ListCardActivity;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,7 +17,7 @@ public class BookingConfirmActivity extends FatherActivity
 	TextView username,healthcard,hospitalname,departmentname,doctorname,date,time,place,pay;
 	
 	Button conbbtn,cancelbtn,changecard;
-			 
+	BookingAction bookingaction; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -30,9 +34,28 @@ public class BookingConfirmActivity extends FatherActivity
 	    place = (TextView)findViewById(R.id.booking_confirm_place);
 	    pay = (TextView)findViewById(R.id.booking_confirm_pay);
 	    
+	    if(Setting.bookingdata==null||Setting.bookingdata.getUsername()==null||Setting.bookingdata.getUsername().equals("")){
+	    	Intent intent = new Intent(BookingConfirmActivity.this,BookingMainActivity.class);
+			Setting.state="booking";
+			startActivity(intent);
+	    	return;
+	    }
+	    username.setText(Setting.bookingdata.getUsername());
+	    
+	    healthcard.setText(Setting.bookingdata.getCardnumber());
+	    hospitalname.setText(Setting.bookingdata.getHospitalname());
+	    departmentname.setText(Setting.bookingdata.getDepartmentname());
+	    doctorname.setText(Setting.bookingdata.getDoctorname());
+	    date.setText(Setting.bookingdata.getReservedate());
+	    time.setText(Setting.bookingdata.getReservetime());
+	    place.setText("现场挂号处");
+	    pay.setText("现场支付");
+	    
 	    conbbtn = (Button)findViewById(R.id.booking_confirm_conbbtn);
 	    cancelbtn = (Button)findViewById(R.id.booking_confirm_cancelbtn);
 	    changecard = (Button)findViewById(R.id.booking_confirm_changecard);
+	    
+	    bookingaction=new BookingAction(BookingConfirmActivity.this);
 	    
 	    conbbtn.setOnClickListener(new OnClickListener()
 		{
@@ -40,28 +63,26 @@ public class BookingConfirmActivity extends FatherActivity
 			@Override
 			public void onClick(View v)
 			{
-				// TODO Auto-generated method stub
-				
+				bookingaction.booking_action();
 			}
 		});
 	    cancelbtn.setOnClickListener(new OnClickListener()
 		{
-			
 			@Override
 			public void onClick(View v)
 			{
-				// TODO Auto-generated method stub
-				
+				finish();
 			}
 		});
 	    changecard.setOnClickListener(new OnClickListener()
 		{
-			
 			@Override
 			public void onClick(View v)
 			{
-				// TODO Auto-generated method stub
-				
+				Intent intent = new Intent(BookingConfirmActivity.this,ListCardActivity.class);
+				Setting.state="booking";
+				startActivity(intent);
+				finish();
 			}
 		});
 	}

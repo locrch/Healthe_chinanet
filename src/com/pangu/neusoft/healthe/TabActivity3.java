@@ -54,6 +54,7 @@ public class TabActivity3 extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Setting.state="userinfo";
 		setContentView(R.layout.tab3_user);
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();

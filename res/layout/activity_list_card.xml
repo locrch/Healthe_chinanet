@@ -29,9 +29,19 @@
                 android:id="@+id/create_card_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
                 android:background="@drawable/button_style"
                 android:text="添加健康卡" />
+
+            <Button
+                android:id="@+id/card_booking_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style"
+                android:text="预约挂号" />
 
         </LinearLayout>
 

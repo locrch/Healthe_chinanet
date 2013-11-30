@@ -21,6 +21,8 @@ public class BookingInfos {
 	String cancelid;
 	String MedicalCardTypeID;
 	String SerialNumber;
+	
+	
 	public String getSerialNumber()
 	{
 		return SerialNumber;

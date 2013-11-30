@@ -86,9 +86,7 @@ public class LoginActivity extends FatherActivity {
 	      password=(EditText)findViewById(R.id.password);
 	      username.setText(sp.getString("username", ""));
 	      password.setText(sp.getString("password", ""));
-	      
-		  
-		  
+
 		  Button login_btn=(Button)findViewById(R.id.login_btn);
 		  login_btn.setOnClickListener(login);
 	}
@@ -143,6 +141,7 @@ public class LoginActivity extends FatherActivity {
 									editor.putString("username", member.getUserName());
 									editor.putString("password", member.getPassword());
 									editor.putBoolean("loginsuccess",true);
+									editor.putString("defaultcardno","0");
 									editor.commit();
 									
 									return true;

@@ -1,5 +1,8 @@
 package com.pangu.neusoft.healthcard;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import org.ksoap2.serialization.SoapObject;
 
 import android.app.Activity;
@@ -19,6 +22,7 @@ import com.pangu.neusoft.core.WebService;
 import com.pangu.neusoft.core.models.BookingInfos;
 import com.pangu.neusoft.core.models.BookingReq;
 import com.pangu.neusoft.db.DBManager;
+import com.pangu.neusoft.healthe.BookingConfirmActivity;
 import com.pangu.neusoft.healthe.Setting;
 import com.pangu.neusoft.tools.DialogShow;
 
@@ -29,7 +33,7 @@ public class BookingAction {
 	private String SerialNumber;//预约流水号
 	private SharedPreferences sp;
 	private Editor editor;
-	BookingInfos bookingdata;
+	
 	BookingReq req ;
 	
 	public BookingAction(Activity activity){
@@ -69,31 +73,32 @@ public class BookingAction {
 		req.setPatientName(sp.getString("owner", ""));
 		req.setMedicalCardTypeID(sp.getString("cardtype", ""));
 		
-		bookingdata = new BookingInfos();
+		Setting.bookingdata = new BookingInfos();
 		
-		bookingdata.setCardnumber(req.getCardNum());
-		bookingdata.setDepartmentid(req.getDepartmentId());
-		bookingdata.setDepartmentname(sp.getString(
+		Setting.bookingdata.setCardnumber(req.getCardNum());
+		Setting.bookingdata.setDepartmentid(req.getDepartmentId());
+		Setting.bookingdata.setDepartmentname(sp.getString(
 				"departmentName", ""));
-		bookingdata.setDoctorid(req.getDoctorId());
-		bookingdata.setDoctorname(sp
+		Setting.bookingdata.setDoctorid(req.getDoctorId());
+		Setting.bookingdata.setDoctorname(sp
 				.getString("doctorName", ""));
-		bookingdata.setHospitalid(req.getHospitalId());
-		bookingdata.setHospitalname(sp.getString("hospitalName", ""));
-		bookingdata.setIdcode(req.getIdCode());
-		bookingdata.setIdtype(req.getIdType());
-		bookingdata.setMemberid(req.getMemberId());
-		bookingdata.setPhonenumber(req.getPhoneNumber());
-		bookingdata.setRegid(req.getRegId());
-		bookingdata.setReservedate(req.getReserveDate());
-		bookingdata.setReservetime(req.getReserveTime());
-		bookingdata.setScheduleid(req.getScheduleID());
-		bookingdata.setSchstate(req.getSchState());
-		bookingdata.setUsername(req.getPatientName());
+		Setting.bookingdata.setHospitalid(req.getHospitalId());
+		Setting.bookingdata.setHospitalname(sp.getString("hospitalName", ""));
+		Setting.bookingdata.setIdcode(req.getIdCode());
+		Setting.bookingdata.setIdtype(req.getIdType());
+		Setting.bookingdata.setMemberid(req.getMemberId());
+		Setting.bookingdata.setPhonenumber(req.getPhoneNumber());
+		Setting.bookingdata.setRegid(req.getRegId());
+		Setting.bookingdata.setReservedate(req.getReserveDate());
+		Setting.bookingdata.setReservetime(req.getReserveTime());
+		Setting.bookingdata.setScheduleid(req.getScheduleID());
+		Setting.bookingdata.setSchstate(req.getSchState());
+		Setting.bookingdata.setUsername(req.getPatientName());
 	}
 	
 	public void booking_action() {
-
+		setBookingdata();
+		
 		new AsyncTask<Void, Void, Boolean>() {
 			String booking_msg = "";
 			@Override
@@ -152,10 +157,9 @@ public class BookingAction {
 						DBManager mgr = new DBManager(activity);
 						
 						// 设置对象
-						bookingdata.setCancelid(recodeid);
-						
-						bookingdata.setSerialNumber(obj.getProperty("SerialNumber").toString());
-						mgr.addBookingRecord(bookingdata);
+						Setting.bookingdata.setCancelid(recodeid);						
+						Setting.bookingdata.setSerialNumber(obj.getProperty("SerialNumber").toString());
+						mgr.addBookingRecord(Setting.bookingdata);
 						booking_msg = "预约成功";
 						mgr.closeDB();
 						return true;
@@ -175,14 +179,27 @@ public class BookingAction {
 				if (mProgressDialog.isShowing()) {
 					mProgressDialog.dismiss();
 				}
+				DialogShow.showDialog(activity, booking_msg);
+				
 				if (booking_msg.equals("预约成功")) {
-					if (bookingdata != null) {
-						dialogBooking();
-					} else {
-						DialogShow.showDialog(activity,booking_msg);
-					}
-				} else {
-					DialogShow.showDialog(activity, booking_msg);
+						final Timer t = new Timer();
+						t.schedule(new TimerTask() {
+							public void run() {
+								activity.startActivity(new Intent(activity,ListCardActivity.class));
+								activity.finish();
+								t.cancel(); 
+							}
+						}, Setting.dialogtimeout+1000);
+
+				} else {					
+					final Timer t = new Timer();
+					t.schedule(new TimerTask() {
+						public void run() {
+							activity.startActivity(new Intent(activity,ListCardActivity.class));
+							activity.finish();
+							t.cancel(); 
+						}
+					}, Setting.dialogtimeout+1000);
 				}
 
 			}
@@ -193,32 +210,32 @@ public class BookingAction {
 
 			}
 
-			protected void dialogBooking() {
-			    
-				AlertDialog.Builder builder = new Builder(activity);
-				builder.setMessage("预约成功:\n"
-						+"就诊人："+bookingdata.getUsername()+"\n"
-						+"预约医院："+ bookingdata.getHospitalname()+ "\n" 
-						+"预约科室："+ bookingdata.getDepartmentname() + "\n"
-						+"预约医生："+ bookingdata.getDoctorname() + "\n"
-						+"预约日期："+ bookingdata.getReservedate() + "\n"
-						+"预约时间："+ bookingdata.getReservetime()+ "\n"
-						+ "流水号："+SerialNumber+"\n"
-						+"取号地点：现场挂号处"+"\n"
-						+"支付方式：现场支付"
-						);
-				builder.setTitle("提示");
-				builder.setPositiveButton("确认",
-						new android.content.DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog,
-									int which) {
-								dialog.dismiss();
-							}
-						});
-
-				builder.create().show();
-			}
+//			protected void dialogBooking() {
+//			    
+//				AlertDialog.Builder builder = new Builder(activity);
+//				builder.setMessage("预约成功:\n"
+//						+"就诊人："+Setting.bookingdata.getUsername()+"\n"
+//						+"预约医院："+ Setting.bookingdata.getHospitalname()+ "\n" 
+//						+"预约科室："+ Setting.bookingdata.getDepartmentname() + "\n"
+//						+"预约医生："+ Setting.bookingdata.getDoctorname() + "\n"
+//						+"预约日期："+ Setting.bookingdata.getReservedate() + "\n"
+//						+"预约时间："+ Setting.bookingdata.getReservetime()+ "\n"
+//						+ "流水号："+SerialNumber+"\n"
+//						+"取号地点：现场挂号处"+"\n"
+//						+"支付方式：现场支付"
+//						);
+//				builder.setTitle("提示");
+//				builder.setPositiveButton("确认",
+//						new android.content.DialogInterface.OnClickListener() {
+//							@Override
+//							public void onClick(DialogInterface dialog,
+//									int which) {
+//								dialog.dismiss();
+//							}
+//						});
+//
+//				builder.create().show();
+//			}
 			
 			
 			
@@ -229,49 +246,51 @@ public class BookingAction {
 	
 		public void confirmBooking() {
 			
-			setBookingdata();
+		setBookingdata();
 			
-		AlertDialog.Builder builder = new Builder(activity);
-		builder.setMessage("预约信息:\n"
-				+"就诊人："+bookingdata.getUsername()+"\n"
-				+"预约医院："+ bookingdata.getHospitalname()+ "\n" 
-				+"预约科室："+ bookingdata.getDepartmentname() + "\n"
-				+"预约医生："+ bookingdata.getDoctorname() + "\n"
-				+"预约日期："+ bookingdata.getReservedate() + "\n"
-				+"预约时间："+ bookingdata.getReservetime()+ "\n"
-				//+ "流水号："+SerialNumber+"\n"
-				+"取号地点：现场挂号处"+"\n"
-				+"支付方式：现场支付"
-				);
-		builder.setTitle("提示");
-		builder.setPositiveButton("确认",
-				new android.content.DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog,
-							int which) {
-						dialog.dismiss();
-						booking_action();
-					}
-				});
-		builder.setNegativeButton("取消",
-				new android.content.DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog,
-							int which) {
-						dialog.dismiss();
-					}
-				});
-		builder.setNeutralButton("选择其他健康卡",
-				new android.content.DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(DialogInterface dialog,
-							int which) {
-						dialog.dismiss();
-						//startActivity(new Intent(ListCardActivity.this,LoginActivity.class));
-						activity.startActivity(new Intent(activity,ListCardActivity.class));
-					}
-				});
-		builder.create().show();
+		activity.startActivity(new Intent(activity,BookingConfirmActivity.class));
+		
+//		AlertDialog.Builder builder = new Builder(activity);
+//		builder.setMessage("预约信息:\n"
+//				+"就诊人："+Setting.bookingdata.getUsername()+"\n"
+//				+"预约医院："+ Setting.bookingdata.getHospitalname()+ "\n" 
+//				+"预约科室："+ Setting.bookingdata.getDepartmentname() + "\n"
+//				+"预约医生："+ Setting.bookingdata.getDoctorname() + "\n"
+//				+"预约日期："+ Setting.bookingdata.getReservedate() + "\n"
+//				+"预约时间："+ Setting.bookingdata.getReservetime()+ "\n"
+//				//+ "流水号："+SerialNumber+"\n"
+//				+"取号地点：现场挂号处"+"\n"
+//				+"支付方式：现场支付"
+//				);
+//		builder.setTitle("提示");
+//		builder.setPositiveButton("确认",
+//				new android.content.DialogInterface.OnClickListener() {
+//					@Override
+//					public void onClick(DialogInterface dialog,
+//							int which) {
+//						dialog.dismiss();
+//						booking_action();
+//					}
+//				});
+//		builder.setNegativeButton("取消",
+//				new android.content.DialogInterface.OnClickListener() {
+//					@Override
+//					public void onClick(DialogInterface dialog,
+//							int which) {
+//						dialog.dismiss();
+//					}
+//				});
+//		builder.setNeutralButton("选择其他健康卡",
+//				new android.content.DialogInterface.OnClickListener() {
+//
+//					@Override
+//					public void onClick(DialogInterface dialog,
+//							int which) {
+//						dialog.dismiss();
+//						//startActivity(new Intent(ListCardActivity.this,LoginActivity.class));
+//						activity.startActivity(new Intent(activity,ListCardActivity.class));
+//					}
+//				});
+//		builder.create().show();
 	}
 }

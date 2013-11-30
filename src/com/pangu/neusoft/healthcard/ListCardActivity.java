@@ -9,6 +9,7 @@ import java.util.TimerTask;
 
 import org.ksoap2.serialization.SoapObject;
 
+import com.pangu.neusoft.adapters.CardListAdapter;
 import com.pangu.neusoft.adapters.HospitalList;
 import com.pangu.neusoft.adapters.HospitalListAdapter;
 import com.pangu.neusoft.core.GET;
@@ -22,6 +23,7 @@ import com.pangu.neusoft.db.Cards;
 import com.pangu.neusoft.db.DBConn;
 import com.pangu.neusoft.db.DBManager;
 import com.pangu.neusoft.db.People;
+import com.pangu.neusoft.healthe.BookingConfirmActivity;
 import com.pangu.neusoft.healthe.BookingMainActivity;
 import com.pangu.neusoft.healthe.DepartmentListActivity;
 import com.pangu.neusoft.healthe.HospitalListActivity;
@@ -54,11 +56,13 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.SimpleAdapter;
 import android.widget.SlidingDrawer;
 import android.widget.Toast;
 
@@ -70,9 +74,13 @@ public class ListCardActivity extends FatherActivity {
 	private ProgressDialog mProgressDialog;
 	private ListView list; 
 	private Button create_card_btn;
-	int countnum=0;
+	private Button card_booking_btn;
+	private boolean empty=true;
+	public static CheckBox temp;
+	//int countnum=0;
 	//private Button login_btn;
-	private Map<String,MedicalCard> cards=new HashMap<String,MedicalCard>();
+	
+	public static Map<String,MedicalCard> cards=new HashMap<String,MedicalCard>();
 	private LinearLayout add_card_help;
 	//private RelativeLayout activity_list_card;
 	private SlidingDrawer slidingDrawer1;
@@ -102,6 +110,9 @@ public class ListCardActivity extends FatherActivity {
 		//handler_btn = (ImageView)findViewById(R.id.handle_btn);
 		create_card_btn=(Button)findViewById(R.id.create_card_btn);
 		create_card_btn.setOnClickListener(addcard);
+		
+		card_booking_btn=(Button)findViewById(R.id.card_booking_btn);
+		card_booking_btn.setOnClickListener(card_booking);
 		//login_btn=(Button)findViewById(R.id.login_btn);
 	//	login_btn.setOnClickListener(login);
 		
@@ -127,14 +138,37 @@ public class ListCardActivity extends FatherActivity {
 		@Override
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
-			 if(countnum<5)
-				 startActivity(new Intent(ListCardActivity.this,CreateCardActivity.class));
-			 else
-				 Toast.makeText(ListCardActivity.this,"最多添加5张健康卡！",Toast.LENGTH_SHORT);
+			addCard();
 		}
 		
 	};
 	
+	public void addCard(){
+		 if(arr.size()<5)
+			 startActivity(new Intent(ListCardActivity.this,CreateCardActivity.class));
+		 else
+			 Toast.makeText(ListCardActivity.this,"最多添加5张健康卡！",Toast.LENGTH_SHORT).show();
+	}
+	
+	OnClickListener card_booking=new OnClickListener(){
+
+		@Override
+		public void onClick(View arg0) {
+			Setting.state="booking";
+			if(Setting.bookingdata==null||Setting.bookingdata.getUsername()==null||Setting.bookingdata.getUsername().equals("")){
+		    	Intent intent = new Intent(ListCardActivity.this,BookingMainActivity.class);
+				Setting.state="booking";
+				startActivity(intent);
+		    	return;
+		    }
+				BookingAction booking=new BookingAction(ListCardActivity.this);
+				//设置预约基本信息
+				Setting.setDefaultCardNumber(sp,editor);
+				booking.confirmBooking();
+			
+		}
+		
+	};
 
 //	OnClickListener login=new OnClickListener(){
 //
@@ -146,6 +180,7 @@ public class ListCardActivity extends FatherActivity {
 //		}
 //		
 //	};
+	
 	
 	
 	public void showListView(){
@@ -173,6 +208,7 @@ public class ListCardActivity extends FatherActivity {
 				if(obj!=null){
 					try{
 						SoapObject areaObject=(SoapObject)obj.getProperty("MedicalCards");
+						
 						for(int i=0;i <areaObject.getPropertyCount();i++){ 
 							
 							SoapObject soapChilds =(SoapObject)areaObject.getProperty(i); 
@@ -223,16 +259,20 @@ public class ListCardActivity extends FatherActivity {
 								editor.putString("defaultcardno", "0");
 							}
 							editor.commit();
-							arr.add(showing);
-							
+							arr.add(showing);							
 							//hospitalList.add(map);
-						}		
+							//countnum++;
+							//arr.add(showing+"1");
+							//arr.add(showing+"2");
+							//arr.add(showing+"3");
+							
+						}	
+						empty=false;
 					
 					}catch(Exception ex){
 						Log.e("error",ex.toString());
+						empty=true;
 						arr.add("请添加健康卡");
-						
-						
 					}
 					String resultCode=obj.getProperty("resultCode").toString();//0000成功1111报错
 					String msg=obj.getProperty("msg").toString();//返回的信息
@@ -285,54 +325,75 @@ public class ListCardActivity extends FatherActivity {
 				} 
 			
 				list=(ListView)findViewById(R.id.list_card);
-		    	ListAdapter adapter=new ArrayAdapter<String>(ListCardActivity.this,android.R.layout.simple_expandable_list_item_1,arr);
-			    list.setAdapter(adapter);		          
-			    list.setOnItemClickListener(choosecard);	
-			    
+		    	if(empty){
+					ListAdapter adapter=new ArrayAdapter<String>(ListCardActivity.this,android.R.layout.simple_expandable_list_item_1,arr);
+					list.setAdapter(adapter);
+					list.setOnItemClickListener(addcard_action);	
+		    	}
+		    	else{
+					ArrayList<HashMap<String, Object>> arrayList = new ArrayList<HashMap<String,Object>>();  
+			        for(String name:arr){  
+			            HashMap<String, Object> tempHashMap = new HashMap<String, Object>();  
+			            tempHashMap.put("cardname", name);  
+			            arrayList.add(tempHashMap); 
+			        }  				
+					
+			        CardListAdapter adapter = new CardListAdapter(ListCardActivity.this, arrayList, R.layout.list_card_content,
+				                new String[]{"cardname"}, new int[]{R.id.cardname});
+					
+				    list.setAdapter(adapter);		          
+				    list.getLayoutParams().height=40*arr.size();
+		    	}
 			}
 		}.execute();
 	}
 	
-	
-	
-	OnItemClickListener choosecard=new OnItemClickListener(){
+	OnItemClickListener addcard_action=new OnItemClickListener(){
 
 		@Override
-		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-				long arg3) {
-			String namecard=(String)list.getItemAtPosition(arg2);
-			
-			
-			
-			if(!namecard.equals("请添加健康卡")){
-				MedicalCard card=cards.get(namecard);
-				editor.putString("owner", card.getOwner());
-				editor.putString("cardnum", card.getMedicalCardCode());
-				editor.putString("cardtype", card.getMedicalCardTypeID()+"");
-				editor.putString("idnumber", card.getOwnerIDCard());
-				editor.putString("idtype", "1");
-				editor.putString("phonenumber", card.getOwnerPhone());
-				editor.commit();
-				
-				Log.e("erxsd:",sp.getString("now_state", ""));
-				if(sp.getString("now_state", "").equals("booking")){
-					BookingAction action=new BookingAction(ListCardActivity.this);
-					action.confirmBooking();
-				}else{
-					if(action!=null&&action.equals("history")){
-						Intent intent=new Intent();
-						intent.setClass(ListCardActivity.this, HistoryViewActivity.class);
-						intent.putExtra("username", sp.getString("owner", ""));
-						startActivity(intent);
-					}else{
-						showCardDialog(namecard);
-					}
-				}
-			}
-		     
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
+			addCard();
 		}
-		
 	};
+	
+//	OnItemClickListener choosecard=new OnItemClickListener(){
+//
+//		@Override
+//		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+//				long arg3) {
+//			String namecard=(String)list.getItemAtPosition(arg2);
+//			
+//			
+//			
+//			if(!namecard.equals("请添加健康卡")){
+//				MedicalCard card=cards.get(namecard);
+//				editor.putString("owner", card.getOwner());
+//				editor.putString("cardnum", card.getMedicalCardCode());
+//				editor.putString("cardtype", card.getMedicalCardTypeID()+"");
+//				editor.putString("idnumber", card.getOwnerIDCard());
+//				editor.putString("idtype", "1");
+//				editor.putString("phonenumber", card.getOwnerPhone());
+//				editor.commit();
+//				
+//				Log.e("erxsd:",sp.getString("now_state", ""));
+//				if(sp.getString("now_state", "").equals("booking")){
+//					BookingAction action=new BookingAction(ListCardActivity.this);
+//					action.confirmBooking();
+//				}else{
+//					if(action!=null&&action.equals("history")){
+//						Intent intent=new Intent();
+//						intent.setClass(ListCardActivity.this, HistoryViewActivity.class);
+//						intent.putExtra("username", sp.getString("owner", ""));
+//						startActivity(intent);
+//					}else{
+//						showCardDialog(namecard);
+//					}
+//				}
+//			}
+//		     
+//		}
+//		
+//	};
 	
 	
 
@@ -345,52 +406,52 @@ public class ListCardActivity extends FatherActivity {
 	
 	
 
-	public void showCardDialog(final String name) {
-		
-		Dialog dialog = new AlertDialog.Builder(this)
-				.setIcon(android.R.drawable.btn_star)
-				.setTitle("提示")
-				.setMessage("以下是针对健康卡的操作，请选择：")
-				.setPositiveButton("详情",
-						new android.content.DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog,
-									int which) {
-								dialog.dismiss();
-								Intent intent=new Intent();
-								intent.setClass(ListCardActivity.this, CardInfoActivity.class);
-								startActivity(intent);
-							}
-						})
-				.setNegativeButton("取消",
-						new android.content.DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog,
-									int which) {
-								dialog.dismiss();
-								
-								
-							}
-						})
-				.setNeutralButton("删除健康卡",
-						new android.content.DialogInterface.OnClickListener() {
-
-							@Override
-							public void onClick(DialogInterface dialog,
-									int which) {
-								// TODO Auto-generated method stub
-								dialog.dismiss();
-								confirmDeleteDialog(name);
-							}
-						}).create();
-
-		dialog.show();
-	}
+//	public void showCardDialog(final String name) {
+//		
+//		Dialog dialog = new AlertDialog.Builder(this)
+//				.setIcon(android.R.drawable.btn_star)
+//				.setTitle("提示")
+//				.setMessage("以下是针对健康卡的操作，请选择：")
+//				.setPositiveButton("详情",
+//						new android.content.DialogInterface.OnClickListener() {
+//							@Override
+//							public void onClick(DialogInterface dialog,
+//									int which) {
+//								dialog.dismiss();
+//								Intent intent=new Intent();
+//								intent.setClass(ListCardActivity.this, CardInfoActivity.class);
+//								startActivity(intent);
+//							}
+//						})
+//				.setNegativeButton("取消",
+//						new android.content.DialogInterface.OnClickListener() {
+//							@Override
+//							public void onClick(DialogInterface dialog,
+//									int which) {
+//								dialog.dismiss();
+//								
+//								
+//							}
+//						})
+//				.setNeutralButton("删除健康卡",
+//						new android.content.DialogInterface.OnClickListener() {
+//
+//							@Override
+//							public void onClick(DialogInterface dialog,
+//									int which) {
+//								// TODO Auto-generated method stub
+//								dialog.dismiss();
+//								confirmDeleteDialog(name);
+//							}
+//						}).create();
+//
+//		dialog.show();
+//	}
 	
 	
 	
 
-	protected void confirmDeleteDialog(String name) {
+	public void confirmDeleteDialog(String name) {
 		MedicalCard card=cards.get(name);
 		
 		final String type=card.getMedicalCardTypeID()+"";

@@ -161,6 +161,8 @@ public class RegisterActivity extends FatherActivity {
 								if(IsRegisterSuccess.equals("true")){
 									editor.putString("username", member.getUserName());
 									editor.putString("password", member.getPassword());
+									editor.putBoolean("loginsuccess",true);
+									editor.putString("defaultcardno","0");
 									editor.commit();
 									
 									
@@ -202,7 +204,7 @@ public class RegisterActivity extends FatherActivity {
 								final Timer t = new Timer();
 								t.schedule(new TimerTask() {
 									public void run() {
-										startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+										//startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
 										finish();
 										t.cancel(); 
 									}

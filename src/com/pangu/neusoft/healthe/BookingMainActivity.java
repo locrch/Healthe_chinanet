@@ -147,8 +147,13 @@ public class BookingMainActivity extends FatherActivity {
 			@Override
 			public void onClick(View arg0)
 			{
-				doctor_hospital2.setVisibility(View.VISIBLE);
-				doctor_hospital3.setVisibility(View.VISIBLE);
+				if(doctor_hospital2.getVisibility()==View.VISIBLE){
+					doctor_hospital2.setVisibility(View.INVISIBLE);
+					doctor_hospital3.setVisibility(View.INVISIBLE);
+				}else{
+					doctor_hospital2.setVisibility(View.VISIBLE);
+					doctor_hospital3.setVisibility(View.VISIBLE);
+				}
 			}
 		});
 		doctor_hospital2.setOnClickListener(new OnClickListener()
@@ -228,13 +233,18 @@ public class BookingMainActivity extends FatherActivity {
 
 	public void setItemSize(){		
 		//search_btn.getLayoutParams().width=(height / 10);
-		//search_btn.getLayoutParams().height=(width / 10);
+		search_btn.getLayoutParams().height=(height / 11);
+		selecttext.getLayoutParams().height=(height / 10);
+		doctor_hospital1.getLayoutParams().height=(height / 12);
+		doctor_hospital2.getLayoutParams().height=(height / 12);
+		doctor_hospital3.getLayoutParams().height=(height / 12);
 		//search_btn.setTextSize(width / fontsizex);
 		//select_spinner.getLayoutParams().width = width / 3;
 		//select_spinner.getLayoutParams().height = height / 8;
 
 		//selecttext.getLayoutParams().width=width / 2;
-		//selecttext.getLayoutParams().height= search_btn.getHeight();
+	
+		//selecttext.setHeight(search_btn.getLayoutParams().height);
 		//doctor_hospital1.setHeight(search_btn.getHeight());
 		//doctor_hospital2.setHeight(search_btn.getHeight());
 		//doctor_hospital3.setHeight(search_btn.getHeight());
@@ -504,7 +514,7 @@ public class BookingMainActivity extends FatherActivity {
 			// TODO Auto-generated method stub
 			String serachdoctorname = selecttext.getText().toString();
 			if(serachdoctorname.equals("")){
-				Toast.makeText(BookingMainActivity.this, "请先输入医生姓名", Toast.LENGTH_SHORT);
+				Toast.makeText(BookingMainActivity.this, "请先输入医生姓名", Toast.LENGTH_SHORT).show();
 			}else{
 				editor.putString("serach_doc", serachdoctorname);			
 				editor.commit();			
@@ -526,7 +536,7 @@ public class BookingMainActivity extends FatherActivity {
 				// TODO Auto-generated method stub
 				String serachhospitalname = selecttext.getText().toString();
 				if(serachhospitalname.equals("")){
-					Toast.makeText(BookingMainActivity.this, "请先输入医院姓名", Toast.LENGTH_SHORT);
+					Toast.makeText(BookingMainActivity.this, "请先输入医院姓名", Toast.LENGTH_SHORT).show();
 				}else{
 					editor.putString("serach_hosp", serachhospitalname);				
 					editor.commit();				

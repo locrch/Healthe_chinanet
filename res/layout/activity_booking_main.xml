@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"        
-         >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp" >
+
          <ScrollView
               android:layout_width="fill_parent" 
     			android:layout_height="wrap_content" >
@@ -19,18 +20,14 @@
             android:textSize="@dimen/button_textsize"
             android:text="医生" />
 
-        
-        
         <EditText
             android:id="@+id/search_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/search_btn"
             android:layout_toRightOf="@+id/doctor_hospital1"
-            android:ems="10"
-            android:textSize="@dimen/button_textsize"
-            android:hint="请输入医生名字" >
+            android:hint="请输入医生名字"
+            android:textSize="@dimen/button_textsize" >
 
             <requestFocus />
         </EditText>

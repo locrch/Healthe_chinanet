@@ -74,30 +74,9 @@ public class SchedultLayout {
          	
 	            for(Schedule schedule:scheduleList){
 	            	String day=schedule.getOutcallDate();
-//	            	String number=schedule.getAvailableNum();
-//	            	String now=maps.get(day);
-//	            	if(now!=null){
-//	            		int res=Integer.parseInt(now)+Integer.parseInt(number);
-//	            		number=res+"";
-//	            	}
-//	            	maps.put(day, number);
 	            	daylist.add(day);
 	            }
-	            //maps.clear();//暂时不在列表显示排班表
-	            
-	            
-//	            TreeMap<String,String> treemap = new TreeMap<String,String>(maps);
-//	            String[] alldays=new String[maps.size()];
-//	            Iterator it = treemap.entrySet().iterator();
-//	            int dayx=0;
-//	           
-//	    		  while (it.hasNext()){ 
-//		    		   Map.Entry entry =(Map.Entry) it.next();
-//		    		   String key = (String) entry.getKey();
-//		    		   alldays[dayx]=key;
-//		    		   dayx++;
-//	    		  }
-	            
+
 	         
 	            HashSet h  =   new  HashSet(daylist); 
 	            daylist.clear(); 
@@ -193,20 +172,14 @@ public class SchedultLayout {
 													editor.commit();
 	 												//Log.e("erorr",schedule.getDoctorName()+schedule.getDoctorId()+":"+schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
 	 												if(sp.getString("username", "").equals("")){
-	 													Toast.makeText(activity, "请先登录", Toast.LENGTH_SHORT);
+	 													Toast.makeText(activity, "请先登录", Toast.LENGTH_SHORT).show();
 	 													//if(!sp.getBoolean("loginsuccess", false)){
 	 														activity.startActivity(new Intent(activity,LoginActivity.class));
 	 													//}
 	 												}else{
 		 												if(!sp.getString("defaultcardno","").equals("")){
 		 													
-		 													editor.putString("owner", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner",""));
-		 													editor.putString("cardnum", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"cardnum",""));
-		 													editor.putString("cardtype", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"cardtype",""));
-		 													editor.putString("idnumber", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"idnumber",""));
-		 													editor.putString("idtype", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"idtype",""));
-		 													editor.putString("phonenumber", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"phonenumber",""));
-		 													editor.commit();
+		 													Setting.setDefaultCardNumber(sp,editor);
 		 													BookingAction action=new BookingAction(activity);
 		 													action.confirmBooking();
 		 												}else{

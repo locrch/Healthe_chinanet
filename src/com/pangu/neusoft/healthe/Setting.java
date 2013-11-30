@@ -1,5 +1,11 @@
 package com.pangu.neusoft.healthe;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+
+import com.pangu.neusoft.core.models.BookingInfos;
+
 public class Setting {
 	public final static int fontsizel=15;
 	public static int fontsizex=12;
@@ -29,5 +35,19 @@ public class Setting {
 	public static String link="http://219.130.221.120:10804/smjkfw/wsyygh/pages/jkw_login_dx.jsp?redirect=http://202.103.160.158:1001/MedicalCardPage/receive.aspx&wxid=";
 	
 	public static int cols=3;//一行显示多少个 医生排班日期
+	public static String state="booking";
+	public static BookingInfos bookingdata;
+	
+	
+	public static void setDefaultCardNumber(SharedPreferences sp,Editor editor){
+		
+			editor.putString("owner", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner",""));
+			editor.putString("cardnum", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"cardnum",""));
+			editor.putString("cardtype", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"cardtype",""));
+			editor.putString("idnumber", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"idnumber",""));
+			editor.putString("idtype", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"idtype",""));
+			editor.putString("phonenumber", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"phonenumber",""));
+			editor.commit();
+	}
 	
 }
