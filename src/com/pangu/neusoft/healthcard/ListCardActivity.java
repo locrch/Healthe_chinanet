@@ -60,6 +60,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SlidingDrawer;
+import android.widget.Toast;
 
 import com.pangu.neusoft.healthe.FatherActivity;
 import com.pangu.neusoft.tools.DialogShow;
@@ -69,10 +70,11 @@ public class ListCardActivity extends FatherActivity {
 	private ProgressDialog mProgressDialog;
 	private ListView list; 
 	private Button create_card_btn;
-	private Button login_btn;
+	int countnum=0;
+	//private Button login_btn;
 	private Map<String,MedicalCard> cards=new HashMap<String,MedicalCard>();
 	private LinearLayout add_card_help;
-	private RelativeLayout activity_list_card;
+	//private RelativeLayout activity_list_card;
 	private SlidingDrawer slidingDrawer1;
 	private ImageView handler_btn;
 	WebService service;
@@ -94,29 +96,29 @@ public class ListCardActivity extends FatherActivity {
 		action=intent.getStringExtra("action");		
 		setContentView(R.layout.activity_list_card);
 		
-		activity_list_card = (RelativeLayout)findViewById(R.id.activity_list_card);
+		//activity_list_card = (RelativeLayout)findViewById(R.id.activity_list_card);
 		add_card_help = (LinearLayout)findViewById(R.id.add_card_help);
-		slidingDrawer1=(SlidingDrawer)findViewById(R.id.slidingDrawer2);
-		handler_btn = (ImageView)findViewById(R.id.handle_btn);
+		//slidingDrawer1=(SlidingDrawer)findViewById(R.id.slidingDrawer2);
+		//handler_btn = (ImageView)findViewById(R.id.handle_btn);
 		create_card_btn=(Button)findViewById(R.id.create_card_btn);
 		create_card_btn.setOnClickListener(addcard);
-		login_btn=(Button)findViewById(R.id.login_btn);
-		login_btn.setOnClickListener(login);
+		//login_btn=(Button)findViewById(R.id.login_btn);
+	//	login_btn.setOnClickListener(login);
 		
 		showListView();
 			
-		slidingDrawer1.setOnDrawerOpenListener(new android.widget.SlidingDrawer.OnDrawerOpenListener() {		 
-            public void onDrawerOpened() {// 当抽屉打开时执行此操作  
-            	handler_btn.setImageResource(R.drawable.button_style);
-            	
-            }  
-        }); 
-		
-		slidingDrawer1.setOnDrawerCloseListener(new android.widget.SlidingDrawer.OnDrawerCloseListener() { 
-            public void onDrawerClosed() {// 抽屉关闭时执行此操作 
-            	handler_btn.setImageResource(R.drawable.button_style);
-            } 
-        });
+//		slidingDrawer1.setOnDrawerOpenListener(new android.widget.SlidingDrawer.OnDrawerOpenListener() {		 
+//            public void onDrawerOpened() {// 当抽屉打开时执行此操作  
+//            	handler_btn.setImageResource(R.drawable.button_style);
+//            	
+//            }  
+//        }); 
+//		
+//		slidingDrawer1.setOnDrawerCloseListener(new android.widget.SlidingDrawer.OnDrawerCloseListener() { 
+//            public void onDrawerClosed() {// 抽屉关闭时执行此操作 
+//            	handler_btn.setImageResource(R.drawable.button_style);
+//            } 
+//        });
 	}
 
 	
@@ -125,23 +127,25 @@ public class ListCardActivity extends FatherActivity {
 		@Override
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
-			 
-			 startActivity(new Intent(ListCardActivity.this,CreateCardActivity.class));
+			 if(countnum<5)
+				 startActivity(new Intent(ListCardActivity.this,CreateCardActivity.class));
+			 else
+				 Toast.makeText(ListCardActivity.this,"最多添加5张健康卡！",Toast.LENGTH_SHORT);
 		}
 		
 	};
 	
 
-	OnClickListener login=new OnClickListener(){
-
-		@Override
-		public void onClick(View arg0) {
-			// TODO Auto-generated method stub
-			 
-			 startActivity(new Intent(ListCardActivity.this,LoginActivity.class));
-		}
-		
-	};
+//	OnClickListener login=new OnClickListener(){
+//
+//		@Override
+//		public void onClick(View arg0) {
+//			// TODO Auto-generated method stub
+//			 
+//			 startActivity(new Intent(ListCardActivity.this,LoginActivity.class));
+//		}
+//		
+//	};
 	
 	
 	public void showListView(){
@@ -284,12 +288,6 @@ public class ListCardActivity extends FatherActivity {
 		    	ListAdapter adapter=new ArrayAdapter<String>(ListCardActivity.this,android.R.layout.simple_expandable_list_item_1,arr);
 			    list.setAdapter(adapter);		          
 			    list.setOnItemClickListener(choosecard);	
-			    
-			    DisplayMetrics dMetrics = new DisplayMetrics();
-			    getWindowManager().getDefaultDisplay().getMetrics(dMetrics);
-			   int ScreenWIDTH = dMetrics.widthPixels;
-
-			    list.getLayoutParams().width=ScreenWIDTH/2;
 			    
 			}
 		}.execute();
