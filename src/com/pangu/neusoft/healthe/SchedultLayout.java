@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -209,8 +210,8 @@ public class SchedultLayout {
 		            
 	           
          } else{
-         	
-	            scheduleText.setText("没有排班");//显示有排班的日期：
+        	 	scheduleText.setTextColor(Color.RED);
+	            scheduleText.setText("（暂无排班信息）");//显示有排班的日期：
 	          //  scheduleDetailLayout.setVisibility(View.GONE);
          }
 
