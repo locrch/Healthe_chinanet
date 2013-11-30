@@ -1,86 +1,219 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/his_list_layout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="wrap_content"
+    android:background="@drawable/schedule_btn_style_layout"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:paddingRight="6dp" >
 
-    <TextView
-        android:id="@+id/his_hospitalid"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/his_cancel_id"
-        android:layout_alignBottom="@+id/his_cancel_id"
-        android:layout_alignLeft="@+id/his_cancel_id"
-        android:text="TextView"
-        android:visibility="invisible" />
+        android:layout_weight="1"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/his_cancel_id"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:text="就诊人：" />
+
+                <TextView
+                    android:id="@+id/his_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView1"
+                    android:layout_alignBottom="@+id/textView1"
+                    android:layout_toRightOf="@+id/textView1"
+                    android:layout_weight="10"
+                    android:text="加载中..." />
+
+                <TextView
+                    android:id="@+id/his_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/his_username"
+                    android:layout_alignBottom="@+id/his_username"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:text="状态" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="流水号：" />
+
+            <TextView
+                android:id="@+id/his_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:text="加载中..." />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="时间：" />
+
+            <TextView
+                android:id="@+id/his_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:text="加载中..." />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="医生：" />
+
+            <TextView
+                android:id="@+id/his_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:text="加载中..." />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <Button
+                    android:id="@+id/his_cancle_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/button_red_style"
+                    android:text="取消" />
+
+                <Button
+                    android:id="@+id/his_detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/button_style"
+                    android:text="详细" />
+
+                <TextView
+                    android:id="@+id/his_doctorid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/his_cancle_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/his_detail_btn"
+                    android:layout_alignBottom="@+id/his_detail_btn"
+                    android:layout_marginLeft="22dp"
+                    android:layout_toRightOf="@+id/his_detail_btn"
+                    android:layout_weight="1"
+                    android:text="test"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/his_hospitalid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/his_cancle_id"
+                    android:layout_alignBottom="@+id/his_cancle_id"
+                    android:layout_centerHorizontal="true"
+                    android:text="yess"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+ 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/his_detail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/hisdDepartment"
-        android:layout_below="@+id/his_date_time"
-        android:text="cancelid"
-        android:visibility="invisible" />
+        android:layout_weight="1"
+        android:background="@drawable/round_linear_layout"
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:visibility="gone" >
 
-    <TextView
-        android:id="@+id/his_hospital"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="37dp"
-        android:text="Hospital" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="详细信息：" />
 
-    <TextView
-        android:id="@+id/seria_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/his_hospital"
-        android:layout_marginBottom="17dp"
-        android:layout_toRightOf="@+id/his_hospital"
-        android:text="" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. ##########" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/seria_num"
-        android:layout_alignBottom="@+id/seria_num"
-        android:layout_alignLeft="@+id/his_hospital"
-        android:text="流水号：" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.@@@@@@@" />
 
-    <TextView
-        android:id="@+id/hisdDepartment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/his_date_time"
-        android:layout_below="@+id/his_hospital"
-        android:text="department" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.%%%%%%%%%" />
 
-    <TextView
-        android:id="@+id/his_doctor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/his_date_time"
-        android:layout_below="@+id/hisdDepartment"
-        android:text="doctor" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/his_date_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/his_hospital"
-        android:layout_below="@+id/his_doctor"
-        android:text="Date Time" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/hisdDepartment"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:text="现场取号" />
-
-</RelativeLayout>
+</LinearLayout>

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.ksoap2.serialization.SoapObject;
 
+import com.pangu.neusoft.adapters.HistoryListAdapter;
 import com.pangu.neusoft.adapters.PullToRefreshView.OnFooterRefreshListener;
 import com.pangu.neusoft.adapters.PullToRefreshView.OnHeaderRefreshListener;
 import com.pangu.neusoft.adapters.DepartmentListAdapter;
@@ -44,6 +45,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -59,10 +61,10 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	DBManager mgr;
 	String username;
 	//List<BookingInfos> list;
+	HistoryListAdapter adapter;
 	
-	private ProgressDialog mProgressDialog; 
-	String cancleid;
-	String hospitalid;
+	//String cancleid;
+	//String hospitalid;
 	private SharedPreferences sp;
 	private Editor editor;
 	ArrayList<HashMap<String,String>> hist_array;
@@ -108,25 +110,21 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		change_card_btn.requestFocus();
 		
 		
-		mProgressDialog = new ProgressDialog(ShowHistoryActivity.this);   
-        mProgressDialog.setMessage("正在加载数据...");   
-        mProgressDialog.setIndeterminate(false);  
-        mProgressDialog.setCanceledOnTouchOutside(false);//设置进度条是否可以按退回键取消  
-        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		
         hist_array=new ArrayList<HashMap<String,String>> ();
         hist_array_temp=new ArrayList<HashMap<String,String>> ();
-		for(int i=0;i<10;i++){
+		//for(int i=0;i<10;i++){
     	setList("booking");
         setList("cancled");
         setList("passed");
-      }
+        // }
         start=0;
         page=0;
-       updatedata();
+        updatedata();
         /*	
 		SimpleAdapter adapter=new SimpleAdapter(
 					this,hist_array,R.layout.history_content,new String[]{"hospital","department","doctor","datatime","cancleid","hospitalid","SerialNumber"},
-					new int[]{R.id.his_hospital,R.id.hisdDepartment,R.id.his_doctor,R.id.his_date_time,R.id.his_cancel_id,R.id.his_hospitalid,R.id.seria_num});
+					new int[]{R.id.his_hospital,R.id.hisdDepartment,R.id.his_doctor,R.id.his_date_time,R.id.his_cancle_id,R.id.his_hospitalid,R.id.seria_num});
 		booking_history_list.setAdapter(adapter);	
 		booking_history_list.setOnItemClickListener(item_click);
 		*/
@@ -138,15 +136,23 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		 
 		List<BookingInfos> list=mgr.getBookingList(username,type);
 		for(BookingInfos booking:list){
-		
+		//R.id.his_username,R.id.his_cancle_id,R.id.his_doctor,R.id.his_num,R.id.his_time,R.id.his_hospitalid,R.id.his_doctorid
 				HashMap<String,String> map=new  HashMap<String,String>();
-				map.put("hospital", booking.getHospitalname());
-				map.put("department", booking.getDepartmentname());
-				map.put("doctor",booking.getDoctorname());
-				map.put("datatime", booking.getReservedate()+" "+booking.getReservetime());
-				map.put("cancleid", booking.getCancelid());
-				map.put("hospitalid", booking.getHospitalid());
-				map.put("SerialNumber", booking.getSerialNumber());
+				map.put("his_username", booking.getUsername());
+				map.put("his_doctor",booking.getDoctorname()+"-"+booking.getDepartmentname()+"-"+booking.getHospitalname());
+				map.put("his_time", booking.getReservedate()+" "+booking.getReservetime());
+				map.put("his_cancle_id", booking.getCancelid());
+				map.put("his_hospitalid", booking.getHospitalid());
+				map.put("his_num", booking.getSerialNumber());
+				map.put("his_doctorid", booking.getDoctorid());
+				if(type.equals("booking")){
+					map.put("type", " 有效 ");
+				}else if(type.equals("cancled")){
+					map.put("type", "已取消");
+				}else{
+					map.put("type", "已过期");
+				}
+				
 				hist_array.add(map);
 			
 		}
@@ -162,7 +168,7 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	        	totalpage+=1;
 	        }
 	        
-	        if(page<=totalpage){
+	        	if(page<=totalpage){
 	        	start=page*10;
 	        	end=page*10+10;
 	        	if(end>totalsize){
@@ -170,18 +176,24 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	        	}
 		        for(int i=start;i<end;i++){
 		        	if(count<totalsize){
-	        		HashMap<String,String> mapx=(HashMap<String,String>)hist_array.get(i);
-	        		mapx.put("hospital", mapx.get("hospital")+count);
-		        		hist_array.set(i, mapx);
+	        		//HashMap<String,String> mapx=(HashMap<String,String>)hist_array.get(i);
+	        		//mapx.put("hospital", mapx.get("hospital")+count);
+		        		//hist_array.set(i, mapx);
 		        		hist_array_temp.add(hist_array.get(i));
 		        		count+=1;
 		        	}
 		        }
-				SimpleAdapter adapter=new SimpleAdapter(
-							this,hist_array_temp,R.layout.history_content,new String[]{"hospital","department","doctor","datatime","cancleid","hospitalid","SerialNumber"},
-							new int[]{R.id.his_hospital,R.id.hisdDepartment,R.id.his_doctor,R.id.his_date_time,R.id.his_cancel_id,R.id.his_hospitalid,R.id.seria_num});
-				booking_history_list.setAdapter(adapter);	
-				booking_history_list.setOnItemClickListener(item_click);
+		        if(hist_array_temp.size()>0){
+			        adapter=new HistoryListAdapter(
+								this,hist_array_temp,R.layout.history_content,new String[]{"his_username","his_doctor","his_num","his_time","his_hospitalid","his_doctorid","type","his_cancle_id"},
+								new int[]{R.id.his_username,R.id.his_doctor,R.id.his_num,R.id.his_time,R.id.his_hospitalid,R.id.his_doctorid,R.id.his_state,R.id.his_cancle_id});
+					
+					booking_history_list.setAdapter(adapter);	
+					//booking_history_list.setOnItemClickListener(item_click);
+		        }else{
+		        	String[] strs = new String[] {"（暂无预约记录）"};
+		        	booking_history_list.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, strs));
+		        }
 	        }
 	}
 	
@@ -195,108 +207,20 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		}
 	};
 	
-	OnItemClickListener item_click=new OnItemClickListener(){
-		@Override
-		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-				long arg3) {
-		  HashMap<String,String> map=(HashMap<String,String>)booking_history_list.getItemAtPosition(arg2);
-		  cancleid=map.get("cancleid");
-		  hospitalid=map.get("hospitalid");
-		 // if(type.equals("booking"))
-		//	  dialog();
-		
-		}
-	};
+//	OnItemClickListener item_click=new OnItemClickListener(){
+//		@Override
+//		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+//				long arg3) {
+//		  HashMap<String,String> map=(HashMap<String,String>)booking_history_list.getItemAtPosition(arg2);
+//		  cancl/eid=map.get("cancleid");
+//		  hospitalid=map.get("hospitalid");
+//		 // if(type.equals("booking"))
+//		//	  dialog();
+//		
+//		}
+//	};
 
-	String message="";
 	
-	protected void dialog() {
-		AlertDialog.Builder builder = new Builder(ShowHistoryActivity.this);
-		builder.setMessage("确认要取消预约吗？");
-		builder.setTitle("提示");
-
-		builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-				new AsyncTask<Void, Void, Boolean>(){
-				    
-					@Override  
-			        protected void onPreExecute() {   
-			            super.onPreExecute(); 
-			            mProgressDialog.show();
-			        }			
-					@Override
-					protected Boolean doInBackground(Void... params){
-						HandleBooking req=new HandleBooking();
-						req.setAucode(GET.Aucode);
-						req.setCancleID(cancleid);
-						req.setCardNum("");
-						req.setHospitalId(hospitalid);
-						req.setOrderNum("");
-						req.setReserveDate("");
-						req.setReserveTime("");
-						
-						WebService service = new WebService();
-						SoapObject  obj = service.cancelBooking(req);
-						
-						if(obj!=null){
-							String isSuccessful=obj.getProperty("isSuccessful").toString();
-							message=obj.getProperty("Message").toString();
-
-							//String resultCode=obj.getProperty("resultCode").toString();//0000成功1111报错
-							//String msg=obj.getProperty("msg").toString();//返回的信息
-							//Log.e("error1", message);
-							//Log.e("error2", msg);
-							if(isSuccessful.equals("true")){
-								return true;
-								
-							}else{
-								return false;
-							}
-						}
-						else{
-							message="取消失败";
-							return false;
-						}
-					}
-					
-					@Override
-					protected void onPostExecute(Boolean result){
-						super.onPostExecute(result);
-						if(mProgressDialog.isShowing()){
-							mProgressDialog.dismiss();
-						}
-						if (result){
-							mgr.cancleBooking(cancleid);
-							mgr.closeDB();
-							DialogShow.showDialog(ShowHistoryActivity.this, "取消成功！");
-						}else{
-							mgr.cancleBooking(cancleid);
-							mgr.closeDB();
-							DialogShow.showDialog(ShowHistoryActivity.this, message);
-						}
-						
-					}
-					@Override
-					protected void onCancelled()
-					{
-						super.onCancelled();
-				
-					}
-				
-				}.execute();
-			}
-		});
-
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		});
-		builder.create().show();
-	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -312,7 +236,17 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	    }  
 	}  
 	
-	
+	public void update(){
+		mPullToRefreshView.onHeaderRefreshComplete();
+        start=0;
+        page=0;
+        hist_array_temp.clear();
+        setList("booking");
+        setList("cancled");
+        setList("passed");
+        updatedata();
+        
+	}
 	
 	@Override
 	public void onFooterRefresh(PullToRefreshView view) {
@@ -333,14 +267,16 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 			
 			@Override
 			public void run() {
-				
-				mPullToRefreshView.onHeaderRefreshComplete();
-		        start=0;
-		        page=0;
-		        hist_array_temp.clear();
-		       updatedata();
+				refresh();
+				 //update();
 			}
 		},1000);
 		
 	}
+	
+	 public void refresh() {  
+	        finish();  
+	        Intent intent = new Intent(ShowHistoryActivity.this, ShowHistoryActivity.class);  
+	        startActivity(intent);  
+	    }  
 }

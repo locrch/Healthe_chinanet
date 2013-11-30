@@ -185,7 +185,7 @@ public class BookingAction {
 						final Timer t = new Timer();
 						t.schedule(new TimerTask() {
 							public void run() {
-								activity.startActivity(new Intent(activity,ListCardActivity.class));
+								activity.startActivity(new Intent(activity,ShowHistoryActivity.class));
 								activity.finish();
 								t.cancel(); 
 							}

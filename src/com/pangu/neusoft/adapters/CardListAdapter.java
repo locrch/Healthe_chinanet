@@ -47,7 +47,7 @@ public class CardListAdapter extends SimpleAdapter{
 	@Override
 	  public View getView(final int position, View convertView, ViewGroup parent) {
 	   // TODO Auto-generated method stub
-		View res=super.getView(position, convertView, parent);
+		final View res=super.getView(position, convertView, parent);
 		
 		final CheckBox namebox=(CheckBox)res.findViewById(R.id.cardname);
 		final String name=namebox.getText().toString();
