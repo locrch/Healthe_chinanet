@@ -242,9 +242,9 @@ public class ListCardActivity extends FatherActivity {
 							
 							String showing="";
 							if(MedicalCardTypeID==1){
-								showing+=("佛山健康卡");
+								showing+=("(佛山健康卡)");
 							}else{
-								showing+=("居民健康卡");
+								showing+=("(居民健康卡)");
 							}
 							//showing+=(MedicalCardCode+"\n");//卡号
 							showing=Owner+showing;

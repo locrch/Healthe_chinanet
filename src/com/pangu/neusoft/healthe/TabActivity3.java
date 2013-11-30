@@ -115,8 +115,7 @@ public class TabActivity3 extends Activity {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			Intent intent=getIntent();
-			intent.putExtra("action", "history");
-			intent.setClass(TabActivity3.this, ListCardActivity.class);
+			intent.setClass(TabActivity3.this, ShowHistoryActivity.class);
 			startActivity(intent);
 		}
 	};

@@ -6,6 +6,7 @@ import java.util.Map;
 import com.pangu.neusoft.core.models.MedicalCard;
 import com.pangu.neusoft.healthcard.BookingAction;
 import com.pangu.neusoft.healthcard.ListCardActivity;
+import com.pangu.neusoft.healthcard.ShowHistoryActivity;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.Setting;
 
@@ -14,6 +15,7 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
@@ -56,9 +58,9 @@ public class CardListAdapter extends SimpleAdapter{
 			String cardtype=sp.getString("card"+number+"_"+"cardtype", "");
 			String type="";
 			if(cardtype.equals("1")){
-				type=("佛山健康卡");
+				type=("(佛山健康卡)");
 			}else{
-				type=("居民健康卡");
+				type=("(居民健康卡)");
 			}
 			String defaulttext=owner+type;
 			Log.e("defaulttext:",defaulttext);
@@ -96,6 +98,8 @@ public class CardListAdapter extends SimpleAdapter{
 						//设置预约基本信息
 						Setting.setDefaultCardNumber(sp,editor);
 						booking.confirmBooking();
+					}else if(Setting.state.equals("history")){
+						activity.startActivity(new Intent(activity,ShowHistoryActivity.class));
 					}
 					Toast.makeText(activity, "默认诊疗卡:"+arg0.getText(), Toast.LENGTH_SHORT).show();
 				}else{

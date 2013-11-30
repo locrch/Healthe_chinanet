@@ -37,7 +37,7 @@ public class Setting {
 	public static int cols=3;//一行显示多少个 医生排班日期
 	public static String state="booking";
 	public static BookingInfos bookingdata;
-	
+	public static int history_list_show=10;//历史记录一次显示10行
 	
 	public static void setDefaultCardNumber(SharedPreferences sp,Editor editor){
 		
@@ -49,5 +49,17 @@ public class Setting {
 			editor.putString("phonenumber", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"phonenumber",""));
 			editor.commit();
 	}
-	
+	public static String getDefaultCardNumber(SharedPreferences sp,Editor editor){
+		
+		String owner=sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner","");
+		String cardtype= sp.getString("card"+sp.getString("defaultcardno","")+"_"+"cardtype","");
+		String type="";
+		if(cardtype.equals("1")){
+			type=("(佛山健康卡)");
+		}else{
+			type=("(居民健康卡)");
+		}
+		
+		return owner+type;
+}
 }

@@ -346,9 +346,9 @@ public class DBManager {
 	    	}
 	    	String sql="SELECT * FROM history where username=?";
 	    	if(type.equals("booking")){
-	    		sql= "SELECT * FROM history where username=? and cancleid <> ? and reservedate >= ? order by reservedate,reservetime desc";
+	    		sql= "SELECT * FROM history where username=? and cancleid <> ? and reservedate >= ? order by reservedate,reservetime";
 	    	}else if (type.equals("cancled")){
-	    		sql= "SELECT * FROM history where username=? and cancleid = ? and reservedate <> ? order by reservedate,reservetime desc";
+	    		sql= "SELECT * FROM history where username=? and cancleid = ? and '' <> ? order by reservedate,reservetime desc";
 	    	}else if (type.equals("passed")){
 	    		sql= "SELECT * FROM history where username=? and cancleid <> ? and reservedate < ? order by reservedate,reservetime desc";
 	    	}

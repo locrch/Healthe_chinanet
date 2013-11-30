@@ -184,7 +184,7 @@ public class BookingMainActivity extends FatherActivity {
 
 		
 		
-		selecttext.clearFocus();
+	
 		//欢迎您和地区选择部分
 		welcome = (TextView) findViewById(R.id.welcome);
 		select_area_btn = (Button) findViewById(R.id.select_area_btn);
@@ -207,7 +207,7 @@ public class BookingMainActivity extends FatherActivity {
 		message = (TextView) findViewById(R.id.messages);
 		message.setText("1.每月爽约次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"2.每周累计主动取消次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"3.同一就诊人在同一就诊日、同一医院、同一医生只能预约1次。"+"\n"+"\n"+"4.同一就诊人在同一就诊日、同一医院只能预约2次。"+"\n"+"\n"+"5.同一就诊人每月预约不能超过6次（医院临时停改诊除外）。");
 		message.setTextColor(R.color.black_overlay);
-		
+		selecttext.clearFocus();
 		welcome.setFocusable(true);
 		welcome.setFocusableInTouchMode(true);
 		welcome.requestFocus();
