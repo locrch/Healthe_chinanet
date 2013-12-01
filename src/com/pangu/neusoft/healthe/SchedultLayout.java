@@ -141,11 +141,12 @@ public class SchedultLayout {
 	 								 String day=newButtonInfo.getDay();
 	 								//显示当日可排班内容
 	 								 
-	 								
+	 								scheduleList=sort.sortScheduleByTimeRange(scheduleList);//排序
 	 								//获得schedule内容。写到列表中
-	 								for(Schedule schedule:scheduleList){
+	 								for(int i=0;i<scheduleList.size();i++){
+	 									Schedule schedule=scheduleList.get(i);
 	 									Log.e("ScheduleList:",schedule.getDoctorName()+schedule.getDoctorId()+":"+schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
-	 									 scheduleList=sort.sortScheduleByDay(scheduleList);
+	 									
 	 									if(schedule.getOutcallDate().equals(day)){
 	 										Button oneButton=new Button(scheduleDetailLayout.getContext());
 	 										oneButton.setPadding(10, 5, 10, 5);
