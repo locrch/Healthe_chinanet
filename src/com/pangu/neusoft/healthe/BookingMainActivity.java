@@ -451,7 +451,10 @@ public class BookingMainActivity extends FatherActivity {
 			protected void onCancelled()
 			{
 				super.onCancelled();
-
+				if (mProgressDialog.isShowing())
+				{
+					mProgressDialog.dismiss();
+				}
 			}
 
 			public void showInList()

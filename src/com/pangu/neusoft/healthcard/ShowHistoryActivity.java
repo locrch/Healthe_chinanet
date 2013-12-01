@@ -58,7 +58,7 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	ListView booking_history_list;
 	//ListView booking_history_list_passed;
 	//ListView booking_history_list_cancled;
-	DBManager mgr;
+	public DBManager mgr;
 	String username;
 	//List<BookingInfos> list;
 	HistoryListAdapter adapter;
@@ -77,6 +77,14 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	int totalsize=0;
 	int page=0;
 	
+	public DBManager getMgr() {
+		return mgr;
+	}
+
+	public void setMgr(DBManager mgr) {
+		this.mgr = mgr;
+	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

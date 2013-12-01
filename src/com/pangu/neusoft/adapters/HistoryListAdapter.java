@@ -63,7 +63,7 @@ public class HistoryListAdapter extends SimpleAdapter{
         mProgressDialog.setIndeterminate(false);  
         mProgressDialog.setCanceledOnTouchOutside(false);//设置进度条是否可以按退回键取消  
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        mgr=new DBManager(activity);
+        mgr=activity.getMgr();
 	}
 
 	boolean showing_detail=false;
