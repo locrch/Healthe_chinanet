@@ -200,19 +200,19 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. ##########" />
+            android:text="说明：本产品预约为实名就诊，请您携带本人健康卡或身份证，在预约时段前15分钟到达医院，凭健康卡或身份证确认预约就诊。如未在规定时间内确认，或未带健康卡或身份证，该预约单作废并记爽约1次，累计爽约3次系统自动暂停预约挂号服务一个月。" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2.@@@@@@@" />
+             />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3.%%%%%%%%%" />
+             />
 
     </LinearLayout>
 
