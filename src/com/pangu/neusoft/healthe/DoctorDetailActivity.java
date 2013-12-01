@@ -257,7 +257,7 @@ public class DoctorDetailActivity extends FatherActivity {
 					//GetSchedule sch=new GetSchedule();
 				//	View scheduleView=sch.getScheduleView(DoctorDetailActivity.this, doctor.getScheduleList());
 				//	scheduleTableLayout.addView(scheduleView);
-    
+					Log.e("pic",doctor.getPictureUrl());
 					  Bitmap bitmap=asyncImageLoader.loadBitmap(pic, doctor.getPictureUrl(), new ImageCallBack() {  
 			                
 			                @Override  
@@ -268,7 +268,19 @@ public class DoctorDetailActivity extends FatherActivity {
 			                    
 			                }  
 			            });  
-					   
+					  if (bitmap == null) {  
+			            	if(doctor.getSex()!=null&&doctor.getSex().equals("男")){
+			            		pic.setImageResource(R.drawable.doc_man_img);            		
+			            	}else if(doctor.getSex()!=null&&doctor.getSex().equals("女")){
+			            		pic.setImageResource(R.drawable.doc_women_img);
+			            	}else {
+			            		pic.setImageResource(R.drawable.doc_def_img);
+			            	}
+			            	
+			                  
+			            }else{  
+			            	pic.setImageBitmap(bitmap); 
+			            }  
 					  SchedultLayout schedule=new SchedultLayout(DoctorDetailActivity.this,doctor.getScheduleList(),scheduledetail,scheduledays,doctor_detail_grade);
 			          schedule.getView();  
 			            
