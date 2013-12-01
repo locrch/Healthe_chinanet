@@ -37,6 +37,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -90,30 +91,49 @@ public class RegisterActivity extends FatherActivity {
 	      
 	      //username.setText(sp.getString("username", ""));
 	      //password.setText(sp.getString("password", ""));
-	      
-		  
-		 
-		 
 	}
 	public String checkData(){
 		String msg="";
 		if(username.getText().toString().equals("")){
 			msg+="用户名不能为空\n";
-		}
+			username.setHint(msg);
+			username.setHintTextColor(Color.RED);
+			return msg;
+		}		
 		if(password.getText().toString().equals("")){
 			msg+="密码不能为空\n";
+			password.setHint(msg);
+			password.setHintTextColor(Color.RED);
+			return msg;
 		}
-		if(!StringMethods.isMobileNO(username.getText().toString())){
-			msg+="请用手机号注册\n";
+		if(!StringMethods.isMobileNO(username.getText().toString())||username.getText().length()!=11){
+			msg+="用户名必须为11位手机号码";
+			username.setText("");
+			username.setHint(msg);
+			username.setHintTextColor(Color.RED);
+			return msg;
 		}
 		if(!password.getText().toString().equals(confirm_password.getText().toString())){
 			msg+="两次密码输入不同\n";
+			confirm_password.setText("");
+			password.setText("");
+			confirm_password.setHint(msg);			
+			confirm_password.setHintTextColor(Color.RED);
+			return msg;
 		}
-		if(card_num.getText().toString().equals("")){
-			msg+="身份证号码不能为空\n";
+		if(card_num.getText().toString().equals("")||card_num.getText().length()!=18){
+			msg+="身份证号码必须是18位\n";
+			card_num.setText("");
+			card_num.setHint(msg);
+			card_num.setHintTextColor(Color.RED);
+			return msg;
 		}
 		if(membername.getText().toString().equals("")){
 			msg+="姓名不能为空\n";
+			membername.setText("");
+			membername.setHint(msg);
+			membername.setHintTextColor(Color.RED);
+			return msg;
 		}
 		return msg;
 	}
@@ -155,18 +175,13 @@ public class RegisterActivity extends FatherActivity {
 								String IsRegisterSuccess=obj.getProperty("IsRegisterSuccess").toString();//0000成功1111报错
 								String resultCode=obj.getProperty("resultCode").toString();//0000成功1111报错
 								msg=obj.getProperty("msg").toString();//返回的信息
-								
-								
-								
+
 								if(IsRegisterSuccess.equals("true")){
 									editor.putString("username", member.getUserName());
 									editor.putString("password", member.getPassword());
 									editor.putBoolean("loginsuccess",true);
 									editor.putString("defaultcardno","0");
 									editor.commit();
-									
-									
-									
 									return true;
 								}else{
 									return false;
@@ -220,15 +235,12 @@ public class RegisterActivity extends FatherActivity {
 							if(mProgressDialog.isShowing()){
 								mProgressDialog.dismiss();
 							}
-							
 						}
-						
-					
-						
 					}.execute();
-				}else{
-					DialogShow.showDialog(RegisterActivity.this, msg);
 				}
+//				else{
+//					DialogShow.showDialog(RegisterActivity.this, msg);
+//				}
 			}
 	  };
 	@Override
