@@ -15,6 +15,8 @@ import com.pangu.neusoft.core.models.HandleBooking;
 import com.pangu.neusoft.db.DBManager;
 import com.pangu.neusoft.healthcard.ListCardActivity;
 import com.pangu.neusoft.healthcard.ShowHistoryActivity;
+import com.pangu.neusoft.healthe.DoctorDetailActivity;
+import com.pangu.neusoft.healthe.HospitalDetailActivity;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.Setting;
 import com.pangu.neusoft.tools.DialogShow;
@@ -24,6 +26,7 @@ import android.app.ProgressDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
@@ -74,14 +77,34 @@ public class HistoryListAdapter extends SimpleAdapter{
 		final LinearLayout his_list_layout=(LinearLayout)res.findViewById(R.id.his_list_layout);
 		final Button his_detail_btn=(Button)res.findViewById(R.id.his_detail_btn);
 		final Button his_cancle_btn=(Button)res.findViewById(R.id.his_cancle_btn);
-		
 		final LinearLayout his_detail=(LinearLayout)res.findViewById(R.id.his_detail);
 		
+		final TextView his_doctor_text=(TextView)res.findViewById(R.id.his_doctor);
+		final TextView his_hospital_text=(TextView)res.findViewById(R.id.his_hospital);
+		final TextView his_doctorid_text=(TextView)res.findViewById(R.id.his_doctorid);
+		final TextView his_hospitalid_text=(TextView)res.findViewById(R.id.his_hospitalid);
+		
+		his_doctor_text.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				Intent intent=new Intent(activity,DoctorDetailActivity.class);
+				intent.putExtra("doctorId", his_doctorid_text.getText().toString());
+				//intent.putExtra("doctorVersion", doctorlist.getVersion());
+				activity.startActivity(intent);
+			}
+		});
+		
+		his_hospital_text.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				Intent intent=new Intent(activity,HospitalDetailActivity.class);
+				intent.putExtra("hospitalId", his_hospitalid_text.getText().toString());
+				//intent.putExtra("hospitalVersion", imageAndText.getVersion());
+				activity.startActivity(intent);
+			}
+		});
 		
 		final TextView his_state=(TextView)res.findViewById(R.id.his_state);
-		
-		
-		
 		if(his_state.getText().toString().equals(" 有效 ")){
 			
 			

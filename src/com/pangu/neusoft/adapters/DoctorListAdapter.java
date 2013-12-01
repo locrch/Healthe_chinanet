@@ -199,44 +199,44 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
 				@Override
 				public void onClick(View v) {
 					// 显示详细内容
-					if(activity.getLocalClassName().equals("DoctorListActivity")||activity.getLocalClassName().equals("BookingMainActivity")){
+//					if(activity.getLocalClassName().equals("DoctorListActivity")||activity.getLocalClassName().equals("BookingMainActivity")){
 						Intent intent=new Intent(activity,DoctorDetailActivity.class);
 						intent.putExtra("doctorId", doctorlist.getId());
 						intent.putExtra("doctorVersion", doctorlist.getVersion());
 						activity.startActivity(intent);
-		            }else{
-		            	
-		            	Intent intent=new Intent(activity,DoctorDetailActivity.class);
-						
-						
-		            			
-						String doctorText=doctorlist.getText(); //获得AreaName
-						//获得名称
-						String[] arraydoctorText=doctorText.split("\n");
-						String hospitalName=arraydoctorText[0];
-						String departmentName=arraydoctorText[1];
-						String doctorName=arraydoctorText[2];
-						//获得ID
-						String doctorIds=doctorlist.getId();
-						String[] arraydoctorId=doctorIds.split("\\|");
-						String hospitalId=arraydoctorId[0];
-						String departmentId=arraydoctorId[1];
-						String doctorId=arraydoctorId[2];
-						
-						SharedPreferences sp= activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
-						Editor editor=sp.edit();;
-						
-						editor.putString("hospitalId", hospitalId);
-						editor.putString("hospitalName", hospitalName);
-						editor.putString("departmentId", departmentId);
-						editor.putString("departmentName", departmentName);
-						editor.commit();
-						
-						intent.putExtra("doctorId", doctorId);
-						intent.putExtra("doctorVersion", doctorlist.getVersion());
-						activity.startActivity(intent);
-		            	
-		            }
+//		            }else{
+//		            	
+//		            	Intent intent=new Intent(activity,DoctorDetailActivity.class);
+//						
+//						
+//		            			
+//						String doctorText=doctorlist.getText(); //获得AreaName
+//						//获得名称
+//						String[] arraydoctorText=doctorText.split("\n");
+//						String hospitalName=arraydoctorText[0];
+//						String departmentName=arraydoctorText[1];
+//						String doctorName=arraydoctorText[2];
+//						//获得ID
+//						String doctorIds=doctorlist.getId();
+//						String[] arraydoctorId=doctorIds.split("\\|");
+//						String hospitalId=arraydoctorId[0];
+//						String departmentId=arraydoctorId[1];
+//						String doctorId=arraydoctorId[2];
+//						
+//						SharedPreferences sp= activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
+//						Editor editor=sp.edit();;
+//						
+//						editor.putString("hospitalId", hospitalId);
+//						editor.putString("hospitalName", hospitalName);
+//						editor.putString("departmentId", departmentId);
+//						editor.putString("departmentName", departmentName);
+//						editor.commit();
+//						
+//						intent.putExtra("doctorId", doctorId);
+//						intent.putExtra("doctorVersion", doctorlist.getVersion());
+//						activity.startActivity(intent);
+//		            	
+//		            }
 					
 				}
             	

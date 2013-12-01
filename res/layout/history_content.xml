@@ -114,7 +114,19 @@
                 android:id="@+id/his_doctor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="9"
+                android:layout_weight="4"
+                android:text="加载中..." />
+            <TextView
+                android:id="@+id/his_department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="加载中..." />
+            <TextView
+                android:id="@+id/his_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
                 android:text="加载中..." />
 
         </LinearLayout>

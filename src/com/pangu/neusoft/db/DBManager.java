@@ -328,7 +328,7 @@ public class DBManager {
 	        	history.setReservedate(c.getString(c.getColumnIndex("reservedate")));
 	        	history.setReservetime(c.getString(c.getColumnIndex("reservetime")));
 	        	history.setSerialNumber(c.getString(c.getColumnIndex("serialnumber")));
-	        	
+	        	history.setDoctorid(c.getString(c.getColumnIndex("doctorid")));
 	        	history.setMedicalCardTypeID("");
 	        	histories.add(history);  
 	        }  
@@ -386,7 +386,7 @@ public class DBManager {
 				"departmentid varchar(45),departmentname varchar(45),doctorid varchar(45),doctorname varchar(45),url varchar(1000)
 	    	*/
 	    	String sql="SELECT * FROM doctor where hospitalid=? and departmentid=? and doctorid=?";
-	    	Cursor c = db.rawQuery(sql, new String[]{doctorinfo.getHospitalid(),doctorinfo.getDepartmentid(),doctorinfo.getDoctorid(),});
+	    	Cursor c = db.rawQuery(sql, new String[]{doctorinfo.getHospitalid(),doctorinfo.getDepartmentid(),doctorinfo.getDoctorid()});
 	    	int s=c.getCount();
 	    	if(s>0){
 	    		return false;
@@ -409,7 +409,6 @@ public class DBManager {
 		        }
 		        finally {  
 		            db.endTransaction();    //结束事务
-		         
 		        }  
 		        return true;
 	    	}

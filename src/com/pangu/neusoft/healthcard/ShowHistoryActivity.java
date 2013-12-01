@@ -117,8 +117,6 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		change_card_btn.setFocusableInTouchMode(true);
 		change_card_btn.requestFocus();
 		
-		
-		
         hist_array=new ArrayList<HashMap<String,String>> ();
         hist_array_temp=new ArrayList<HashMap<String,String>> ();
 		//for(int i=0;i<10;i++){
@@ -147,7 +145,9 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		//R.id.his_username,R.id.his_cancle_id,R.id.his_doctor,R.id.his_num,R.id.his_time,R.id.his_hospitalid,R.id.his_doctorid
 				HashMap<String,String> map=new  HashMap<String,String>();
 				map.put("his_username", booking.getUsername());
-				map.put("his_doctor",booking.getDoctorname()+"-"+booking.getDepartmentname()+"-"+booking.getHospitalname());
+				map.put("his_doctor",booking.getDoctorname());
+				map.put("his_department", "-"+booking.getDepartmentname()+"-");
+				map.put("his_hospital", booking.getHospitalname());
 				map.put("his_time", booking.getReservedate()+" "+booking.getReservetime());
 				map.put("his_cancle_id", booking.getCancelid());
 				map.put("his_hospitalid", booking.getHospitalid());
@@ -193,8 +193,8 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		        }
 		        if(hist_array_temp.size()>0){
 			        adapter=new HistoryListAdapter(
-								this,hist_array_temp,R.layout.history_content,new String[]{"his_username","his_doctor","his_num","his_time","his_hospitalid","his_doctorid","type","his_cancle_id"},
-								new int[]{R.id.his_username,R.id.his_doctor,R.id.his_num,R.id.his_time,R.id.his_hospitalid,R.id.his_doctorid,R.id.his_state,R.id.his_cancle_id});
+								this,hist_array_temp,R.layout.history_content,new String[]{"his_username","his_doctor","his_num","his_time","his_hospitalid","his_doctorid","type","his_cancle_id","his_department","his_hospital"},
+								new int[]{R.id.his_username,R.id.his_doctor,R.id.his_num,R.id.his_time,R.id.his_hospitalid,R.id.his_doctorid,R.id.his_state,R.id.his_cancle_id,R.id.his_department,R.id.his_hospital});
 					
 					booking_history_list.setAdapter(adapter);	
 					//booking_history_list.setOnItemClickListener(item_click);
