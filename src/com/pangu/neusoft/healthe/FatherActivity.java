@@ -1,6 +1,10 @@
 package com.pangu.neusoft.healthe;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import com.baidu.mapapi.search.c;
+import com.pangu.neusoft.healthcard.ShowHistoryActivity;
 import com.pangu.neusoft.tools.SysApplication;
 import com.baidu.mobstat.StatService;
 import com.hp.hpl.sparta.xpath.ThisNodeTest;
@@ -32,7 +36,7 @@ import android.widget.Toast;
 public class FatherActivity extends Activity
 {
 	Button back_index,back_back;
-	TextView notice;
+	static TextView notice;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -43,7 +47,7 @@ public class FatherActivity extends Activity
 		
 		
 		notice = (TextView)findViewById(R.id.notice);
-		
+		notice.setText(Setting.defaultnotice);
 		back_index = (Button)findViewById(R.id.back_index);
 		back_back = (Button)findViewById(R.id.back_back);
 		
@@ -102,9 +106,17 @@ public class FatherActivity extends Activity
 		title_title.setText(title);
 	}
 	
-	public Boolean SetNotice(String notice_Str)
+	public static Boolean SetNotice(String notice_Str)
 	{
 		notice.setText(notice_Str);
+		
+		final Timer t = new Timer();
+		t.schedule(new TimerTask() {
+			public void run() {
+				notice.setText(Setting.defaultnotice);
+				t.cancel(); 
+			}
+		}, Setting.noticetime);
 		
 		if (notice.getText().equals(notice_Str))
 		{

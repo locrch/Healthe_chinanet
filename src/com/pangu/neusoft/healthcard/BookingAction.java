@@ -23,6 +23,7 @@ import com.pangu.neusoft.core.models.BookingInfos;
 import com.pangu.neusoft.core.models.BookingReq;
 import com.pangu.neusoft.db.DBManager;
 import com.pangu.neusoft.healthe.BookingConfirmActivity;
+import com.pangu.neusoft.healthe.FatherActivity;
 import com.pangu.neusoft.healthe.Setting;
 import com.pangu.neusoft.tools.DialogShow;
 
@@ -180,7 +181,7 @@ public class BookingAction {
 					mProgressDialog.dismiss();
 				}
 				DialogShow.showDialog(activity, booking_msg);
-				
+				FatherActivity.SetNotice(booking_msg);
 				if (booking_msg.equals("预约成功")) {
 						final Timer t = new Timer();
 						t.schedule(new TimerTask() {
@@ -191,7 +192,8 @@ public class BookingAction {
 							}
 						}, Setting.dialogtimeout+1000);
 
-				} else {					
+				} else {	
+					
 					final Timer t = new Timer();
 					t.schedule(new TimerTask() {
 						public void run() {

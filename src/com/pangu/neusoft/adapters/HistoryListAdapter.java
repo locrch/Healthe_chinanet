@@ -16,6 +16,7 @@ import com.pangu.neusoft.db.DBManager;
 import com.pangu.neusoft.healthcard.ListCardActivity;
 import com.pangu.neusoft.healthcard.ShowHistoryActivity;
 import com.pangu.neusoft.healthe.DoctorDetailActivity;
+import com.pangu.neusoft.healthe.FatherActivity;
 import com.pangu.neusoft.healthe.HospitalDetailActivity;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.Setting;
@@ -254,6 +255,7 @@ public class HistoryListAdapter extends SimpleAdapter{
 							mgr.closeDB();
 							DialogShow.showDialog(activity, "取消成功！");
 						}else{
+							FatherActivity.SetNotice(message);
 							mgr.cancleBooking(cancleid);
 							mgr.closeDB();
 							DialogShow.showDialog(activity, message);

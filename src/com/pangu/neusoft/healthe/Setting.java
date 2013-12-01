@@ -13,6 +13,8 @@ public class Setting {
 	public static int fontsizey=8;
 	public final static String spfile="healthE";
 	public final static int dialogtimeout=2000;
+	public final static int noticetime=30000;//标题栏显示通知的时间
+	public final static String defaultnotice="通知：";//默认通知 
 	public final static String catche_dir="/mnt/sdcard/healthE/";
 	public final static String image_="pangu";
 	//public final static String default_pic_url="http://publimedic.mx/wp-content/themes/directorypress/thumbs/hospital_icon-1.jpg";
