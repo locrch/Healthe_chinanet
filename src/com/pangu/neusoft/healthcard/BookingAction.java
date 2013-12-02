@@ -16,6 +16,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.pangu.neusoft.core.GET;
 import com.pangu.neusoft.core.WebService;
@@ -23,6 +24,7 @@ import com.pangu.neusoft.core.models.BookingInfos;
 import com.pangu.neusoft.core.models.BookingReq;
 import com.pangu.neusoft.db.DBManager;
 import com.pangu.neusoft.healthe.BookingConfirmActivity;
+import com.pangu.neusoft.healthe.BookingMainActivity;
 import com.pangu.neusoft.healthe.FatherActivity;
 import com.pangu.neusoft.healthe.Setting;
 import com.pangu.neusoft.tools.DialogShow;
@@ -183,7 +185,8 @@ public class BookingAction {
 				DialogShow.showDialog(activity, booking_msg);
 				FatherActivity.SetNotice(booking_msg);
 				if (booking_msg.equals("预约成功")) {
-						final Timer t = new Timer();
+					//Toast.makeText(activity, booking_msg, Toast.LENGTH_SHORT);	
+					final Timer t = new Timer();
 						t.schedule(new TimerTask() {
 							public void run() {
 								activity.startActivity(new Intent(activity,ShowHistoryActivity.class));
@@ -194,10 +197,11 @@ public class BookingAction {
 
 				} else {	
 					
+					//DialogShow.showDialog(activity, booking_msg);
 					final Timer t = new Timer();
 					t.schedule(new TimerTask() {
 						public void run() {
-							activity.startActivity(new Intent(activity,ListCardActivity.class));
+							activity.startActivity(new Intent(activity,BookingMainActivity.class));
 							activity.finish();
 							t.cancel(); 
 						}
