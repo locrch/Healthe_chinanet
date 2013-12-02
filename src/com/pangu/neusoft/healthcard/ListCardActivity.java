@@ -342,7 +342,7 @@ public class ListCardActivity extends FatherActivity {
 				                new String[]{"cardname"}, new int[]{R.id.cardname});
 					
 				    list.setAdapter(adapter);		          
-				    list.getLayoutParams().height=40*arr.size();
+				    list.getLayoutParams().height=60*arr.size();
 		    	}
 			}
 		}.execute();
