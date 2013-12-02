@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -154,9 +155,18 @@ public class SchedultLayout {
 	 										oneButton.setText(schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
 	 										oneButton.setTag(schedule);
 	 										oneButton.setBackgroundDrawable(layout.getResources().getDrawable(R.drawable.schedule_btn_style_layout_click));
+	 										
+	 										oneButton.setTextSize(TypedValue.COMPLEX_UNIT_PX, oneButton.getResources().getDimension(R.dimen.button_textsize));
+	 										
+	 										LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+	 										lp.setMargins(0, 3, 3, 0);
+	 										oneButton.setLayoutParams(lp);
+	 										
+	 										
 	 										oneButton.setOnClickListener(new OnClickListener(){
 	 											@Override
 	 											public void onClick(View arg0) {
+	 												arg0.setBackgroundDrawable(arg0.getResources().getDrawable(R.drawable.schedule_btn_style_layout));
 	 												Schedule schedule=(Schedule)arg0.getTag();
 	 												String doctorId=schedule.getDoctorId();
 	 												String doctorName=schedule.getDoctorName();

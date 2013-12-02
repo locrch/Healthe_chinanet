@@ -274,19 +274,22 @@
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.TabActivity5"
-            android:label="@string/title_activity_tab_activity5" >
+            android:label="@string/title_activity_tab_activity5" 
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.SearchResActivity"
             android:label="@string/title_activity_search_res"
-            android:parentActivityName="com.pangu.neusoft.healthe.FatherActivity" >
+            android:parentActivityName="com.pangu.neusoft.healthe.FatherActivity" 
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pangu.neusoft.healthe.FatherActivity" />
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.BookingConfirmActivity"
-            android:label="@string/title_activity_booking_confirm" >
+            android:label="@string/title_activity_booking_confirm" 
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
