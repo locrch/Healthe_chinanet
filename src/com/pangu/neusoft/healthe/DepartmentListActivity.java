@@ -63,13 +63,14 @@ public class DepartmentListActivity extends FatherActivity {
 		service=new WebService();
 		departmentList=new ArrayList<Department>();	
 		  
-		infos_text=(TextView)findViewById(R.id.infos_text);
-		infos_text.setText(sp.getString("hospitalName", "")+"-"+sp.getString("departmentName", ""));
-	
-		 
+		
 		sp= getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor=sp.edit();
 		
+		infos_text=(TextView)findViewById(R.id.infos_text);
+		infos_text.setText(sp.getString("hospitalName", ""));
+	
+		 
 		mProgressDialog = new ProgressDialog(DepartmentListActivity.this);   
         mProgressDialog.setMessage("正在加载数据...");   
         mProgressDialog.setIndeterminate(false);  
