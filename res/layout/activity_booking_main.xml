@@ -49,7 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/search_btn"
-            android:text="欢迎您" />
+            android:text="欢迎您"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/select_area_btn"

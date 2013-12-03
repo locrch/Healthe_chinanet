@@ -70,6 +70,7 @@
      android:id="@+id/schedule_text"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
+     android:layout_marginTop="14dp"
      android:layout_alignLeft="@+id/doctor_list_image"
      android:layout_alignParentRight="true"
      android:layout_below="@+id/doctor_list_image"
@@ -90,8 +91,9 @@
             android:id="@+id/scheduledays"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp" >
-
+            android:padding="5dp"
+            android:layout_marginTop="5dp" >
+		
             <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
