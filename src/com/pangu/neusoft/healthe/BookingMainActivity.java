@@ -235,9 +235,9 @@ public class BookingMainActivity extends FatherActivity {
 		//search_btn.getLayoutParams().width=(height / 10);
 		search_btn.getLayoutParams().height=(height / 11);
 		selecttext.getLayoutParams().height=(height / 10);
-		doctor_hospital1.getLayoutParams().height=(height / 12);
-		doctor_hospital2.getLayoutParams().height=(height / 12);
-		doctor_hospital3.getLayoutParams().height=(height / 12);
+		//doctor_hospital1.getLayoutParams().height=(height / 12);
+		//doctor_hospital2.getLayoutParams().height=(height / 12);
+		//doctor_hospital3.getLayoutParams().height=(height / 12);
 		//search_btn.setTextSize(width / fontsizex);
 		//select_spinner.getLayoutParams().width = width / 3;
 		//select_spinner.getLayoutParams().height = height / 8;
