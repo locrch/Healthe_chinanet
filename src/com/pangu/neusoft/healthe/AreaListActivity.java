@@ -47,7 +47,7 @@ public class AreaListActivity extends FatherActivity {
 	ArrayList<HashMap<String,String>> areaArrayList;
 	//String type="";
 	private ProgressDialog mProgressDialog; 
-	
+	TextView infos_text;
 	public final class ViewHolder{  
         TextView texta;  
     }
@@ -60,6 +60,9 @@ public class AreaListActivity extends FatherActivity {
 		arealistView=(ListView)findViewById(R.id.list);
 		service=new WebService();
 		areaArrayList=new ArrayList<HashMap<String,String>>();	
+		
+		infos_text=(TextView)findViewById(R.id.infos_text);
+		infos_text.setVisibility(View.GONE);
 		
 	  	mProgressDialog = new ProgressDialog(AreaListActivity.this);   
         mProgressDialog.setMessage("正在加载数据...");   

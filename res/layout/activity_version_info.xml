@@ -10,7 +10,7 @@
     
     >
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/infos_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/seria_num"
@@ -39,7 +39,7 @@
         android:id="@+id/verison_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBottom="@+id/infos_text"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="26dp"
         android:text="V1.0" />

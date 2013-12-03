@@ -51,7 +51,7 @@
             android:text="今日" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/infos_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

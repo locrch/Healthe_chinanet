@@ -13,9 +13,21 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:layout_below="@+id/infos_text"
         android:descendantFocusability="blocksDescendants"
-          android:fastScrollEnabled="true"
-        android:layout_alignParentTop="true" >
+        android:fastScrollEnabled="true" >
+
     </ListView>
+
+    <TextView
+        android:id="@+id/infos_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/button_style"
+        android:gravity="center"
+        android:text="TextView" />
 
 </RelativeLayout>

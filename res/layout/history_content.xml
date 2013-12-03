@@ -24,7 +24,7 @@
                 android:layout_weight="1" >
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/infos_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -36,9 +36,9 @@
                     android:id="@+id/his_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/textView1"
-                    android:layout_alignBottom="@+id/textView1"
-                    android:layout_toRightOf="@+id/textView1"
+                    android:layout_alignBaseline="@+id/infos_text"
+                    android:layout_alignBottom="@+id/infos_text"
+                    android:layout_toRightOf="@+id/infos_text"
                     android:layout_weight="10"
                     android:text="加载中..." />
 

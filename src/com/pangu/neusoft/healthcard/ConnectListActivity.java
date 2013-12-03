@@ -64,7 +64,7 @@ public class ConnectListActivity extends FatherActivity {
         TextView texta;  
     }
 	boolean connecting;
-	
+	TextView infos_text;
 	HashMap<String,ConnectDoctor> doctormap=new HashMap<String,ConnectDoctor>();
 	
 	@Override
@@ -76,8 +76,12 @@ public class ConnectListActivity extends FatherActivity {
 		service=new WebService();
 		doctorList=new ArrayList<DoctorList>();	
 		
+		
 		sp= getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor=sp.edit();
+		
+		infos_text=(TextView)findViewById(R.id.infos_text);
+		infos_text.setVisibility(View.GONE);
 		
 		mProgressDialog = new ProgressDialog(ConnectListActivity.this);
 		mProgressDialog.setMessage("正在加载数据...");

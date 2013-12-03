@@ -57,6 +57,8 @@ public class DoctorListActivity extends FatherActivity
 	private ProgressDialog mProgressDialog;
 	Editor editor;
 	private String who;
+	TextView infos_text;
+	
 
 	public final class ViewHolder
 	{
@@ -72,13 +74,17 @@ public class DoctorListActivity extends FatherActivity
 		setContentView(R.layout.activity_list);
 		super.setactivitytitle("选择医生");
 		doctorlistView = (ListView) findViewById(R.id.list);
+		
+		
 		service = new WebService();
 		doctorList = new ArrayList<DoctorList>();
 
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		
-
+		infos_text=(TextView)findViewById(R.id.infos_text);
+		infos_text.setText(sp.getString("hospitalName", "")+"-"+sp.getString("departmentName", ""));
+		
 		mProgressDialog = new ProgressDialog(DoctorListActivity.this);
 		mProgressDialog.setMessage("正在加载数据...");
 		mProgressDialog.setIndeterminate(false);

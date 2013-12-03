@@ -27,7 +27,7 @@
                     android:padding="2dp" >
 
                     <TextView
-                        android:id="@+id/textView1"
+                        android:id="@+id/infos_text"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

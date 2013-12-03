@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/infos_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/username"
@@ -21,7 +21,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:paddingLeft="5dp"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_toRightOf="@+id/infos_text"
         android:digits="1234567890"
          android:inputType="number"
         android:ems="10" 
@@ -48,7 +48,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/seria_num"
         android:paddingLeft="5dp"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_toRightOf="@+id/infos_text"
         android:ems="10"
         android:inputType="textPassword" 
         android:background="@drawable/edittext_style">

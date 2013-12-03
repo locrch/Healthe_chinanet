@@ -46,7 +46,7 @@ public class DepartmentListActivity extends FatherActivity {
 	List<Department> departmentList;
 	SharedPreferences sp;
 	private ProgressDialog mProgressDialog; 
-	
+	TextView infos_text;
 	
 	Editor editor;
 	GB2Alpha getAlpha = new GB2Alpha();
@@ -63,6 +63,9 @@ public class DepartmentListActivity extends FatherActivity {
 		service=new WebService();
 		departmentList=new ArrayList<Department>();	
 		  
+		infos_text=(TextView)findViewById(R.id.infos_text);
+		infos_text.setText(sp.getString("hospitalName", "")+"-"+sp.getString("departmentName", ""));
+	
 		 
 		sp= getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor=sp.edit();
