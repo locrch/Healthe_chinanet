@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="健康卡信息"
+            android:text="健康卡管理"
             android:textSize="@dimen/button_textsize" />
 
         <Button
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:gravity="left"
-            android:text="预约记录"
+            android:text="我的预约"
             android:textSize="@dimen/button_textsize" />
 
         <Button

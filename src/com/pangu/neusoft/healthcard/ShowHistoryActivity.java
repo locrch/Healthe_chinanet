@@ -89,6 +89,7 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_show_history);
+		setactivitytitle("我的预约");
 		booking_history_list=(ListView)findViewById(R.id.booking_history_list_using);
 		//booking_history_list_passed=(ListView)findViewById(R.id.booking_history_list_passed);
 		//booking_history_list_cancled=(ListView)findViewById(R.id.booking_history_list_cancled);

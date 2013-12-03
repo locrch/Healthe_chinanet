@@ -9,15 +9,31 @@
         android:background="@drawable/background_black"
         android:orientation="vertical"
          >
+		<RelativeLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    >
+
+        <Button
+            android:id="@+id/connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="27dp"
+            android:background="@drawable/button_style"
+            android:text="  收 藏  "
+            android:textSize="@dimen/button_textsize" />
 
         <ImageView
             android:id="@+id/doctor_detail_pictureurl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/booking_doc"
-            android:layout_gravity="center"
-            />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/booking_doc" />
 
+		</RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -121,35 +137,33 @@
 
             </LinearLayout>
             
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"  
-                android:layout_margin="2dp">
+                android:layout_height="87dp"
+                android:layout_margin="2dp" >
 
-                <TextView android:textSize="@dimen/detail_content_textsize"
-                    android:id="@+id/doctor_detail_intro_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="简介： " />
-
-                <TextView android:textSize="@dimen/detail_content_textsize"
+                <TextView
                     android:id="@+id/doctor_detail_intro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="8"
-                    android:text="加载中...." />
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="22dp"
+                    android:layout_toRightOf="@+id/doctor_detail_intro_label"
+                    android:layout_weight="6.66"
+                    android:text="加载中...."
+                    android:textSize="@dimen/detail_content_textsize" />
 
-                <Button
-                    android:id="@+id/connect"
+                <TextView
+                    android:id="@+id/doctor_detail_intro_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_style"
-                    android:textSize="@dimen/button_textsize"
-                    android:text="  收 藏  " />
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="2"
+                    android:text="简介： "
+                    android:textSize="@dimen/detail_content_textsize" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

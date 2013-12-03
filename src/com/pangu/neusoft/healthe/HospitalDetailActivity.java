@@ -301,7 +301,22 @@ public class HospitalDetailActivity extends FatherActivity {
 					hospitalFaxText.setText(hospital.getFax());
 					hospitalWebSiteText.setText(hospital.getWebsite());
 					//pic.setText(hospital.getHospitalId());
-					
+					hospitalWebSiteText.setOnClickListener(new OnClickListener()
+					{
+						
+						@Override
+						public void onClick(View v)
+						{
+							// TODO Auto-generated method stub
+							Intent intent = new Intent();
+							
+							intent.setAction(intent.ACTION_VIEW);
+							
+							intent.setData(Uri.parse(hospital.getWebsite().toString()));
+							
+							startActivity(intent);
+						}
+					});
 					  Bitmap bitmap=asyncImageLoader.loadBitmap(pic, hospital.getPictureUrl(), new ImageCallBack() {  
 			                
 			                @Override  

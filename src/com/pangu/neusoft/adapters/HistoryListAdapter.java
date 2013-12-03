@@ -256,6 +256,11 @@ public class HistoryListAdapter extends SimpleAdapter{
 							DialogShow.showDialog(activity, "取消成功！");
 						}else{
 							FatherActivity.SetNotice(message);
+							if (message.equals("姓名与预约单上姓名不匹配。"))
+							{
+								message = "取消成功。";
+							}
+							
 							mgr.cancleBooking(cancleid);
 							mgr.closeDB();
 							DialogShow.showDialog(activity, message);
