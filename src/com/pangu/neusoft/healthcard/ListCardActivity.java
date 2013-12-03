@@ -52,6 +52,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -328,7 +330,8 @@ public class ListCardActivity extends FatherActivity {
 		    	if(empty){
 					ListAdapter adapter=new ArrayAdapter<String>(ListCardActivity.this,android.R.layout.simple_expandable_list_item_1,arr);
 					list.setAdapter(adapter);
-					list.setOnItemClickListener(addcard_action);	
+					list.setOnItemClickListener(addcard_action);
+					setListViewHeightBasedOnChildren(list);
 		    	}
 		    	else{
 					ArrayList<HashMap<String, Object>> arrayList = new ArrayList<HashMap<String,Object>>();  
@@ -341,11 +344,39 @@ public class ListCardActivity extends FatherActivity {
 			        CardListAdapter adapter = new CardListAdapter(ListCardActivity.this, arrayList, R.layout.list_card_content,
 				                new String[]{"cardname"}, new int[]{R.id.cardname});
 					
-				    list.setAdapter(adapter);		          
-				    list.getLayoutParams().height=150*arr.size();
+				    list.setAdapter(adapter);	
+				    setListViewHeightBasedOnChildren(list);
+//				    int height=sp.getInt("screen_height", 0);
+//				    Log.e("height", ""+height);
+//				    list.getLayoutParams().height=height/8*arr.size();
 		    	}
 			}
 		}.execute();
+	}
+	
+	public int Dp2Px(Context context, float dp) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (dp * scale + 0.5f);
+	}
+	public void setListViewHeightBasedOnChildren(ListView listView) {
+		ListAdapter listAdapter = listView.getAdapter();
+		//item的高度
+		int itemHeight = 46;
+
+		if (listAdapter == null) {
+		    return;
+		}
+
+		int totalHeight = 0;
+
+		for (int i = 0; i < listAdapter.getCount(); i++) {
+		totalHeight += Dp2Px(getApplicationContext(),itemHeight)+listView.getDividerHeight();
+		}
+
+		ViewGroup.LayoutParams params = listView.getLayoutParams();
+		params.height = totalHeight;
+
+		listView.setLayoutParams(params);
 	}
 	
 	OnItemClickListener addcard_action=new OnItemClickListener(){
