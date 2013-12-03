@@ -147,8 +147,8 @@ public class SchedultLayout {
 	 								for(int i=0;i<scheduleList.size();i++){
 	 									Schedule schedule=scheduleList.get(i);
 	 									Log.e("ScheduleList:",schedule.getDoctorName()+schedule.getDoctorId()+":"+schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
-	 									
-	 									if(schedule.getOutcallDate().equals(day)){
+	 									int numi=Integer.parseInt(schedule.getAvailableNum());
+	 									if(schedule.getOutcallDate().equals(day)&&numi>0){
 	 										Button oneButton=new Button(scheduleDetailLayout.getContext());
 	 										oneButton.setPadding(10, 5, 10, 5);
 	 										
