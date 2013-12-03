@@ -59,11 +59,12 @@
 
     <ImageView
         android:id="@+id/doctor_list_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="4dp"
+        android:layout_margin="1dp"
+        android:scaleType="fitXY"
         android:src="@drawable/booking_doc" />
 
  <TextView
