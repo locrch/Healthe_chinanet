@@ -32,17 +32,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="姓名："
-                        android:textAlignment="center"
-                        android:textSize="@dimen/detail_content_textsize" />
+                       
+                        android:textSize="@dimen/listtitle_textsize" />
 
                     <TextView
                         android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
-                        android:textSize="@dimen/detail_content_textsize" />
+                        android:textSize="@dimen/listtitle_textsize" />
 
                 </TableRow>
 
@@ -58,16 +58,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="卡类型："
-                        android:textSize="@dimen/detail_content_textsize" />
+                        android:textSize="@dimen/listtitle_textsize" />
 
                     <TextView
                         android:id="@+id/card_type"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
-                        android:textSize="@dimen/detail_content_textsize" />
+                        android:textSize="@dimen/listtitle_textsize" />
 
                 </TableRow>
 
@@ -83,16 +83,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="卡号："
-                        android:textSize="@dimen/detail_content_textsize" />
+                        android:textSize="@dimen/listtitle_textsize" />
 
                     <TextView
                         android:id="@+id/card_num"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
-                        android:textSize="@dimen/detail_content_textsize" />
+                        android:textSize="@dimen/listtitle_textsize" />
 
                 </TableRow>
 
@@ -108,16 +108,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="身份证："
-                        android:textSize="@dimen/detail_content_textsize" />
+                        android:textSize="@dimen/listtitle_textsize" />
 
                     <TextView
                         android:id="@+id/id_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
-                        android:textSize="@dimen/detail_content_textsize" />
+                        android:textSize="@dimen/listtitle_textsize" />
 
                 </TableRow>
 
