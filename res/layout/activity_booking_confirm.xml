@@ -47,6 +47,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linear_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -66,15 +67,6 @@
                     android:layout_marginRight="4dp"
                     android:text="加载中..."
                     android:textSize="@dimen/detail_content_textsize" />
-
-                <Button
-                    android:id="@+id/booking_confirm_changecard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/button_style"
-                    android:text="变更"
-                    android:textSize="@dimen/button_textsize" />
 
             </LinearLayout>
 
@@ -218,6 +210,18 @@
                     android:textSize="@dimen/detail_content_textsize" />
             </LinearLayout>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/booking_confirm_changecard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/button_style"
+            android:text="变更"
+            android:textSize="@dimen/button_textsize" />
+
     </RelativeLayout>
 
     <Button

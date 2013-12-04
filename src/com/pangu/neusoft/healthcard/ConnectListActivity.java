@@ -290,7 +290,7 @@ public class ConnectListActivity extends FatherActivity {
 		doctorlistView.setAdapter(adapter);
 		doctorlistView.setClickable(true);
 		doctorlistView.setFocusable(true);
-		doctorlistView.setOnItemClickListener(new OnItemClickListener(){
+		/*doctorlistView.setOnItemClickListener(new OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3)
 			{
@@ -319,7 +319,7 @@ public class ConnectListActivity extends FatherActivity {
 					startActivity(new Intent (ConnectListActivity.this, ScheduleListActivity.class));
 				}
 			}
-		});
+		});*/
 	}
 	  
 	
