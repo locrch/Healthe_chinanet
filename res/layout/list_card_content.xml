@@ -16,13 +16,25 @@
         android:text="删除"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/card_details_infos"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+       android:layout_alignParentTop="true"
+          android:layout_alignBottom="@+id/cardname"
+        android:layout_toLeftOf="@+id/deleteCard"
+        android:padding="1dp"
+        android:layout_margin="3dp"
+        android:background="@drawable/button_style"
+        android:text="详情" />
+
     <CheckBox
         android:id="@+id/cardname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/deleteCard"
+        android:layout_toLeftOf="@+id/card_details_infos"
         android:text="健康卡" />
 
 </RelativeLayout>

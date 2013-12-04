@@ -480,7 +480,22 @@ public class ListCardActivity extends FatherActivity {
 //	}
 	
 	
+	public void showinfo(String name){
+		MedicalCard card=cards.get(name);
 	
+		
+		editor.putString("owner", card.getOwner());
+		
+		if(card.getMedicalCardTypeID()==1){
+			editor.putString("cardtype", "佛山健康卡");
+		}else{
+			editor.putString("cardtype", "居民健康卡");
+		}
+		editor.putString("cardnum", card.getMedicalCardCode());
+		editor.putString("idnumber", card.getOwnerIDCard());
+		
+    	startActivity(new Intent(ListCardActivity.this,CardInfoActivity.class));
+	}
 
 	public void confirmDeleteDialog(String name) {
 		MedicalCard card=cards.get(name);

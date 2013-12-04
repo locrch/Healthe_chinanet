@@ -7,11 +7,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="4dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/schedule_btn_style_layout"
             android:orientation="vertical" >
 
             <TableLayout
@@ -23,7 +25,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:background="@drawable/border"
                     android:padding="2dp" >
 
                     <TextView
@@ -33,13 +34,15 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="姓名："
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="@dimen/detail_content_textsize" />
 
                     <TextView
                         android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="4" />
+                        android:layout_weight="4"
+                        android:textSize="@dimen/detail_content_textsize" />
 
                 </TableRow>
 
@@ -48,7 +51,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:background="@drawable/border"
                     android:padding="2dp" >
 
                     <TextView
@@ -57,13 +59,15 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="卡类型：：" />
+                        android:text="卡类型："
+                        android:textSize="@dimen/detail_content_textsize" />
 
                     <TextView
                         android:id="@+id/card_type"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="4" />
+                        android:layout_weight="4"
+                        android:textSize="@dimen/detail_content_textsize" />
 
                 </TableRow>
 
@@ -72,7 +76,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:background="@drawable/border"
                     android:padding="2dp" >
 
                     <TextView
@@ -81,13 +84,15 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="卡号：" />
+                        android:text="卡号："
+                        android:textSize="@dimen/detail_content_textsize" />
 
                     <TextView
                         android:id="@+id/card_num"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="4" />
+                        android:layout_weight="4"
+                        android:textSize="@dimen/detail_content_textsize" />
 
                 </TableRow>
 
@@ -96,7 +101,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:background="@drawable/border"
                     android:padding="2dp" >
 
                     <TextView
@@ -105,56 +109,19 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="身份证：" />
+                        android:text="身份证："
+                        android:textSize="@dimen/detail_content_textsize" />
 
                     <TextView
                         android:id="@+id/id_card"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="4" />
+                        android:layout_weight="4"
+                        android:textSize="@dimen/detail_content_textsize" />
 
                 </TableRow>
 
             </TableLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <Button
-                    android:id="@+id/booking"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_style"
-                    android:text="预约挂号"
-                    android:visibility="gone" />
-
-                <Button
-                    android:id="@+id/showhistory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_style"
-                    android:text="预约记录"
-                    android:visibility="gone" />
-
-            </LinearLayout>
 
         </LinearLayout>
 

@@ -74,11 +74,11 @@ public class CardInfoActivity extends FatherActivity {
 	private TextView id_card_text;
 
 	
-	private Button booking_btn;
+	//private Button booking_btn;
 	
 	private SharedPreferences sp;
 	private Editor editor;
-	private Button history_btn;
+	//private Button history_btn;
 	
 	BookingInfos bookingdata;
 	BookingReq req ;
@@ -109,10 +109,10 @@ public class CardInfoActivity extends FatherActivity {
 		card_num_text.setText(sp.getString("cardnum", ""));
 		id_card_text.setText(sp.getString("idnumber", ""));
 		
-		booking_btn=(Button)findViewById(R.id.booking);
-		booking_btn.setOnClickListener(booking);
-		history_btn=(Button)findViewById(R.id.showhistory);
-		history_btn.setOnClickListener(history);
+		//booking_btn=(Button)findViewById(R.id.booking);
+		//booking_btn.setOnClickListener(booking);
+		//history_btn=(Button)findViewById(R.id.showhistory);
+		//history_btn.setOnClickListener(history);
 	}
 
 	OnClickListener history=new OnClickListener(){

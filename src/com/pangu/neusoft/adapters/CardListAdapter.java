@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.pangu.neusoft.core.models.MedicalCard;
 import com.pangu.neusoft.healthcard.BookingAction;
+import com.pangu.neusoft.healthcard.CardInfoActivity;
 import com.pangu.neusoft.healthcard.ListCardActivity;
 import com.pangu.neusoft.healthcard.ShowHistoryActivity;
 import com.pangu.neusoft.healthe.R;
@@ -111,7 +112,18 @@ public class CardListAdapter extends SimpleAdapter{
 			}
 		});
 		
+		Button carddetail=(Button) res.findViewById(R.id.card_details_infos);
+		carddetail.setOnClickListener(new OnClickListener(){
+		    @Override
+		    public void onClick(View v) {
+		     // TODO Auto-generated method stub
+		    	
+			activity.showinfo(name);
+		    	
+		    }
+		});
 		
+	 
 		
 		
 		Button btn=(Button) res.findViewById(R.id.deleteCard);
