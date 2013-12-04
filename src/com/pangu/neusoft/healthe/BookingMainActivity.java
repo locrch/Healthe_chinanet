@@ -227,7 +227,11 @@ public class BookingMainActivity extends FatherActivity {
         });
 		
 		setItemSize();
-		
+		Intent intent=getIntent();
+		String message=intent.getStringExtra("error_message");
+		if(message!=null&&!message.equals("")){
+			SetNotice(message);
+		}
 		
 	}
 

@@ -94,6 +94,8 @@ public class HospitalListActivity extends FatherActivity {
 				who=intent.getStringExtra("who");
 				
 				if (who!=null&&who.equals("serach")){
+					setactivitytitle("搜索医院");
+					infos_text.setVisibility(View.GONE);
 					FindHospitalListReq req=new FindHospitalListReq();
 					
 					req.setHospitalName(sp.getString("serach_hosp", ""));
@@ -213,7 +215,6 @@ public class HospitalListActivity extends FatherActivity {
 				super.onPostExecute(result);
 				if (!result){
 					connecting=false;
-					
 				}else{
 					connecting=true;				
 				}
@@ -225,48 +226,47 @@ public class HospitalListActivity extends FatherActivity {
 				super.onCancelled();
 		
 			}
-			
-		
-			
-			
-			
 			public void showInList(){
 				if(mProgressDialog.isShowing()){
 					mProgressDialog.dismiss();
 				} 
-			
-				HospitalListAdapter adapter=new HospitalListAdapter(HospitalListActivity.this, hospitalList);
-				
-				hospitallistView.setAdapter(adapter);
-				hospitallistView.setClickable(true);
-				hospitallistView.setFocusable(true);
-				hospitallistView.setOnItemClickListener(new OnItemClickListener(){
-					@Override
-					public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3)
-					{
-						HospitalList map=(HospitalList)hospitallistView.getItemAtPosition(arg2);
-						
-						String hospitalId=map.getId(); //获得Areaid		
-						String hospitalName=map.getText(); //获得AreaName
-						String version=map.getVersion();
-						
-						
-							//记录地区信息。其他医院、科室、医生信息要清空		
+				if(hospitalList.size()>0){
+					HospitalListAdapter adapter=new HospitalListAdapter(HospitalListActivity.this, hospitalList);
+					
+					hospitallistView.setAdapter(adapter);
+					hospitallistView.setClickable(true);
+					hospitallistView.setFocusable(true);
+					hospitallistView.setOnItemClickListener(new OnItemClickListener(){
+						@Override
+						public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3)
+						{
+							HospitalList map=(HospitalList)hospitallistView.getItemAtPosition(arg2);
 							
-							editor.putString("hospitalId", hospitalId);
-							editor.putString("hospitalName", hospitalName);			    	
-					    	
-							editor.putString("departmentId", "NG");
-							editor.putString("departmentName", "请选择科室");
-					    				    	
-							editor.putString("doctorId", "NG");
-							editor.putString("doctorName", "请选择医生");
+							String hospitalId=map.getId(); //获得Areaid		
+							String hospitalName=map.getText(); //获得AreaName
+							String version=map.getVersion();
 							
-							editor.commit();
-							startActivity(new Intent (HospitalListActivity.this, DepartmentListActivity.class));
-						
-					}
-				});
+							
+								//记录地区信息。其他医院、科室、医生信息要清空		
+								
+								editor.putString("hospitalId", hospitalId);
+								editor.putString("hospitalName", hospitalName);			    	
+						    	
+								editor.putString("departmentId", "NG");
+								editor.putString("departmentName", "请选择科室");
+						    				    	
+								editor.putString("doctorId", "NG");
+								editor.putString("doctorName", "请选择医生");
+								
+								editor.commit();
+								startActivity(new Intent (HospitalListActivity.this, DepartmentListActivity.class));
+							
+						}
+					});
+				}else{
+					infos_text.setVisibility(View.VISIBLE);
+					infos_text.setText("未找到医院");
+				}
 			}
 		}.execute();
 		

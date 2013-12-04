@@ -177,6 +177,10 @@ public class RegisterActivity extends FatherActivity {
 								msg=obj.getProperty("msg").toString();//返回的信息
 
 								if(IsRegisterSuccess.equals("true")){
+									if(!member.getUserName().equals(sp.getString("username", ""))){
+										editor.clear();
+										editor.commit();
+									}
 									editor.putString("username", member.getUserName());
 									editor.putString("password", member.getPassword());
 									editor.putBoolean("loginsuccess",true);
@@ -219,7 +223,7 @@ public class RegisterActivity extends FatherActivity {
 								final Timer t = new Timer();
 								t.schedule(new TimerTask() {
 									public void run() {
-										//startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+										startActivity(new Intent(RegisterActivity.this,ListCardActivity.class));
 										finish();
 										t.cancel(); 
 									}

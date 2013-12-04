@@ -106,15 +106,23 @@ public class FatherActivity extends Activity
 		title_title.setText(title);
 	}
 	
-	public static Boolean SetNotice(String notice_Str)
+	public Boolean SetNotice(String notice_Str)
 	{
 		notice.setText(notice_Str);
 		
 		final Timer t = new Timer();
 		t.schedule(new TimerTask() {
 			public void run() {
-				notice.setText(Setting.defaultnotice);
-				t.cancel(); 
+				runOnUiThread(new Runnable()    
+		        {    
+		            public void run()    
+		            {    
+		            	notice.setText(Setting.defaultnotice);
+						t.cancel();
+		            }    
+		    
+		        });    
+				
 			}
 		}, Setting.noticetime);
 		

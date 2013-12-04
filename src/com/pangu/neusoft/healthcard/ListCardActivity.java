@@ -157,7 +157,8 @@ public class ListCardActivity extends FatherActivity {
 		@Override
 		public void onClick(View arg0) {
 			Setting.state="booking";
-			if(Setting.bookingdata==null||Setting.bookingdata.getUsername()==null||Setting.bookingdata.getUsername().equals("")){
+			
+			if(Setting.bookingdata==null||Setting.bookingdata.getDoctorid()==null||Setting.bookingdata.getDoctorid().equals("")){
 		    	Intent intent = new Intent(ListCardActivity.this,BookingMainActivity.class);
 				Setting.state="booking";
 				startActivity(intent);
@@ -260,13 +261,10 @@ public class ListCardActivity extends FatherActivity {
 							if(sp.getString("defaultcardno", "").equals("")){
 								editor.putString("defaultcardno", "0");
 							}
+							editor.putInt("total_cards", areaObject.getPropertyCount());
 							editor.commit();
 							arr.add(showing);							
-							//hospitalList.add(map);
-							//countnum++;
-							//arr.add(showing+"1");
-							//arr.add(showing+"2");
-							//arr.add(showing+"3");
+							
 							
 						}	
 						empty=false;

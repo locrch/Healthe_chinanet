@@ -110,6 +110,8 @@ public class DoctorListActivity extends FatherActivity
 				who=intent.getStringExtra("who");
 				
 				if (who!=null&&who.equals("serach")){
+					setactivitytitle("搜索医生");
+					infos_text.setVisibility(View.GONE);
 					FindDoctorListReq req = new FindDoctorListReq();
 
 					req.setDoctorName(sp.getString("serach_doc", ""));
@@ -423,36 +425,39 @@ public class DoctorListActivity extends FatherActivity
 				{
 					mProgressDialog.dismiss();
 				}
-
-				DoctorListAdapter adapter = new DoctorListAdapter(
-						DoctorListActivity.this, doctorList);
-
-				doctorlistView.setAdapter(adapter);
-				doctorlistView.setClickable(true);
-				doctorlistView.setFocusable(true);
-				doctorlistView.setOnItemClickListener(new OnItemClickListener()
-				{
-					@Override
-					public void onItemClick(AdapterView<?> arg0, View arg1,
-							int arg2, long arg3)
+				if(doctorList.size()>0){
+					DoctorListAdapter adapter = new DoctorListAdapter(DoctorListActivity.this, doctorList);
+	
+					doctorlistView.setAdapter(adapter);
+					doctorlistView.setClickable(true);
+					doctorlistView.setFocusable(true);
+					doctorlistView.setOnItemClickListener(new OnItemClickListener()
 					{
-						DoctorList map = (DoctorList) doctorlistView
-								.getItemAtPosition(arg2);
-
-						String doctorId = map.getId(); // 获得Areaid
-						String doctorName = map.getText(); // 获得AreaName
-						String version = map.getVersion();
-
-						// 记录医生信息要清空
-						editor.putString("doctorId", doctorId);
-						editor.putString("doctorName", doctorName);
-
-						editor.commit();
-						// startActivity(new Intent (DoctorListActivity.this,
-						// ScheduleListActivity.class));
-
-					}
-				});
+						@Override
+						public void onItemClick(AdapterView<?> arg0, View arg1,
+								int arg2, long arg3)
+						{
+							DoctorList map = (DoctorList) doctorlistView
+									.getItemAtPosition(arg2);
+	
+							String doctorId = map.getId(); // 获得Areaid
+							String doctorName = map.getText(); // 获得AreaName
+							String version = map.getVersion();
+	
+							// 记录医生信息要清空
+							editor.putString("doctorId", doctorId);
+							editor.putString("doctorName", doctorName);
+	
+							editor.commit();
+							// startActivity(new Intent (DoctorListActivity.this,
+							// ScheduleListActivity.class));
+	
+						}
+					});
+				}else{
+					infos_text.setVisibility(View.VISIBLE);
+					infos_text.setText("未找到医生");
+				}
 			}
 		}.execute();
 	}

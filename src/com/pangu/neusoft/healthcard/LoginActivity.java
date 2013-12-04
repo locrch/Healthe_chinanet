@@ -138,6 +138,22 @@ public class LoginActivity extends FatherActivity {
 								msg=obj.getProperty("msg").toString();//返回的信息
 								
 								if(IsLoginSuccess.equals("true")){
+									if(!member.getUserName().equals(sp.getString("username", ""))){
+										
+										int totalcards=sp.getInt("total_cards", 0);
+										for(int i=0;i<totalcards;i++){
+											editor.remove("card"+i+"_"+"owner");
+											editor.remove("card"+i+"_"+"cardnum");
+											editor.remove("card"+i+"_"+"cardtype");
+											editor.remove("card"+i+"_"+"idnumber");
+											editor.remove("card"+i+"_"+"idtype");
+											editor.remove("card"+i+"_"+"phonenumber");
+										}
+										editor.remove("defaultcardno");
+										editor.remove("total_cards");
+										editor.commit();
+									}
+									
 									editor.putString("username", member.getUserName());
 									editor.putString("password", member.getPassword());
 									editor.putBoolean("loginsuccess",true);

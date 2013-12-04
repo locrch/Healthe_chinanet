@@ -152,7 +152,7 @@ public class TabActivity3 extends Activity {
 	
 	protected void dialog() {
 		AlertDialog.Builder builder = new Builder(TabActivity3.this);
-		builder.setMessage("确认要删除缓存数据吗？");
+		builder.setMessage("确认要删除预约记录和本帐号登录数据吗？");
 		builder.setTitle("提示");
 
 		builder.setPositiveButton("确认", new android.content.DialogInterface.OnClickListener() {

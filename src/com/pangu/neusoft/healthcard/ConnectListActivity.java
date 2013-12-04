@@ -81,7 +81,7 @@ public class ConnectListActivity extends FatherActivity {
 		editor=sp.edit();
 		
 		infos_text=(TextView)findViewById(R.id.infos_text);
-		infos_text.setVisibility(View.VISIBLE);
+		infos_text.setVisibility(View.GONE);
 		
 		mProgressDialog = new ProgressDialog(ConnectListActivity.this);
 		mProgressDialog.setMessage("正在加载数据...");

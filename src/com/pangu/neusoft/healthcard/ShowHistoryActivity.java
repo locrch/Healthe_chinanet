@@ -200,6 +200,7 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 					booking_history_list.setAdapter(adapter);	
 					//booking_history_list.setOnItemClickListener(item_click);
 		        }else{
+		        	
 		        	String[] strs = new String[] {"（暂无预约记录）"};
 		        	booking_history_list.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, strs));
 		        }

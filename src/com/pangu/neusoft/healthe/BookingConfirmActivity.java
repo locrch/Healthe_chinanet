@@ -34,7 +34,7 @@ public class BookingConfirmActivity extends FatherActivity
 	    place = (TextView)findViewById(R.id.booking_confirm_place);
 	    pay = (TextView)findViewById(R.id.booking_confirm_pay);
 	    
-	    if(Setting.bookingdata==null||Setting.bookingdata.getUsername()==null||Setting.bookingdata.getUsername().equals("")){
+	    if(Setting.bookingdata==null||Setting.bookingdata.getDoctorid()==null||Setting.bookingdata.getDoctorid().equals("")){
 	    	Intent intent = new Intent(BookingConfirmActivity.this,BookingMainActivity.class);
 			Setting.state="booking";
 			startActivity(intent);

@@ -61,7 +61,9 @@ public class Setting {
 		}else{
 			type=("(居民健康卡)");
 		}
-		
+		if(owner.equals("")){
+			return "未添加健康卡";
+		}
 		return owner+type;
-}
+	}
 }
