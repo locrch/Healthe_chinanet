@@ -31,6 +31,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
@@ -84,6 +85,10 @@ public class HistoryListAdapter extends SimpleAdapter{
 		final TextView his_hospital_text=(TextView)res.findViewById(R.id.his_hospital);
 		final TextView his_doctorid_text=(TextView)res.findViewById(R.id.his_doctorid);
 		final TextView his_hospitalid_text=(TextView)res.findViewById(R.id.his_hospitalid);
+		
+		his_doctor_text.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
+		his_hospital_text.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
+		
 		
 		his_doctor_text.setOnClickListener(new OnClickListener(){
 			@Override

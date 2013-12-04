@@ -149,7 +149,11 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             //imageView.getLayoutParams().height=width/4;
             // Set the text on the TextView  
             TextView textView = viewCache.getTextView();  
-            textView.setText(doctorlist.getText());  
+            textView.setText(doctorlist.getText());
+            if (doctorlist.getText().equals(null)||doctorlist.getText().equals(""))
+			{
+				textView.setVisibility(View.GONE);
+			}
             //textView.setTextSize(width/Setting.fontsizex);
             
             TextView idView = viewCache.getIdView();
