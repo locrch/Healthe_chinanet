@@ -62,6 +62,7 @@ public class LoginActivity extends FatherActivity {
 		
 		
 		setContentView(R.layout.login_layout);
+		
 		setactivitytitle("登录");
 		service=new WebService();
 	  	mProgressDialog = new ProgressDialog(LoginActivity.this);   
@@ -89,6 +90,7 @@ public class LoginActivity extends FatherActivity {
 
 		  Button login_btn=(Button)findViewById(R.id.login_btn);
 		  login_btn.setOnClickListener(login);
+		  Setting.bookingdata=null;//清除本次预约数据
 	}
 
 	

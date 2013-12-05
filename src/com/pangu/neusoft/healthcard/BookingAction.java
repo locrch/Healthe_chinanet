@@ -170,6 +170,7 @@ public class BookingAction {
 							mgr.addBookingRecord(Setting.bookingdata);
 							booking_msg = "预约成功";
 							mgr.closeDB();
+							Setting.bookingdata=null;//清除本次预约数据
 							return true;
 						} else {
 							booking_msg = obj.getProperty("Message").toString();

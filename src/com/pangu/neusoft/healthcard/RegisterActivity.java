@@ -89,7 +89,7 @@ public class RegisterActivity extends FatherActivity {
 	      sex=(Spinner)findViewById(R.id.reg_sex);
 	      card_num=(EditText)findViewById(R.id.card_num);
 	      membername=(EditText)findViewById(R.id.reg_name);
-	      
+	      Setting.bookingdata=null;//清除本次预约数据
 	      //username.setText(sp.getString("username", ""));
 	      //password.setText(sp.getString("password", ""));
 	}
