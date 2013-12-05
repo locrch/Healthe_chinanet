@@ -501,7 +501,7 @@ public class BookingMainActivity extends FatherActivity {
 
 					}
 				});
-				doctorlistView.getLayoutParams().height+=600;
+				doctorlistView.getLayoutParams().height+=1000;
 				 
 			}
 		}.execute();
