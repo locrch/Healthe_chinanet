@@ -512,8 +512,7 @@ public class ListCardActivity extends FatherActivity {
 						dialog.dismiss();
 						int totalcards=sp.getInt("total_cards", 0);
 						for(int i=0;i<totalcards;i++){
-							if (sp.getString("card"+i+"_"+"cardnum", "").equals(card.getMedicalCardCode()))
-							{
+							if (sp.getString("card"+i+"_"+"cardnum", "").equals(card.getMedicalCardCode())){
 								editor.remove("card"+i+"_"+"owner");
 								editor.remove("card"+i+"_"+"cardnum");
 								editor.remove("card"+i+"_"+"cardtype");

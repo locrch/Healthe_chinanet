@@ -27,6 +27,7 @@
         android:layout_alignParentTop="true"
         android:background="@drawable/button_style"
         android:gravity="center"
+        android:textSize="@dimen/button_textsize"
         android:text="" />
 
 </RelativeLayout>

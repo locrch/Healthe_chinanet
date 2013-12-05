@@ -94,7 +94,7 @@ public class SchedultLayout {
 	            }
 	            if(totalrows==0)
 	            	totalrows=1;
-	            
+	            boolean have=false;
 	            int count=0;
 	            for(int i=0;i<totalrows;i++){
 	            	TableRow row = new TableRow(activity);
@@ -211,19 +211,17 @@ public class SchedultLayout {
 	    	            	
 	    	            	row.addView(days);
 	    	            	count++;
+	    	            	have=true;
 	            		}
 	            	}
 	            	scheduleLayout.addView(row);
 	            }
-	
+	            	scheduleText.setText("");//有排班
+				    scheduleText.setVisibility(View.GONE);
 		            
-		            scheduleText.setText("");//显示有排班的日期：
-		            scheduleText.setVisibility(View.GONE);
-		            
-	           
          } else{
         	 	scheduleText.setTextColor(Color.RED);
-	            scheduleText.setText("（暂无排班信息）");//显示有排班的日期：
+	            scheduleText.setText("（暂无排班信息）");//没有排班
 	          //  scheduleDetailLayout.setVisibility(View.GONE);
          }
 

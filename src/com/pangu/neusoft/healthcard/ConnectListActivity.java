@@ -210,9 +210,12 @@ public class ConnectListActivity extends FatherActivity {
 							if (sex.equals("anyType{}"))
 							{
 								sex = "";
+								map.setLevel(title);
+							}else {
+								map.setLevel("(" + sex + ") " + title);
 							}
 	
-							map.setLevel("(" + sex + ") " + title);
+							
 	
 							map.setVersion(version);
 							map.setScheduleList(schedulelist);
