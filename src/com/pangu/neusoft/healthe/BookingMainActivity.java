@@ -136,7 +136,11 @@ public class BookingMainActivity extends FatherActivity {
 		search_btn = (ImageButton) findViewById(R.id.search_btn);
 		search_btn.setOnClickListener(search_btn_doctor_click);
 		
+		selecttext.clearFocus();
 		
+		search_btn.setFocusable(true);
+		search_btn.setFocusableInTouchMode(true);
+		search_btn.requestFocus();
 		doctor_hospital1=(Button)findViewById(R.id.doctor_hospital1);
 		doctor_hospital2=(Button)findViewById(R.id.doctor_hospital2);
 	

@@ -72,7 +72,10 @@ public class DoctorListActivity extends FatherActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
-		super.setactivitytitle("选择医生");
+		
+		
+		
+		setactivitytitle("选择医生");
 		doctorlistView = (ListView) findViewById(R.id.list);
 		
 		

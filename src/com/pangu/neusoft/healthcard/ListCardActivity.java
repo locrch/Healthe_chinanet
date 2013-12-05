@@ -491,7 +491,7 @@ public class ListCardActivity extends FatherActivity {
 		}
 		editor.putString("cardnum", card.getMedicalCardCode());
 		editor.putString("idnumber", card.getOwnerIDCard());
-		
+		editor.commit();
     	startActivity(new Intent(ListCardActivity.this,CardInfoActivity.class));
 	}
 

@@ -23,7 +23,7 @@ public class BookingConfirmActivity extends FatherActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_booking_confirm);
-		
+		setactivitytitle("预约信息确认");
 	    username = (TextView)findViewById(R.id.booking_confirm_username);
 	    healthcard = (TextView)findViewById(R.id.booking_confirm_healthcard);
 	    hospitalname = (TextView)findViewById(R.id.booking_confirm_hospitalname);

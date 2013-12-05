@@ -285,55 +285,66 @@ public class HospitalDetailActivity extends FatherActivity {
 			}
 			
 			@Override
-			protected void onPostExecute(Boolean result){
+			protected void onPostExecute(final Boolean result){
 				super.onPostExecute(result);
-				if(mProgressDialog.isShowing()){
-					mProgressDialog.dismiss();
-				} 
-				if (result){
-					hospitalIdText.setText(hospital.getHospitalId());
-					hospitalNameText.setText(hospital.getHospitalName());
-					hospitallevelText.setText(hospital.getLevel()+hospital.getGrade());
-					hospitalInfoText.setText(hospital.getIntro());
-					hospitalAddressText.setText(hospital.getAddress());
-					hospitalZipCodeText.setText(hospital.getZipCode());
-					hospitalTelephoneText.setText(hospital.getTelephone());
-					hospitalFaxText.setText(hospital.getFax());
-					hospitalWebSiteText.setText(hospital.getWebsite());
-					//pic.setText(hospital.getHospitalId());
-					hospitalWebSiteText.setOnClickListener(new OnClickListener()
-					{
-						
-						@Override
-						public void onClick(View v)
-						{
-							// TODO Auto-generated method stub
-							Intent intent = new Intent();
-							
-							intent.setAction(intent.ACTION_VIEW);
-							
-							intent.setData(Uri.parse(hospital.getWebsite().toString()));
-							
-							startActivity(intent);
-						}
-					});
-					  Bitmap bitmap=asyncImageLoader.loadBitmap(pic, hospital.getPictureUrl(), new ImageCallBack() {  
-			                
-			                @Override  
-			                public void imageLoad(ImageView imageView, Bitmap bitmap) {  
-			                    // TODO Auto-generated method stub  
-			                    imageView.setImageBitmap(bitmap);  
-			                }  
-			            });  
-			            
-			      
-			            if (bitmap == null) {  
-			                pic.setImageResource(R.drawable.booking_hosp);  
-			            }else{  
-			            	pic.setImageBitmap(bitmap); 
-			            }  
+				
+				runOnUiThread(new Runnable()
+				{
 					
-				}
+					@Override
+					public void run()
+					{
+
+						if(mProgressDialog.isShowing()){
+							mProgressDialog.dismiss();
+						} 
+						if (result){
+							hospitalIdText.setText(hospital.getHospitalId());
+							hospitalNameText.setText(hospital.getHospitalName());
+							hospitallevelText.setText(hospital.getLevel()+hospital.getGrade());
+							hospitalInfoText.setText(hospital.getIntro());
+							hospitalAddressText.setText(hospital.getAddress());
+							hospitalZipCodeText.setText(hospital.getZipCode());
+							hospitalTelephoneText.setText(hospital.getTelephone());
+							hospitalFaxText.setText(hospital.getFax());
+							hospitalWebSiteText.setText(hospital.getWebsite());
+							//pic.setText(hospital.getHospitalId());
+							hospitalWebSiteText.setOnClickListener(new OnClickListener()
+							{
+								
+								@Override
+								public void onClick(View v)
+								{
+									// TODO Auto-generated method stub
+									Intent intent = new Intent();
+									
+									intent.setAction(intent.ACTION_VIEW);
+									
+									intent.setData(Uri.parse(hospital.getWebsite().toString()));
+									
+									startActivity(intent);
+								}
+							});
+							  Bitmap bitmap=asyncImageLoader.loadBitmap(pic, hospital.getPictureUrl(), new ImageCallBack() {  
+					                
+					                @Override  
+					                public void imageLoad(ImageView imageView, Bitmap bitmap) {  
+					                    // TODO Auto-generated method stub  
+					                    imageView.setImageBitmap(bitmap);  
+					                }  
+					            });  
+					            
+					      
+					            if (bitmap == null) {  
+					                pic.setImageResource(R.drawable.booking_hosp);  
+					            }else{  
+					            	pic.setImageBitmap(bitmap); 
+					            }  
+							
+						}
+						
+					}
+				});
 			}
 			@Override
 			protected void onCancelled()

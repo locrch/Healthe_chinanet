@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="2dp" >
+    android:layout_marginTop="2dp"
+     >
 
          <ScrollView
               android:layout_width="fill_parent" 
@@ -18,8 +19,8 @@
             android:layout_alignParentLeft="true"
             android:background="@drawable/button_style"
             android:textSize="@dimen/button_textsize"
-            android:text="医生" />
-
+            android:text="医生"
+            android:focusable="true" />
         <EditText
             android:id="@+id/search_text"
             android:layout_width="wrap_content"
@@ -27,9 +28,11 @@
             android:layout_toLeftOf="@+id/search_btn"
             android:layout_toRightOf="@+id/doctor_hospital1"
             android:hint="请输入医生名字"
-            android:textSize="@dimen/button_textsize" >
+            android:textSize="@dimen/button_textsize"
+            android:focusable="false"
+        	android:focusableInTouchMode="false" >
 
-            <requestFocus />
+            
         </EditText>
         
         <ImageButton

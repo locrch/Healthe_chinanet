@@ -62,7 +62,7 @@ public class HospitalListActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
-		super.setactivitytitle("选择医院");
+		setactivitytitle("选择医院");
 		hospitallistView=(ListView)findViewById(R.id.list);
 		service=new WebService();
 		hospitalList=new ArrayList<HospitalList>();	
