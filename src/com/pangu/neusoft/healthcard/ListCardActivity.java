@@ -496,7 +496,7 @@ public class ListCardActivity extends FatherActivity {
 	}
 
 	public void confirmDeleteDialog(String name) {
-		MedicalCard card=cards.get(name);
+		final MedicalCard card=cards.get(name);
 		
 		final String type=card.getMedicalCardTypeID()+"";
 		final String num=card.getMedicalCardCode();
@@ -509,7 +509,27 @@ public class ListCardActivity extends FatherActivity {
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						dialog.dismiss();						
+						dialog.dismiss();
+						int totalcards=sp.getInt("total_cards", 0);
+						for(int i=0;i<totalcards;i++){
+							if (sp.getString("card"+i+"_"+"cardnum", "").equals(card.getMedicalCardCode()))
+							{
+								editor.remove("card"+i+"_"+"owner");
+								editor.remove("card"+i+"_"+"cardnum");
+								editor.remove("card"+i+"_"+"cardtype");
+								editor.remove("card"+i+"_"+"idnumber");
+								editor.remove("card"+i+"_"+"idtype");
+								editor.remove("card"+i+"_"+"phonenumber");
+								if(sp.getString("defaultcardno", "0").equals(""+i)){
+									editor.remove("defaultcardno");
+								}								
+								editor.putString("total_cards",(totalcards-1)+"");
+							}
+							
+						}						
+						
+						editor.commit();
+						
 						deleteCard(num,type);						
 					}
 				});
