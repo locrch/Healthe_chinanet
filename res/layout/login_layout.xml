@@ -64,7 +64,7 @@
         android:layout_alignBottom="@+id/reg_btn"
         android:layout_alignParentLeft="true"
         android:textSize="@dimen/button_textsize"
-        android:text="登陆" 
+        android:text="登录" 
         android:background="@drawable/button_style"
         />
 

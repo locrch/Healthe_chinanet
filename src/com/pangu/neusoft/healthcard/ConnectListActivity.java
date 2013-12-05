@@ -290,6 +290,12 @@ public class ConnectListActivity extends FatherActivity {
 	
 		DoctorListAdapter adapter=new DoctorListAdapter(ConnectListActivity.this, doctorList);
 		
+		if (doctorList.size()==1)
+		{
+			//如果医生列表只有一个数据，就自定义设置高度
+			doctorlistView.getLayoutParams().height=3000;
+		}
+		
 		doctorlistView.setAdapter(adapter);
 		doctorlistView.setClickable(true);
 		doctorlistView.setFocusable(true);
