@@ -62,7 +62,7 @@ public class LoginActivity extends FatherActivity {
 		
 		
 		setContentView(R.layout.login_layout);
-		
+		setactivitytitle("登录");
 		service=new WebService();
 	  	mProgressDialog = new ProgressDialog(LoginActivity.this);   
         mProgressDialog.setMessage("正在加载数据...");   

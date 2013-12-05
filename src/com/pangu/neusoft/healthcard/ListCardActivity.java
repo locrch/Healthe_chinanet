@@ -93,7 +93,7 @@ public class ListCardActivity extends FatherActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.setactivitytitle("选择健康卡");
+		this.setactivitytitle("健康卡管理");
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		if(!sp.getBoolean("loginsuccess", false)){

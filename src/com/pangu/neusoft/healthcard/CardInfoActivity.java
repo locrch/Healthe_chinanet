@@ -88,7 +88,7 @@ public class CardInfoActivity extends FatherActivity {
 		//mgr = new DBManager(CardInfoActivity.this);
 		setContentView(R.layout.activity_card_info);
 		Intent intent = getIntent();
-		
+		setactivitytitle("健康卡详情");
 //		mProgressDialog = new ProgressDialog(CardInfoActivity.this);
 //		mProgressDialog.setMessage("正在加载数据...");
 //		mProgressDialog.setIndeterminate(false);

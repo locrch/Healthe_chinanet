@@ -69,6 +69,7 @@ public class RegisterActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.reg_layout);
+		setactivitytitle("注册");
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		service=new WebService();

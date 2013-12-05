@@ -67,13 +67,7 @@
             android:background="@drawable/schedule_btn_style_layout"
             android:orientation="vertical" >
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="添加健康卡"
-                android:textSize="20dp" />
-
+            
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
