@@ -90,6 +90,73 @@
             android:name="BaiduMobAd_WIFI_LOCATION"
             android:value="true" />
 
+        <!-- 
+        push service client
+        <receiver android:name="your.package.MyPushMessageReceiver" >
+            <intent-filter>
+
+                接收push消息
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                接收bind、setTags等method的返回结果
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                可选。接受通知点击事件，和通知自定义内容
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+
+        push service start
+        用于接收系统消息以保证PushService正常运行
+        <receiver
+            android:name="com.baidu.android.pushservice.PushServiceReceiver"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+            </intent-filter>
+        </receiver>
+        Push服务接收客户端发送的各种请求
+        注意：RegistrationReceiver 在2.1.1及之前版本有拼写失误，为RegistratonReceiver ，用新版本SDK时请更改为如下代码
+        <receiver
+            android:name="com.baidu.android.pushservice.RegistrationReceiver"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        Push 服务
+        <service
+            android:name="com.baidu.android.pushservice.PushService"
+            android:exported="true"
+            android:process=":bdservice_v1" />
+        富媒体功能
+        push service rich media display
+        <activity
+            android:name="com.baidu.android.pushservice.richmedia.MediaViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="MediaViewActivity" >
+        </activity>
+        <activity
+            android:name="com.baidu.android.pushservice.richmedia.MediaListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="MediaListActivity"
+            android:launchMode="singleTask" >
+        </activity> 
+        
+        -->
+        
+        
+        
+        
+        
+        
         <activity
             android:name="com.pangu.neusoft.healthe.MainActivity"
             android:icon="@drawable/ic_launcher"
@@ -274,13 +341,13 @@
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.TabActivity5"
-            android:label="@string/title_activity_tab_activity5" 
+            android:label="@string/title_activity_tab_activity5"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.SearchResActivity"
             android:label="@string/title_activity_search_res"
-            android:parentActivityName="com.pangu.neusoft.healthe.FatherActivity" 
+            android:parentActivityName="com.pangu.neusoft.healthe.FatherActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -288,7 +355,7 @@
         </activity>
         <activity
             android:name="com.pangu.neusoft.healthe.BookingConfirmActivity"
-            android:label="@string/title_activity_booking_confirm" 
+            android:label="@string/title_activity_booking_confirm"
             android:screenOrientation="portrait" >
         </activity>
     </application>

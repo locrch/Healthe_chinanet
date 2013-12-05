@@ -429,6 +429,12 @@ public class DoctorListActivity extends FatherActivity
 					mProgressDialog.dismiss();
 				}
 				if(doctorList.size()>0){
+					if (doctorList.size()==1)
+					{
+						//如果医生列表只有一个数据，就自定义设置高度
+						doctorlistView.getLayoutParams().height=1000;
+					}
+					
 					DoctorListAdapter adapter = new DoctorListAdapter(DoctorListActivity.this, doctorList);
 	
 					doctorlistView.setAdapter(adapter);

@@ -583,7 +583,14 @@ public class ListCardActivity extends FatherActivity {
 				final Timer t = new Timer();
 				t.schedule(new TimerTask() {
 					public void run() {
-						showListView();
+						runOnUiThread(new Runnable()
+						{
+							public void run()
+							{
+								showListView();
+							}
+						});
+						
 						t.cancel(); 
 					}
 				}, Setting.dialogtimeout+1000);

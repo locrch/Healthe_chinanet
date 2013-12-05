@@ -25,7 +25,7 @@ public class Setting {
 	public static final int schedule_show_num=6;
 	//public static final String mapkey="36a773d43634b75464e03e17f65dd3bf";
 	public static final String mapkey="849b6fcf128aaff2549fda5df98dff56";
-	
+	public static final String apikey="WUXMvjgF3megBkFlYiF9CVnq";
     
 	
 	public static final double default_lat=23.026947*1E6;

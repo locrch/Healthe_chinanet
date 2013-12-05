@@ -2,6 +2,8 @@ package com.pangu.neusoft.healthe;
 
 import java.net.ContentHandler;
 
+import com.baidu.android.pushservice.PushConstants;
+import com.baidu.android.pushservice.PushManager;
 import com.baidu.mobstat.StatService;
 import com.baidu.platform.comapi.map.r;
 import com.pangu.neusoft.healthcard.LoginActivity;
@@ -44,6 +46,8 @@ public class FristActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		
 		setContentView(R.layout.activity_frist);
+		
+		//PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, Setting.apikey);
 		
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_frist);
 		
