@@ -94,7 +94,7 @@ public class CardListAdapter extends SimpleAdapter{
 						ListCardActivity.temp.setChecked(false);
 					}
 					ListCardActivity.temp=namebox;
-					if(Setting.state.equals("booking")){
+					if(Setting.state.equals("booking")&&Setting.bookingdata!=null){
 						BookingAction booking=new BookingAction(activity);
 						//设置预约基本信息
 						Setting.setDefaultCardNumber(sp,editor);
