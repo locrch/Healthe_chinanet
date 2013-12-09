@@ -47,7 +47,9 @@ public class FristActivity extends Activity {
 		
 		setContentView(R.layout.activity_frist);
 		
-		//PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, Setting.apikey);
+		PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, Setting.apikey);
+		
+		
 		
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_frist);
 		
@@ -154,6 +156,7 @@ public class FristActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onResume();
 		StatService.onResume(this);
+		//PushManager.resumeWork(getApplicationContext());
 	}
 	
 	@Override
@@ -161,6 +164,14 @@ public class FristActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onPause();
 		StatService.onPause(this);
+	}
+	
+	@Override
+	protected void onStop()
+	{
+		// TODO Auto-generated method stub
+		super.onStop();
+		//PushManager.stopWork(this);
 	}
 	
 	private long exitTime = 1;

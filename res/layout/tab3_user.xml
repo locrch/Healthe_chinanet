@@ -36,6 +36,7 @@
             android:gravity="left"
             android:text="登录"
             android:textSize="@dimen/button_textsize" />
+        
 
         <Button
             android:id="@+id/tab3_peopleinfo"

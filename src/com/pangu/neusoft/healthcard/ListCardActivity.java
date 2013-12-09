@@ -9,6 +9,7 @@ import java.util.TimerTask;
 
 import org.ksoap2.serialization.SoapObject;
 
+import com.baidu.a.a.a.a.a;
 import com.pangu.neusoft.adapters.CardListAdapter;
 import com.pangu.neusoft.adapters.HospitalList;
 import com.pangu.neusoft.adapters.HospitalListAdapter;
@@ -492,7 +493,8 @@ public class ListCardActivity extends FatherActivity {
 		editor.putString("cardnum", card.getMedicalCardCode());
 		editor.putString("idnumber", card.getOwnerIDCard());
 		editor.commit();
-    	startActivity(new Intent(ListCardActivity.this,CardInfoActivity.class));
+		
+		startActivity(new Intent(ListCardActivity.this,CardInfoActivity.class));
 	}
 
 	public void confirmDeleteDialog(String name) {

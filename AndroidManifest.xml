@@ -90,9 +90,9 @@
             android:name="BaiduMobAd_WIFI_LOCATION"
             android:value="true" />
 
-        <!-- 
+        
         push service client
-        <receiver android:name="your.package.MyPushMessageReceiver" >
+        <receiver android:name="com.pangu.neusoft.baidu.MyPushMessageReceiver" >
             <intent-filter>
 
                 接收push消息
@@ -136,6 +136,8 @@
             android:name="com.baidu.android.pushservice.PushService"
             android:exported="true"
             android:process=":bdservice_v1" />
+        
+        <meta-data android:name="api_key" android:value="WUXMvjgF3megBkFlYiF9CVnq" />
         富媒体功能
         push service rich media display
         <activity
@@ -150,7 +152,7 @@
             android:launchMode="singleTask" >
         </activity> 
         
-        -->
+       
         
         
         
