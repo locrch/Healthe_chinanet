@@ -3,147 +3,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
-    android:background="@drawable/background_black" >
-
-    <TextView
-        android:id="@+id/infos_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tab2_booking"
-        android:layout_alignRight="@+id/tab2_booking"
-        android:layout_below="@+id/tab2_booking"
-        android:gravity="center"
-        android:text="预约挂号"
-        android:textColor="@color/tab_text"
-        android:textSize="20sp" />
-
-    <ImageButton
-        android:id="@+id/tab2_booking"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="84dp"
-        android:background="@drawable/yuyue" />
-
-    <ImageButton
-        android:id="@+id/tab2_healthfoler"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_above="@+id/infos_text"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/foler" />
-
-    <TextView
-        android:id="@+id/seria_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/infos_text"
-        android:layout_alignBottom="@+id/infos_text"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="健康档案"
-        android:textColor="@color/tab_text"
-        android:textSize="20sp" />
-
-    <ImageButton
-        android:id="@+id/tab2_moneycheck"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/tab2_booking"
-        android:background="@drawable/car" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/infos_text"
-        android:layout_alignBottom="@+id/infos_text"
-        android:layout_alignLeft="@+id/tab2_moneycheck"
-        android:layout_alignParentRight="true"
-        android:gravity="center"
-        android:text="费用查询"
-        android:textColor="@color/tab_text"
-        android:textSize="20sp" />
-
-    <ImageButton
-        android:id="@+id/tab2_eachother"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/infos_text"
-        android:layout_marginTop="43dp"
-        android:background="@drawable/stethoscope" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/tab2_eachother"
-        android:layout_below="@+id/tab2_eachother"
-        android:gravity="center"
-        android:text="医患互动"
-        android:textColor="@color/tab_text"
-        android:textSize="20sp" />
-
-    <ImageButton
-        android:id="@+id/tab2_healthinfo"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_above="@+id/textView3"
-        android:layout_alignLeft="@+id/tab2_healthfoler"
-        android:background="@drawable/paste" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tab2_healthinfo"
-        android:layout_alignRight="@+id/tab2_healthinfo"
-        android:layout_below="@+id/tab2_healthinfo"
-        android:gravity="center"
-        android:text="健康大全"
-        android:textColor="@color/tab_text"
-        android:textSize="20sp" />
-
-    <ImageButton
-        android:id="@+id/tab2_tellphone"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_above="@+id/textView4"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/yijian" />
+     >
 
     <TextView
         android:id="@+id/huoqu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:textColor="@color/tab_text" />
 
-    <TextView
+    <ImageButton
+        android:id="@+id/tab2_healthfoler"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_below="@+id/title_zhineng"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/tab2_file_press" />
+
+    <ImageButton
+        android:id="@+id/tab2_healthinfo"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tab2_healthfoler"
+        android:layout_margin="30dp"
+        android:background="@drawable/tab2_all_press" />
+
+    <ImageView
         android:id="@+id/title_zhineng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/huoqu"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="智能健康"
-        android:textColor="@color/white"
-        android:textSize="30sp" />
+        android:layout_marginTop="26dp"
+        android:background="@drawable/first_zhinengbut" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignParentRight="true"
-        android:gravity="center"
-        android:text="药房优惠 "
-        android:textColor="@color/tab_text"
-        android:textSize="20sp" />
+    <ImageButton
+        android:id="@+id/tab2_eachother"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignRight="@+id/tab2_booking"
+        android:layout_alignTop="@+id/tab2_healthinfo"
+        android:background="@drawable/tab2_each_press" />
+
+    <ImageButton
+        android:id="@+id/tab2_booking"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_above="@+id/tab2_healthinfo"
+        android:layout_toLeftOf="@+id/tab2_healthinfo"
+        android:background="@drawable/tab2_booking_press" />
+
+    <ImageButton
+        android:id="@+id/tab2_moneycheck"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignTop="@+id/tab2_healthfoler"
+        android:layout_toRightOf="@+id/tab2_healthinfo"
+        android:background="@drawable/tab2_money_press" />
+
+    <ImageButton
+        android:id="@+id/tab2_tellphone"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignTop="@+id/tab2_healthinfo"
+        android:layout_toRightOf="@+id/tab2_healthinfo"
+        android:background="@drawable/tab2_offer_press" />
 
 </RelativeLayout>

@@ -1,13 +1,10 @@
 package com.pangu.neusoft.healthe;
 
+
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,9 +12,10 @@ import android.widget.Toast;
 
 public class TabActivity2 extends Activity
 {
-	ImageButton tab2_booking, tab2_tellphone, tab2_healthfoler,
+	ImageButton tab2_booking,  tab2_healthfoler,tab2_tellphone,
 			tab2_moneycheck, tab2_eachother, tab2_healthinfo;
-
+	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -46,6 +44,8 @@ public class TabActivity2 extends Activity
 		tab2_moneycheck = (ImageButton) findViewById(R.id.tab2_moneycheck);
 		tab2_eachother = (ImageButton) findViewById(R.id.tab2_eachother);
 		tab2_healthinfo = (ImageButton) findViewById(R.id.tab2_healthinfo);
+		
+		
 		
 		OnClickListener development = new OnClickListener()
 		{

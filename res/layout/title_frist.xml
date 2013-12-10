@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="80dp"
-    
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/title_frist_bg"
      >
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_launcher" />
-
-    <TextView
-        android:id="@+id/infos_text"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/imageView1"
-        android:text="@string/app_name"
-        android:textSize="30dp"
-        android:textColor="#FFFFFF"
-         />
 
     <ImageButton
         android:id="@+id/phone"
@@ -29,7 +12,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="25dp"
-        android:layout_toRightOf="@+id/infos_text"
         android:background="@drawable/phone_12320" />
  
 </RelativeLayout>
