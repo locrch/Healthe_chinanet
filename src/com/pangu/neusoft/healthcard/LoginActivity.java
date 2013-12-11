@@ -39,6 +39,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
@@ -50,6 +53,7 @@ public class LoginActivity extends FatherActivity {
 	private ProgressDialog mProgressDialog; 
 	private EditText username;
 	private EditText password;
+	private CheckBox member_CheckBox,auto_CheckBox;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -82,18 +86,66 @@ public class LoginActivity extends FatherActivity {
 		  };
 		  Button reg_btn=(Button)findViewById(R.id.reg_btn);
 		  reg_btn.setOnClickListener(reg);
-		  
+		  member_CheckBox=(CheckBox)findViewById(R.id.member_CheckBox);
+		  auto_CheckBox=(CheckBox)findViewById(R.id.auto_CheckBox);
 	      username=(EditText)findViewById(R.id.username);
 	      password=(EditText)findViewById(R.id.password);
-	      username.setText(sp.getString("username", ""));
-	      password.setText(sp.getString("password", ""));
-
+	      
+	      
 		  Button login_btn=(Button)findViewById(R.id.login_btn);
 		  login_btn.setOnClickListener(login);
 		  Setting.bookingdata=null;//清除本次预约数据
+		  member_CheckBox.setChecked(sp.getBoolean("auto_ischecked", true));
+		  
+		  if (member_CheckBox.isChecked())
+		{ 
+			  username.setText(sp.getString("username", ""));
+			  password.setText(sp.getString("password", ""));
+			  
+		}
+	      else {
+	    	  username.getText().clear();
+			   password.getText().clear();
+		}
+	      
+		  member_CheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener()
+		{
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+			{
+				// TODO Auto-generated method stub
+				if (isChecked)
+				{
+					editor.putBoolean("auto_ischecked", true);
+					
+					editor.commit();
+					
+				}
+				else {
+					editor.putBoolean("auto_ischecked", false);
+					editor.commit();
+					
+				}
+			}
+		});
 	}
-
-	
+	@Override
+	protected void onStop()
+	{
+		// TODO Auto-generated method stub
+		super.onStop();
+		editor.putString("username", username.getText().toString());
+		editor.putString("password", password.getText().toString());
+		editor.commit();
+	}
+	@Override
+	protected void onDestroy()
+	{
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		
+	}
 	public String checkData(){
 		String msg="";
 		if(username.getText().toString().equals("")){
@@ -213,11 +265,6 @@ public class LoginActivity extends FatherActivity {
 		}
   };
 	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.login, menu);
-		return true;
-	}
+	
 
 }

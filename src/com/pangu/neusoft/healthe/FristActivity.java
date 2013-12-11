@@ -8,6 +8,7 @@ import com.baidu.mobstat.StatService;
 import com.baidu.platform.comapi.map.r;
 import com.pangu.neusoft.healthcard.LoginActivity;
 import com.pangu.neusoft.healthcard.RegisterActivity;
+import com.pangu.neusoft.tools.DensityUtil;
 import com.pangu.neusoft.tools.SysApplication;
 import com.pangu.neusoft.tools.update.UpdateOperation;
 
@@ -15,6 +16,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -24,6 +26,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
@@ -31,12 +36,16 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
+@SuppressLint("NewApi")
 public class FristActivity extends Activity {
 	ImageButton zhineng, shuzi,phone;
 	
 	Button zhuce, denglu;
+	
+	ScrollView scrollView;
 	private SharedPreferences sp;
 	private Editor editor;
 	@Override
@@ -63,6 +72,21 @@ public class FristActivity extends Activity {
 
 		denglu = (Button) findViewById(R.id.denglu);
 
+		scrollView = (ScrollView) findViewById(R.id.scrollView1);
+		
+		//getScreenSize();
+		
+		DisplayMetrics metric = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(metric);
+		
+		Integer height = metric.heightPixels;
+		
+		
+		if (height>480)
+		{
+			
+		}
+		
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		if(sp.getInt("fontsize", 0)==0){

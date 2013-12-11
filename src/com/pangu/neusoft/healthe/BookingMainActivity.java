@@ -670,8 +670,8 @@ public class BookingMainActivity extends FatherActivity {
 	public void getScreenSize() {
 		DisplayMetrics metric = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metric);
-		width = metric.widthPixels;
-		height = metric.heightPixels;
+		int width = metric.widthPixels;
+		int height = metric.heightPixels;
 		
 		width=DensityUtil.px2dip(this, width);
 		height=DensityUtil.px2dip(this, height);

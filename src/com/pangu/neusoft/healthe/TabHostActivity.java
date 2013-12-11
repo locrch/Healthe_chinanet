@@ -34,7 +34,7 @@ public class TabHostActivity extends ActivityGroup {
 		//requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.acitivty_tabhost);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
-		 R.layout.title_frist);
+		 R.layout.title_tabhost);
 		/*
 		 * back_back = (Button)findViewById(R.id.back_back); back_index =
 		 * (Button)findViewById(R.id.back_index); back_index.setVisibility(8);

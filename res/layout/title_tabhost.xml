@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    <TextView
-	    android:id="@+id/title_tab_title"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignBottom="@+id/back_index"
-	    android:layout_centerHorizontal="true"
-	    android:text="@string/app_name"
-	    android:textSize="22sp"
-	    android:textColor="#FFFFFF"
-	    android:gravity="center"
-	     />
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/title_frist_bg_black"
+     >
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/wsj_logo" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="健康E园"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+ 	
 </RelativeLayout>
