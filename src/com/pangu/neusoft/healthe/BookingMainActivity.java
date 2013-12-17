@@ -55,6 +55,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.SlidingDrawer;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -105,7 +106,6 @@ public class BookingMainActivity extends FatherActivity {
 	private ImageView handler;
 	private SlidingDrawer slidingDrawer1;
 	private ProgressDialog mProgressDialog;
-	
 	WebService service;
 	
 	@Override
@@ -132,6 +132,8 @@ public class BookingMainActivity extends FatherActivity {
 		//adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		//搜索部分
 		//select_spinner.setAdapter(adapter);
+		
+		
 		selecttext = (EditText) findViewById(R.id.search_text);
 		search_btn = (ImageButton) findViewById(R.id.search_btn);
 		search_btn.setOnClickListener(search_btn_doctor_click);
@@ -670,8 +672,8 @@ public class BookingMainActivity extends FatherActivity {
 	public void getScreenSize() {
 		DisplayMetrics metric = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metric);
-		int width = metric.widthPixels;
-		int height = metric.heightPixels;
+		width = metric.widthPixels;
+		height = metric.heightPixels;
 		
 		width=DensityUtil.px2dip(this, width);
 		height=DensityUtil.px2dip(this, height);

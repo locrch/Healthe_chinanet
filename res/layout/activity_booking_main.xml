@@ -5,6 +5,7 @@
      >
 
          <ScrollView
+             android:id="@+id/scrollview2"
               android:layout_width="fill_parent" 
     			android:layout_height="wrap_content" >
 	<RelativeLayout 
@@ -80,8 +81,8 @@
 
         <ImageView
             android:id="@+id/cashe_list_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/welcomelayout"
             android:layout_marginTop="10dp"
@@ -99,7 +100,7 @@
         <EditText
             android:id="@+id/department"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/cashe_list_image"
             android:layout_toRightOf="@+id/imageView2"
@@ -114,8 +115,8 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/imageView2"
             android:layout_marginTop="10dp"
@@ -124,7 +125,7 @@
         <EditText
             android:id="@+id/doctor"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/imageView2"
@@ -143,7 +144,7 @@
         <EditText
             android:id="@+id/hospital"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_above="@+id/department"
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@+id/cashe_list_image"
@@ -208,8 +209,8 @@
 
             <ImageView
                 android:id="@+id/handle"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
                 android:src="@drawable/handle_down" />
 
             <LinearLayout

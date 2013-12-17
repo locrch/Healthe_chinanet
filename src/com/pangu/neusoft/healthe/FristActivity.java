@@ -6,6 +6,7 @@ import com.baidu.android.pushservice.PushConstants;
 import com.baidu.android.pushservice.PushManager;
 import com.baidu.mobstat.StatService;
 import com.baidu.platform.comapi.map.r;
+import com.hp.hpl.sparta.xpath.ThisNodeTest;
 import com.pangu.neusoft.healthcard.LoginActivity;
 import com.pangu.neusoft.healthcard.RegisterActivity;
 import com.pangu.neusoft.tools.DensityUtil;
@@ -31,11 +32,13 @@ import android.util.Log;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -45,9 +48,7 @@ public class FristActivity extends Activity {
 	
 	Button zhuce, denglu;
 	
-	ScrollView scrollView;
-	private SharedPreferences sp;
-	private Editor editor;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -58,9 +59,8 @@ public class FristActivity extends Activity {
 		
 		PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, Setting.apikey);
 		
-		
-		
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_frist);
+		
 		
 		phone = (ImageButton)findViewById(R.id.phone);
 		
@@ -72,20 +72,22 @@ public class FristActivity extends Activity {
 
 		denglu = (Button) findViewById(R.id.denglu);
 
-		scrollView = (ScrollView) findViewById(R.id.scrollView1);
 		
-		//getScreenSize();
-		
+		Context ctx = FristActivity.this;
 		DisplayMetrics metric = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metric);
 		
 		Integer height = metric.heightPixels;
 		
+		SharedPreferences sp = ctx.getSharedPreferences("SP", MODE_PRIVATE);
 		
-		if (height>480)
-		{
-			
-		}
+		Editor editor = sp.edit();
+		
+		editor.putInt("height_screen", height);
+		
+		editor.commit();
+		
+		
 		
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();

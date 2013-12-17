@@ -97,7 +97,7 @@
         android:layout_alignBaseline="@+id/OwnerIDCard"
         android:layout_alignBottom="@+id/OwnerIDCard"
         android:layout_alignParentLeft="true"
-        android:text="身份证：" />
+        android:text="身份证号：" />
 
     <EditText
         android:id="@+id/OwnerTel"

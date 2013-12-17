@@ -109,7 +109,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="left"
-                        android:text="身份证："
+                        android:text="身份证号："
                         android:textSize="@dimen/listtitle_textsize" />
 
                     <TextView

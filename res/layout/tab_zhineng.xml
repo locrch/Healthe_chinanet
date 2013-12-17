@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/huoqu"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/first_zhinengbut_press" />
 
     <ImageButton
