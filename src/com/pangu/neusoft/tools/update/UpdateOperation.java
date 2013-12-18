@@ -17,7 +17,7 @@ import com.pangu.neusoft.healthe.R;
 
 
 
-import com.pangu.neusoft.healthe.TabActivity4;
+import com.pangu.neusoft.healthe.TabActivity5;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -118,14 +118,14 @@ public class UpdateOperation {
 	           
 	            if(info.getVersion().equals(localVersion)){  
 	                Log.i(TAG,"版本号相同无需升级");  
-	                TabActivity4.updated=1;
+	                TabActivity5.updated=1;
 	                
 	            }else{  
 	                Log.i(TAG,"版本号不同 ,提示用户升级 ");  
 	                Message msg = new Message();  
 	                msg.what = UPDATA_CLIENT;  
 	                handler.sendMessage(msg); 
-	                TabActivity4.updated=2;
+	                TabActivity5.updated=2;
 	            }  
 	        } catch (Exception e) {  
 	            // 待处理   

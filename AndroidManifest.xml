@@ -208,7 +208,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.healthe.TabActivity4"
+            android:name="com.pangu.neusoft.healthe.TabActivity5"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
@@ -343,7 +343,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.healthe.TabActivity5"
+            android:name="com.pangu.neusoft.healthe.TabActivity4"
             android:label="@string/title_activity_tab_activity5"
             android:screenOrientation="portrait" >
         </activity>

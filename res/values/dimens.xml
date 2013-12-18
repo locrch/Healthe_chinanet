@@ -5,9 +5,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="margin_right">40dp</dimen>
 	<dimen name="button_textsize">18dp</dimen>
-	<dimen name="listtitle_textsize">20dp</dimen>
-	<dimen name="list_address_textsize">16dp</dimen>
+	<dimen name="list_big_textsize">18dp</dimen>
+	<dimen name="list_small_textsize">14dp</dimen>
 	<dimen name="title_textsize">30dp</dimen>
 	<dimen name="detail_content_textsize">14dp</dimen>
 	<dimen name="list_detailimg_margin">2dp</dimen>
+	<dimen name="list_padding_width">5dp</dimen>
 </resources>

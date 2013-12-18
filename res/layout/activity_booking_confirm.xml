@@ -212,6 +212,7 @@
         </LinearLayout>
 
         <Button
+            
             android:id="@+id/booking_confirm_changecard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

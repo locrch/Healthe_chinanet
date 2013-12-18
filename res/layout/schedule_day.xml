@@ -44,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_weight="9"
         android:text="Large Text"
-        android:textSize="@dimen/list_address_textsize" />
+        android:textSize="@dimen/list_small_textsize" />
 
     <TextView
         android:id="@+id/textView2"

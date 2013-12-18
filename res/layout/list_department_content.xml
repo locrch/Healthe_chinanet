@@ -27,7 +27,7 @@
         android:layout_alignParentLeft="true"  
         android:singleLine="true"  
         android:textAppearance="?android:textAppearanceMedium"
-        android:textSize="@dimen/listtitle_textsize"
+        android:textSize="@dimen/list_big_textsize"
          />  
   		
     <TextView

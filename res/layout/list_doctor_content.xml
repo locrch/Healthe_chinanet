@@ -2,6 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/list_padding_width"
+    android:paddingRight="@dimen/list_padding_width"
     >
 
     <TextView
@@ -32,10 +34,11 @@
         android:layout_alignRight="@+id/doctor_list_grade"
         android:layout_toRightOf="@+id/doctor_list_image"
         android:layout_marginRight="@dimen/margin_right"
+        android:layout_marginLeft="5dp"
         android:singleLine="true"
 		android:ellipsize="end"
         android:text="TextView" 
-        android:textSize="@dimen/listtitle_textsize"/>
+        android:textSize="@dimen/list_big_textsize"/>
 
     <ImageView
         android:id="@+id/doctor_list_moreinfo"
@@ -46,7 +49,8 @@
        	android:layout_margin="@dimen/list_detailimg_margin"
        	android:focusable="false"
        	android:clickable="true"
-        android:src="@drawable/more_info" />
+        android:src="@drawable/more_info"
+         />
 
     <TextView
         android:id="@+id/doctor_list_level"
@@ -54,7 +58,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/doctor_list_title"
         android:layout_toRightOf="@+id/doctor_list_image"
-        android:text="TextView" />
+       	android:layout_alignLeft="@+id/doctor_list_title"
+        android:text="TextView"
+        android:textSize="@dimen/list_small_textsize" />
 
 
     <ImageView
@@ -64,14 +70,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_margin="1dp"
-        android:scaleType="fitXY"
         android:src="@drawable/booking_doc" />
 
  <TextView
      android:id="@+id/schedule_text"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-     android:layout_marginTop="14dp"
+     android:layout_marginTop="15dp"
      android:layout_alignLeft="@+id/doctor_list_image"
      android:layout_alignParentRight="true"
      android:layout_below="@+id/doctor_list_image"
@@ -93,7 +98,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:layout_marginTop="5dp" >
+            android:layout_marginTop="9dp" >
+            <!-- 排班按钮定位 -->
 		
             <TableRow
                 android:id="@+id/tableRow1"
@@ -139,16 +145,18 @@
         android:id="@+id/hospital_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/doctor_list_level"
+        android:layout_alignLeft="@+id/doctor_list_title"
         android:layout_below="@+id/doctor_list_level"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="@dimen/list_small_textsize" />
 
     <TextView
         android:id="@+id/department_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/hospital_text"
+        android:layout_alignLeft="@+id/doctor_list_title"
         android:layout_below="@+id/hospital_text"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="@dimen/list_small_textsize" />
 
 </RelativeLayout>
