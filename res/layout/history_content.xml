@@ -2,7 +2,7 @@
     android:id="@+id/his_list_layout"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/schedule_btn_style_layout"
+    android:background="@layout/schedule_btn_style_layout"
     android:orientation="vertical"
     android:padding="4dp"
     android:paddingRight="6dp" >
@@ -165,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
-                    android:background="@drawable/button_red_style"
+                    android:background="@layout/button_red_style"
                     android:text="取消预约" />
 
                 <Button
@@ -174,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:background="@drawable/button_style"
+                    android:background="@layout/button_style"
                     android:text="详细" />
 
                 <TextView
@@ -216,7 +216,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@drawable/round_linear_layout"
+        android:background="@layout/round_linear_layout"
         android:orientation="vertical"
         android:padding="4dp"
         android:visibility="gone" >

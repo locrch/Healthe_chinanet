@@ -16,7 +16,7 @@
             android:layout_gravity="right"
             android:textSize="@dimen/button_textsize"
             android:text="返回"
-            android:background="@drawable/button_style" />
+            android:background="@layout/button_style" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:background="@drawable/border"
+                    android:background="@layout/border"
                     android:padding="2dp" >
 
                     <TextView
@@ -50,7 +50,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:background="@drawable/edittext_style"
+                        android:background="@layout/edittext_style"
                          >
 
                         <requestFocus />
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:background="@drawable/border"
+                    android:background="@layout/border"
                     android:padding="2dp" >
 
                     <TextView
@@ -80,7 +80,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:entries="@array/sex"
-                        android:background="@drawable/button_style" />
+                        android:background="@layout/button_style" />
 
                 </TableRow>
 
@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:background="@drawable/border"
+                    android:background="@layout/border"
                     android:padding="2dp" >
 
                     <TextView
@@ -108,7 +108,7 @@
 						android:inputType="number"
 						android:digits="0123456789"
                         android:ems="10"
-                        android:background="@drawable/edittext_style" />
+                        android:background="@layout/edittext_style" />
 
                 </TableRow>
 
@@ -117,7 +117,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:background="@drawable/border"
+                    android:background="@layout/border"
                     android:padding="2dp" >
 
                     <TextView
@@ -134,7 +134,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:background="@drawable/edittext_style" />
+                        android:background="@layout/edittext_style" />
 
                 </TableRow>
 
@@ -154,7 +154,7 @@
                 android:ellipsize="end"
                 android:entries="@array/licences_type"
                 android:singleLine="true" 
-                android:background="@drawable/button_style"/>
+                android:background="@layout/button_style"/>
 
             <EditText
                 android:id="@+id/people_licence_num"
@@ -175,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/button_textsize"
                 android:text="创建就诊人"
-                android:background="@drawable/button_style" />
+                android:background="@layout/button_style" />
 
         </LinearLayout>
 

@@ -17,7 +17,7 @@
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="53dp"
-        android:background="@drawable/button_style"
+        android:background="@layout/button_style"
         android:text="大"
         android:textSize="30dp"
         android:gravity="left"
@@ -30,7 +30,7 @@
         android:layout_alignLeft="@+id/text_size_big"
         android:layout_below="@+id/text_size_big"
         android:layout_marginTop="22dp"
-        android:background="@drawable/button_style"
+        android:background="@layout/button_style"
         android:gravity="left"
         android:text="中"
         android:textSize="20dp" />
@@ -42,7 +42,7 @@
         android:layout_alignLeft="@+id/text_size_normal"
         android:layout_below="@+id/text_size_normal"
         android:layout_marginTop="29dp"
-        android:background="@drawable/button_style"
+        android:background="@layout/button_style"
         android:gravity="left"
         android:text="小"
         android:textSize="15dp" />

@@ -13,7 +13,7 @@
         android:layout_alignBottom="@+id/denglu"
         android:layout_alignRight="@+id/zhineng"
         android:layout_marginRight="21dp"
-        android:background="@drawable/frist_reg_press" />
+        android:background="@layout/frist_reg_press" />
 
     <Button
         android:id="@+id/denglu"
@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="48dp"
-        android:background="@drawable/frist_login_press" />
+        android:background="@layout/frist_login_press" />
 
     <ImageButton
         android:id="@+id/zhineng"
@@ -32,7 +32,7 @@
         android:layout_below="@+id/zhuce"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:background="@drawable/zhineng_press" />
+        android:background="@layout/zhineng_press" />
 
     <ImageButton
         android:id="@+id/shuzi"
@@ -41,6 +41,6 @@
         android:layout_alignLeft="@+id/zhineng"
         android:layout_below="@+id/zhineng"
         android:layout_marginTop="27dp"
-        android:background="@drawable/shuzi_press" />
+        android:background="@layout/shuzi_press" />
 
 </RelativeLayout>

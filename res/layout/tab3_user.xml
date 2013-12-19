@@ -32,7 +32,7 @@
             android:id="@+id/tab3_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:gravity="left"
             android:text="登录"
             android:textSize="@dimen/button_textsize" />
@@ -42,7 +42,7 @@
             android:id="@+id/tab3_peopleinfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:gravity="left"
             android:text="健康卡管理"
             android:textSize="@dimen/button_textsize" />
@@ -51,7 +51,7 @@
             android:id="@+id/tab3_bookinghist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:gravity="left"
             android:text="我的预约"
             android:textSize="@dimen/button_textsize" />
@@ -60,7 +60,7 @@
             android:id="@+id/tab3_showhist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:gravity="left"
             android:text="个人收藏"
             android:textSize="@dimen/button_textsize" />
@@ -69,7 +69,7 @@
             android:id="@+id/tab3_userchange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:gravity="left"
             android:text="切换账号"
             android:textSize="@dimen/button_textsize" />
@@ -78,7 +78,7 @@
             android:id="@+id/tab3_cleanDB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:gravity="left"
             android:text="清除缓存"
             android:textSize="@dimen/button_textsize" />
@@ -87,7 +87,7 @@
             android:id="@+id/tab3_settextsize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:gravity="left"
             android:text="字体设置"
             android:visibility="gone"

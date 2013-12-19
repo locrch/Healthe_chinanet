@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/button_style"
+        android:background="@layout/button_style"
         android:text="创建就诊人" />
     
     <ListView
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/list_people"
         android:layout_alignParentTop="true"
-        android:background="@drawable/button_style"
+        android:background="@layout/button_style"
         android:text="注销" />
    
 </RelativeLayout>

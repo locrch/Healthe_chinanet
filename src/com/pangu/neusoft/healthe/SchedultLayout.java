@@ -126,7 +126,7 @@ public class SchedultLayout {
 	 								 LinearLayout scheduleDetailLayout=newButtonInfo.getScheduleDetailLayout();
 	 								 scheduleDetailLayout.removeAllViews();
 	 								 for(LinearLayout layout:alllayout){
-	 									layout.setBackgroundDrawable(layout.getResources().getDrawable(R.drawable.schedule_btn_style_layout));
+	 									layout.setBackgroundDrawable(layout.getResources().getDrawable(R.layout.schedule_btn_style_layout));
 	 								 }
 	 								 LinearLayout layout=(LinearLayout)arg0.findViewById(R.id.schedule_day_btn_set);
 	 								  if(arg0.equals(nowButton)&&showing==true){
@@ -135,7 +135,7 @@ public class SchedultLayout {
 	 								  }else{
 	 								 nowButton=arg0;
 	 								showing=true;
-	 								layout.setBackgroundDrawable(layout.getResources().getDrawable(R.drawable.schedule_btn_style_layout_click));
+	 								layout.setBackgroundDrawable(layout.getResources().getDrawable(R.layout.schedule_btn_style_layout_click));
 	 								// ScheduleButton newButtonInfo=( ScheduleButton)arg0.getTag();
 	 								
 	 								 List<Schedule> scheduleList=newButtonInfo.getScheduleList();
@@ -155,7 +155,7 @@ public class SchedultLayout {
 	 										
 	 										oneButton.setText(schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
 	 										oneButton.setTag(schedule);
-	 										oneButton.setBackgroundDrawable(layout.getResources().getDrawable(R.drawable.schedule_btn_style_layout_click));
+	 										oneButton.setBackgroundDrawable(layout.getResources().getDrawable(R.layout.schedule_btn_style_layout_click));
 	 										
 	 										oneButton.setTextSize(TypedValue.COMPLEX_UNIT_PX, oneButton.getResources().getDimension(R.dimen.button_textsize));
 	 										
@@ -167,7 +167,7 @@ public class SchedultLayout {
 	 										oneButton.setOnClickListener(new OnClickListener(){
 	 											@Override
 	 											public void onClick(View arg0) {
-	 												arg0.setBackgroundDrawable(arg0.getResources().getDrawable(R.drawable.schedule_btn_style_layout));
+	 												arg0.setBackgroundDrawable(arg0.getResources().getDrawable(R.layout.schedule_btn_style_layout));
 	 												Schedule schedule=(Schedule)arg0.getTag();
 	 												String doctorId=schedule.getDoctorId();
 	 												String doctorName=schedule.getDoctorName();

@@ -12,7 +12,7 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/round_linear_layout"
+        android:background="@layout/round_linear_layout"
         android:paddingLeft="10px"
         android:paddingRight="10px"
         android:paddingTop="20px"

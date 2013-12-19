@@ -25,7 +25,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="84dp"
-        android:background="@drawable/tab2_booking_press" 
+        android:background="@layout/tab2_booking_press" 
         
         />
 
@@ -35,7 +35,7 @@
         android:layout_height="100sp"
         android:layout_above="@+id/infos_text"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/medicine" />
+         />
 
     <TextView
         android:id="@+id/seria_num"
@@ -55,7 +55,7 @@
         android:layout_height="100sp"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/tab2_booking"
-        android:background="@drawable/syringe" />
+         />
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,7 +76,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/infos_text"
         android:layout_marginTop="43dp"
-        android:background="@drawable/h" />
+        />
 
     <TextView
         android:id="@+id/textView3"
@@ -96,7 +96,7 @@
         android:layout_height="100sp"
         android:layout_above="@+id/textView3"
         android:layout_alignLeft="@+id/tab2_healthfoler"
-        android:background="@drawable/paste" />
+         />
 
     <TextView
         android:id="@+id/textView4"
@@ -116,7 +116,7 @@
         android:layout_height="100sp"
         android:layout_above="@+id/textView4"
         android:layout_alignParentRight="true"
-        android:background="@drawable/bag" />
+         />
 
     <TextView
         android:layout_width="wrap_content"

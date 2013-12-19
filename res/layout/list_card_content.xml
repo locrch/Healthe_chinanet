@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:padding="1dp"
         android:layout_margin="3dp"
-        android:background="@drawable/button_red_style"
+        android:background="@layout/button_red_style"
         android:text="删除"
         android:textStyle="bold" />
 
@@ -25,7 +25,7 @@
         android:layout_toLeftOf="@+id/deleteCard"
         android:padding="1dp"
         android:layout_margin="3dp"
-        android:background="@drawable/button_style"
+        android:background="@layout/button_style"
         android:text="详情" />
 
     <CheckBox

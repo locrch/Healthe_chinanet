@@ -25,7 +25,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/textView3"
-        android:background="@drawable/edittext_style"
+        android:background="@layout/edittext_style"
         android:digits="1234567890"
         android:ems="10"
         android:hint="请输入手机号码"
@@ -53,7 +53,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/textView4"
         android:layout_toRightOf="@+id/textView3"
-        android:background="@drawable/edittext_style"
+        android:background="@layout/edittext_style"
         android:ems="10"
         android:inputType="textPassword"
         android:paddingLeft="5dp" >
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/reg_password"
         android:layout_alignTop="@+id/infos_text"
-        android:background="@drawable/edittext_style"
+        android:background="@layout/edittext_style"
         android:ems="10"
         android:inputType="textPassword"
         />
@@ -88,7 +88,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/reg_password_con"
         android:layout_marginTop="20dp"
-        android:background="@drawable/edittext_style"
+        android:background="@layout/edittext_style"
         android:ems="10"
         android:hint="请输入18位身份证号码" />
 
@@ -109,7 +109,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/reg_sex"
         android:layout_margin="20dp"
-        android:background="@drawable/button_style"
+        android:background="@layout/button_style"
         android:text="注册" />
 
     <EditText
@@ -120,7 +120,7 @@
         android:layout_below="@+id/card_num"
         android:layout_marginTop="14dp"
         android:layout_toRightOf="@+id/seria_num"
-        android:background="@drawable/edittext_style"
+        android:background="@layout/edittext_style"
         android:ems="10"
         android:hint="请输入完整姓名" />
 
@@ -150,7 +150,7 @@
         android:layout_below="@+id/reg_name"
         android:layout_marginTop="16dp"
         android:layout_toRightOf="@+id/seria_num"
-        android:background="@drawable/edittext_style"
+        android:background="@layout/edittext_style"
         android:entries="@array/sex" />
 	
 </RelativeLayout>

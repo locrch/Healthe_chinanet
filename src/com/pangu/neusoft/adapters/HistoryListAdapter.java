@@ -179,9 +179,9 @@ public class HistoryListAdapter extends SimpleAdapter{
 		
 		
 		if(position%2==0){
-			his_list_layout.setBackgroundDrawable(activity.getResources().getDrawable(R.drawable.schedule_btn_style_layout_click));
+			his_list_layout.setBackgroundDrawable(activity.getResources().getDrawable(R.layout.schedule_btn_style_layout_click));
 		}else{
-			his_list_layout.setBackgroundDrawable(activity.getResources().getDrawable(R.drawable.schedule_btn_style_layout));
+			his_list_layout.setBackgroundDrawable(activity.getResources().getDrawable(R.layout.schedule_btn_style_layout));
 		}
 		
 		

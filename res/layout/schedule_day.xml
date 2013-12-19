@@ -27,7 +27,7 @@
             android:id="@+id/schedule_day_btn_set"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@drawable/schedule_btn_style_layout" >
+            android:background="@layout/schedule_btn_style_layout" >
 
               <TextView
                   android:id="@+id/infos_text"

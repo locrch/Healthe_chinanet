@@ -28,7 +28,7 @@
             android:id="@+id/more_help"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:gravity="left"
             android:text="预约指南"
             android:textSize="@dimen/button_textsize" />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="版本信息"
             android:gravity="left"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:textSize="@dimen/button_textsize"
              />
 		<Button
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:text="检查更新"
             android:gravity="left"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:textSize="@dimen/button_textsize"
              />
     </LinearLayout>

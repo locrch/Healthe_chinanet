@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:background="@drawable/schedule_btn_style_layout" >
+        android:background="@layout/schedule_btn_style_layout" >
 
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -219,9 +219,10 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="38dp"
-            android:background="@drawable/button_style"
+            android:background="@layout/button_style"
             android:text="变更"
-            android:textSize="@dimen/button_textsize" />
+            android:textSize="@dimen/button_textsize"
+             />
 
     </RelativeLayout>
 
@@ -232,7 +233,7 @@
         android:layout_alignRight="@+id/relativeLayout1"
         android:layout_below="@+id/relativeLayout1"
         android:layout_marginTop="14dp"
-        android:background="@drawable/button_style"
+        android:background="@layout/button_style"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
         android:text="取消"
@@ -245,7 +246,7 @@
         android:layout_alignBaseline="@+id/booking_confirm_cancelbtn"
         android:layout_alignBottom="@+id/booking_confirm_cancelbtn"
         android:layout_alignLeft="@+id/relativeLayout1"
-        android:background="@drawable/button_style"
+        android:background="@layout/button_style"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
         android:text="确认"

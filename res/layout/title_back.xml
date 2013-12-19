@@ -34,7 +34,7 @@
 	    android:layout_alignParentRight="true"
 	    android:layout_below="@+id/notice"
 	    android:layout_margin="2dp"
-	    android:background="@drawable/button_style"
+	    android:background="@layout/button_style"
 	    android:gravity="center"
 	    android:text="智能健康"
 	    android:textSize="@dimen/button_textsize" />
