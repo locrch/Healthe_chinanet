@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="2dp" >
+    
+     >
 
     <ScrollView
         android:id="@+id/scrollview2"
@@ -10,7 +11,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:paddingLeft="8dp"
+    		android:paddingRight="8dp" >
 
             <Button
                 android:id="@+id/doctor_hospital1"
@@ -47,7 +50,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="225dp"
+                    android:layout_marginLeft="210dp"
                     android:background="@drawable/search_btn" >
                 </ImageButton>
             </RelativeLayout>
@@ -56,7 +59,6 @@
                 android:id="@+id/welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/select_area_btn"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/search_layout"
                 android:layout_toLeftOf="@+id/select_area_btn"
@@ -68,6 +70,7 @@
                 android:id="@+id/select_area_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/welcome"
                 android:layout_alignLeft="@+id/booking_btn"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/search_layout"
@@ -206,21 +209,24 @@
     <SlidingDrawer
         android:id="@+id/slidingDrawer1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:content="@+id/content"
-        android:handle="@+id/handle" >
+        android:handle="@+id/booking_knower_btn"
+        android:topOffset="0dp" >
 
         <ImageView
-            android:id="@+id/handle"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:src="@drawable/handle_down" />
-
+            android:id="@+id/booking_knower_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitEnd"
+            android:src="@drawable/booking_knower_btn" />
+		
         <LinearLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#fff" >
+            android:background="#fff"
+             >
 
             <TextView
                 android:id="@+id/messages"

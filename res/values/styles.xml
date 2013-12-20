@@ -24,6 +24,7 @@
     
 	<style name="MyTheme" parent="android:Theme.Light">
        	<item name="android:windowTitleSize">90dp</item>
+       	
         <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
     </style>
     

@@ -96,16 +96,16 @@ public class LoginActivity extends FatherActivity {
 		  login_btn.setOnClickListener(login);
 		  Setting.bookingdata=null;//清除本次预约数据
 		  member_CheckBox.setChecked(sp.getBoolean("auto_ischecked", true));
+		  auto_CheckBox.setChecked(sp.getBoolean("auto_login_ischecked", true));
 		  
-		  if (member_CheckBox.isChecked())
+		if (member_CheckBox.isChecked())
 		{ 
 			  username.setText(sp.getString("username", ""));
 			  password.setText(sp.getString("password", ""));
-			  
 		}
 	      else {
-	    	  username.getText().clear();
-			   password.getText().clear();
+	    	  //username.getText().clear();
+			  password.getText().clear();
 		}
 	      
 		  member_CheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener()
@@ -118,17 +118,36 @@ public class LoginActivity extends FatherActivity {
 				if (isChecked)
 				{
 					editor.putBoolean("auto_ischecked", true);
-					
-					editor.commit();
-					
+					editor.commit();					
 				}
 				else {
 					editor.putBoolean("auto_ischecked", false);
+					editor.putString("password", "");
 					editor.commit();
 					
 				}
 			}
 		});
+		  
+		  auto_CheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener()
+			{
+				
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+				{
+					// TODO Auto-generated method stub
+					if (isChecked)
+					{
+						editor.putBoolean("auto_login_ischecked", true);
+						editor.commit();						
+					}
+					else {
+						editor.putBoolean("auto_login_ischecked", false);
+						editor.commit();
+						
+					}
+				}
+			});
 	}
 	@Override
 	protected void onStop()

@@ -106,6 +106,10 @@ public class TabActivity5 extends Activity  {
 				startActivity(new Intent(TabActivity5.this,HelpActivity.class));
 			}
 		});
+		
+		//com.pangu.neusoft.healthe.PressButton cust_btn = (com.pangu.neusoft.healthe.PressButton)findViewById(R.id.cust_btn);
+		
+		//cust_btn.setBackground(cust_btn,R.drawable.button_def_img,R.drawable.button_press_img);
 	}
 	
 	

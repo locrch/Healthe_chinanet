@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_black"
-     >
-	<TextView
+    android:background="@color/white" >
+
+    <TextView
         android:id="@+id/title_zhineng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,15 +13,16 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="更多"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="30sp" />
+
     <LinearLayout
         android:layout_width="400dp"
         android:layout_height="800dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="160dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="160dp"
         android:orientation="vertical" >
 
         <Button
@@ -33,24 +34,29 @@
             android:text="预约指南"
             android:textSize="@dimen/button_textsize" />
 
-		<Button
+        <Button
             android:id="@+id/more_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="版本信息"
-            android:gravity="left"
             android:background="@layout/button_style"
-            android:textSize="@dimen/button_textsize"
-             />
-		<Button
+            android:gravity="left"
+            android:text="版本信息"
+            android:textSize="@dimen/button_textsize" />
+
+        <Button
             android:id="@+id/more_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="检查更新"
-            android:gravity="left"
             android:background="@layout/button_style"
-            android:textSize="@dimen/button_textsize"
-             />
+            android:gravity="left"
+            android:text="检查更新"
+            android:textSize="@dimen/button_textsize" />
+
+        <!-- <com.pangu.neusoft.healthe.PressButton
+            android:id="@+id/cust_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试" /> -->
     </LinearLayout>
 
 </RelativeLayout>
