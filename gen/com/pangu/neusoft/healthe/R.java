@@ -505,6 +505,8 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
+        public static final int booking_main_search_btn_marginleft=0x7f06000b;
+        public static final int booking_main_search_text_marginleft=0x7f06000a;
         public static final int button_textsize=0x7f060003;
         public static final int detail_content_textsize=0x7f060007;
         public static final int list_big_textsize=0x7f060004;
