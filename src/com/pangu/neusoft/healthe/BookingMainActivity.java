@@ -54,6 +54,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.SlidingDrawer;
@@ -103,8 +104,9 @@ public class BookingMainActivity extends FatherActivity {
 	private String departmentName;
 	private String doctorId;
 	private String doctorName;
-	private ImageView handler;
-	private SlidingDrawer slidingDrawer1;
+	private ImageView booking_knower;
+	private SlidingDrawer booking_knower_btn;
+	private LinearLayout content;
 	private ProgressDialog mProgressDialog;
 	WebService service;
 	
@@ -218,19 +220,32 @@ public class BookingMainActivity extends FatherActivity {
 		welcome.setFocusableInTouchMode(true);
 		welcome.requestFocus();
 		
-		slidingDrawer1=(SlidingDrawer)findViewById(R.id.slidingDrawer1);
-		handler = (ImageView)findViewById(R.id.handle);		
+		booking_knower_btn=(SlidingDrawer)findViewById(R.id.slidingDrawer1);
+		booking_knower = (ImageView)findViewById(R.id.booking_knower_btn);		
 	
-		slidingDrawer1.setOnDrawerOpenListener(new android.widget.SlidingDrawer.OnDrawerOpenListener() {		 
+		booking_knower_btn.setOnDrawerOpenListener(new android.widget.SlidingDrawer.OnDrawerOpenListener() {		 
             public void onDrawerOpened() {// 当抽屉打开时执行此操作  
-            	handler.setImageResource(R.drawable.handle_up); 
+            	booking_knower.setImageResource(R.drawable.booking_knower_btn); 
             }  
         }); 		
-		slidingDrawer1.setOnDrawerCloseListener(new android.widget.SlidingDrawer.OnDrawerCloseListener() { 
+		booking_knower_btn.setOnDrawerCloseListener(new android.widget.SlidingDrawer.OnDrawerCloseListener() { 
             public void onDrawerClosed() {// 抽屉关闭时执行此操作 
-            	handler.setImageResource(R.drawable.handle_down);
+            	booking_knower.setImageResource(R.drawable.booking_knower_btn);
             } 
         });
+		content = (LinearLayout)findViewById(R.id.content);
+		
+		content.setOnClickListener(new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
 		
 		setItemSize();
 		Intent intent=getIntent();
@@ -284,10 +299,10 @@ public class BookingMainActivity extends FatherActivity {
 		//message.setTextSize(width / fontsizex);
 		//handler.getLayoutParams().height=handler.getLayoutParams().width;
 		
-		int o_width=width/4;
-		int o_height=height/12;		
-		handler.getLayoutParams().width=o_width;
-		handler.getLayoutParams().height=o_height;
+		//int o_width=width/4;
+		//int o_height=height/12;		
+		//booking_knower.getLayoutParams().width=o_width;
+		//booking_knower.getLayoutParams().height=o_height;
 	}
 	
 	
