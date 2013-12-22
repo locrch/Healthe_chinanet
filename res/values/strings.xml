@@ -44,6 +44,7 @@
     <string name="title_activity_tab_activity5">增值服务</string>
     <string name="title_activity_search_res">搜索结果</string>
     <string name="title_activity_booking_confirm">预约信息确认</string>
+    <string name="title_activity_change_password">忘记密码</string>
     
  	<string name="pull_to_refresh_pull_label">下拉刷新</string>
     <string name="pull_to_refresh_release_label">松开后刷新</string>
