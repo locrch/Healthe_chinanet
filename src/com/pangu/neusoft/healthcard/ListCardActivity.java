@@ -163,6 +163,7 @@ public class ListCardActivity extends FatherActivity {
 		    	Intent intent = new Intent(ListCardActivity.this,BookingMainActivity.class);
 				Setting.state="booking";
 				startActivity(intent);
+				finish();
 		    	return;
 		    }
 				BookingAction booking=new BookingAction(ListCardActivity.this);

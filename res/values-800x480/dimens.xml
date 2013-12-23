@@ -1,0 +1,14 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_right">40dp</dimen>
+	<dimen name="button_textsize">18dp</dimen>
+	<dimen name="list_big_textsize">20dp</dimen>
+	<dimen name="list_small_textsize">16dp</dimen>
+	<dimen name="title_textsize">30dp</dimen>
+	<dimen name="detail_content_textsize">14dp</dimen>
+	<dimen name="booking_main_search_text_marginleft">24dp</dimen>
+	<dimen name="booking_main_search_btn_marginleft">210dp</dimen>
+</resources>

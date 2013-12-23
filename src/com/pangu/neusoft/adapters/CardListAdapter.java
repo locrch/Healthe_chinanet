@@ -101,6 +101,7 @@ public class CardListAdapter extends SimpleAdapter{
 						booking.confirmBooking();
 					}else if(Setting.state.equals("history")){
 						activity.startActivity(new Intent(activity,ShowHistoryActivity.class));
+						activity.finish();
 					}
 					Toast.makeText(activity, "默认诊疗卡:"+arg0.getText(), Toast.LENGTH_SHORT).show();
 				}else{

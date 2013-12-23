@@ -587,8 +587,7 @@ public class BookingMainActivity extends FatherActivity {
 				// 启动预约
 				editor.putString("now_state", "booking");
 				editor.commit();
-				startActivity(new Intent(BookingMainActivity.this,
-						ScheduleListActivity.class));
+				startActivity(new Intent(BookingMainActivity.this,ScheduleListActivity.class));
 				
 			}
 			

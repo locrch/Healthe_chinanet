@@ -38,6 +38,7 @@ public class BookingConfirmActivity extends FatherActivity
 	    	Intent intent = new Intent(BookingConfirmActivity.this,BookingMainActivity.class);
 			Setting.state="booking";
 			startActivity(intent);
+			 finish();
 	    	return;
 	    }
 	    username.setText(Setting.bookingdata.getUsername());

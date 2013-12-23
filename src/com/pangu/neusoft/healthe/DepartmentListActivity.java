@@ -186,7 +186,7 @@ public class DepartmentListActivity extends FatherActivity {
 							intent.putExtra("who", "dep");
 							
 							startActivity(intent);
-						
+							finish();
 							
 					}
 				});

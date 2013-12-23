@@ -231,11 +231,11 @@ public class BookingAction {
 	}
 	
 	
-		public void confirmBooking() {
+	public void confirmBooking() {
 			
 		setBookingdata();
 			
 		activity.startActivity(new Intent(activity,BookingConfirmActivity.class));
-		
+		activity.finish();
 	}
 }

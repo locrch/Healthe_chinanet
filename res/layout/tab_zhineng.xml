@@ -14,7 +14,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:textColor="@color/tab_text" />
-
+	
     <ImageView
         android:id="@+id/title_zhineng"
         android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
 
     <TableLayout
         android:id="@+id/tableLayout1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignTop="@+id/title_zhineng"
@@ -34,26 +34,31 @@
 
         <TableRow
             android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <ImageButton
                 android:id="@+id/tab2_booking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@layout/tab2_booking_press" />
+                android:background="@layout/tab2_booking_press"
+                android:layout_weight="1"
+                 />
 
             <ImageButton
                 android:id="@+id/tab2_healthfoler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@layout/tab2_file_press" />
+                android:background="@layout/tab2_file_press"
+                android:layout_weight="1"
+                 />
 
             <ImageButton
                 android:id="@+id/tab2_moneycheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@layout/tab2_money_press" />
+                android:background="@layout/tab2_money_press"
+                android:layout_weight="1" />
 
         </TableRow>
 
@@ -66,19 +71,22 @@
                 android:id="@+id/tab2_eachother"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@layout/tab2_each_press" />
+                android:background="@layout/tab2_each_press"
+                android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/tab2_healthinfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@layout/tab2_all_press" />
+                android:background="@layout/tab2_all_press"
+                android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/tab2_tellphone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@layout/tab2_offer_press" />
+                android:background="@layout/tab2_offer_press"
+                android:layout_weight="1" />
 
         </TableRow>
     </TableLayout>

@@ -161,7 +161,7 @@ public class LoginActivity extends FatherActivity {
 				Intent intent = new Intent(LoginActivity.this,ChangePassActivity.class);
 				intent.putExtra("userphone", phone);
 				startActivity(intent);
-				finish();
+				//finish();
 			} 
 		  });
 		  

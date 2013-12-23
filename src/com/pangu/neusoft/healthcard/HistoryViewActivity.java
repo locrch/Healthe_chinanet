@@ -42,6 +42,7 @@ public class HistoryViewActivity extends FatherActivity {
 			intent.putExtra("type", "booking");
 			intent.setClass(HistoryViewActivity.this, ShowHistoryActivity.class);
 			startActivity(intent);
+			finish();
 		}
 		
 	};
@@ -55,6 +56,7 @@ public class HistoryViewActivity extends FatherActivity {
 			intent.putExtra("type", "cancled");
 			intent.setClass(HistoryViewActivity.this, ShowHistoryActivity.class);
 			startActivity(intent);
+			finish();
 		}
 		
 	};
@@ -68,6 +70,7 @@ public class HistoryViewActivity extends FatherActivity {
 			intent.putExtra("type", "passed");
 			intent.setClass(HistoryViewActivity.this, ShowHistoryActivity.class);
 			startActivity(intent);
+			finish();
 		}
 		
 	};

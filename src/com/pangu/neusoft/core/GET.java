@@ -60,9 +60,9 @@ public interface GET
 			
 			MethodName.put("findDoctorList", "Booking_FindDoctorList");
 			
-			MethodName.put("findHospitalList", "Booking_FindHospitalList ");
+			MethodName.put("findHospitalList", "Booking_FindHospitalList");
 
-			
+			MethodName.put("GetCAPTCHA", "GetCAPTCHA");
 			return MethodName.get(i);
 		}
 		

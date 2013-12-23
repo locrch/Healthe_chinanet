@@ -150,8 +150,10 @@ public class HospitalDetailActivity extends FatherActivity {
 				
 				editor.commit();
 				startActivity(new Intent (HospitalDetailActivity.this, DepartmentListActivity.class));
+				finish();
 			}else{
 				startActivity(new Intent (HospitalDetailActivity.this, DepartmentListActivity.class));
+				finish();
 			}
 		}
 	};

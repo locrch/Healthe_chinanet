@@ -81,6 +81,7 @@ public class TabActivity2 extends Activity
 						BookingMainActivity.class);
 
 				startActivity(intent);
+				finish();
 
 			}
 		});

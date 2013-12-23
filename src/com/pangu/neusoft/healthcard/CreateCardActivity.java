@@ -46,6 +46,7 @@ public class CreateCardActivity extends FatherActivity {
 		    		 Intent intent=new Intent();
 		    		 intent.setClass(CreateCardActivity.this, ListCardActivity.class);
 		    		 startActivity(intent);
+		    		 finish();
 		    	}
             } 
 		});

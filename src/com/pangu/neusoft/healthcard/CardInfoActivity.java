@@ -123,6 +123,7 @@ public class CardInfoActivity extends FatherActivity {
 			intent.setClass(CardInfoActivity.this, HistoryViewActivity.class);
 			intent.putExtra("username", sp.getString("owner", ""));
 			startActivity(intent);
+			finish();
 		}
 		
 	};

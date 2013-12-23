@@ -32,6 +32,7 @@ import com.pangu.neusoft.core.models.DoctorInfoReq;
 import com.pangu.neusoft.core.models.DoctorReq;
 import com.pangu.neusoft.core.models.FindDoctorListReq;
 import com.pangu.neusoft.core.models.FindHospitalListReq;
+import com.pangu.neusoft.core.models.GetCAPTCHAReg;
 import com.pangu.neusoft.core.models.HandleBooking;
 import com.pangu.neusoft.core.models.HospitalInfoReq;
 import com.pangu.neusoft.core.models.HospitalReq;
@@ -62,6 +63,15 @@ public class WebService implements GET{
 		 request.addProperty("req",req);
 		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 	     envelope.addMapping(NAMESPACE, "req", MemberReg.class);
+		 return getSoapObject(request,method,envelope);
+	}
+	
+	public SoapObject sendVerfily(GetCAPTCHAReg req,String method){		 
+		 //发送验证码
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName(method));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", GetCAPTCHAReg.class);
 		 return getSoapObject(request,method,envelope);
 	}
 	

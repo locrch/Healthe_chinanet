@@ -214,6 +214,7 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 			// TODO Auto-generated method stub
 			Setting.state="history";
 			startActivity(new Intent(ShowHistoryActivity.this,ListCardActivity.class));
+			finish();
 		}
 	};
 	
@@ -285,8 +286,9 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	}
 	
 	 public void refresh() {  
-	        finish();  
+	         
 	        Intent intent = new Intent(ShowHistoryActivity.this, ShowHistoryActivity.class);  
 	        startActivity(intent);  
+	        finish();
 	    }  
 }
