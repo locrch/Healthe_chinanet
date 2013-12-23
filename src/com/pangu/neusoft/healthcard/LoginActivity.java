@@ -45,6 +45,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.TextView;
 
 public class LoginActivity extends FatherActivity {
 	private SharedPreferences sp;
@@ -54,6 +55,8 @@ public class LoginActivity extends FatherActivity {
 	private EditText username;
 	private EditText password;
 	private CheckBox member_CheckBox,auto_CheckBox;
+	private TextView for_pass;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -148,6 +151,20 @@ public class LoginActivity extends FatherActivity {
 					}
 				}
 			});
+		  
+		  for_pass=(TextView)findViewById(R.id.for_pass);
+		  for_pass.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				//找回密码
+				String phone=username.getText().toString();
+				Intent intent = new Intent(LoginActivity.this,ChangePassActivity.class);
+				intent.putExtra("userphone", phone);
+				startActivity(intent);
+				finish();
+			} 
+		  });
+		  
 	}
 	@Override
 	protected void onStop()

@@ -267,6 +267,11 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name="com.pangu.neusoft.healthcard.ChangePassActivity"
+            android:label="@string/title_activity_change_password"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="com.pangu.neusoft.healthcard.RegisterActivity"
             android:label="@string/title_activity_register"
             android:screenOrientation="portrait" >
