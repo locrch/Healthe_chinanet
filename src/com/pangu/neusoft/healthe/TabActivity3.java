@@ -79,6 +79,8 @@ public class TabActivity3 extends Activity {
 		Setting.bookingdata=null;//清除本次预约数据
 		editor.putString("now_state", "usersetting");
 		editor.commit();
+		
+	    
 	}
 	OnClickListener settextsize_click = new OnClickListener()
 	{

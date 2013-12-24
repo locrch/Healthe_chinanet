@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/button_textsize"
                 android:text="预约挂号" 
-                android:background="@layout/button_style"
+                android:background="@layout/tab_btn_press"
                 />
 			<TextView android:textSize="@dimen/detail_content_textsize"
 				    android:id="@+id/hospital_detail_id"

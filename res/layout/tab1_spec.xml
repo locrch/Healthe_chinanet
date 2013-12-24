@@ -5,7 +5,6 @@
         android:layout_height="wrap_content"
         android:background="@layout/tab1_press"
          >
-
-        
+	
         
     </RelativeLayout>

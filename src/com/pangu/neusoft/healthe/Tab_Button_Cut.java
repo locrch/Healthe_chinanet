@@ -10,28 +10,37 @@ import android.widget.Button;
 
 
 
-public class PressButton extends Button
+public class Tab_Button_Cut extends Button
 {
-	public PressButton(Context context)
+	public Tab_Button_Cut(Context context)
 	{
 		super(context);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public PressButton(Context context, AttributeSet attrs)
+	public Tab_Button_Cut(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public PressButton(Context context, AttributeSet attrs, int defStyle)
+	public Tab_Button_Cut(Context context, AttributeSet attrs, int defStyle)
 	{
 		super(context, attrs, defStyle);
 		// TODO Auto-generated constructor stub
 	}
 	
-	@SuppressLint("NewApi")
-	public void setBackground(final Button b,final int def_img,final int press_img)
+	@Override
+	public void setBackgroundResource(int resid)
+	{
+		// TODO Auto-generated method stub
+		this.setBackgroundResource(R.drawable.tab_btn);
+		
+	}
+	
+	
+	
+	/*public void setBackground(final Button b,final int def_img,final int press_img)
 	{
 		// TODO Auto-generated method stub
 		
@@ -76,6 +85,6 @@ public class PressButton extends Button
 				return false;
 			}
 		});
-	}
+	}*/
 	
 }
