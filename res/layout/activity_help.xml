@@ -1,8 +1,8 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+﻿<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_black"
+    android:background="@color/white"
     tools:context=".HelpActivity"
     
     android:orientation="vertical"
@@ -34,7 +34,7 @@
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
-        android:text="答：“健康E园”包括“智能健康”和“数字医院”两种模式。“智能健康”包括预约挂号、健康档案、社保医保、医患互动、健康大全和一键拨号；“数字医院”是属于医院的专属版本，里面将体现更多更详细的医院信息，包括预约挂号、增值服务、检查项目、排队叫号、医患互动、医院指南。" />
+        android:text="答：“健康E园”包括“智能健康”和“数字医院”两种模式。“智能健康”包括预约挂号、健康档案、电子病历、医问医答、健康大全和药房优惠；“数字医院”是属于医院的专属版本，里面将体现更多更详细的医院信息，包括预约挂号、医问医答、智能叫号、医院动态、医院服务。" />
 
     <TextView android:textSize="@dimen/button_textsize"
         android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
-        android:text="答：用户需注册登录，填写就诊人信息，然后选择地区→选择医院→选择科室→选择医生→选择就诊时间，最后点击“预约挂号”即可成功预约挂号。" />
+        android:text="答：用户需注册登录，填写健康卡信息，然后选择地区→选择医院→选择科室→选择医生→选择就诊时间，最后点击“预约挂号”即可成功预约挂号。" />
         <TextView android:textSize="@dimen/button_textsize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
-        android:text="答：取消订单操作，用户点击“个人中心”→“预约记录”，会出现用户历史预约记录的详细信息，点击“取消预约”按钮，如需取消，请在就诊前一个工作日下午4点前取消。" />
+        android:text="答：取消订单操作，用户点击“个人中心”→“我的预约”，会出现用户历史预约记录的详细信息，点击“取消预约”按钮，如需取消，请在就诊前一个工作日下午4点前取消。" />
         <TextView android:textSize="@dimen/button_textsize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
-        android:text="答：预约成功后，在“个人中心”—“预约记录”里面有预约的信息，根据信息上的流水号到医院挂号处交费取号，为了您能顺利就诊，请提前半小时至医院取号，各医院取号的地点在医院现场会有相应的指引。" />
+        android:text="答：预约成功后，在“个人中心”—“我的预约”里面有预约的信息，根据信息上的流水号到医院挂号处交费取号，为了您能顺利就诊，请提前半小时至医院取号，各医院取号的地点在医院现场会有相应的指引。" />
         <TextView android:textSize="@dimen/button_textsize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="23dp"
         android:text="用户名：" />
 
     <EditText
@@ -25,7 +25,12 @@
         android:layout_alignBottom="@+id/textView4"
         android:layout_alignLeft="@+id/ver_pass"
         android:layout_alignParentRight="true"
-        android:ems="10" />
+        android:background="@layout/edittext_style"
+        android:digits="1234567890"
+        android:ems="10"
+        android:hint="请输入手机号码"
+        android:inputType="number"
+        android:paddingLeft="5dp" />
 
     <EditText
         android:id="@+id/ver_pass"
@@ -33,19 +38,24 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/new_pass"
         android:layout_below="@+id/userphone"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="23dp"
         android:layout_toLeftOf="@+id/get_ver"
-        android:ems="10" />
+        android:background="@layout/edittext_style"
+        android:digits="1234567890"
+        android:ems="10"
+        android:hint="请输入验证码"
+        android:inputType="number"
+        android:paddingLeft="5dp" />
 
     <Button
-        android:background="@layout/tab_btn_press"
         android:id="@+id/get_ver"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/ver_pass"
         android:layout_alignBottom="@+id/ver_pass"
         android:layout_alignParentRight="true"
-        android:text="获取验证码" />
+        android:layout_alignTop="@+id/ver_pass"
+        android:background="@layout/tab_btn_press"
+        android:text="@string/get_captcha" />
 
     <TextView
         android:id="@+id/textView3"
@@ -64,8 +74,11 @@
         android:layout_alignBottom="@+id/textView1"
         android:layout_alignLeft="@+id/confirm_pass"
         android:layout_alignParentRight="true"
+        android:background="@layout/edittext_style"
+        android:layout_marginTop="23dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:paddingLeft="5dp" />
 
     <Button
         android:background="@layout/tab_btn_press"
@@ -76,7 +89,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/confirm_pass"
         android:layout_marginTop="19dp"
-        android:text="重设密码" />
+        android:text="保存设置" />
 
     <TextView
         android:id="@+id/textView1"
@@ -84,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/get_ver"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="23dp"
         android:text="新密码：" />
 
     <TextView
@@ -93,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/new_pass"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="23dp"
         android:text="确认密码：" />
 
     <EditText
@@ -102,8 +115,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:background="@layout/edittext_style"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:paddingLeft="5dp" />
 
 </RelativeLayout>
 </ScrollView>

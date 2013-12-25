@@ -16,15 +16,47 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:orientation="vertical" >
+		<RelativeLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    >
 
-        <Button android:background="@layout/tab_btn_press"
+        <Button
             android:id="@+id/tab3_login"
-            android:layout_width="match_parent"
+            android:layout_width="76dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@layout/tab_btn_press"
             android:gravity="center"
             android:text="登录"
             android:textSize="@dimen/button_textsize" />
-        
+
+        <TextView
+            android:id="@+id/tab3_welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="29dp"
+             />
+
+		</RelativeLayout>
+        <Button
+            android:id="@+id/user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@layout/tab_btn_press"
+            android:text="个人信息"
+            android:textSize="@dimen/button_textsize" />
+
+        <Button
+            android:id="@+id/change_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@layout/tab_btn_press"
+            android:text="修改密码"
+            android:textSize="@dimen/button_textsize" />
 
         <Button android:background="@layout/tab_btn_press"
             android:id="@+id/tab3_peopleinfo"
@@ -48,14 +80,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="个人收藏"
-            android:textSize="@dimen/button_textsize" />
-
-        <Button android:background="@layout/tab_btn_press"
-            android:id="@+id/tab3_userchange"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="切换账号"
             android:textSize="@dimen/button_textsize" />
 
         <Button android:background="@layout/tab_btn_press"

@@ -77,13 +77,33 @@ public class FatherActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				// TODO Auto-generated method stub
-				finish();
-				}
+				doReturn();
+			}
 		});
 		
 		this.NetWorkStatus(this);
 	}
+	public void doReturn(){
+		//获取activityName 再操作
+		//Toast.makeText(this, getRunningActivityName()+"", Toast.LENGTH_SHORT).show();
+		
+		finish();
+	}
+	
+	@Override 
+    public boolean onKeyDown(int keyCode, KeyEvent event) { 
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) { 
+           doReturn();
+            return false; 
+        } 
+        return false; 
+    }
+	
+	private String getRunningActivityName(){        
+        ActivityManager activityManager=(ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        String runningActivity=activityManager.getRunningTasks(1).get(0).topActivity.getClassName();
+        return runningActivity;               
+    }
 	
 	@Override
 	protected void onResume() {

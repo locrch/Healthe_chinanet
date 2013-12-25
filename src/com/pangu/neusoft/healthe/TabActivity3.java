@@ -11,11 +11,13 @@ import com.pangu.neusoft.core.WebService;
 import com.pangu.neusoft.core.models.HandleBooking;
 import com.pangu.neusoft.db.DBManager;
 import com.pangu.neusoft.tools.DialogShow;
+import com.pangu.neusoft.healthcard.ChangePassActivity;
 import com.pangu.neusoft.healthcard.ConnectListActivity;
 import com.pangu.neusoft.healthcard.ListCardActivity;
 import com.pangu.neusoft.healthcard.LoginActivity;
 import com.pangu.neusoft.healthcard.ShowHistoryActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 
 import android.app.AlertDialog;
@@ -34,21 +36,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class TabActivity3 extends Activity {
 	private SharedPreferences sp;
 	private Editor editor;
-	
+	private String welcome_username = "用户";
 	Button tab3_login;//登录
 	Button tab3_peopleinfo;//就诊人信息
 	Button tab3_bookinghist;//预约记录
 	Button tab3_showhist;//个人收藏
-	Button tab3_userchange;//切换账户
+	Button user_info;//个人信息
+	Button change_pass;//个人信息
 	Button tab3_cleanDB;//清除缓存
 	Button tab3_settextsize;//设置字体
-	TextView textview1;
+	
+	TextView textview1,tab3_welcome_text;
 	DBManager mgr;
 	
 	@Override
@@ -59,12 +65,15 @@ public class TabActivity3 extends Activity {
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		mgr=new DBManager(TabActivity3.this);
-		
+		tab3_welcome_text = (TextView)findViewById(R.id.tab3_welcome_text);
 		tab3_login=(Button)findViewById(R.id.tab3_login);
 		tab3_peopleinfo=(Button)findViewById(R.id.tab3_peopleinfo);
 		tab3_bookinghist=(Button)findViewById(R.id.tab3_bookinghist);
 		tab3_showhist=(Button)findViewById(R.id.tab3_showhist);
-		tab3_userchange=(Button)findViewById(R.id.tab3_userchange);
+		
+		user_info=(Button)findViewById(R.id.user_info);
+		change_pass=(Button)findViewById(R.id.change_pass);
+		
 		tab3_cleanDB=(Button)findViewById(R.id.tab3_cleanDB);
 		tab3_settextsize=(Button)findViewById(R.id.tab3_settextsize);
 		
@@ -72,16 +81,37 @@ public class TabActivity3 extends Activity {
 		tab3_peopleinfo.setOnClickListener(peopleinfo_click);
 		tab3_bookinghist.setOnClickListener(bookinghist_click);
 		tab3_showhist.setOnClickListener(showhist_click);
-		tab3_userchange.setOnClickListener(userchange_click);
+		user_info.setOnClickListener(user_info_click);
 		tab3_cleanDB.setOnClickListener(cleanDB_click);
 		tab3_settextsize.setOnClickListener(settextsize_click);
-		
+		change_pass.setOnClickListener(chang_pass_click);
 		Setting.bookingdata=null;//清除本次预约数据
 		editor.putString("now_state", "usersetting");
 		editor.commit();
-		
+		tab3_welcome_text.setText("尊敬的"+welcome_username+",您好！");
+		if(sp.getString("username", "").equals("")){
+			tab3_login.setText("登录");
+		}else{
+			tab3_login.setText("注销");
+		}
 	    
 	}
+	//修改密码
+	OnClickListener chang_pass_click = new OnClickListener()
+	{
+		
+		@Override
+		public void onClick(View v)
+		{
+			String phone=sp.getString("username", "");
+			
+			Intent intent=new Intent(TabActivity3.this, ChangePassActivity.class);
+			intent.putExtra("userphone", phone);
+			startActivity(intent);
+		}
+	};
+	
+	
 	OnClickListener settextsize_click = new OnClickListener()
 	{
 		
@@ -97,12 +127,46 @@ public class TabActivity3 extends Activity {
 	OnClickListener login_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
-			Intent intent=getIntent();
-			intent.setClass(TabActivity3.this, LoginActivity.class);
-			startActivity(intent);
+			if(tab3_login.getText().toString().equals("登录")){
+				Intent intent=getIntent();
+				intent.setClass(TabActivity3.this, LoginActivity.class);
+				startActivity(intent);
+			}else{
+				
+				logoutDialog();
+			}
 			
 		}
 	};
+	
+	protected void logoutDialog() {
+		AlertDialog.Builder builder = new Builder(TabActivity3.this);
+		builder.setMessage("确认要注销吗？");
+		builder.setTitle("提示");
+
+		builder.setPositiveButton("确认", new android.content.DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				//注销
+				editor.putString("username", "");
+		    	editor.putString("password", "");
+		    	editor.putBoolean("loginsuccess",false);
+				editor.putString("defaultcardno","0");
+		    	editor.commit();
+		    	tab3_login.setText("登录");
+			}
+		});
+
+		builder.setNegativeButton("取消", new android.content.DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+		builder.create().show();
+	}
+	
 	OnClickListener peopleinfo_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
@@ -130,12 +194,18 @@ public class TabActivity3 extends Activity {
 			startActivity(intent);
 		}
 	};
-	OnClickListener userchange_click=new OnClickListener(){
+	
+	@SuppressLint("ShowToast")
+	OnClickListener user_info_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
-			editor.putBoolean("loginsuccess", false);
-			editor.commit();
-			startActivity(new Intent(TabActivity3.this,LoginActivity.class));
+			if(sp.getString("username", "").equals("")){
+				Toast.makeText(TabActivity3.this, "请先登录", Toast.LENGTH_SHORT);
+			}else{
+				Intent intent=getIntent();
+				intent.setClass(TabActivity3.this, UserInfoActivity.class);
+				startActivity(intent);
+			}
 		}
 	};
 	OnClickListener cleanDB_click=new OnClickListener(){
@@ -150,6 +220,7 @@ public class TabActivity3 extends Activity {
 			
 		}
 	};
+	
 	
 	
 	protected void dialog() {
@@ -171,8 +242,8 @@ public class TabActivity3 extends Activity {
 						del(dir.getPath());
 					}catch(Exception ex){}
 				}
-				editor.clear();
-				editor.commit();
+				//editor.clear();
+				//editor.commit();
 				DialogShow.showDialog(TabActivity3.this, "清除成功");
 			}
 		});

@@ -3,7 +3,8 @@
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-<RelativeLayout 
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -24,89 +25,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/textView3"
         android:background="@layout/edittext_style"
         android:digits="1234567890"
         android:ems="10"
         android:hint="请输入手机号码"
         android:inputType="number"
-        android:paddingLeft="5dp"
-        android:layout_marginTop="10dp" >
-
-        <requestFocus android:layout_width="wrap_content" />
-    </EditText>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/reg_username"
-         android:layout_marginTop="23dp"
-        android:gravity="center"
-        android:text="验证码：" />
-
-    <Button
-        android:id="@+id/get_ver"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ver_pass_text"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/ver_pass_text"
-        android:background="@layout/tab_btn_press"
-        android:text="@string/get_captcha" />
-    
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ver_pass_text"
-        android:layout_marginTop="23dp"
-        android:gravity="center"
-        android:text="密码：" />
-
-    <EditText
-        android:id="@+id/reg_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ver_pass_text"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/textView4"
-        android:background="@layout/edittext_style"
-        android:ems="10"
-        android:inputType="textPassword"
         android:paddingLeft="5dp" >
 
+       
     </EditText>
-
-    <TextView
-        android:id="@+id/infos_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/reg_password"
-        android:layout_marginTop="20dp"
-        android:text="确认密码" />
-
-    <EditText
-        android:id="@+id/reg_password_con"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/reg_password"
-        android:layout_alignTop="@+id/infos_text"
-        android:background="@layout/edittext_style"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:paddingLeft="5dp" />
 
     <EditText
         android:id="@+id/card_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/reg_password_con"
+        android:layout_alignLeft="@+id/reg_username"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/reg_password_con"
+        android:layout_below="@+id/reg_username"
         android:layout_marginTop="20dp"
         android:background="@layout/edittext_style"
         android:ems="10"
@@ -130,8 +67,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/reg_sex"
         android:layout_margin="20dp"
-        android:background="@layout/button_style"
-        android:text="注册" />
+        android:background="@layout/tab_btn_press"
+        android:text="保存信息" />
 
     <EditText
         android:id="@+id/reg_name"
@@ -175,20 +112,6 @@
         android:background="@layout/edittext_style"
         android:entries="@array/sex"
         android:paddingLeft="5dp" />
-
-    <EditText
-        android:id="@+id/ver_pass_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/reg_username"
-        android:layout_alignTop="@+id/textView1"
-        android:layout_toLeftOf="@+id/get_ver"
-        android:background="@layout/edittext_style"
-        android:digits="1234567890"
-        android:ems="10"
-        android:hint="请输入验证码"
-        android:inputType="number"
-        android:paddingLeft="5dp" />
-	
 </RelativeLayout>
+
 </ScrollView>

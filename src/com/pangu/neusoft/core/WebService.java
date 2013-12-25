@@ -26,6 +26,7 @@ import com.pangu.neusoft.core.models.AreaReq;
 import com.pangu.neusoft.core.models.AreaResponse;
 import com.pangu.neusoft.core.models.BookingReq;
 import com.pangu.neusoft.core.models.CardListReq;
+import com.pangu.neusoft.core.models.ChangePassReq;
 import com.pangu.neusoft.core.models.DeleteCardReq;
 import com.pangu.neusoft.core.models.DepartmentReq;
 import com.pangu.neusoft.core.models.DoctorInfoReq;
@@ -37,6 +38,7 @@ import com.pangu.neusoft.core.models.HandleBooking;
 import com.pangu.neusoft.core.models.HospitalInfoReq;
 import com.pangu.neusoft.core.models.HospitalReq;
 import com.pangu.neusoft.core.models.Member;
+import com.pangu.neusoft.core.models.MemberChangeReg;
 import com.pangu.neusoft.core.models.MemberReg;
 import com.pangu.neusoft.core.models.SchedulingReq;
 
@@ -66,12 +68,39 @@ public class WebService implements GET{
 		 return getSoapObject(request,method,envelope);
 	}
 	
+	public SoapObject getUserInfo(CardListReq req,String method){		 
+		 //获取用户数据
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName(method));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", CardListReq.class);
+		 return getSoapObject(request,method,envelope);
+	}
+	
+	public SoapObject modifyMemberData(MemberChangeReg req,String method){		 
+		 //修改用户数据
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName(method));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", MemberChangeReg.class);
+		 return getSoapObject(request,method,envelope);
+	}
+	
 	public SoapObject sendVerfily(GetCAPTCHAReg req,String method){		 
 		 //发送验证码
 		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName(method));
 		 request.addProperty("req",req);
 		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 	     envelope.addMapping(NAMESPACE, "req", GetCAPTCHAReg.class);
+		 return getSoapObject(request,method,envelope);
+	}
+	
+	public SoapObject changePass(ChangePassReq req,String method){		 
+		 //重设密码
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName(method));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", ChangePassReq.class);
 		 return getSoapObject(request,method,envelope);
 	}
 	

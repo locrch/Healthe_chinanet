@@ -48,7 +48,8 @@ public class FristActivity extends Activity {
 	
 	Button zhuce, denglu;
 	
-	
+	private SharedPreferences sp;
+	private Editor editor;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -72,6 +73,8 @@ public class FristActivity extends Activity {
 
 		denglu = (Button) findViewById(R.id.denglu);
 
+		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
+		editor = sp.edit();
 		
 		Context ctx = FristActivity.this;
 		DisplayMetrics metric = new DisplayMetrics();
@@ -218,8 +221,7 @@ public class FristActivity extends Activity {
 		return super.onKeyDown(keyCode, event);
 	}
 	
-	
-	
+
 	public void NetWorkStatus(Context context) {
 		/*
 		 * 本方法实现判断网络连接功能，并可点击跳转到网络设置
@@ -263,5 +265,16 @@ public class FristActivity extends Activity {
 		
     }
 	
-	
+	@Override  
+	protected void onDestroy() {  
+	    super.onDestroy();  
+	  //自动登陆
+	    if(!sp.getBoolean("auto_login_ischecked", true)){
+	    	editor.putString("username", "");
+	    	editor.putString("password", "");
+	    	editor.putBoolean("loginsuccess",false);
+			editor.putString("defaultcardno","0");
+	    	editor.commit();
+	    }
+	}  
 }

@@ -63,6 +63,13 @@ public interface GET
 			MethodName.put("findHospitalList", "Booking_FindHospitalList");
 
 			MethodName.put("GetCAPTCHA", "GetCAPTCHA");
+			
+			MethodName.put("ResetPassword", "ResetPassword");
+			
+			MethodName.put("GetMemberInfo", "GetMemberInfo");
+			
+			
+			MethodName.put("ModifyMemberInfo", "ModifyMemberInfo");
 			return MethodName.get(i);
 		}
 		

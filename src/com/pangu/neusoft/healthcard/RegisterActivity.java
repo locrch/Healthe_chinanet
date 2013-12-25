@@ -48,6 +48,7 @@ import android.widget.EditText;
 import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class RegisterActivity extends FatherActivity {
 	private SharedPreferences sp;
@@ -62,7 +63,8 @@ public class RegisterActivity extends FatherActivity {
 	private EditText card_num;
 	private EditText membername;
 	
-	
+	private EditText ver_pass_text;
+	private Button get_ver_btn;
 	
 	
 	@Override
@@ -89,10 +91,27 @@ public class RegisterActivity extends FatherActivity {
 	      sex=(Spinner)findViewById(R.id.reg_sex);
 	      card_num=(EditText)findViewById(R.id.card_num);
 	      membername=(EditText)findViewById(R.id.reg_name);
+	      
+	      ver_pass_text=(EditText)findViewById(R.id.ver_pass_text);
+	      get_ver_btn=(Button)findViewById(R.id.get_ver);
+	      get_ver_btn.setOnClickListener(getver);
 	      Setting.bookingdata=null;//清除本次预约数据
 	      //username.setText(sp.getString("username", ""));
 	      //password.setText(sp.getString("password", ""));
 	}
+	
+	OnClickListener getver=new OnClickListener(){
+		@Override
+		public void onClick(View arg0) {
+			final String phone=username.getText().toString();
+			if(phone!=null||!phone.equals("")){
+				SendCaptcha sendAction=new SendCaptcha(phone,mProgressDialog,service,RegisterActivity.this,get_ver_btn);
+				sendAction.sendData();
+			}else{
+				Toast.makeText(RegisterActivity.this, "请先输入用户名(手机号)", Toast.LENGTH_SHORT);
+			}
+		}
+	};
 	public String checkData(){
 		String msg="";
 		if(username.getText().toString().equals("")){
@@ -136,6 +155,14 @@ public class RegisterActivity extends FatherActivity {
 			membername.setHintTextColor(Color.RED);
 			return msg;
 		}
+		if(ver_pass_text.getText().toString().equals("")){
+			msg+="请输入验证码\n";
+			ver_pass_text.setText("");
+			ver_pass_text.setHint(msg);
+			ver_pass_text.setHintTextColor(Color.RED);
+			return msg;
+		}
+		
 		return msg;
 	}
 	
@@ -167,7 +194,7 @@ public class RegisterActivity extends FatherActivity {
 							 else
 								 member.setSex(0);
 							 
-							 member.setCAPTCHA("");
+							 member.setCAPTCHA(ver_pass_text.getText().toString());
 							 
 							 member.setAucode(GET.Aucode);
 							 SoapObject obj= service.sendMemberData(member,"userRegister");

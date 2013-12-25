@@ -45,12 +45,13 @@
     <string name="title_activity_search_res">搜索结果</string>
     <string name="title_activity_booking_confirm">预约信息确认</string>
     <string name="title_activity_change_password">忘记密码</string>
-    
- 	<string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="get_captcha"> 获取验证码</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
     <string name="pull_to_refresh_release_label">松开后刷新</string>
     <string name="pull_to_refresh_refreshing_label">刷新\u2026</string>
-    
     <string name="pull_to_refresh_footer_release_label">松开后加载</string>
     <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
     <string name="pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
+    <string name="title_activity_user_info">UserInfoActivity</string>
+
 </resources>

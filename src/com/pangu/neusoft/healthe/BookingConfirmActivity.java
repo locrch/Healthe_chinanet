@@ -4,14 +4,18 @@ import com.pangu.neusoft.healthcard.BookingAction;
 import com.pangu.neusoft.healthcard.ListCardActivity;
 
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+
+@SuppressLint("ResourceAsColor")
 public class BookingConfirmActivity extends FatherActivity
 {
 	TextView username,healthcard,hospitalname,departmentname,doctorname,date,time,place,pay;
@@ -33,7 +37,7 @@ public class BookingConfirmActivity extends FatherActivity
 	    time = (TextView)findViewById(R.id.booking_confirm_time);
 	    place = (TextView)findViewById(R.id.booking_confirm_place);
 	    pay = (TextView)findViewById(R.id.booking_confirm_pay);
-	    
+	    healthcard.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
 	    if(Setting.bookingdata==null||Setting.bookingdata.getDoctorid()==null||Setting.bookingdata.getDoctorid().equals("")){
 	    	Intent intent = new Intent(BookingConfirmActivity.this,BookingMainActivity.class);
 			Setting.state="booking";
@@ -44,6 +48,7 @@ public class BookingConfirmActivity extends FatherActivity
 	    username.setText(Setting.bookingdata.getUsername());
 	    
 	    healthcard.setText(Setting.bookingdata.getCardnumber());
+	    
 	    hospitalname.setText(Setting.bookingdata.getHospitalname());
 	    departmentname.setText(Setting.bookingdata.getDepartmentname());
 	    doctorname.setText(Setting.bookingdata.getDoctorname());
@@ -55,7 +60,7 @@ public class BookingConfirmActivity extends FatherActivity
 	    conbbtn = (Button)findViewById(R.id.booking_confirm_conbbtn);
 	    cancelbtn = (Button)findViewById(R.id.booking_confirm_cancelbtn);
 	    changecard = (Button)findViewById(R.id.booking_confirm_changecard);
-	    
+	    changecard.setVisibility(View.GONE);
 	    bookingaction=new BookingAction(BookingConfirmActivity.this);
 	    
 	    conbbtn.setOnClickListener(new OnClickListener()
@@ -76,6 +81,18 @@ public class BookingConfirmActivity extends FatherActivity
 			}
 		});
 	    changecard.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				Intent intent = new Intent(BookingConfirmActivity.this,ListCardActivity.class);
+				Setting.state="booking";
+				startActivity(intent);
+				finish();
+			}
+		});
+	    
+	    healthcard.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
