@@ -358,7 +358,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.pangu.neusoft.healthe.UserInfoActivity"
+            android:name="com.pangu.neusoft.healthcard.UserInfoActivity"
             android:label="@string/title_activity_user_info" >
         </activity>
     </application>

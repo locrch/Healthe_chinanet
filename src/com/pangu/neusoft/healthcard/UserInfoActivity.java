@@ -1,4 +1,4 @@
-package com.pangu.neusoft.healthe;
+package com.pangu.neusoft.healthcard;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -12,8 +12,12 @@ import com.pangu.neusoft.core.models.MemberChangeReg;
 import com.pangu.neusoft.core.models.MemberReg;
 import com.pangu.neusoft.db.DBManager;
 import com.pangu.neusoft.db.People;
-import com.pangu.neusoft.healthcard.ListCardActivity;
-import com.pangu.neusoft.healthcard.RegisterActivity;
+import com.pangu.neusoft.healthe.FatherActivity;
+import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.Setting;
+import com.pangu.neusoft.healthe.R.id;
+import com.pangu.neusoft.healthe.R.layout;
+import com.pangu.neusoft.healthe.R.menu;
 import com.pangu.neusoft.tools.DialogShow;
 import com.pangu.neusoft.tools.StringMethods;
 

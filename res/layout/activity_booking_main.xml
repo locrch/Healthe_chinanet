@@ -29,6 +29,7 @@
                 android:id="@+id/search_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                
                 android:layout_toRightOf="@+id/doctor_hospital1"
                 android:background="@drawable/search_edittext" >
 

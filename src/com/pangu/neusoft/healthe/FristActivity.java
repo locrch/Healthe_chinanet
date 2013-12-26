@@ -268,13 +268,6 @@ public class FristActivity extends Activity {
 	@Override  
 	protected void onDestroy() {  
 	    super.onDestroy();  
-	  //自动登陆
-	    if(!sp.getBoolean("auto_login_ischecked", true)){
-	    	editor.putString("username", "");
-	    	editor.putString("password", "");
-	    	editor.putBoolean("loginsuccess",false);
-			editor.putString("defaultcardno","0");
-	    	editor.commit();
-	    }
-	}  
+
+	}
 }

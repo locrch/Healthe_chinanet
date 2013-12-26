@@ -16,6 +16,7 @@ import com.pangu.neusoft.healthcard.ConnectListActivity;
 import com.pangu.neusoft.healthcard.ListCardActivity;
 import com.pangu.neusoft.healthcard.LoginActivity;
 import com.pangu.neusoft.healthcard.ShowHistoryActivity;
+import com.pangu.neusoft.healthcard.UserInfoActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -88,10 +89,11 @@ public class TabActivity3 extends Activity {
 		Setting.bookingdata=null;//清除本次预约数据
 		editor.putString("now_state", "usersetting");
 		editor.commit();
-		tab3_welcome_text.setText("尊敬的"+welcome_username+",您好！");
+		
 		if(sp.getString("username", "").equals("")){
 			tab3_login.setText("登录");
 		}else{
+			tab3_welcome_text.setText("尊敬的"+ sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner", "用户")+",您好！");
 			tab3_login.setText("注销");
 		}
 	    
@@ -200,7 +202,7 @@ public class TabActivity3 extends Activity {
 		@Override
 		public void onClick(View v) {
 			if(sp.getString("username", "").equals("")){
-				Toast.makeText(TabActivity3.this, "请先登录", Toast.LENGTH_SHORT);
+				Toast.makeText(TabActivity3.this, "请先登录", Toast.LENGTH_SHORT).show();
 			}else{
 				Intent intent=getIntent();
 				intent.setClass(TabActivity3.this, UserInfoActivity.class);
@@ -282,7 +284,28 @@ public class TabActivity3 extends Activity {
 		super.onActivityResult(requestCode, resultCode, data);
 		
 	}
-	
+	@Override
+	protected void onStart()
+	{
+		// TODO Auto-generated method stub
+		super.onStart();
+		if(sp.getString("username", "").equals("")){
+			tab3_login.setText("登录");
+		}else{
+			tab3_login.setText("注销");
+		}
+	}
+	@Override
+	protected void onRestart()
+	{
+		// TODO Auto-generated method stub
+		super.onRestart();
+		if(sp.getString("username", "").equals("")){
+			tab3_login.setText("登录");
+		}else{
+			tab3_login.setText("注销");
+		}
+	}
 	@Override  
 	protected void onDestroy() {  
 	    super.onDestroy();  
