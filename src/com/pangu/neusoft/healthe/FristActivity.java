@@ -9,6 +9,7 @@ import com.baidu.platform.comapi.map.r;
 import com.hp.hpl.sparta.xpath.ThisNodeTest;
 import com.pangu.neusoft.healthcard.LoginActivity;
 import com.pangu.neusoft.healthcard.RegisterActivity;
+import com.pangu.neusoft.service.ListenService;
 import com.pangu.neusoft.tools.DensityUtil;
 import com.pangu.neusoft.tools.SysApplication;
 import com.pangu.neusoft.tools.update.UpdateOperation;
@@ -79,15 +80,10 @@ public class FristActivity extends Activity {
 		Context ctx = FristActivity.this;
 		DisplayMetrics metric = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metric);
-		
 		Integer height = metric.heightPixels;
-		
 		SharedPreferences sp = ctx.getSharedPreferences("SP", MODE_PRIVATE);
-		
 		Editor editor = sp.edit();
-		
 		editor.putInt("height_screen", height);
-		
 		editor.commit();
 		
 		
@@ -178,6 +174,8 @@ public class FristActivity extends Activity {
     	update.checkUpdate();
     	
     	this.NetWorkStatus(this);
+    	
+    	startListener();	
 	}
 	
 	@Override
@@ -247,27 +245,27 @@ public class FristActivity extends Activity {
                         intent.setAction("android.intent.action.VIEW");
                     }
                     startActivity(intent);
-                	
-                	
-                	
-                	
                 }
             }).setNeutralButton("否", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                     dialog.cancel();
                 }
             }).show();
-	     // unconnect network
+	    // unconnect network
 	     }else {
-
 	    // connect network
 	     }
-		
     }
 	
 	@Override  
 	protected void onDestroy() {  
 	    super.onDestroy();  
-
+	    
+	}
+	
+	public void startListener(){
+		   Intent i  = new Intent();  
+           i.setClass(FristActivity.this, ListenService.class);  
+           this.startService(i);  
 	}
 }

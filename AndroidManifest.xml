@@ -361,6 +361,7 @@
             android:name="com.pangu.neusoft.healthcard.UserInfoActivity"
             android:label="@string/title_activity_user_info" >
         </activity>
+        <service android:name="com.pangu.neusoft.service.ListenService" android:exported="false"></service>  
     </application>
 
 </manifest>
