@@ -12,6 +12,7 @@ import org.ksoap2.serialization.SoapObject;
 public interface GET
 {
 	public static final String Aucode = "QWERTYUIOP";
+	//联调请更改此处
 	public static final String URL ="http://202.103.160.158:1001/HealthCarePlatform.asmx";
 	//public static final String URL ="http://192.168.2.236:1001/HealthCarePlatform.asmx";
 	public static final String NAMESPACE = "http://tempuri.org/";

@@ -55,7 +55,7 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/welcome"
+                android:id="@+id/booking_main_welcome_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -69,7 +69,7 @@
                 android:id="@+id/select_area_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/welcome"
+                android:layout_alignBottom="@+id/booking_main_welcome_content"
                 android:layout_alignLeft="@+id/booking_btn"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/search_layout"

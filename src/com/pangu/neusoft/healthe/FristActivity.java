@@ -104,14 +104,22 @@ public class FristActivity extends Activity {
 						RegisterActivity.class));
 			}
 		});
-		
+		Islogin();
 		denglu.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				startActivity(new Intent(FristActivity.this,
-						LoginActivity.class));
+				
+				if(denglu.getText().toString().equals("登录")){
+					Intent intent=getIntent();
+					intent.setClass(FristActivity.this, LoginActivity.class);
+					startActivity(intent);
+				}else{
+					
+					logoutDialog(FristActivity.this);
+				}
+				
 			}
 		});
 		
@@ -178,11 +186,70 @@ public class FristActivity extends Activity {
     	startListener();	
 	}
 	
+	private void logoutDialog(Context context) {
+		AlertDialog.Builder builder = new Builder(context);
+		builder.setMessage("确认要注销吗？");
+		builder.setTitle("提示");
+
+		builder.setPositiveButton("确认", new android.content.DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				//注销
+				editor.putString("username", "");
+		    	editor.putString("password", "");
+		    	editor.putBoolean("loginsuccess",false);
+				editor.putString("defaultcardno","0");
+		    	editor.commit();
+		    	denglu.setText("登录");
+		    	Islogin();
+			}
+		});
+
+		builder.setNegativeButton("取消", new android.content.DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+		builder.create().show();
+	}
+		
+		private void Islogin()
+		{
+			//判断登录状态
+			if(sp.getString("username", "").equals("")){
+				denglu.setText("登录");
+				
+			}else{
+				
+				denglu.setText("注销");
+			}
+		}
+	
+	@Override
+	protected void onStart()
+	{
+		// TODO Auto-generated method stub
+		super.onStart();
+		Islogin();
+	}	
+		
+	@Override
+	protected void onRestart()
+	{
+		// TODO Auto-generated method stub
+		super.onRestart();
+		Islogin();
+	}
+	
+	
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
 		StatService.onResume(this);
+		Islogin();
 		//PushManager.resumeWork(getApplicationContext());
 	}
 	
@@ -191,6 +258,7 @@ public class FristActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onPause();
 		StatService.onPause(this);
+		
 	}
 	
 	@Override
@@ -198,6 +266,7 @@ public class FristActivity extends Activity {
 	{
 		// TODO Auto-generated method stub
 		super.onStop();
+		
 		//PushManager.stopWork(this);
 	}
 	
@@ -207,7 +276,7 @@ public class FristActivity extends Activity {
 		// TODO Auto-generated method stub
 		if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){   
 	        if((System.currentTimeMillis()-exitTime) > 2000){  
-	            Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();                                
+	            Toast.makeText(getApplicationContext(), "再按一次退出健康E园", Toast.LENGTH_SHORT).show();                                
 	            exitTime = System.currentTimeMillis();   
 	        } else {
 	            finish();

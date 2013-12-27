@@ -98,14 +98,13 @@
         android:id="@+id/for_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/password"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/password"
+        android:layout_above="@+id/auto_CheckBox"
+        android:layout_toRightOf="@+id/seria_num"
+        android:gravity="center"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:text="忘记密码"
+        android:text="忘记密码了？"
         android:textColor="@color/red"
-        android:textStyle="bold"
-        android:gravity="center" />
+        android:textStyle="bold" />
 
 </RelativeLayout>

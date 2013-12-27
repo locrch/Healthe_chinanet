@@ -33,6 +33,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Paint;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -153,6 +154,9 @@ public class LoginActivity extends FatherActivity {
 			});
 		  
 		  for_pass=(TextView)findViewById(R.id.for_pass);
+		  for_pass.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
+		  for_pass.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
+			
 		  for_pass.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View arg0) {

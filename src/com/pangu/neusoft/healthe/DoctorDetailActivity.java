@@ -125,8 +125,8 @@ public class DoctorDetailActivity extends FatherActivity {
 		int width=sp.getInt("screen_width", 0);
         int height=sp.getInt("screen_height", 0); 
 		
-		pic.getLayoutParams().width=width;
-		pic.getLayoutParams().height=height/3;
+		//pic.getLayoutParams().width=width;
+		//pic.getLayoutParams().height=height/3;
 		
 		//booking_btn.setOnClickListener(booking);
 		getDataFromInternet(); 

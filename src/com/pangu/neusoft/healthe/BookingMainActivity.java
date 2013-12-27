@@ -194,10 +194,10 @@ public class BookingMainActivity extends FatherActivity {
 		
 	
 		//欢迎您和地区选择部分
-		welcome = (TextView) findViewById(R.id.welcome);
+		welcome = (TextView) findViewById(R.id.booking_main_welcome_content);
 		select_area_btn = (Button) findViewById(R.id.select_area_btn);
 		select_area_btn.setOnClickListener(select_area_click);
-		welcome.setText("欢迎您");
+		
 		//选择医院、科室、医生部分
 		first = (ImageView) findViewById(R.id.cashe_list_image);
 		second = (ImageView) findViewById(R.id.imageView2);
@@ -470,6 +470,7 @@ public class BookingMainActivity extends FatherActivity {
 			{
 				super.onPostExecute(result);
 				showInList();
+				
 			}
 
 			@Override
@@ -531,6 +532,7 @@ public class BookingMainActivity extends FatherActivity {
 		if(!doctorId.equals("NG")){
 			setHistory();
 		}
+		Islogin();
 	}
 	//搜索医生功能
 	OnClickListener search_btn_doctor_click=new OnClickListener()
@@ -766,6 +768,32 @@ public class BookingMainActivity extends FatherActivity {
 		}
 	}
 	
+	@Override
+	protected void onRestart()
+	{
+		// TODO Auto-generated method stub
+		super.onRestart();
+		Islogin();
+	}
+	@Override
+	protected void onResume()
+	{
+		// TODO Auto-generated method stub
+		super.onResume();
+		Islogin();
+	}
+	
+	private void Islogin()
+	{
+		//判断登录状态
+		if(sp.getString("username", "").equals("")){
+			welcome.setText("尊敬的用户,您好！");
+		}else{
+			
+			welcome.setText("尊敬的"+ sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner", "用户")+",您好！");
+			
+		}
+	}
 	@Override  
 	protected void onDestroy() {  
 	    super.onDestroy();  

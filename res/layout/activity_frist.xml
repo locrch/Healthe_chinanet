@@ -3,8 +3,13 @@
     android:id="@+id/frist_fatherlayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/first_bg" >
-
+     >
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/first_bg"
+    android:scaleType="matrix"
+     ></ImageView>
     <Button
         android:id="@+id/zhuce"
         android:layout_width="wrap_content"
@@ -13,7 +18,9 @@
         android:layout_alignBottom="@+id/denglu"
         android:layout_alignRight="@+id/zhineng"
         android:layout_marginRight="21dp"
-        android:background="@layout/frist_reg_press" />
+        android:background="@layout/button_style"
+        android:text="注册"
+        android:textSize="@dimen/button_textsize" />
 
     <Button
         android:id="@+id/denglu"
@@ -23,7 +30,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="48dp"
-        android:background="@layout/frist_login_press" />
+        android:background="@layout/button_style"
+        android:text="登录"
+        android:textSize="@dimen/button_textsize"
+         />
 
     <ImageButton
         android:id="@+id/zhineng"

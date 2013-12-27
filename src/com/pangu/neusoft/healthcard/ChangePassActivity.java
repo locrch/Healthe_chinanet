@@ -42,7 +42,7 @@ public class ChangePassActivity extends FatherActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_find_pass);
-		
+		setactivitytitle("修改密码");
 		userphone_text=(EditText)findViewById(R.id.userphone);
 		ver_pass_text=(EditText)findViewById(R.id.ver_pass);
 		new_pass_text=(EditText)findViewById(R.id.new_pass);

@@ -90,12 +90,7 @@ public class TabActivity3 extends Activity {
 		editor.putString("now_state", "usersetting");
 		editor.commit();
 		
-		if(sp.getString("username", "").equals("")){
-			tab3_login.setText("登录");
-		}else{
-			tab3_welcome_text.setText("尊敬的"+ sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner", "用户")+",您好！");
-			tab3_login.setText("注销");
-		}
+		Islogin();
 	    
 	}
 	//修改密码
@@ -135,14 +130,14 @@ public class TabActivity3 extends Activity {
 				startActivity(intent);
 			}else{
 				
-				logoutDialog();
+				logoutDialog(TabActivity3.this);
 			}
 			
 		}
 	};
 	
-	protected void logoutDialog() {
-		AlertDialog.Builder builder = new Builder(TabActivity3.this);
+	private void logoutDialog(Context context) {
+		AlertDialog.Builder builder = new Builder(context);
 		builder.setMessage("确认要注销吗？");
 		builder.setTitle("提示");
 
@@ -157,6 +152,7 @@ public class TabActivity3 extends Activity {
 				editor.putString("defaultcardno","0");
 		    	editor.commit();
 		    	tab3_login.setText("登录");
+		    	Islogin();
 			}
 		});
 
@@ -313,6 +309,17 @@ public class TabActivity3 extends Activity {
 	    	mgr.closeDB();  
 	    }  
 	}  
-
+	
+	private void Islogin()
+	{
+		//判断登录状态
+		if(sp.getString("username", "").equals("")){
+			tab3_login.setText("登录");
+			tab3_welcome_text.setText("");
+		}else{
+			tab3_welcome_text.setText("尊敬的"+ sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner", "用户")+",您好！");
+			tab3_login.setText("注销");
+		}
+	}
 
 }

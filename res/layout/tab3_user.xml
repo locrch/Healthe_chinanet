@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scrollView1"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
 <RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tab_content_bg" >
+    android:background="@drawable/tab_content_bg"
+     >
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+         >
 		<RelativeLayout 
 		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
+		    android:layout_height="@dimen/tab_button_height"
 		    >
 
         <Button
             android:id="@+id/tab3_login"
-            android:layout_width="76dp"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="@dimen/tab_button_height"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:background="@layout/tab_btn_press"
@@ -37,63 +36,65 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="29dp"
-             />
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/tab3_login"
+            android:gravity="center"
+            android:text="尊敬的用户，您好！" />
 
 		</RelativeLayout>
         <Button
             android:id="@+id/user_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/tab_button_width"
+            android:layout_height="@dimen/tab_button_height"
             android:background="@layout/tab_btn_press"
             android:text="个人信息"
-            android:textSize="@dimen/button_textsize" />
-
+            android:textSize="@dimen/button_textsize"
+             />
+	
         <Button
             android:id="@+id/change_pass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/tab_button_width"
+            android:layout_height="@dimen/tab_button_height"
             android:background="@layout/tab_btn_press"
             android:text="修改密码"
             android:textSize="@dimen/button_textsize" />
 
         <Button android:background="@layout/tab_btn_press"
             android:id="@+id/tab3_peopleinfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/tab_button_width"
+            android:layout_height="@dimen/tab_button_height"
             android:gravity="center"
             android:text="健康卡管理"
             android:textSize="@dimen/button_textsize" />
 
         <Button android:background="@layout/tab_btn_press"
             android:id="@+id/tab3_bookinghist"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/tab_button_width"
+            android:layout_height="@dimen/tab_button_height"
             android:gravity="center"
             android:text="我的预约"
             android:textSize="@dimen/button_textsize" />
 
         <Button android:background="@layout/tab_btn_press"
             android:id="@+id/tab3_showhist"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/tab_button_width"
+            android:layout_height="@dimen/tab_button_height"
             android:gravity="center"
             android:text="个人收藏"
             android:textSize="@dimen/button_textsize" />
 
         <Button android:background="@layout/tab_btn_press"
             android:id="@+id/tab3_cleanDB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/tab_button_width"
+            android:layout_height="@dimen/tab_button_height"
             android:gravity="center"
             android:text="清除缓存"
             android:textSize="@dimen/button_textsize" />
         
         <Button android:background="@layout/tab_btn_press"
             android:id="@+id/tab3_settextsize"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/tab_button_width"
+            android:layout_height="@dimen/tab_button_height"
             android:gravity="center"
             android:text="字体设置"
             android:visibility="gone"
@@ -101,4 +102,3 @@
     </LinearLayout>
 
 </RelativeLayout>
-</ScrollView>
