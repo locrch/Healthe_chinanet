@@ -217,7 +217,7 @@
             android:id="@+id/booking_knower_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitEnd"
+            android:scaleType="center"
             android:src="@drawable/booking_knower_btn" />
 
         <LinearLayout

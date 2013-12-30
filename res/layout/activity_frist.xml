@@ -53,4 +53,14 @@
         android:layout_marginTop="27dp"
         android:background="@layout/shuzi_press" />
 
+    <TextView
+        android:id="@+id/frist_welcome_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/zhuce"
+        android:layout_alignLeft="@+id/denglu"
+        android:layout_marginBottom="14dp"
+        android:text="尊敬的用户"
+        android:textSize="@dimen/button_textsize" />
+
 </RelativeLayout>

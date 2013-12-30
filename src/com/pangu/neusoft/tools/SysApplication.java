@@ -3,6 +3,9 @@ package com.pangu.neusoft.tools;
 
 import java.util.LinkedList; 
 import java.util.List; 
+
+import com.baidu.frontia.FrontiaApplication;
+
 import android.app.Activity; 
 import android.app.Application; 
 /**
@@ -10,7 +13,7 @@ import android.app.Application;
  * @author Administrator
  *
  */
-public class SysApplication extends Application {
+public class SysApplication extends FrontiaApplication {
 	//运用list来保存们每一个activity是关键
     private List<Activity> mList = new LinkedList<Activity>();
     //为了实现每次使用该类时不创建新的对象而创建的静态对象

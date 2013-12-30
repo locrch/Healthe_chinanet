@@ -41,6 +41,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 @SuppressLint("NewApi")
@@ -48,7 +49,7 @@ public class FristActivity extends Activity {
 	ImageButton zhineng, shuzi,phone;
 	
 	Button zhuce, denglu;
-	
+	TextView frist_welcome_content;
 	private SharedPreferences sp;
 	private Editor editor;
 	@Override
@@ -63,6 +64,7 @@ public class FristActivity extends Activity {
 		
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title_frist);
 		
+		frist_welcome_content = (TextView)findViewById(R.id.frist_welcome_content);
 		
 		phone = (ImageButton)findViewById(R.id.phone);
 		
@@ -220,10 +222,10 @@ public class FristActivity extends Activity {
 			//判断登录状态
 			if(sp.getString("username", "").equals("")){
 				denglu.setText("登录");
-				
+				frist_welcome_content.setText("尊敬的用户,您好！");
 			}else{
-				
 				denglu.setText("注销");
+				frist_welcome_content.setText("尊敬的"+ sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner", "用户")+",您好！");
 			}
 		}
 	
