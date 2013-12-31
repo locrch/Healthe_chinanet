@@ -114,9 +114,9 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		username=sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner","");
 		
 		user_card_text.clearFocus();
-		change_card_btn.setFocusable(true);
-		change_card_btn.setFocusableInTouchMode(true);
-		change_card_btn.requestFocus();
+		mPullToRefreshView.setFocusable(true);
+		mPullToRefreshView.setFocusableInTouchMode(true);
+		mPullToRefreshView.requestFocus();
 		
         hist_array=new ArrayList<HashMap<String,String>> ();
         hist_array_temp=new ArrayList<HashMap<String,String>> ();
@@ -214,7 +214,7 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 			// TODO Auto-generated method stub
 			Setting.state="history";
 			startActivity(new Intent(ShowHistoryActivity.this,ListCardActivity.class));
-			finish();
+			//finish();
 		}
 	};
 	

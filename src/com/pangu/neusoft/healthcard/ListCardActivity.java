@@ -299,10 +299,15 @@ public class ListCardActivity extends FatherActivity {
 				        {    
 				            public void run()    
 				            {    
-				            	showInList();
-				            	if( sp.getString("bookingcard", "").equals("yes")){
-				            		 editor.putString("bookingcard", "no");
-				            		 
+				            	Intent intent= getIntent();
+				            	if(intent.getStringExtra("fromlogin")!=null&&intent.getStringExtra("fromlogin").equals("fromlogin")){
+				            		finish();
+				            	}else{
+					            	showInList();
+					            	if( sp.getString("bookingcard", "").equals("yes")){
+					            		 editor.putString("bookingcard", "no");
+					            		 
+					            	}
 				            	}
 				            }    
 				    

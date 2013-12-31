@@ -12,6 +12,7 @@
         android:id="@+id/user_card_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
         android:layout_alignBottom="@+id/change_card_btn"
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/change_card_btn"
@@ -19,15 +20,17 @@
         android:enabled="false"
         android:focusable="false"
         android:focusableInTouchMode="false"
+        android:background="@layout/edittext_style"
         android:ems="10" >
     </EditText>
 
     <Button
         android:id="@+id/change_card_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:background="@layout/button_style"
         android:text="变更" />
 
     

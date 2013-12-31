@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 	<item android:drawable="@drawable/button_press_red_img" android:state_pressed="true"/>
     <item android:drawable="@drawable/button_press_red_img" android:state_focused="true"/>
- 	<item android:drawable="@drawable/button_def_img"/>
+ 	<item android:drawable="@drawable/button_red_img"/>
 	
 	
 </selector>

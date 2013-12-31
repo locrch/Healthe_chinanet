@@ -112,9 +112,8 @@ public class HistoryListAdapter extends SimpleAdapter{
 		
 		final TextView his_state=(TextView)res.findViewById(R.id.his_state);
 		if(his_state.getText().toString().equals(" 有效 ")){
-			
-			
-			his_state.setBackgroundColor(Color.RED);
+			//有效状态背景
+			his_state.setBackgroundResource(R.drawable.booking_info_status_effective_bg);
 			his_state.setTextColor(Color.WHITE);
 			his_cancle_btn.setVisibility(View.VISIBLE);
 			his_detail_btn.setVisibility(View.VISIBLE);
@@ -131,9 +130,11 @@ public class HistoryListAdapter extends SimpleAdapter{
 				@Override
 				public void onClick(View arg0) {
 					if(showing_detail){
+						his_detail_btn.setText("详细");
 						his_detail.setVisibility(View.GONE);
 						showing_detail=false;
 					}else{
+						his_detail_btn.setText("收起");
 						his_detail.setVisibility(View.VISIBLE);
 						showing_detail=true;
 					}
@@ -142,7 +143,8 @@ public class HistoryListAdapter extends SimpleAdapter{
 			
 			
 		}else if(his_state.getText().toString().equals("已取消")){
-			his_state.setBackgroundColor(Color.GRAY);
+			//已取消背景
+			his_state.setBackgroundResource(R.drawable.booking_info_status_fail_bg);
 			his_state.setTextColor(Color.BLACK);
 			his_cancle_btn.setVisibility(View.GONE);
 			his_detail_btn.setVisibility(View.GONE);
@@ -159,7 +161,8 @@ public class HistoryListAdapter extends SimpleAdapter{
 				}
 			});
 		}else{
-			his_state.setBackgroundColor(Color.YELLOW);
+			//已过期背景
+			his_state.setBackgroundResource(R.drawable.booking_info_status_expired_bg);
 			his_state.setTextColor(Color.BLACK);
 			his_cancle_btn.setVisibility(View.GONE);
 			his_detail_btn.setVisibility(View.GONE);
@@ -179,9 +182,9 @@ public class HistoryListAdapter extends SimpleAdapter{
 		
 		
 		if(position%2==0){
-			his_list_layout.setBackgroundDrawable(activity.getResources().getDrawable(R.layout.schedule_btn_style_layout_click));
+			//his_list_layout.setBackgroundDrawable(activity.getResources().getDrawable(R.layout.schedule_btn_style_layout_click));
 		}else{
-			his_list_layout.setBackgroundDrawable(activity.getResources().getDrawable(R.layout.schedule_btn_style_layout));
+			//his_list_layout.setBackgroundDrawable(activity.getResources().getDrawable(R.layout.schedule_btn_style_layout));
 		}
 		
 		

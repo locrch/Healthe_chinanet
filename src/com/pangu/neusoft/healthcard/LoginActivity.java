@@ -280,7 +280,9 @@ public class LoginActivity extends FatherActivity {
 								final Timer t = new Timer();
 								t.schedule(new TimerTask() {
 									public void run() {
-										startActivity(new Intent(LoginActivity.this,ListCardActivity.class));
+										Intent intent=new Intent(LoginActivity.this,ListCardActivity.class);
+										intent.putExtra("fromlogin", "fromlogin");
+										startActivity(intent);
 										finish();
 										t.cancel(); 
 									}

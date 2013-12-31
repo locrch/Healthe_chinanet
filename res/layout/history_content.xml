@@ -44,13 +44,14 @@
 
                 <TextView
                     android:id="@+id/his_state"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@+id/his_username"
                     android:layout_alignBottom="@+id/his_username"
                     android:layout_alignParentRight="true"
                     android:layout_weight="1"
-                    android:text="状态" />
+                    android:text="状态"
+                    android:gravity="center" />
 
             </RelativeLayout>
 
