@@ -23,6 +23,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pangu.neusoft.core.GET;
+import com.pangu.neusoft.core.models.BookingInfos;
+import com.pangu.neusoft.core.models.BookingReq;
 import com.pangu.neusoft.core.models.Schedule;
 import com.pangu.neusoft.core.models.ScheduleButton;
 import com.pangu.neusoft.healthcard.BookingAction;
@@ -183,6 +186,52 @@ public class SchedultLayout {
 	 								      			editor.putString("IdType", "");
 	 								      			editor.putString("IdCode", "");
 													editor.commit();
+													
+														BookingReq req = new BookingReq();
+														req.setAucode(GET.Aucode);
+														req.setBookingWayID("3");
+														//选择的东西
+														req.setHospitalId(sp.getString("hospitalId", ""));
+														req.setDepartmentId(sp.getString("departmentId", ""));
+														req.setDoctorId(sp.getString("doctorId", ""));
+														req.setMemberId(sp.getString("username", ""));
+														req.setScheduleID(sp.getString("ScheduleID", ""));
+														req.setScheduleID("");
+														req.setSchState(sp.getString("SchState", ""));
+														req.setPhoneNumber(sp.getString("phonenumber", ""));
+														req.setRegId(sp.getString("RegId", ""));
+														req.setReserveDate(sp.getString("ReserveDate", ""));
+														req.setReserveTime(sp.getString("ReserveTime", ""));
+														req.setIdType(sp.getString("idtype", ""));
+														// req.setIdType("");
+														req.setIdCode(sp.getString("idnumber", ""));
+														//健康卡信息
+														req.setCardNum(sp.getString("cardnum", ""));
+														req.setPatientName(sp.getString("owner", ""));
+														req.setMedicalCardTypeID(sp.getString("cardtype", ""));
+														
+														Setting.bookingdata = new BookingInfos();
+														
+														Setting.bookingdata.setCardnumber(req.getCardNum());
+														Setting.bookingdata.setDepartmentid(req.getDepartmentId());
+														Setting.bookingdata.setDepartmentname(sp.getString(
+																"departmentName", ""));
+														Setting.bookingdata.setDoctorid(req.getDoctorId());
+														Setting.bookingdata.setDoctorname(sp
+																.getString("doctorName", ""));
+														Setting.bookingdata.setHospitalid(req.getHospitalId());
+														Setting.bookingdata.setHospitalname(sp.getString("hospitalName", ""));
+														Setting.bookingdata.setIdcode(req.getIdCode());
+														Setting.bookingdata.setIdtype(req.getIdType());
+														Setting.bookingdata.setMemberid(req.getMemberId());
+														Setting.bookingdata.setPhonenumber(req.getPhoneNumber());
+														Setting.bookingdata.setRegid(req.getRegId());
+														Setting.bookingdata.setReservedate(req.getReserveDate());
+														Setting.bookingdata.setReservetime(req.getReserveTime());
+														Setting.bookingdata.setScheduleid(req.getScheduleID());
+														Setting.bookingdata.setSchstate(req.getSchState());
+														Setting.bookingdata.setUsername(req.getPatientName());
+													
 	 												//Log.e("erorr",schedule.getDoctorName()+schedule.getDoctorId()+":"+schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
 	 												if(sp.getString("username", "").equals("")){
 	 													Toast.makeText(activity, "请先登录", Toast.LENGTH_SHORT).show();

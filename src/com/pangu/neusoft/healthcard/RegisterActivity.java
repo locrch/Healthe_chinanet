@@ -95,7 +95,7 @@ public class RegisterActivity extends FatherActivity {
 	      ver_pass_text=(EditText)findViewById(R.id.ver_pass_text);
 	      get_ver_btn=(Button)findViewById(R.id.get_ver);
 	      get_ver_btn.setOnClickListener(getver);
-	      Setting.bookingdata=null;//清除本次预约数据
+	      //Setting.bookingdata=null;//清除本次预约数据
 	      //username.setText(sp.getString("username", ""));
 	      //password.setText(sp.getString("password", ""));
 	}

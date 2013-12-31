@@ -98,7 +98,7 @@ public class LoginActivity extends FatherActivity {
 	      
 		  Button login_btn=(Button)findViewById(R.id.login_btn);
 		  login_btn.setOnClickListener(login);
-		  Setting.bookingdata=null;//清除本次预约数据
+		 // Setting.bookingdata=null;//清除本次预约数据
 		  member_CheckBox.setChecked(sp.getBoolean("auto_ischecked", true));
 		  auto_CheckBox.setChecked(sp.getBoolean("auto_login_ischecked", true));
 		  

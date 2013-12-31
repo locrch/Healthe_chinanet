@@ -178,9 +178,14 @@ public class TabActivity3 extends Activity {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Intent intent=getIntent();
-			intent.setClass(TabActivity3.this, ShowHistoryActivity.class);
-			startActivity(intent);
+			if(sp.getString("username", "").equals("")){
+				Toast.makeText(TabActivity3.this, "请先登录", Toast.LENGTH_SHORT).show();
+			}else{
+				Intent intent=getIntent();
+				intent.setClass(TabActivity3.this, ShowHistoryActivity.class);
+				startActivity(intent);
+			}
+			
 		}
 	};
 	OnClickListener showhist_click=new OnClickListener(){
@@ -285,22 +290,14 @@ public class TabActivity3 extends Activity {
 	{
 		// TODO Auto-generated method stub
 		super.onStart();
-		if(sp.getString("username", "").equals("")){
-			tab3_login.setText("登录");
-		}else{
-			tab3_login.setText("注销");
-		}
+		Islogin();
 	}
 	@Override
 	protected void onRestart()
 	{
 		// TODO Auto-generated method stub
 		super.onRestart();
-		if(sp.getString("username", "").equals("")){
-			tab3_login.setText("登录");
-		}else{
-			tab3_login.setText("注销");
-		}
+		Islogin();
 	}
 	@Override  
 	protected void onDestroy() {  

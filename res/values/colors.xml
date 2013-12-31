@@ -333,6 +333,6 @@
     <color name="isToday_BgColor">#EBDCC1</color>
     <color name="specialReminder">#FF0000</color>
     <color name="commonReminder">#BDBAB5</color>
-    
+    <color name="content_background">#C4E1FF</color>
 	
 </resources>
