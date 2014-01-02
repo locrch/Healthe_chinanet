@@ -17,6 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:paddingLeft="@dimen/booking_confirm_content_paddingwidth"
+        android:paddingRight="@dimen/booking_confirm_content_paddingwidth"
         android:background="@drawable/context_bg" >
 
         <LinearLayout

@@ -13,8 +13,9 @@
 	<dimen name="list_detailimg_margin">2dp</dimen>
 	<dimen name="list_padding_width">5dp</dimen>
 	<dimen name="booking_main_search_text_marginleft">24dp</dimen>
-	<dimen name="booking_main_search_btn_marginleft">180dp</dimen><!-- 预约挂号首页搜索按钮左边距 -->
-	<dimen name="tab_button_width">250dp</dimen><!-- 个人中心按钮宽度 -->
-	<dimen name="tab_button_height">50dp</dimen><!-- 个人中心按钮高度 -->
-	
+	<dimen name="booking_main_search_btn_marginleft">211dp</dimen><!-- 预约挂号首页搜索按钮左边距 -->
+	<dimen name="tab_button_width">240dp</dimen><!-- 个人中心按钮宽度 -->
+	<dimen name="tab_button_height">42dp</dimen><!-- 个人中心按钮高度 -->
+	<dimen name="booking_main_edittext_height">30dp</dimen><!-- 预约挂号界面选择医院科室医生高度 -->
+	<dimen name="version_info_logo_margintop">30dp</dimen><!-- 版本信息卫生局logo上边距 -->
 </resources>

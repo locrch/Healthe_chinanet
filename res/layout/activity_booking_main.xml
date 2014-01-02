@@ -90,8 +90,8 @@
 
             <ImageView
                 android:id="@+id/cashe_list_image"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/booking_main_edittext_height"
+                android:layout_height="@dimen/booking_main_edittext_height"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/welcomelayout"
                 android:layout_marginTop="10dp"
@@ -99,8 +99,8 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/booking_main_edittext_height"
+                android:layout_height="@dimen/booking_main_edittext_height"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/cashe_list_image"
                 android:layout_marginTop="10dp"
@@ -109,10 +109,10 @@
             <EditText
                 android:id="@+id/department"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/booking_main_edittext_height"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/cashe_list_image"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/imageView2"
                 android:background="@layout/edittext_style"
                 android:ems="10"
@@ -124,8 +124,8 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/booking_main_edittext_height"
+                android:layout_height="@dimen/booking_main_edittext_height"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/imageView2"
                 android:layout_marginTop="10dp"
@@ -134,7 +134,7 @@
             <EditText
                 android:id="@+id/doctor"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/booking_main_edittext_height"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/imageView2"
                 android:layout_marginTop="10dp"
@@ -152,7 +152,7 @@
             <EditText
                 android:id="@+id/hospital"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/booking_main_edittext_height"
                 android:layout_above="@+id/department"
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@+id/cashe_list_image"

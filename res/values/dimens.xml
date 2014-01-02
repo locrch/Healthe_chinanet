@@ -17,4 +17,9 @@
 	<dimen name="tab_button_width">250dp</dimen><!-- 个人中心按钮宽度 -->
 	<dimen name="tab_button_height">50dp</dimen><!-- 个人中心按钮高度 -->
 	<dimen name="long_number_size">18dp</dimen><!-- 长数字的字体大小 -->
+	<dimen name="booking_main_edittext_height">40dp</dimen><!-- 预约挂号界面选择医院科室医生高度 -->
+	<dimen name="booking_confirm_content_paddingwidth">5dp</dimen><!-- 预约确认内容左右内边距 -->
+	<dimen name="tab_button_img_height">50dp</dimen><!-- tab按钮图片高度 -->
+	<dimen name="tab2_button_size">75dp</dimen><!-- 智能健康6个功能按钮大小,高度宽度一致 -->
+	<dimen name="version_info_logo_margintop">73dp</dimen><!-- 版本信息卫生局logo上边距 -->
 </resources>

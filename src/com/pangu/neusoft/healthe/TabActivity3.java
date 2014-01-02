@@ -52,7 +52,7 @@ public class TabActivity3 extends Activity {
 	Button tab3_showhist;//个人收藏
 	Button user_info;//个人信息
 	Button change_pass;//个人信息
-	Button tab3_cleanDB;//清除缓存
+	Button tab3_cleanDB;//清理缓存
 	Button tab3_settextsize;//设置字体
 	
 	TextView textview1,tab3_welcome_text;

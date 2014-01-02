@@ -37,7 +37,8 @@
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/tab3_login"
             android:gravity="center"
-            android:text="尊敬的用户，您好！" />
+            android:text="尊敬的用户，您好！"
+            android:textSize="15dp" />
 
 		</RelativeLayout>
         <Button

@@ -509,6 +509,14 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
+        /**  预约挂号界面选择医院科室医生高度 
+         */
+        public static final int booking_confirm_content_paddingwidth=0x7f060010;
+        /**  长数字的字体大小 
+ 个人中心按钮高度 
+ 个人中心按钮高度 
+         */
+        public static final int booking_main_edittext_height=0x7f06000f;
         public static final int booking_main_search_btn_marginleft=0x7f06000b;
         public static final int booking_main_search_text_marginleft=0x7f06000a;
         public static final int button_textsize=0x7f060003;
@@ -521,6 +529,10 @@ public final class R {
          */
         public static final int long_number_size=0x7f06000e;
         public static final int margin_right=0x7f060002;
+        /**  tab按钮图片高度 
+ tab按钮图片高度 
+         */
+        public static final int tab2_button_size=0x7f060012;
         /**  个人中心按钮宽度 
  个人中心按钮宽度 
  个人中心按钮宽度 
@@ -528,6 +540,11 @@ public final class R {
  个人中心按钮宽度 
          */
         public static final int tab_button_height=0x7f06000d;
+        /**  预约确认内容左右内边距 
+ 个人中心按钮高度 
+ 预约挂号界面选择医院科室医生高度 
+         */
+        public static final int tab_button_img_height=0x7f060011;
         /**  预约挂号首页搜索按钮左边距 
  预约挂号首页搜索按钮左边距 
  预约挂号首页搜索按钮左边距 
@@ -536,6 +553,10 @@ public final class R {
          */
         public static final int tab_button_width=0x7f06000c;
         public static final int title_textsize=0x7f060006;
+        /**  智能健康6个功能按钮大小,高度宽度一致 
+ 预约挂号界面选择医院科室医生高度 
+         */
+        public static final int version_info_logo_margintop=0x7f060013;
     }
     public static final class drawable {
         public static final int back_btn_img=0x7f020000;

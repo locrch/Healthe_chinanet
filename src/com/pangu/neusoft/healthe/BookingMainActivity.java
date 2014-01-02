@@ -257,52 +257,7 @@ public class BookingMainActivity extends FatherActivity {
 	}
 
 	public void setItemSize(){		
-		//search_btn.getLayoutParams().width=(height / 10);
-		//search_btn.getLayoutParams().height=(height / 11);
-		//selecttext.getLayoutParams().height=(height / 10);
-		//doctor_hospital1.getLayoutParams().height=(height / 12);
-		//doctor_hospital2.getLayoutParams().height=(height / 12);
-		//doctor_hospital3.getLayoutParams().height=(height / 12);
-		//search_btn.setTextSize(width / fontsizex);
-		//select_spinner.getLayoutParams().width = width / 3;
-		//select_spinner.getLayoutParams().height = height / 8;
-
-		//selecttext.getLayoutParams().width=width / 2;
-	
-		//selecttext.setHeight(search_btn.getLayoutParams().height);
-		//doctor_hospital1.setHeight(search_btn.getHeight());
-		//doctor_hospital2.setHeight(search_btn.getHeight());
-		//doctor_hospital3.setHeight(search_btn.getHeight());
 		
-		//selecttext.setTextSize(width / fontsizex);
-		//welcome.setTextSize(width / fontsizex);
-		//select_area_btn.setTextSize(width / fontsizex);
-		
-		welcome.setWidth(width - select_area_btn.getWidth());
-		welcome.getLayoutParams().height = height / 12;		
-		first.getLayoutParams().width = height / 12;
-		first.getLayoutParams().height = height / 12;
-		second.getLayoutParams().width = height / 12;
-		second.getLayoutParams().height = height / 12;
-		third.getLayoutParams().width = height / 12;
-		third.getLayoutParams().height = height / 12;
-		hospital.getLayoutParams().height= height / 10;
-		//hospital.setTextSize(width / fontsizex);
-		//department.setTextSize(width / fontsizex);
-		department.getLayoutParams().height= height / 10;
-		doctor.getLayoutParams().height= height / 10;
-		//doctor.setTextSize(width / fontsizex);		
-		//booking = (Button) findViewById(R.id.booking_confirm_btn);
-		//booking.setTextSize(width / fontsizex);
-		//booking.setHeight(height / 10);
-		//booking.setOnClickListener(booking_btn_click);
-		//message.setTextSize(width / fontsizex);
-		//handler.getLayoutParams().height=handler.getLayoutParams().width;
-		
-		//int o_width=width/4;
-		//int o_height=height/12;		
-		//booking_knower.getLayoutParams().width=o_width;
-		//booking_knower.getLayoutParams().height=o_height;
 	}
 	
 	

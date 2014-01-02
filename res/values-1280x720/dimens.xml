@@ -16,5 +16,5 @@
 	<dimen name="booking_main_search_btn_marginleft">180dp</dimen><!-- 预约挂号首页搜索按钮左边距 -->
 	<dimen name="tab_button_width">300dp</dimen><!-- 个人中心按钮宽度 -->
 	<dimen name="tab_button_height">60dp</dimen><!-- 个人中心按钮高度 -->
-	
+	<dimen name="tab_button_img_height">60dp</dimen><!-- tab按钮图片高度 -->
 </resources>

@@ -14,7 +14,7 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/tab_button_img_height"
                 android:layout_alignParentBottom="true"
                 android:orientation="horizontal"
                 >
