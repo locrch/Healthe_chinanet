@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:background="@color/content_background"
     android:orientation="vertical"
-    android:padding="4dp"
+    android:paddingTop="4dp"
+    android:paddingLeft="4dp"
     android:paddingRight="6dp" >
 
     <LinearLayout
@@ -158,7 +159,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="50dp" >
 
                 <Button
                     android:id="@+id/his_cancle_btn"
@@ -166,17 +167,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
-                    android:background="@layout/button_red_style"
-                    android:text="取消预约" />
-
-                <Button
-                    android:id="@+id/his_detail_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@layout/button_style"
-                    android:text="详细" />
+                    android:background="@layout/history_canel_press"
+                    android:textColor="@color/white"
+                     />
 
                 <TextView
                     android:id="@+id/his_doctorid"
@@ -205,6 +198,18 @@
                     android:layout_centerHorizontal="true"
                     android:text="yess"
                     android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/his_detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="26dp"
+                    android:background="@drawable/history__detail_def_img"
+                    android:text="详细"
+                    android:textColor="@color/white"
+                    android:paddingTop="5dp"/>
 
             </RelativeLayout>
 

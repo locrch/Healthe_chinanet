@@ -78,14 +78,14 @@ public class HistoryListAdapter extends SimpleAdapter{
 		
 		final LinearLayout his_list_layout=(LinearLayout)res.findViewById(R.id.his_list_layout);
 		final Button his_detail_btn=(Button)res.findViewById(R.id.his_detail_btn);
-		final Button his_cancle_btn=(Button)res.findViewById(R.id.his_cancle_btn);
+		Button his_cancle_btn=(Button)res.findViewById(R.id.his_cancle_btn);
 		final LinearLayout his_detail=(LinearLayout)res.findViewById(R.id.his_detail);
 		
 		final TextView his_doctor_text=(TextView)res.findViewById(R.id.his_doctor);
 		final TextView his_hospital_text=(TextView)res.findViewById(R.id.his_hospital);
 		final TextView his_doctorid_text=(TextView)res.findViewById(R.id.his_doctorid);
 		final TextView his_hospitalid_text=(TextView)res.findViewById(R.id.his_hospitalid);
-		
+		his_cancle_btn.setText("取消"+"\n"+"预约");
 		his_doctor_text.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
 		his_hospital_text.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
 		
@@ -133,7 +133,7 @@ public class HistoryListAdapter extends SimpleAdapter{
 						his_detail_btn.setText("详细");
 						his_detail.setVisibility(View.GONE);
 						showing_detail=false;
-					}else{
+					}else{      
 						his_detail_btn.setText("收起");
 						his_detail.setVisibility(View.VISIBLE);
 						showing_detail=true;
