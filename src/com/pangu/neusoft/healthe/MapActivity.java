@@ -144,11 +144,7 @@ public class MapActivity extends Activity {
     }          
     
     
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.booking_main, menu);
-        return true;
-    }
+    
     
     @Override  
     protected void onDestroy(){  

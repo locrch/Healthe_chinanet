@@ -228,23 +228,25 @@ public class TabActivity3 extends Activity {
 	
 	protected void dialog() {
 		AlertDialog.Builder builder = new Builder(TabActivity3.this);
-		builder.setMessage("确认要删除预约记录和本帐号登录数据吗？");
+		builder.setMessage("确认要删除图片缓存数据吗？");
 		builder.setTitle("提示");
 
 		builder.setPositiveButton("确认", new android.content.DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
-				DBManager mgr=new DBManager(TabActivity3.this);
-				mgr.clearDB();
-				mgr.closeDB();
-				
+//				//删除数据库记录
+//				DBManager mgr=new DBManager(TabActivity3.this);
+//				mgr.clearDB();
+//				mgr.closeDB();
+				//删除图片缓存
 				File dir=new File(Setting.catche_dir);
 				if(dir.exists()){
 					try{
 						del(dir.getPath());
 					}catch(Exception ex){}
 				}
+				//下面是清除用户登录信息？
 				//editor.clear();
 				//editor.commit();
 				DialogShow.showDialog(TabActivity3.this, "清除成功");

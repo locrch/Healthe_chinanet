@@ -18,12 +18,6 @@ public class CancelbookingActivity extends FatherActivity
 		setContentView(R.layout.activity_cancelbooking);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu)
-	{
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.cancelbooking, menu);
-		return true;
-	}
+	
 
 }

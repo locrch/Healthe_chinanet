@@ -366,12 +366,7 @@ public class CardInfoActivity extends FatherActivity {
 //		builder.create().show();
 //	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.people_info, menu);
-		return true;
-	}
+	
 
 //	@Override
 //	protected void onDestroy() {

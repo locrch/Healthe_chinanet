@@ -192,12 +192,7 @@ public class UserInfoActivity extends FatherActivity {
 		return msg;
 	}
 	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.user_info, menu);
-		return true;
-	}
+	
 	
 	 OnClickListener changeinfo=new OnClickListener(){//修改信息
 			@Override

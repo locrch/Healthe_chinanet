@@ -89,12 +89,6 @@ public class SetTextSizeActivity extends FatherActivity
 		
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu)
-	{
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.set_text_size, menu);
-		return true;
-	}
+	
 
 }

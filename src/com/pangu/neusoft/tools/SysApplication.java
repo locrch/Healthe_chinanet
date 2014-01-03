@@ -13,7 +13,7 @@ import android.content.Context;
 /**
  * 一个类 用来结束所有后台activity
  * 
- * @author Administrator
+ * @author 盘古开天
  * 
  */
 public class SysApplication extends FrontiaApplication

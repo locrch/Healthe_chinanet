@@ -502,19 +502,19 @@ public final class R {
  Default screen margins, per the Android Design guidelines. 
  Default screen margins, per the Android Design guidelines. 
  Default screen margins, per the Android Design guidelines. 
-
-         Customize dimensions originally defined in res/values/dimens.xml (such as
-         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
-    
+ Default screen margins, per the Android Design guidelines. 
+ Default screen margins, per the Android Design guidelines. 
          */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
         /**  预约挂号界面选择医院科室医生高度 
+ 预约挂号界面选择医院科室医生高度 
          */
         public static final int booking_confirm_content_paddingwidth=0x7f060010;
         /**  长数字的字体大小 
  个人中心按钮高度 
  个人中心按钮高度 
+ 长数字的字体大小 
          */
         public static final int booking_main_edittext_height=0x7f06000f;
         public static final int booking_main_search_btn_marginleft=0x7f06000b;
@@ -526,14 +526,18 @@ public final class R {
         public static final int list_padding_width=0x7f060009;
         public static final int list_small_textsize=0x7f060005;
         /**  个人中心按钮高度 
+ 个人中心按钮高度 
          */
         public static final int long_number_size=0x7f06000e;
         public static final int margin_right=0x7f060002;
         /**  tab按钮图片高度 
  tab按钮图片高度 
+ tab按钮图片高度 
          */
         public static final int tab2_button_size=0x7f060012;
         /**  个人中心按钮宽度 
+ 个人中心按钮宽度 
+ 个人中心按钮宽度 
  个人中心按钮宽度 
  个人中心按钮宽度 
  个人中心按钮宽度 
@@ -543,9 +547,13 @@ public final class R {
         /**  预约确认内容左右内边距 
  个人中心按钮高度 
  预约挂号界面选择医院科室医生高度 
+ 预约确认内容左右内边距 
+ 个人中心按钮高度 
          */
         public static final int tab_button_img_height=0x7f060011;
         /**  预约挂号首页搜索按钮左边距 
+ 预约挂号首页搜索按钮左边距 
+ 预约挂号首页搜索按钮左边距 
  预约挂号首页搜索按钮左边距 
  预约挂号首页搜索按钮左边距 
  预约挂号首页搜索按钮左边距 
@@ -555,6 +563,7 @@ public final class R {
         public static final int title_textsize=0x7f060006;
         /**  智能健康6个功能按钮大小,高度宽度一致 
  预约挂号界面选择医院科室医生高度 
+ 智能健康6个功能按钮大小,高度宽度一致 
          */
         public static final int version_info_logo_margintop=0x7f060013;
     }
@@ -650,7 +659,6 @@ public final class R {
         public static final int TableRow4=0x7f0a003a;
         public static final int TextView02=0x7f0a003b;
         public static final int Top_Date=0x7f0a010f;
-        public static final int action_settings=0x7f0a0168;
         public static final int add_card_help=0x7f0a0060;
         public static final int areainfo=0x7f0a0072;
         public static final int auto_CheckBox=0x7f0a00f9;
@@ -874,6 +882,7 @@ public final class R {
         public static final int logout_btn=0x7f0a0063;
         public static final int main_pull_refresh_view=0x7f0a006a;
         public static final int member_CheckBox=0x7f0a00f7;
+        public static final int menu_action_exit=0x7f0a0168;
         public static final int messages=0x7f0a0030;
         public static final int more_help=0x7f0a0154;
         public static final int more_info=0x7f0a0155;
@@ -1093,28 +1102,7 @@ public final class R {
         public static final int zhineng_press=0x7f03005b;
     }
     public static final class menu {
-        public static final int area_list=0x7f090000;
-        public static final int booking_confirm=0x7f090001;
-        public static final int booking_main=0x7f090002;
-        public static final int cancelbooking=0x7f090003;
-        public static final int create_card=0x7f090004;
-        public static final int create_people=0x7f090005;
-        public static final int father=0x7f090006;
-        public static final int favorite=0x7f090007;
-        public static final int health_activity_group=0x7f090008;
-        public static final int help=0x7f090009;
-        public static final int hospital_detail=0x7f09000a;
-        public static final int list_people=0x7f09000b;
-        public static final int login=0x7f09000c;
-        public static final int main=0x7f09000d;
-        public static final int people_info=0x7f09000e;
-        public static final int search_res=0x7f09000f;
-        public static final int set_text_size=0x7f090010;
-        public static final int show_history=0x7f090011;
-        public static final int tab_activity4=0x7f090012;
-        public static final int tab_activity5=0x7f090013;
-        public static final int user_info=0x7f090014;
-        public static final int version_info=0x7f090015;
+        public static final int main=0x7f090000;
     }
     public static final class string {
         public static final int action_settings=0x7f070001;

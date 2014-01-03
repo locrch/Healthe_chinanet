@@ -1,8 +1,25 @@
+<!-- def -->
 <resources>
 
-    <!--
-         Customize dimensions originally defined in res/values/dimens.xml (such as
-         screen margins) for sw600dp devices (e.g. 7" tablets) here.
-    -->
-
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_right">40dp</dimen>
+	<dimen name="button_textsize">18dp</dimen>
+	<dimen name="list_big_textsize">18dp</dimen>
+	<dimen name="list_small_textsize">14dp</dimen>
+	<dimen name="title_textsize">30dp</dimen>
+	<dimen name="detail_content_textsize">14dp</dimen>
+	<dimen name="list_detailimg_margin">2dp</dimen>
+	<dimen name="list_padding_width">5dp</dimen>
+	<dimen name="booking_main_search_text_marginleft">24dp</dimen>
+	<dimen name="booking_main_search_btn_marginleft">180dp</dimen><!-- 预约挂号首页搜索按钮左边距 -->
+	<dimen name="tab_button_width">250dp</dimen><!-- 个人中心按钮宽度 -->
+	<dimen name="tab_button_height">50dp</dimen><!-- 个人中心按钮高度 -->
+	<dimen name="long_number_size">18dp</dimen><!-- 长数字的字体大小 -->
+	<dimen name="booking_main_edittext_height">40dp</dimen><!-- 预约挂号界面选择医院科室医生高度 -->
+	<dimen name="booking_confirm_content_paddingwidth">5dp</dimen><!-- 预约确认内容左右内边距 -->
+	<dimen name="tab_button_img_height">50dp</dimen><!-- tab按钮图片高度 -->
+	<dimen name="tab2_button_size">75dp</dimen><!-- 智能健康6个功能按钮大小,高度宽度一致 -->
+	<dimen name="version_info_logo_margintop">73dp</dimen><!-- 版本信息卫生局logo上边距 -->
 </resources>

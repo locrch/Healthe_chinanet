@@ -632,12 +632,7 @@ public class BookingMainActivity extends FatherActivity {
 
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.booking_main, menu);
-		return true;
-	}
+	
 
 	// 获得屏幕大小
 	public void getScreenSize() {
