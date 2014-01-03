@@ -87,7 +87,7 @@
             android:layout_width="@dimen/tab_button_width"
             android:layout_height="@dimen/tab_button_height"
             android:gravity="center"
-            android:text="清除缓存"
+            android:text="清理缓存"
             android:textSize="@dimen/button_textsize" />
         
         <Button android:background="@layout/tab_btn_press"
