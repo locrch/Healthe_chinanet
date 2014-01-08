@@ -146,11 +146,14 @@ public class TabActivity3 extends Activity {
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
 				//注销
-				editor.putString("username", "");
-		    	editor.putString("password", "");
-		    	editor.putBoolean("loginsuccess",false);
-				editor.putString("defaultcardno","0");
+				for(int i=0;i<5;i++)
+					editor.remove("card"+i+"_"+"owner");				
+				editor.remove("username");
+		    	editor.remove("password");
+		    	editor.remove("loginsuccess");
+				editor.remove("defaultcardno");				
 		    	editor.commit();
+				
 		    	tab3_login.setText("登录");
 		    	Islogin();
 			}
@@ -168,6 +171,7 @@ public class TabActivity3 extends Activity {
 	OnClickListener peopleinfo_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
+			Setting.state="show_cardlist";
 			Intent intent=getIntent();
 			intent.putExtra("action", "info");
 			intent.setClass(TabActivity3.this, ListCardActivity.class);

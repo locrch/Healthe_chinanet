@@ -20,7 +20,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
         android:layout_toRightOf="@+id/imageView1"
-        android:text="健康E园"
+        android:text="健康e园"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold" />

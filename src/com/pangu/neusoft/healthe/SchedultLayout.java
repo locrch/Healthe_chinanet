@@ -262,6 +262,7 @@ public class SchedultLayout {
 	            		}
 	            	}
 	            	scheduleLayout.addView(row);
+	            	
 	            }
 	            scheduleText.setText("scheduleList.size()"+scheduleList.size());//有排班
 	            scheduleText.setVisibility(View.GONE);

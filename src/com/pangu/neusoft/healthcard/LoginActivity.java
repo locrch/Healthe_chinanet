@@ -175,9 +175,9 @@ public class LoginActivity extends FatherActivity {
 	{
 		// TODO Auto-generated method stub
 		super.onStop();
-		editor.putString("username", username.getText().toString());
-		editor.putString("password", password.getText().toString());
-		editor.commit();
+		//editor.putString("username", username.getText().toString());
+		//editor.putString("password", password.getText().toString());
+		//editor.commit();
 	}
 	@Override
 	protected void onDestroy()
@@ -230,7 +230,7 @@ public class LoginActivity extends FatherActivity {
 								String IsLoginSuccess=obj.getProperty("IsLoginSuccess").toString();//0000成功1111报错
 								String resultCode=obj.getProperty("resultCode").toString();//0000成功1111报错
 								msg=obj.getProperty("msg").toString();//返回的信息
-								
+								Log.e("IsLoginSuccess",IsLoginSuccess);
 								if(IsLoginSuccess.equals("true")){
 									if(!member.getUserName().equals(sp.getString("username", ""))){
 										

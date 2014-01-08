@@ -101,7 +101,6 @@ public class FristActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				startActivity(new Intent(FristActivity.this,
 						RegisterActivity.class));
 			}
@@ -111,17 +110,14 @@ public class FristActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				
-				if(denglu.getText().toString().equals("登录")){
-					Intent intent=getIntent();
-					intent.setClass(FristActivity.this, LoginActivity.class);
-					startActivity(intent);
-				}else{
-					
+				if(denglu.getText().toString().equals("登录")){					
+					Intent intent=new Intent();					
+					intent.setClass(FristActivity.this, LoginActivity.class);					
+					startActivity(intent);					
+				}else{					
 					logoutDialog(FristActivity.this);
-				}
-				
+				}				
 			}
 		});
 		
@@ -198,10 +194,12 @@ public class FristActivity extends Activity {
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
 				//注销
-				editor.putString("username", "");
-		    	editor.putString("password", "");
-		    	editor.putBoolean("loginsuccess",false);
-				editor.putString("defaultcardno","0");
+				for(int i=0;i<5;i++)
+					editor.remove("card"+i+"_"+"owner");				
+				editor.remove("username");
+		    	editor.remove("password");
+		    	editor.remove("loginsuccess");
+				editor.remove("defaultcardno");				
 		    	editor.commit();
 		    	denglu.setText("登录");
 		    	Islogin();
@@ -278,7 +276,7 @@ public class FristActivity extends Activity {
 		// TODO Auto-generated method stub
 		if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){   
 	        if((System.currentTimeMillis()-exitTime) > 2000){  
-	            Toast.makeText(getApplicationContext(), "再按一次退出健康E园", Toast.LENGTH_SHORT).show();                                
+	            Toast.makeText(getApplicationContext(), "再按一次退出健康e园", Toast.LENGTH_SHORT).show();                                
 	            exitTime = System.currentTimeMillis();   
 	        } else {
 	            finish();

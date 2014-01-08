@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.ksoap2.serialization.SoapObject;
 
+import com.baidu.mobstat.StatService;
 import com.pangu.neusoft.adapters.HistoryListAdapter;
 import com.pangu.neusoft.adapters.PullToRefreshView.OnFooterRefreshListener;
 import com.pangu.neusoft.adapters.PullToRefreshView.OnHeaderRefreshListener;
@@ -106,28 +107,14 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		
 		mgr=new DBManager(ShowHistoryActivity.this);
 		
-		//取得默认卡号
-		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
-		editor = sp.edit();
-		String cardname=Setting.getDefaultCardNumber(sp,editor);
-		user_card_text.setText(cardname);		
-		username=sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner","");
 		
 		user_card_text.clearFocus();
 		mPullToRefreshView.setFocusable(true);
 		mPullToRefreshView.setFocusableInTouchMode(true);
 		mPullToRefreshView.requestFocus();
 		
-        hist_array=new ArrayList<HashMap<String,String>> ();
-        hist_array_temp=new ArrayList<HashMap<String,String>> ();
-		//for(int i=0;i<10;i++){
-    	setList("booking");
-        setList("cancled");
-        setList("passed");
-        // }
-        start=0;
-        page=0;
-        updatedata();
+		
+       // updatedata();
         /*	
 		SimpleAdapter adapter=new SimpleAdapter(
 					this,hist_array,R.layout.history_content,new String[]{"hospital","department","doctor","datatime","cancleid","hospitalid","SerialNumber"},
@@ -279,6 +266,33 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		},1000);
 		
 	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+				//取得默认卡号
+				sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
+				editor = sp.edit();
+				String cardname=Setting.getDefaultCardNumber(sp,editor);
+				user_card_text.setText(cardname);		
+				username=sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner","");
+				
+				
+		        hist_array=new ArrayList<HashMap<String,String>> ();
+		        hist_array_temp=new ArrayList<HashMap<String,String>> ();
+				//for(int i=0;i<10;i++){
+		    	setList("booking");
+		        setList("cancled");
+		        setList("passed");
+		        // }
+		        start=0;
+		        page=0;
+		
+		 updatedata();
+		//PushManager.resumeWork(getApplicationContext());
+	}
+	
 	
 	 public void refresh() {  
 	         

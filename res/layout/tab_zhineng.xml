@@ -27,10 +27,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/title_zhineng"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="100dp" >
+        android:layout_marginTop="100dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp" >
 
         <TableRow
             android:id="@+id/tableRow1"
@@ -53,6 +52,14 @@
                     android:background="@layout/tab2_file_press" />
 
                 <ImageButton
+                    android:id="@+id/tab2_booking"
+                    android:layout_width="@dimen/tab2_button_size"
+                    android:layout_height="@dimen/tab2_button_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="1"
+                    android:background="@layout/tab2_booking_press" />
+
+                <ImageButton
                     android:id="@+id/tab2_moneycheck"
                     android:layout_width="@dimen/tab2_button_size"
                     android:layout_height="@dimen/tab2_button_size"
@@ -61,14 +68,6 @@
                     android:layout_weight="1"
                     android:background="@layout/tab2_money_press" />
 
-                <ImageButton
-                    android:id="@+id/tab2_booking"
-                    android:layout_width="@dimen/tab2_button_size"
-                    android:layout_height="@dimen/tab2_button_size"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_weight="1"
-                    android:background="@layout/tab2_booking_press" />
             </RelativeLayout>
         </TableRow>
 
@@ -95,7 +94,6 @@
                     android:id="@+id/tab2_eachother"
                     android:layout_width="@dimen/tab2_button_size"
                     android:layout_height="@dimen/tab2_button_size"
-                    android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_weight="1"
                     android:background="@layout/tab2_each_press" />

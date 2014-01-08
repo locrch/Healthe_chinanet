@@ -108,6 +108,7 @@ public class BookingMainActivity extends FatherActivity {
 	private SlidingDrawer booking_knower_btn;
 	private LinearLayout content;
 	private ProgressDialog mProgressDialog;
+	private ScrollView booking_main_sv;
 	WebService service;
 	
 	@Override
@@ -135,6 +136,7 @@ public class BookingMainActivity extends FatherActivity {
 		//搜索部分
 		//select_spinner.setAdapter(adapter);
 		
+		booking_main_sv = (ScrollView)findViewById(R.id.booking_main_sv);
 		
 		selecttext = (EditText) findViewById(R.id.search_text);
 		search_btn = (ImageButton) findViewById(R.id.search_btn);
@@ -189,7 +191,6 @@ public class BookingMainActivity extends FatherActivity {
 			}
 		});
 		
-
 		
 		
 	
@@ -474,7 +475,7 @@ public class BookingMainActivity extends FatherActivity {
 
 					}
 				});
-				doctorlistView.getLayoutParams().height+=1000;
+				doctorlistView.getLayoutParams().height+=2000;
 				 
 			}
 		}.execute();

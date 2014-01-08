@@ -690,6 +690,7 @@ public final class R {
         public static final int booking_confirm_username=0x7f0a0005;
         public static final int booking_history_list_using=0x7f0a006b;
         public static final int booking_knower_btn=0x7f0a002f;
+        public static final int booking_main_sv=0x7f0a001a;
         public static final int booking_main_welcome_content=0x7f0a001f;
         public static final int bpush_download_icon=0x7f0a0076;
         public static final int bpush_download_progress=0x7f0a007a;
@@ -940,7 +941,6 @@ public final class R {
         public static final int scheduleinfo=0x7f0a0075;
         public static final int scheduling_list_scheduleid=0x7f0a00f3;
         public static final int scrollView1=0x7f0a0001;
-        public static final int scrollview2=0x7f0a001a;
         public static final int search_btn=0x7f0a001e;
         public static final int search_layout=0x7f0a001c;
         public static final int search_text=0x7f0a001d;

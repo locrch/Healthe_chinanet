@@ -1,17 +1,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+     >
 
     <ScrollView
-        android:id="@+id/scrollview2"
+        android:id="@+id/booking_main_sv"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingLeft="8dp"
-            android:paddingRight="8dp" >
+            android:paddingRight="8dp"
+            android:paddingBottom="10dp" >
 
             <Button
                 android:id="@+id/doctor_hospital1"

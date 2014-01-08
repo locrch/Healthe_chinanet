@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">健康E园</string>
+    <string name="app_name">健康e园</string>
     <string name="action_settings">设置</string>
     <string name="title_activity_booking_main">预约挂号</string>
     <string name="title_activity_area_list">选择地区</string>
