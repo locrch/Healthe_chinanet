@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pangu.neusoft.healthe"
     android:versionCode="9"
-    android:versionName="1.09" >
+    android:versionName="1.00" >
 
     <supports-screens
         android:anyDensity="true"
@@ -368,7 +368,7 @@
         </service>
 
         <activity
-            android:name="com.pangu.neusoft.healthe.Drugstore_main_activity"
+            android:name="com.pangu.neusoft.drugstore.Drugstore_main_activity"
             android:label="@string/title_activity_drugstore_main_activity" >
         </activity>
     </application>

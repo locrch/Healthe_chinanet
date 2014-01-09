@@ -1,4 +1,7 @@
-package com.pangu.neusoft.healthe;
+package com.pangu.neusoft.drugstore;
+
+import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.R.layout;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -14,12 +17,6 @@ public class Drugstore_main_activity extends Activity
 		setContentView(R.layout.activity_drugstore_main_activity);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu)
-	{
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.drugstore_main_activity, menu);
-		return true;
-	}
+	
 
 }
