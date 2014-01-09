@@ -446,8 +446,7 @@ public class BookingMainActivity extends FatherActivity {
 					mProgressDialog.dismiss();
 				}
 
-				DoctorListAdapter adapter = new DoctorListAdapter(
-						BookingMainActivity.this, doctorList);
+				DoctorListAdapter adapter = new DoctorListAdapter(BookingMainActivity.this, doctorList);
 
 				doctorlistView.setAdapter(adapter);
 				doctorlistView.setClickable(true);
@@ -475,7 +474,9 @@ public class BookingMainActivity extends FatherActivity {
 
 					}
 				});
-				doctorlistView.getLayoutParams().height+=2000;
+				
+				//设置预约历史记录 医生列表高度
+				doctorlistView.getLayoutParams().height=(int)getResources().getDimension(R.dimen.booking_main_scroll_height);
 				 
 			}
 		}.execute();
@@ -720,11 +721,11 @@ public class BookingMainActivity extends FatherActivity {
 	}
 	
 	@Override
-	protected void onRestart()
+	protected void onStop()
 	{
 		// TODO Auto-generated method stub
-		super.onRestart();
-		Islogin();
+		super.onStop();
+		
 	}
 	@Override
 	protected void onResume()
@@ -732,6 +733,7 @@ public class BookingMainActivity extends FatherActivity {
 		// TODO Auto-generated method stub
 		super.onResume();
 		Islogin();
+		
 	}
 	
 	private void Islogin()

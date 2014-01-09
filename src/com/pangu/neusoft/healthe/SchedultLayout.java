@@ -159,7 +159,7 @@ public class SchedultLayout {
 	 										oneButton.setText(schedule.getTimeRange()+" 可预约数："+schedule.getAvailableNum());
 	 										oneButton.setTag(schedule);
 	 										oneButton.setBackgroundDrawable(layout.getResources().getDrawable(R.layout.schedule_btn_style_layout_click));
-	 										
+	 										//高度
 	 										oneButton.setTextSize(TypedValue.COMPLEX_UNIT_PX, oneButton.getResources().getDimension(R.dimen.button_textsize));
 	 										
 	 										LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -251,6 +251,7 @@ public class SchedultLayout {
 	 											}
 	 										});
 		 										scheduleDetailLayout.addView(oneButton);
+		 										
 		 									}
 		 								}
 	 								}

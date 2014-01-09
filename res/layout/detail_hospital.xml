@@ -106,6 +106,9 @@
                     android:layout_width="206dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
+                    android:ellipsize="end"  
+        			android:marqueeRepeatLimit="marquee_forever"  
+        			android:lines="6"
                     android:text="加载中...." />
 
 				</ScrollView>

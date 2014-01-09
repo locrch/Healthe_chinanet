@@ -517,6 +517,9 @@ public final class R {
  长数字的字体大小 
          */
         public static final int booking_main_edittext_height=0x7f06000f;
+        /**  版本信息卫生局logo上边距 
+         */
+        public static final int booking_main_scroll_height=0x7f060014;
         public static final int booking_main_search_btn_marginleft=0x7f06000b;
         public static final int booking_main_search_text_marginleft=0x7f06000a;
         public static final int button_textsize=0x7f060003;

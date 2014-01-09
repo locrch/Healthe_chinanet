@@ -293,12 +293,15 @@ public class ConnectListActivity extends FatherActivity {
 		if (doctorList.size()==1)
 		{
 			//如果医生列表只有一个数据，就自定义设置高度
-			doctorlistView.getLayoutParams().height=3000;
+			doctorlistView.getLayoutParams().height=(int)getResources().getDimension(R.dimen.booking_main_scroll_height);
 		}
 		
 		doctorlistView.setAdapter(adapter);
 		doctorlistView.setClickable(true);
 		doctorlistView.setFocusable(true);
+		
+		//doctorlistView.getLayoutParams().height=2000;
+		
 		/*doctorlistView.setOnItemClickListener(new OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3)

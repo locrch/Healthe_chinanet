@@ -3,6 +3,10 @@ package com.pangu.neusoft.healthe;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import com.pangu.neusoft.core.models.BookingInfos;
 
@@ -67,4 +71,27 @@ public class Setting {
 		}
 		return owner+type;
 	}
+	public static void setListViewBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();   
+        if (listAdapter == null) {
+        // pre-condition  
+            return;  
+        }  
+        int totalHeight = 0;  
+        int maxWidth = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {  
+            View listItem = listAdapter.getView(i, null, listView);  
+            if(listItem!=null){
+	            //listItem.measure(0, 0);  
+	            totalHeight += listItem.getMeasuredHeight();  
+	            int width = listItem.getMeasuredWidth();
+	            if(width>maxWidth)maxWidth = width;
+            }
+        }  
+   
+        ViewGroup.LayoutParams params = listView.getLayoutParams();  
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1)); 
+        params.width = maxWidth;
+        listView.setLayoutParams(params);  
+    }
 }
