@@ -99,7 +99,7 @@
                     android:background="@layout/tab2_each_press" />
 
                 <ImageButton
-                    android:id="@+id/tab2_tellphone"
+                    android:id="@+id/tab2_drugstore"
                     android:layout_width="@dimen/tab2_button_size"
                     android:layout_height="@dimen/tab2_button_size"
                     android:layout_alignParentRight="true"

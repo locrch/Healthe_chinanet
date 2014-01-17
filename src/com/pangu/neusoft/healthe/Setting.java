@@ -25,7 +25,7 @@ public class Setting {
 	public final static String DEFAULT_DOC_url="http://cdn-img.easyicon.net/png/122/12279.png";//默认图片
 	public final static String TEST_url="http://cdn-img.easyicon.net/png/120/12012.png";//测试图片
 	
-	public final static int countDownGetCaptcha=60;//获取验证码倒数时间
+	public final static int countDownGetCaptcha=180;//获取验证码倒数时间
 	
 	public static final String parcelableKey = "com.pangu.neusoft.healthe"; 
 	//public static final int schedule_show_num=6;//not use

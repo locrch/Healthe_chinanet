@@ -1,7 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-     >
+    android:layout_height="wrap_content" >
 
     <ScrollView
         android:id="@+id/booking_main_sv"
@@ -32,7 +31,6 @@
                 android:id="@+id/search_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                
                 android:layout_toRightOf="@+id/doctor_hospital1"
                 android:background="@drawable/search_edittext" >
 

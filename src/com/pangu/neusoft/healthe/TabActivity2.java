@@ -1,18 +1,21 @@
 package com.pangu.neusoft.healthe;
 
 
+import com.pangu.neusoft.drugstore.Drugstore_main_activity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class TabActivity2 extends Activity
 {
-	ImageButton tab2_booking,  tab2_healthfoler,tab2_tellphone,
+	ImageButton tab2_booking,  tab2_healthfoler,tab2_drugstore,
 			tab2_moneycheck, tab2_eachother, tab2_healthinfo;
 	
 	
@@ -39,7 +42,7 @@ public class TabActivity2 extends Activity
 		huoqu.setVisibility(8);
 		
 		tab2_booking = (ImageButton) findViewById(R.id.tab2_booking);
-		tab2_tellphone = (ImageButton) findViewById(R.id.tab2_tellphone);
+		tab2_drugstore = (ImageButton) findViewById(R.id.tab2_drugstore);
 		tab2_healthfoler = (ImageButton) findViewById(R.id.tab2_healthfoler);
 		tab2_moneycheck = (ImageButton) findViewById(R.id.tab2_moneycheck);
 		tab2_eachother = (ImageButton) findViewById(R.id.tab2_eachother);
@@ -86,39 +89,33 @@ public class TabActivity2 extends Activity
 			}
 		});
 
-		tab2_tellphone.setOnClickListener(new OnClickListener()
+		tab2_drugstore.setOnClickListener(new OnClickListener()
 		{
 			
 			@Override
 			public void onClick(View v)
 			{
 				// TODO Auto-generated method stub
-				/*final String[] args = new String[]
-				{ "12320", "114" };
-
-				new AlertDialog.Builder(TabActivity2.this).setTitle("电话表")
-						.setItems(args, new DialogInterface.OnClickListener()
-						{
-
-							@Override
-							public void onClick(DialogInterface dialog,
-									int which)
-							{
-								String phone = args[which];
-
-								Intent myIntentDial = new Intent(
-										Intent.ACTION_CALL, Uri.parse("tel:"
-												+ phone));
-
-								TabActivity2.this.startActivity(myIntentDial);
-
-							}
-						}).setNegativeButton("确定", null).show();*/
-				
 				Toast.makeText(getApplicationContext(), "该功能正在建设中，敬请期待", Toast.LENGTH_SHORT).show();
 			}
 		});
 		
+		//长按进入药房优惠
+		/*tab2_drugstore.setOnLongClickListener(new OnLongClickListener()
+		{
+			
+			@Override
+			public boolean onLongClick(View v)
+			{
+				// TODO Auto-generated method stub
+				if (v == tab2_drugstore)
+				{
+					startActivity(new Intent(TabActivity2.this,Drugstore_main_activity.class));
+				}
+				
+				return false;
+			}
+		});*/
 		
 	}
 

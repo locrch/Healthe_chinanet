@@ -1,5 +1,6 @@
 package com.pangu.neusoft.healthe;
 
+import com.pangu.neusoft.drugstore.ContentFragment;
 import com.pangu.neusoft.tools.DensityUtil;
 
 import android.os.Bundle;
@@ -22,6 +23,9 @@ public class SetTextSizeActivity extends FatherActivity
 	int height;
 	
 	Button text_size_big,text_size_normal,text_size_small;
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{

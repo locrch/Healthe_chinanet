@@ -121,7 +121,7 @@
                     android:id="@+id/booking_confirm_text5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="预约医院："
+                    android:text="预约医生："
                     android:textSize="@dimen/detail_content_textsize" />
 
                 <TextView

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/drugstore_menu_detail_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="简介"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        <TextView
+            android:id="@+id/drugstore_menu_otherstore_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="分店"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        <TextView
+            android:id="@+id/drugstore_menu_drugs_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="药品"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        
+    </LinearLayout>
+    
+</FrameLayout>

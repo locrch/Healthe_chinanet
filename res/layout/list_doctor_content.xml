@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="@dimen/list_padding_width"
-    android:paddingRight="@dimen/list_padding_width"
+    android:paddingLeft="@dimen/list_booking_padding_width"
+    android:paddingRight="@dimen/list_booking_padding_width"
     >
 
     <TextView

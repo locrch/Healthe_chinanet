@@ -2,11 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView1"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+     >
 
 <RelativeLayout 
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/activity_padding_width"
+    android:paddingRight="@dimen/activity_padding_width" >
 
     <TextView
         android:id="@+id/textView4"

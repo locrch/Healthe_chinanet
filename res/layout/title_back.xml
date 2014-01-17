@@ -19,8 +19,8 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
 	    android:layout_below="@+id/notice"
-	    android:paddingLeft="@dimen/list_padding_width"
-	    android:paddingRight="@dimen/list_padding_width" >
+	    android:paddingLeft="@dimen/activity_padding_width"
+	    android:paddingRight="@dimen/activity_padding_width" >
 
 	    <Button
 	    android:id="@+id/back_back"

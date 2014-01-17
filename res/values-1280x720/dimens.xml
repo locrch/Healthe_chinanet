@@ -2,8 +2,8 @@
 <resources>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">5dp</dimen>
+    <dimen name="activity_vertical_margin">5dp</dimen>
     <dimen name="margin_right">40dp</dimen>
 	<dimen name="button_textsize">18dp</dimen>
 	<dimen name="list_big_textsize">18dp</dimen>
@@ -11,9 +11,10 @@
 	<dimen name="title_textsize">30dp</dimen>
 	<dimen name="detail_content_textsize">14dp</dimen>
 	<dimen name="list_detailimg_margin">2dp</dimen>
-	<dimen name="list_padding_width">5dp</dimen>
+	<dimen name="activity_padding_width">10dp</dimen><!-- 输入页面左右padding -->
+	<dimen name="list_booking_padding_width">2dp</dimen><!-- 医院医生左右padding -->
 	<dimen name="booking_main_search_text_marginleft">24dp</dimen>
-	<dimen name="booking_main_search_btn_marginleft">180dp</dimen><!-- 预约挂号首页搜索按钮左边距 -->
+	<dimen name="booking_main_search_btn_marginleft">280dp</dimen><!-- 预约挂号首页搜索按钮左边距 -->
 	<dimen name="tab_button_width">300dp</dimen><!-- 个人中心按钮宽度 -->
 	<dimen name="tab_button_height">60dp</dimen><!-- 个人中心按钮高度 -->
 	<dimen name="tab_button_img_height">60dp</dimen><!-- tab按钮图片高度 -->

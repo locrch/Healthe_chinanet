@@ -66,7 +66,7 @@ public class SysApplication extends FrontiaApplication
 			System.exit(0);
 		}
 	}
-
+	
 	// 杀进程
 	public void onLowMemory()
 	{

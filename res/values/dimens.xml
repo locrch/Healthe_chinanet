@@ -11,7 +11,9 @@
 	<dimen name="title_textsize">30dp</dimen>
 	<dimen name="detail_content_textsize">14dp</dimen>
 	<dimen name="list_detailimg_margin">2dp</dimen>
-	<dimen name="list_padding_width">5dp</dimen>
+	<dimen name="activity_padding_width">10dp</dimen><!-- 输入页面左右padding -->
+	<dimen name="list_booking_padding_width">2dp</dimen><!-- 医院医生左右padding -->
+	
 	<dimen name="booking_main_search_text_marginleft">24dp</dimen>
 	<dimen name="booking_main_search_btn_marginleft">180dp</dimen><!-- 预约挂号首页搜索按钮左边距 -->
 	<dimen name="tab_button_width">250dp</dimen><!-- 个人中心按钮宽度 -->
@@ -23,4 +25,8 @@
 	<dimen name="tab2_button_size">85dp</dimen><!-- 智能健康6个功能按钮大小,高度宽度一致 -->
 	<dimen name="version_info_logo_margintop">73dp</dimen><!-- 版本信息卫生局logo上边距 -->
 	<dimen name="booking_main_scroll_height">380dp</dimen><!-- 预约挂号首页可滚动高度 -->
+	<dimen name="slidingmenu_shadowWidth">5dp</dimen>
+    <dimen name="slidingmenu_behindOffset">240dp</dimen>
+	<dimen name="slidingmenu_textsize">25dp</dimen>
+	
 </resources>

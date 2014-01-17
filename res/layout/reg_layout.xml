@@ -3,192 +3,243 @@
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-<RelativeLayout 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/reg_username"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="用  户  名" />
-
-    <EditText
-        android:id="@+id/reg_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textView3"
-        android:background="@layout/edittext_style"
-        android:digits="1234567890"
-        android:ems="10"
-        android:hint="请输入手机号码"
-        android:inputType="number"
-        android:paddingLeft="5dp"
-        android:layout_marginTop="10dp" >
-
-        <requestFocus android:layout_width="wrap_content" />
-    </EditText>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/reg_username"
-         android:layout_marginTop="23dp"
-        android:gravity="center"
-        android:text="验  证  码" />
-
-    <Button
-        android:id="@+id/get_ver"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ver_pass_text"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/ver_pass_text"
-        android:background="@layout/tab_btn_press"
-        android:text="@string/get_captcha" />
-    
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ver_pass_text"
-        android:layout_marginTop="23dp"
-        android:gravity="center"
-        android:text="密        码" />
-
-    <EditText
-        android:id="@+id/reg_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ver_pass_text"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/textView4"
-        android:background="@layout/edittext_style"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:paddingLeft="5dp" >
-
-    </EditText>
-
-    <TextView
-        android:id="@+id/infos_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/reg_password"
-        android:layout_marginTop="20dp"
-        android:text="确认密码" />
-
-    <EditText
-        android:id="@+id/reg_password_con"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/reg_password"
-        android:layout_alignTop="@+id/infos_text"
-        android:background="@layout/edittext_style"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:paddingLeft="5dp" />
-
-    <EditText
-        android:id="@+id/card_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/reg_password_con"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/reg_password_con"
-        android:layout_marginTop="20dp"
-        android:background="@layout/edittext_style"
-        android:ems="10"
-        android:hint="请输入18位身份证号码"
-        android:paddingLeft="5dp" />
-
-    <TextView
-        android:id="@+id/seria_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/card_num"
-        android:layout_alignBottom="@+id/card_num"
-        android:layout_alignParentLeft="true"
-        android:text="身份证号" />
-
-    <Button
-        android:id="@+id/reg_reg_btn"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/reg_sex"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:background="@layout/tab_btn_press"
-        android:text="注册" />
-
-    <EditText
-        android:id="@+id/reg_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/card_num"
-        android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/seria_num"
-        android:background="@layout/edittext_style"
-        android:ems="10"
-        android:hint="请输入完整姓名"
-        android:paddingLeft="5dp" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/reg_name"
-        android:layout_alignBottom="@+id/reg_name"
-        android:layout_alignParentLeft="true"
-        android:text="姓        名" />
-
-    <Spinner
-        android:id="@+id/reg_sex"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/reg_name"
-        android:layout_marginTop="16dp"
-        android:layout_toRightOf="@+id/seria_num"
-        android:background="@layout/edittext_style"
-        android:entries="@array/sex"
-        android:paddingLeft="5dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_padding_width"
+        android:paddingRight="@dimen/activity_padding_width" >
 
-    <EditText
-        android:id="@+id/ver_pass_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/reg_username"
-        android:layout_alignTop="@+id/textView1"
-        android:layout_toLeftOf="@+id/get_ver"
-        android:background="@layout/edittext_style"
-        android:digits="1234567890"
-        android:ems="10"
-        android:hint="请输入验证码"
-        android:inputType="number"
-        android:paddingLeft="5dp" />
+        <RelativeLayout
+            android:id="@+id/reg_username_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/reg_reg_btn"
-        android:layout_alignTop="@+id/reg_sex"
-        android:layout_toLeftOf="@+id/reg_sex"
-        android:text="性        别"
-        android:gravity="center" />
-	
-</RelativeLayout>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/reg_username"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="用  户  名" />
+
+            <EditText
+                android:id="@+id/reg_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/textView3"
+                android:background="@layout/edittext_style"
+                android:digits="1234567890"
+                android:ems="10"
+                android:hint="请输入手机号码"
+                android:inputType="number"
+                android:paddingLeft="5dp" >
+
+                <requestFocus android:layout_width="wrap_content" />
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reg_ver_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/reg_username_lay"
+            android:layout_marginBottom="15dp" >
+
+            <EditText
+                android:id="@+id/ver_pass_text"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/get_ver"
+                android:layout_toRightOf="@+id/textView1"
+                android:layout_weight="1"
+                android:background="@layout/edittext_style"
+                android:digits="1234567890"
+                android:ems="10"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:paddingLeft="5dp" />
+
+            <Button
+                android:id="@+id/get_ver"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ver_pass_text"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:background="@layout/tab_btn_press"
+                android:text="@string/get_captcha" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/ver_pass_text"
+                android:layout_alignBottom="@+id/ver_pass_text"
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="验  证  码" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reg_password_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reg_username_lay"
+            android:layout_marginBottom="15dp" >
+
+            <EditText
+                android:id="@+id/reg_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView4"
+                android:background="@layout/edittext_style"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/reg_password"
+                android:layout_alignBottom="@+id/reg_password"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:text="密        码" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reg_password_con_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp" >
+
+            <EditText
+                android:id="@+id/reg_password_con"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/infos_text"
+                android:background="@layout/edittext_style"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:id="@+id/infos_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="确认密码" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reg_card_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp" >
+
+            <EditText
+                android:id="@+id/card_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/seria_num"
+                android:background="@layout/edittext_style"
+                android:ems="10"
+                android:hint="请输入18位身份证号码"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:id="@+id/seria_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/card_num"
+                android:layout_alignBottom="@+id/card_num"
+                android:layout_alignParentLeft="true"
+                android:text="身份证号" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reg_name_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp" >
+
+            <EditText
+                android:id="@+id/reg_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView5"
+                android:background="@layout/edittext_style"
+                android:ems="10"
+                android:hint="请输入完整姓名"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/reg_name"
+                android:layout_alignBottom="@+id/reg_name"
+                android:layout_alignParentLeft="true"
+                android:text="姓        名" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reg_sex_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp" >
+
+            <Spinner
+                android:id="@+id/reg_sex"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView2"
+                android:background="@layout/edittext_style"
+                android:entries="@array/sex"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="性        别" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/reg_reg_btn"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@layout/tab_btn_press"
+                android:text="注册" />
+        </RelativeLayout>
+    </LinearLayout>
+
 </ScrollView>

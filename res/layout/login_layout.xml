@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_padding_width"
+    android:paddingRight="@dimen/activity_padding_width" >
 
     <TextView
         android:id="@+id/infos_text"
@@ -30,19 +32,6 @@
         <requestFocus />
         </EditText>
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/seria_num"
-        android:layout_toRightOf="@+id/infos_text"
-        android:background="@layout/edittext_style"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:paddingLeft="5dp" >
-        
-    </EditText>
-
     <CheckBox
         android:id="@+id/member_CheckBox"
         android:layout_width="wrap_content"
@@ -52,16 +41,6 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="29dp"
         android:text="记住密码" />
-
-    <TextView
-        android:id="@+id/seria_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/infos_text"
-        android:layout_marginTop="37dp"
-        android:gravity="center"
-        android:text="密码：" />
 
     <Button
         android:id="@+id/login_btn"
@@ -106,5 +85,27 @@
         android:text="忘记密码了？"
         android:textColor="@color/red"
         android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/seria_num"
+        android:layout_alignBottom="@+id/seria_num"
+        android:layout_toRightOf="@+id/infos_text"
+        android:background="@layout/edittext_style"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingLeft="5dp" />
+
+    <TextView
+        android:id="@+id/seria_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/infos_text"
+        android:layout_below="@+id/infos_text"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="    密码：" />
 
 </RelativeLayout>
