@@ -12,6 +12,7 @@ import org.xmlpull.v1.XmlPullParser;
 
 
 import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.healthe.Setting;
 
 
 
@@ -174,25 +175,33 @@ public class UpdateOperation {
 	 *  4.对话框show()出来   
 	 */  
 	protected void showUpdataDialog() {  
-	    AlertDialog.Builder builer = new Builder(activity) ;   
-	    builer.setTitle("版本升级");  
-	    builer.setMessage(info.getDescription());  
-	    //当点确定按钮时从服务器上下载 新的apk 然后安装   
-	    builer.setPositiveButton("确定", new OnClickListener() {  
-	    public void onClick(DialogInterface dialog, int which) {  
-	            Log.i(TAG,"下载apk,更新");  
-	            downLoadApk();  
-	        }     
-	    });  
-	    //当点取消按钮时进行登录  
-	    builer.setNegativeButton("取消", new OnClickListener() {  
-	        public void onClick(DialogInterface dialog, int which) {  
-	            
-	        }  
-	    });  
-	    
-	    AlertDialog dialog = builer.create();  
-	    dialog.show();  
+		if(Setting.showupdate){
+		    AlertDialog.Builder builer = new Builder(activity) ;   
+		    builer.setTitle("版本升级");  
+		    builer.setMessage(info.getDescription());  
+		    //当点确定按钮时从服务器上下载 新的apk 然后安装   
+		    builer.setPositiveButton("确定", new OnClickListener() {  
+		        public void onClick(DialogInterface dialog, int which) {  
+		            Log.i(TAG,"下载apk,更新");  
+		            downLoadApk();  
+		        }     
+		    });  
+		    
+		    builer.setNeutralButton("不再提示",new OnClickListener() {  
+	            public void onClick(DialogInterface dialog, int whichButton) {  
+	            	Setting.showupdate=false;
+	            }  
+	        });  
+		    //当点取消按钮时进行登录  
+		    builer.setNegativeButton("取消", new OnClickListener() {  
+		        public void onClick(DialogInterface dialog, int which) {  
+		            
+		        }  
+		    });  
+		    
+		    AlertDialog dialog = builer.create();  
+		    dialog.show();  
+		}
 	}  
 	  
 	/* 

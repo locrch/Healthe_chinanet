@@ -2,11 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ShowHistoryActivity" >
+    android:paddingLeft="@dimen/history_cotent_padding"
+    android:paddingRight="@dimen/history_cotent_padding"
+    tools:context=".ShowHistoryActivity"
+    android:background="#FFFFFF" >
 
     <EditText
         android:id="@+id/user_card_text"

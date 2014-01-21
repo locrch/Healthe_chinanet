@@ -14,6 +14,7 @@ import android.graphics.Color;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -126,7 +127,14 @@ public class SchedultLayout {
 	 							@SuppressLint("NewApi")
 								@Override
 	 							public void onClick(View arg0) {
-	 								 LinearLayout scheduleDetailLayout=newButtonInfo.getScheduleDetailLayout();
+	 								/*int this_height = 0;
+ 									this_height = Setting.bookingmain_scroll_height=+600;
+ 									BookingMainActivity.doctorlistView.getLayoutParams().height = Setting.Dp2Px(activity, this_height) ; */
+	 							    
+	 								 
+ 									
+ 									
+ 									LinearLayout scheduleDetailLayout=newButtonInfo.getScheduleDetailLayout();
 	 								 scheduleDetailLayout.removeAllViews();
 	 								 for(LinearLayout layout:alllayout){
 	 									layout.setBackgroundDrawable(layout.getResources().getDrawable(R.layout.schedule_btn_style_layout));
@@ -135,7 +143,12 @@ public class SchedultLayout {
 	 								  if(arg0.equals(nowButton)&&showing==true){
 	 									 nowButton=arg0;
 	 									  showing=false;
+	 									 
+										
 	 								  }else{
+	 									
+	 									 
+	 									  
 	 								 nowButton=arg0;
 	 								showing=true;
 	 								layout.setBackgroundDrawable(layout.getResources().getDrawable(R.layout.schedule_btn_style_layout_click));
@@ -165,6 +178,7 @@ public class SchedultLayout {
 	 										LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 	 										lp.setMargins(0, 3, 3, 0);
 	 										oneButton.setLayoutParams(lp);
+	 										
 	 										
 	 										
 	 										oneButton.setOnClickListener(new OnClickListener(){
@@ -248,6 +262,7 @@ public class SchedultLayout {
 	 														activity.startActivity(new Intent(activity,ListCardActivity.class));
 		 												}
 	 												}
+	 												 
 	 											}
 	 										});
 		 										scheduleDetailLayout.addView(oneButton);

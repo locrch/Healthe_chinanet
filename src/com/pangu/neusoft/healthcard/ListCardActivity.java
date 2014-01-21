@@ -137,20 +137,21 @@ public class ListCardActivity extends FatherActivity {
 
 	
 	OnClickListener addcard=new OnClickListener(){
-
 		@Override
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
 			addCard();
-		}
-		
+		}		
 	};
 	
 	public void addCard(){
-		 if(arr.size()<5)
+		 if(arr.size()<5){
 			 startActivity(new Intent(ListCardActivity.this,CreateCardActivity.class));
-		 else
+			 finish();
+		 }
+		 else{
 			 Toast.makeText(ListCardActivity.this,"最多添加5张健康卡！",Toast.LENGTH_SHORT).show();
+		 }
 	}
 	
 	OnClickListener card_booking=new OnClickListener(){
@@ -366,7 +367,7 @@ public class ListCardActivity extends FatherActivity {
 	public void setListViewHeightBasedOnChildren(ListView listView) {
 		ListAdapter listAdapter = listView.getAdapter();
 		//item的高度
-		int itemHeight = 46;
+		int itemHeight = 50;
 
 		if (listAdapter == null) {
 		    return;
@@ -513,26 +514,28 @@ public class ListCardActivity extends FatherActivity {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						dialog.dismiss();
-						int totalcards=sp.getInt("total_cards", 0);
-						for(int i=0;i<totalcards;i++){
-							if (sp.getString("card"+i+"_"+"cardnum", "").equals(card.getMedicalCardCode())){
-								editor.remove("card"+i+"_"+"owner");
-								editor.remove("card"+i+"_"+"cardnum");
-								editor.remove("card"+i+"_"+"cardtype");
-								editor.remove("card"+i+"_"+"idnumber");
-								editor.remove("card"+i+"_"+"idtype");
-								editor.remove("card"+i+"_"+"phonenumber");
-								if(sp.getString("defaultcardno", "0").equals(""+i)){
-									editor.remove("defaultcardno");
-								}								
-								editor.putString("total_cards",(totalcards-1)+"");
-							}
+						try{
+							int totalcards=sp.getInt("total_cards", 0);
+							for(int i=0;i<totalcards;i++){
+								if (sp.getString("card"+i+"_"+"cardnum", "").equals(card.getMedicalCardCode())){
+									editor.remove("card"+i+"_"+"owner");
+									editor.remove("card"+i+"_"+"cardnum");
+									editor.remove("card"+i+"_"+"cardtype");
+									editor.remove("card"+i+"_"+"idnumber");
+									editor.remove("card"+i+"_"+"idtype");
+									editor.remove("card"+i+"_"+"phonenumber");
+									if(sp.getString("defaultcardno", "0").equals(""+i)){
+										editor.remove("defaultcardno");
+									}								
+									editor.putString("total_cards",(totalcards-1)+"");
+								}
+								
+							}						
+							editor.commit();							
+							deleteCard(num,type);	
+						}catch(Exception ex){
 							
-						}						
-						
-						editor.commit();
-						
-						deleteCard(num,type);						
+						}
 					}
 				});
 

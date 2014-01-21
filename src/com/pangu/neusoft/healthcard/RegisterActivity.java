@@ -105,10 +105,18 @@ public class RegisterActivity extends FatherActivity {
 		public void onClick(View arg0) {
 			final String phone=username.getText().toString();
 			if(phone!=null||!phone.equals("")){
-				SendCaptcha sendAction=new SendCaptcha(phone,mProgressDialog,service,RegisterActivity.this,get_ver_btn);
-				sendAction.sendData();
+				if(!StringMethods.isMobileNO(username.getText().toString())||username.getText().length()!=11){
+					String msg="用户名必须为11位手机号码";
+					username.setText("");
+					username.setHint(msg);
+					username.setHintTextColor(Color.RED);
+					Toast.makeText(RegisterActivity.this, msg, Toast.LENGTH_SHORT).show();
+				}else{
+					SendCaptcha sendAction=new SendCaptcha(phone,mProgressDialog,service,RegisterActivity.this,get_ver_btn);
+					sendAction.sendData();
+				}
 			}else{
-				Toast.makeText(RegisterActivity.this, "请先输入用户名(手机号)", Toast.LENGTH_SHORT);
+				Toast.makeText(RegisterActivity.this, "请先输入用户名(手机号)", Toast.LENGTH_SHORT).show();
 			}
 		}
 	};

@@ -1,12 +1,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView1"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         android:orientation="vertical"
         android:paddingLeft="@dimen/activity_padding_width"
         android:paddingRight="@dimen/activity_padding_width"
@@ -177,7 +177,7 @@
                     android:layout_alignParentTop="true"
                     android:ellipsize="end"  
         			android:marqueeRepeatLimit="marquee_forever"  
-        			android:lines="6"
+        			android:lines="5"
                     android:layout_marginLeft="22dp"
                     android:layout_toRightOf="@+id/doctor_detail_intro_label"
                     android:layout_weight="6.66"

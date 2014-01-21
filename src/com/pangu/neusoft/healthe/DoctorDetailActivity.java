@@ -40,18 +40,23 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
+import android.support.v4.app.DialogFragment;
 import android.text.TextUtils.TruncateAt;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -59,6 +64,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 @SuppressLint("SimpleDateFormat")
 public class DoctorDetailActivity extends FatherActivity
@@ -133,8 +139,33 @@ public class DoctorDetailActivity extends FatherActivity
 		// pic.getLayoutParams().height=height/3;
 
 		// booking_btn.setOnClickListener(booking);
+		
+		
 		getDataFromInternet();
 	}
+	
+	
+	
+	public void checkConnected(){
+		ConnectDoctor conndoctor = new ConnectDoctor();
+		conndoctor.setHospitalid(sp.getString("hospitalId", ""));
+		conndoctor.setHospitalname(sp.getString("hospitalName", ""));
+		conndoctor.setDepartmentid(sp.getString("departmentId", ""));
+		conndoctor.setDepartmentname(sp.getString("departmentName", ""));
+		conndoctor.setDoctorid(doctor.getDoctorId());
+		conndoctor.setDoctorname(doctor.getDoctorName());
+		conndoctor.setImageUrl(doctor.getPictureUrl());
+		conndoctor.setLevel(doctor.getTitle());
+		DBManager mgr = new DBManager(DoctorDetailActivity.this);
+		if (mgr.connected(conndoctor,sp.getString("username", ""))){
+			connect.setText("已收藏");
+		}
+		else{
+			connect.setText("收藏");		
+		}
+		mgr.closeDB();
+	}
+	
 	@Override
 	protected void onStart()
 	{
@@ -291,6 +322,17 @@ public class DoctorDetailActivity extends FatherActivity
 					doctorlevelText.setText("(" + doctor.getSex() + ")  "
 							+ doctor.getTitle());
 					doctorInfoText.setText(doctor.getInfo());
+					doctorInfoText.setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View v) {
+							// TODO Auto-generated method stub
+							if (doctor.getInfo()!="") {
+								Toast.makeText(getApplicationContext(), doctor.getInfo(), Toast.LENGTH_LONG).show();
+							}
+							
+						}
+					});
 					// pic.setText(doctor.getHospitalId());
 					// GetSchedule sch=new GetSchedule();
 					// View
@@ -335,7 +377,7 @@ public class DoctorDetailActivity extends FatherActivity
 							doctor.getScheduleList(), scheduledetail,
 							scheduledays, doctor_detail_grade);
 					schedule.getView();
-
+					checkConnected();
 				}
 			}
 
@@ -365,10 +407,14 @@ public class DoctorDetailActivity extends FatherActivity
 			conndoctor.setImageUrl(doctor.getPictureUrl());
 			conndoctor.setLevel(doctor.getTitle());
 			DBManager mgr = new DBManager(DoctorDetailActivity.this);
-			if (mgr.addDoctor(conndoctor))
+			if (mgr.addDoctor(conndoctor,sp.getString("username", ""))){
+				connect.setText("已收藏");
 				DialogShow.showDialog(DoctorDetailActivity.this, "收藏成功！");
-			else
-				DialogShow.showDialog(DoctorDetailActivity.this, "已经收藏该医生！");
+			}
+			else{
+				connect.setText("收藏");
+				DialogShow.showDialog(DoctorDetailActivity.this, "取消收藏！");
+			}
 			mgr.closeDB();
 		}
 

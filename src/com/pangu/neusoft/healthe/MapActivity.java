@@ -48,7 +48,7 @@ import com.pangu.neusoft.healthe.R.layout;
 import com.pangu.neusoft.healthe.R.menu;
 
 
-public class MapActivity extends Activity {
+public class MapActivity extends FatherActivity {
 	public static final String TAG = "BaiduMapGeocodeActivity";
 	BMapManager mBMapMan = null;  
 	MapView mMapView = null;
@@ -67,7 +67,7 @@ public class MapActivity extends Activity {
         mBMapMan.init(Setting.mapkey, null);    
         //注意：请在试用setContentView前初始化BMapManager对象，否则会报错  
         setContentView(R.layout.activity_map); 
-        
+        setactivitytitle("地图");
         Intent intent = getIntent();
         address=intent.getStringExtra("address");
         String latitude=intent.getStringExtra("latitude");

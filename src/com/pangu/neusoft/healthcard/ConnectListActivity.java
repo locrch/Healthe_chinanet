@@ -91,7 +91,7 @@ public class ConnectListActivity extends FatherActivity {
 		
 		
 		DBManager mgr=new DBManager(ConnectListActivity.this);
-		doctors=mgr.queryConnectDoctors();
+		doctors=mgr.queryConnectDoctors(sp.getString("username", ""));
 		mgr.closeDB();
 		
 		

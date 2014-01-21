@@ -607,13 +607,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int yellow=0x7f060003;
     }
     public static final class dimen {
-        public static final int activity=0x7f070019;
+        public static final int activity=0x7f07001f;
         /**  Default screen margins, per the Android Design guidelines. 
  Default screen margins, per the Android Design guidelines. 
- Default screen margins, per the Android Design guidelines. 
- Default screen margins, per the Android Design guidelines. 
- Default screen margins, per the Android Design guidelines. 
- 800x480 
  Default screen margins, per the Android Design guidelines. 
  Default screen margins, per the Android Design guidelines. 
          */
@@ -623,6 +619,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  预约挂号界面选择医院科室医生高度 
  预约挂号界面选择医院科室医生高度 
  预约挂号界面选择医院科室医生高度 
+ 预约挂号界面选择医院科室医生高度 
+ 预约挂号界面选择医院科室医生高度 
+ 预约挂号界面选择医院科室医生高度 
          */
         public static final int booking_confirm_content_paddingwidth=0x7f070011;
         /**  长数字的字体大小 
@@ -630,9 +629,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  个人中心按钮高度 
  长数字的字体大小 
  长数字的字体大小 
+ 长数字的字体大小 
+ 长数字的字体大小 
+ 长数字的字体大小 
          */
         public static final int booking_main_edittext_height=0x7f070010;
         /**  版本信息卫生局logo上边距 
+ 预约挂号首页搜索按钮左边距 
+ 版本信息卫生局logo上边距 
+ 版本信息卫生局logo上边距 
+ 版本信息卫生局logo上边距 
  版本信息卫生局logo上边距 
          */
         public static final int booking_main_scroll_height=0x7f070015;
@@ -643,14 +649,26 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  输入页面左右padding 
  输入页面左右padding 
  医院医生左右padding 
+ 医院医生左右padding 
+ 医院医生左右padding 
+ 医院医生左右padding 
  输入页面左右padding 
  输入页面左右padding 
          */
         public static final int booking_main_search_text_marginleft=0x7f07000b;
         public static final int button_textsize=0x7f070003;
         public static final int detail_content_textsize=0x7f070007;
+        /**  tab按钮图片高度 
+ 智能健康6个功能按钮大小,高度宽度一致 
+ 版本信息卫生局logo上边距 
+         */
+        public static final int detail_hospital_hospital_detail_intro_width=0x7f07001e;
+        public static final int history_cotent_padding=0x7f07001c;
         public static final int list_big_textsize=0x7f070004;
         /**  输入页面左右padding 
+ 输入页面左右padding 
+ 输入页面左右padding 
+ 输入页面左右padding 
  输入页面左右padding 
  输入页面左右padding 
  输入页面左右padding 
@@ -661,11 +679,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  个人中心按钮高度 
  个人中心按钮高度 
  个人中心按钮高度 
+ 个人中心按钮高度 
+ 个人中心按钮高度 
+ 个人中心按钮高度 
          */
         public static final int long_number_size=0x7f07000f;
         public static final int margin_right=0x7f070002;
         public static final int slidingmenu_behindOffset=0x7f070017;
         /**  预约挂号首页可滚动高度 
+ 预约挂号首页可滚动高度 
+ 预约挂号首页可滚动高度 
+ 预约挂号首页可滚动高度 
  预约挂号首页可滚动高度 
          */
         public static final int slidingmenu_shadowWidth=0x7f070016;
@@ -674,9 +698,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  tab按钮图片高度 
  tab按钮图片高度 
  tab按钮图片高度 
+ tab按钮图片高度 
+ tab按钮图片高度 
+ tab按钮图片高度 
          */
         public static final int tab2_button_size=0x7f070013;
+        /**  预约挂号首页可滚动高度 
+         */
+        public static final int tab2_icon_marginleftright=0x7f070019;
+        public static final int tab2_icon_tablelayout_margintop=0x7f07001b;
+        public static final int tab2_title_margintop=0x7f07001a;
+        public static final int tab_bg_height=0x7f07001d;
         /**  个人中心按钮宽度 
+ 个人中心按钮宽度 
+ 个人中心按钮宽度 
+ 个人中心按钮宽度 
  个人中心按钮宽度 
  个人中心按钮宽度 
  个人中心按钮宽度 
@@ -691,11 +727,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  预约挂号界面选择医院科室医生高度 
  预约确认内容左右内边距 
  预约确认内容左右内边距 
+ 预约确认内容左右内边距 
+ 预约确认内容左右内边距 
+ 预约确认内容左右内边距 
  个人中心按钮高度 
          */
         public static final int tab_button_img_height=0x7f070012;
         /**  预约挂号首页搜索按钮左边距 
  预约挂号首页搜索按钮左边距 
+ 预约挂号首页搜索按钮左边距 
+ 预约挂号首页搜索按钮左边距 
+ 预约挂号首页可滚动高度 
  预约挂号首页搜索按钮左边距 
  预约挂号首页搜索按钮左边距 
  预约挂号首页搜索按钮左边距 
@@ -707,6 +749,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_textsize=0x7f070006;
         /**  智能健康6个功能按钮大小,高度宽度一致 
  预约挂号界面选择医院科室医生高度 
+ 智能健康6个功能按钮大小,高度宽度一致 
+ 智能健康6个功能按钮大小,高度宽度一致 
+ 智能健康6个功能按钮大小,高度宽度一致 
  智能健康6个功能按钮大小,高度宽度一致 
  智能健康6个功能按钮大小,高度宽度一致 
          */
@@ -1134,6 +1179,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tab2_eachother=0x7f05017c;
         public static final int tab2_healthfoler=0x7f05017a;
         public static final int tab2_healthinfo=0x7f05017d;
+        public static final int tab2_icon_tablelayout=0x7f050182;
         public static final int tab2_moneycheck=0x7f05017b;
         public static final int tab3_bookinghist=0x7f05016c;
         public static final int tab3_cleanDB=0x7f050174;
@@ -1142,7 +1188,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tab3_settextsize=0x7f050175;
         public static final int tab3_showhist=0x7f050173;
         public static final int tab3_welcome_text=0x7f050170;
-        public static final int tableLayout1=0x7f050182;
         public static final int tableRow1=0x7f050036;
         public static final int tableRow2=0x7f050039;
         public static final int tableRow3=0x7f05003c;

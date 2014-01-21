@@ -1,6 +1,6 @@
+<!-- 800x480 -->
 <resources>
-	<!-- 800x480 -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="margin_right">40dp</dimen>
 	<dimen name="button_textsize">18dp</dimen>
@@ -21,8 +21,10 @@
 	<dimen name="tab_button_img_height">50dp</dimen><!-- tab按钮图片高度 -->
 	<dimen name="tab2_button_size">85dp</dimen><!-- 智能健康6个功能按钮大小,高度宽度一致 -->
 	<dimen name="version_info_logo_margintop">73dp</dimen><!-- 版本信息卫生局logo上边距 -->
-	<dimen name="booking_main_scroll_height">400dp</dimen><!-- 预约挂号首页可滚动高度 -->
+	<dimen name="booking_main_scroll_height">590dp</dimen><!-- 预约挂号首页可滚动高度 -->
 	<dimen name="slidingmenu_shadowWidth">5dp</dimen>
     <dimen name="slidingmenu_behindOffset">240dp</dimen>
 	<dimen name="slidingmenu_textsize">25dp</dimen>
+	<dimen name="detail_hospital_hospital_detail_intro_width">192dp</dimen>
+	<dimen name="tab_bg_height">368dp</dimen>
 </resources>

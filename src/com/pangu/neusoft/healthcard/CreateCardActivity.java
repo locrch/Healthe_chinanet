@@ -22,10 +22,11 @@ public class CreateCardActivity extends FatherActivity {
 
 	SharedPreferences sp;
 	Editor editor;
-	
+	static boolean  open=false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		open=true;
 		setContentView(R.layout.create_card_layout);
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
@@ -42,11 +43,12 @@ public class CreateCardActivity extends FatherActivity {
 		    
 		    public void onPageFinished(WebView view, String url) { 
 		    	 super.onPageFinished(view, url); 
-		    	if(!url.contains("219.130.221.120")){
-		    		 Intent intent=new Intent();
+		    	if(!url.contains("219.130.221.120")&&open){
+		    		 Intent intent=getIntent();
 		    		 intent.setClass(CreateCardActivity.this, ListCardActivity.class);
 		    		 startActivity(intent);
 		    		 finish();
+		    		 open=false;
 		    	}
             } 
 		});

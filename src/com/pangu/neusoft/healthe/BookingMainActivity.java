@@ -95,7 +95,7 @@ public class BookingMainActivity extends FatherActivity {
 	private SharedPreferences sp;
 	private Editor editor;
 	List<DoctorList> doctorList;
-	ListView doctorlistView;
+	static ListView doctorlistView;
 	private String areaId;
 	private String areaName;
 	private String hospitalId;
@@ -214,8 +214,9 @@ public class BookingMainActivity extends FatherActivity {
 
 		
 		message = (TextView) findViewById(R.id.messages);
-		message.setText("1.每月爽约次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"2.每周累计主动取消次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"3.同一健康卡在同一就诊日、同一医院、同一医生只能预约1次。"+"\n"+"\n"+"4.同一健康卡在同一就诊日、同一医院只能预约2次。"+"\n"+"\n"+"5.同一健康卡每月预约不能超过6次（医院临时停改诊除外）。");
-		message.setTextColor(R.color.black_overlay);
+		message.setText("1.累计爽约超过3次，将被列入黑名单，限制挂号2个自然月。"+"\n"+"\n"+"2.每周累计主动取消次数超过3次，将被限制挂号2个自然月。"+"\n"+"\n"+"3.同一健康卡在同一就诊日、同一医院只能预约同一医生1次。"+"\n"+"\n"+"4.同一健康卡在同一就诊日、同一医院只能预约2次。");
+		message.setTextColor(R.color.black);
+		message.setTextSize(15);
 		selecttext.clearFocus();
 		welcome.setFocusable(true);
 		welcome.setFocusableInTouchMode(true);
@@ -471,13 +472,14 @@ public class BookingMainActivity extends FatherActivity {
 						editor.commit();
 						// startActivity(new Intent (DoctorListActivity.this,
 						// ScheduleListActivity.class));
-
+						
+						
 					}
 				});
 				
 				//设置预约历史记录 医生列表高度
 				doctorlistView.getLayoutParams().height=(int)getResources().getDimension(R.dimen.booking_main_scroll_height);
-				 
+				Setting.bookingmain_scroll_height =Setting.Px2Dp(getApplicationContext(), doctorlistView.getHeight());
 			}
 		}.execute();
 	}

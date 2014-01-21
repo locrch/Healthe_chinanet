@@ -373,11 +373,25 @@ public class DBManager {
 	        db.update("history", cv, " cancleid = ?", new String[]{cancleid});  
 	    }  
 	    
+	    
+	    public boolean connected(ConnectDoctor doctorinfo,String username){
+	    	if(!db.isOpen()){
+	    		 db = dbconn.getWritableDatabase(); 
+	    	}
+	    	String sql="SELECT * FROM doctor where hospitalid=? and departmentid=? and doctorid=? and username=?";
+	    	Cursor c = db.rawQuery(sql, new String[]{doctorinfo.getHospitalid(),doctorinfo.getDepartmentid(),doctorinfo.getDoctorid(),username});
+	    	int s=c.getCount();
+	    	if(s>0)
+	    		return true;
+	    	else
+	    		return false;
+	    }
+	    
 	    /** 
 	     * add doctor 
 	     * @param card 
 	     */  
-	    public boolean addDoctor(ConnectDoctor doctorinfo) {  
+	    public boolean addDoctor(ConnectDoctor doctorinfo,String username) {  
 	    	if(!db.isOpen()){
 	    		 db = dbconn.getWritableDatabase(); 
 	    	}
@@ -385,15 +399,18 @@ public class DBManager {
 	    	 * hospitalid varchar(45),hospitalname varchar(45)," +
 				"departmentid varchar(45),departmentname varchar(45),doctorid varchar(45),doctorname varchar(45),url varchar(1000)
 	    	*/
-	    	String sql="SELECT * FROM doctor where hospitalid=? and departmentid=? and doctorid=?";
-	    	Cursor c = db.rawQuery(sql, new String[]{doctorinfo.getHospitalid(),doctorinfo.getDepartmentid(),doctorinfo.getDoctorid()});
+	    	String sql="SELECT * FROM doctor where hospitalid=? and departmentid=? and doctorid=? and username=?";
+	    	Cursor c = db.rawQuery(sql, new String[]{doctorinfo.getHospitalid(),doctorinfo.getDepartmentid(),doctorinfo.getDoctorid(),username});
 	    	int s=c.getCount();
 	    	if(s>0){
+	    		String sql_doctor="delete from doctor where hospitalid=? and departmentid=? and doctorid=? and username=?";
+	    		db.execSQL(sql_doctor, new String[]{doctorinfo.getHospitalid(),doctorinfo.getDepartmentid(),doctorinfo.getDoctorid(),username});
 	    		return false;
 	    	}else{
 		        db.beginTransaction();  //开始事务  
 		        try {  
-		            db.execSQL("INSERT INTO doctor VALUES(?,?,?,?,?,?,?,?,?)", new Object[]{
+		            db.execSQL("INSERT INTO doctor VALUES(?,?,?,?,?,?,?,?,?,?)", new Object[]{
+		            		username,
 		            		doctorinfo.getHospitalid(),
 		            		doctorinfo.getHospitalname(),
 		            		doctorinfo.getDepartmentid(),
@@ -414,12 +431,12 @@ public class DBManager {
 	    	}
 	    }  
 	    
-	    public List<ConnectDoctor> queryConnectDoctors() {  
+	    public List<ConnectDoctor> queryConnectDoctors(String username) {  
 	    	if(!db.isOpen()){
 	    		 db = dbconn.getWritableDatabase(); 
 	    	}
 	        ArrayList<ConnectDoctor> doctors = new ArrayList<ConnectDoctor>();  
-	        Cursor c = queryAllDoctor();  
+	        Cursor c = queryAllDoctor(username);  
 	        c.moveToFirst();
 	        c.moveToPrevious();
 	        while (c.moveToNext()) {  
@@ -440,12 +457,14 @@ public class DBManager {
 	        return doctors;  
 	    } 
 	    
-	    public Cursor queryAllDoctor() {
+	    public Cursor queryAllDoctor(String username) {
 	    	if(!db.isOpen()){
 	    		 db = dbconn.getWritableDatabase(); 
 	    	}
-	    	String sql="SELECT * FROM doctor";
-	        Cursor c = db.rawQuery(sql,null);  
+	    	String sql="SELECT * FROM doctor where username=?";
+	    	
+	    	Cursor c = db.rawQuery(sql, new String[]{username});
+	        
 	        return c;  
 	    }  
 }

@@ -83,10 +83,11 @@ public class ChangePassActivity extends FatherActivity{
 			userphone_text.setHintTextColor(Color.RED);
 			return msg;
 		}		
-		if(ver_pass_text.getText().toString().equals("")){
+
+		if(new_pass_text.getText().toString().equals("")){
 			msg+="密码不能为空\n";
-			ver_pass_text.setHint(msg);
-			ver_pass_text.setHintTextColor(Color.RED);
+			new_pass_text.setHint(msg);
+			new_pass_text.setHintTextColor(Color.RED);
 			return msg;
 		}
 		if(!StringMethods.isMobileNO(userphone_text.getText().toString())||userphone_text.getText().length()!=11){

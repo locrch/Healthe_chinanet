@@ -181,7 +181,8 @@ public class FristActivity extends Activity {
     	
     	this.NetWorkStatus(this);
     	
-    	startListener();	
+    	startListener();
+    	Setting.showupdate=true;
 	}
 	
 	private void logoutDialog(Context context) {

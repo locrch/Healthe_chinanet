@@ -1,8 +1,6 @@
 <!-- 1920x1080 -->
 <resources>
-
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="margin_right">40dp</dimen>
 	<dimen name="button_textsize">18dp</dimen>
@@ -20,4 +18,5 @@
 	<dimen name="booking_main_edittext_height">40dp</dimen><!-- 预约挂号界面选择医院科室医生高度 -->
 	<dimen name="tab_button_img_height">57dp</dimen><!-- tab按钮图片高度 -->
 	<dimen name="tab2_button_size">85dp</dimen><!-- 智能健康6个功能按钮大小,高度宽度一致 -->
+	<dimen name="detail_hospital_hospital_detail_intro_width">357dp</dimen>
 </resources>

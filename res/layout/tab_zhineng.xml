@@ -19,15 +19,16 @@
         android:id="@+id/title_zhineng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tab2_title_margintop"
         android:layout_centerHorizontal="true"
         android:background="@drawable/first_zhinengbut_press" />
 
     <TableLayout
-        android:id="@+id/tableLayout1"
+        android:id="@+id/tab2_icon_tablelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/title_zhineng"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/tab2_icon_tablelayout_margintop"
         android:paddingLeft="8dp"
         android:paddingRight="8dp" >
 
@@ -52,21 +53,24 @@
                     android:background="@layout/tab2_file_press" />
 
                 <ImageButton
-                    android:id="@+id/tab2_booking"
-                    android:layout_width="@dimen/tab2_button_size"
-                    android:layout_height="@dimen/tab2_button_size"
-                    android:layout_alignParentTop="true"
-                    android:layout_weight="1"
-                    android:background="@layout/tab2_booking_press" />
-
-                <ImageButton
                     android:id="@+id/tab2_moneycheck"
                     android:layout_width="@dimen/tab2_button_size"
                     android:layout_height="@dimen/tab2_button_size"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
+                    android:layout_marginRight="@dimen/tab2_icon_marginleftright"
                     android:layout_weight="1"
                     android:background="@layout/tab2_money_press" />
+
+                <ImageButton
+                    android:id="@+id/tab2_booking"
+                    android:layout_width="@dimen/tab2_button_size"
+                    android:layout_height="@dimen/tab2_button_size"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/tab2_icon_marginleftright"
+                    android:layout_weight="1"
+                    android:background="@layout/tab2_booking_press" />
 
             </RelativeLayout>
         </TableRow>
@@ -91,21 +95,25 @@
                     android:background="@layout/tab2_all_press" />
 
                 <ImageButton
-                    android:id="@+id/tab2_eachother"
-                    android:layout_width="@dimen/tab2_button_size"
-                    android:layout_height="@dimen/tab2_button_size"
-                    android:layout_alignParentTop="true"
-                    android:layout_weight="1"
-                    android:background="@layout/tab2_each_press" />
-
-                <ImageButton
                     android:id="@+id/tab2_drugstore"
                     android:layout_width="@dimen/tab2_button_size"
                     android:layout_height="@dimen/tab2_button_size"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
+                    android:layout_marginRight="@dimen/tab2_icon_marginleftright"
                     android:layout_weight="1"
                     android:background="@layout/tab2_offer_press" />
+
+                <ImageButton
+                    android:id="@+id/tab2_eachother"
+                    android:layout_width="@dimen/tab2_button_size"
+                    android:layout_height="@dimen/tab2_button_size"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/tab2_icon_marginleftright"
+                    android:layout_weight="1"
+                    android:background="@layout/tab2_each_press" />
+
             </RelativeLayout>
         </TableRow>
     </TableLayout>

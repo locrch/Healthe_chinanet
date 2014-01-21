@@ -64,7 +64,7 @@ public class CardListAdapter extends SimpleAdapter{
 				type=("(居民健康卡)");
 			}
 			String defaulttext=owner+type;
-			Log.e("defaulttext:",defaulttext);
+			//Log.e("defaulttext:",defaulttext);
 			
 			if(defaulttext.trim().equals(name.trim())){
 				namebox.setChecked(true);

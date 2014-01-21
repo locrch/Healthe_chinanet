@@ -100,11 +100,16 @@ public class TabActivity3 extends Activity {
 		@Override
 		public void onClick(View v)
 		{
-			String phone=sp.getString("username", "");
+			if(sp.getString("username", "").equals("")){
+				Toast.makeText(TabActivity3.this, "请先登录", Toast.LENGTH_SHORT).show();
+			}else{
+				String phone=sp.getString("username", "");
+				
+				Intent intent=new Intent(TabActivity3.this, ChangePassActivity.class);
+				intent.putExtra("userphone", phone);
+				startActivity(intent);
+			}
 			
-			Intent intent=new Intent(TabActivity3.this, ChangePassActivity.class);
-			intent.putExtra("userphone", phone);
-			startActivity(intent);
 		}
 	};
 	
@@ -172,10 +177,15 @@ public class TabActivity3 extends Activity {
 		@Override
 		public void onClick(View v) {
 			Setting.state="show_cardlist";
-			Intent intent=getIntent();
-			intent.putExtra("action", "info");
-			intent.setClass(TabActivity3.this, ListCardActivity.class);
-			startActivity(intent);
+			if(sp.getString("username", "").equals("")){
+				Toast.makeText(TabActivity3.this, "请先登录", Toast.LENGTH_SHORT).show();
+			}else{
+				Setting.state="show_cardlist";
+				Intent intent=getIntent();
+				intent.putExtra("action", "info");
+				intent.setClass(TabActivity3.this, ListCardActivity.class);
+				startActivity(intent);
+			}
 		}
 	};
 	OnClickListener bookinghist_click=new OnClickListener(){
@@ -195,10 +205,13 @@ public class TabActivity3 extends Activity {
 	OnClickListener showhist_click=new OnClickListener(){
 		@Override
 		public void onClick(View v) {
-			
-			Intent intent=getIntent();
-			intent.setClass(TabActivity3.this, ConnectListActivity.class);
-			startActivity(intent);
+			if(sp.getString("username", "").equals("")){
+				Toast.makeText(TabActivity3.this, "请先登录", Toast.LENGTH_SHORT).show();
+			}else{
+				Intent intent=getIntent();
+				intent.setClass(TabActivity3.this, ConnectListActivity.class);
+				startActivity(intent);
+			}
 		}
 	};
 	

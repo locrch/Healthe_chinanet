@@ -11,6 +11,8 @@ import android.widget.ListView;
 import com.pangu.neusoft.core.models.BookingInfos;
 
 public class Setting {
+	
+	public static boolean showupdate=true;
 	public final static int fontsizel=15;
 	public static int fontsizex=12;
 	public static int fontsizes=10;
@@ -45,7 +47,7 @@ public class Setting {
 	public static String state="booking";
 	public static BookingInfos bookingdata;
 	public static int history_list_show=10;//历史记录一次显示10行
-	
+	public static int bookingmain_scroll_height;
 	public static void setDefaultCardNumber(SharedPreferences sp,Editor editor){
 		
 			editor.putString("owner", sp.getString("card"+sp.getString("defaultcardno","")+"_"+"owner",""));
@@ -94,4 +96,14 @@ public class Setting {
         params.width = maxWidth;
         listView.setLayoutParams(params);  
     }
+	//Px转Dp
+	public static int Px2Dp(Context context, float px) { 
+	    final float scale = context.getResources().getDisplayMetrics().density; 
+	    return (int) (px / scale + 0.5f); 
+	}
+	//Dp转Px
+	public static int Dp2Px(Context context, float dp) { 
+	    final float scale = context.getResources().getDisplayMetrics().density; 
+	    return (int) (dp * scale + 0.5f); 
+	} 
 }

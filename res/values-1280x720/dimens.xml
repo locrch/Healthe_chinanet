@@ -1,8 +1,6 @@
 <!-- 1280x720 -->
 <resources>
-
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">5dp</dimen>
+	<dimen name="activity_horizontal_margin">5dp</dimen>
     <dimen name="activity_vertical_margin">5dp</dimen>
     <dimen name="margin_right">40dp</dimen>
 	<dimen name="button_textsize">18dp</dimen>
@@ -14,8 +12,15 @@
 	<dimen name="activity_padding_width">10dp</dimen><!-- 输入页面左右padding -->
 	<dimen name="list_booking_padding_width">2dp</dimen><!-- 医院医生左右padding -->
 	<dimen name="booking_main_search_text_marginleft">24dp</dimen>
-	<dimen name="booking_main_search_btn_marginleft">280dp</dimen><!-- 预约挂号首页搜索按钮左边距 -->
-	<dimen name="tab_button_width">300dp</dimen><!-- 个人中心按钮宽度 -->
+	<dimen name="booking_main_search_btn_marginleft">248dp</dimen><!-- 预约挂号首页搜索按钮左边距 -->
+	<dimen name="tab_button_width">260dp</dimen><!-- 个人中心按钮宽度 -->
 	<dimen name="tab_button_height">60dp</dimen><!-- 个人中心按钮高度 -->
 	<dimen name="tab_button_img_height">60dp</dimen><!-- tab按钮图片高度 -->
+	<dimen name="detail_hospital_hospital_detail_intro_width">222dp</dimen>
+	<dimen name="booking_main_scroll_height">570dp</dimen><!-- 预约挂号首页可滚动高度 -->
+	<dimen name="tab2_icon_marginleftright">25dp</dimen>
+	<dimen name="tab2_title_margintop">20dp</dimen>
+	<dimen name="tab2_icon_tablelayout_margintop">120dp</dimen>
+	<dimen name="history_cotent_padding">20dp</dimen>
+	<dimen name="tab_bg_height">465dp</dimen>
 </resources>

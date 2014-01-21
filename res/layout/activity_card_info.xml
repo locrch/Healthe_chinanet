@@ -38,7 +38,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="left"
-                        android:text="姓        名："
+                        android:text="姓       名  :"
                         android:textSize="@dimen/list_big_textsize" />
 
                     <TextView
