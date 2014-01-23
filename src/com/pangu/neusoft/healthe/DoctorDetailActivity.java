@@ -141,7 +141,7 @@ public class DoctorDetailActivity extends FatherActivity
 		// booking_btn.setOnClickListener(booking);
 		
 		
-		getDataFromInternet();
+		//getDataFromInternet();
 	}
 	
 	
@@ -171,6 +171,7 @@ public class DoctorDetailActivity extends FatherActivity
 	{
 		// TODO Auto-generated method stub
 		super.onStart();
+		getDataFromInternet();
 		
 	}
 	public void getDataFromInternet()

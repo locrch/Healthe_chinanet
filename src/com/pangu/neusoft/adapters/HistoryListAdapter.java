@@ -281,7 +281,7 @@ public class HistoryListAdapter extends SimpleAdapter{
 						        {    
 						            public void run()    
 						            {    
-						            	activity.refresh();
+						            	activity.refreshs();
 						            }    
 						    
 						        });   

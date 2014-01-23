@@ -232,7 +232,7 @@ public class HospitalListActivity extends FatherActivity {
 				} 
 				if(hospitalList.size()>0){
 					HospitalListAdapter adapter=new HospitalListAdapter(HospitalListActivity.this, hospitalList);
-					
+					adapter.notifyDataSetChanged();
 					hospitallistView.setAdapter(adapter);
 					hospitallistView.setClickable(true);
 					hospitallistView.setFocusable(true);

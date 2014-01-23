@@ -18,13 +18,14 @@ public class HttpUtils {
     public static InputStream getStreamFromURL(String imageURL) {  
         InputStream in=null;  
         try {  
-            URL url=new URL(imageURL);  
-            HttpURLConnection connection=(HttpURLConnection) url.openConnection();  
-            in=connection.getInputStream();  
-              
+        	if(imageURL.contains("http")){
+	            URL url=new URL(imageURL);  
+	            HttpURLConnection connection=(HttpURLConnection) url.openConnection();  
+	            in=connection.getInputStream();  
+        	}
         } catch (Exception e) {  
             // TODO Auto-generated catch block  
-            e.printStackTrace();
+            //e.printStackTrace();
             //Toast.makeText(activity, "请检查网络！", Toast.LENGTH_SHORT).show();
         }  
         return in;  

@@ -119,7 +119,7 @@ public class ListCardActivity extends FatherActivity {
 		//login_btn=(Button)findViewById(R.id.login_btn);
 	//	login_btn.setOnClickListener(login);
 		
-		showListView();
+		
 			
 //		slidingDrawer1.setOnDrawerOpenListener(new android.widget.SlidingDrawer.OnDrawerOpenListener() {		 
 //            public void onDrawerOpened() {// 当抽屉打开时执行此操作  
@@ -135,6 +135,13 @@ public class ListCardActivity extends FatherActivity {
 //        });
 	}
 
+	@Override
+	protected void onStart(){
+		super.onStart();
+		showListView();
+	}
+	
+	
 	
 	OnClickListener addcard=new OnClickListener(){
 		@Override
@@ -147,7 +154,7 @@ public class ListCardActivity extends FatherActivity {
 	public void addCard(){
 		 if(arr.size()<5){
 			 startActivity(new Intent(ListCardActivity.this,CreateCardActivity.class));
-			 finish();
+			 //finish();
 		 }
 		 else{
 			 Toast.makeText(ListCardActivity.this,"最多添加5张健康卡！",Toast.LENGTH_SHORT).show();
@@ -333,6 +340,7 @@ public class ListCardActivity extends FatherActivity {
 				} 
 			
 				list=(ListView)findViewById(R.id.list_card);
+				//list.removeAllViews();
 		    	if(empty){
 					ListAdapter adapter=new ArrayAdapter<String>(ListCardActivity.this,android.R.layout.simple_expandable_list_item_1,arr);
 					list.setAdapter(adapter);
@@ -355,6 +363,7 @@ public class ListCardActivity extends FatherActivity {
 //				    int height=sp.getInt("screen_height", 0);
 //				    Log.e("height", ""+height);
 //				    list.getLayoutParams().height=height/8*arr.size();
+			
 		    	}
 			}
 		}.execute();

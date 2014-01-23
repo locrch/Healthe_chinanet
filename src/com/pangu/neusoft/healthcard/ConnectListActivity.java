@@ -74,7 +74,7 @@ public class ConnectListActivity extends FatherActivity {
 		setactivitytitle("个人收藏");
 		doctorlistView=(ListView)findViewById(R.id.list);
 		service=new WebService();
-		doctorList=new ArrayList<DoctorList>();	
+		
 		
 		
 		sp= getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
@@ -90,10 +90,93 @@ public class ConnectListActivity extends FatherActivity {
 		mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+//		for(ConnectDoctor doctor:doctors){
+//			DoctorList list=new DoctorList();
+//			list.setId(doctor.getHospitalid()+"|"+doctor.getDepartmentid()+"|"+doctor.getDoctorid());
+//			list.setImageUrl(doctor.getImageUrl());
+//			list.setLevel(doctor.getLevel());
+//			list.setText(doctor.getHospitalname()+"\n"+doctor.getDepartmentname()+"\n"+doctor.getDoctorname()+"\n"+doctor.getHospitalid());
+//			list.setVersion(doctor.getVersion());
+//			doctormap.put(doctor.getDoctorid()+doctor.getDoctorname(), doctor);
+//			doctorList.add(list);
+//		}	
+		showlist();
+		
+	}
+
+
+	public void showInList(){
+		 
+	
+		DoctorListAdapter adapter=new DoctorListAdapter(ConnectListActivity.this, doctorList);
+		
+		if (doctorList.size()==1)
+		{
+			//如果医生列表只有一个数据，就自定义设置高度
+			doctorlistView.getLayoutParams().height=(int)getResources().getDimension(R.dimen.booking_main_scroll_height);
+		}
+		
+		doctorlistView.setAdapter(adapter);
+		doctorlistView.setClickable(true);
+		doctorlistView.setFocusable(true);
+		
+		//doctorlistView.getLayoutParams().height=2000;
+		
+		/*doctorlistView.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3)
+			{
+				DoctorList map=(DoctorList)doctorlistView.getItemAtPosition(arg2);
+				
+				String doctorId=map.getId(); //获得Areaid		
+				String doctorText=map.getText(); //获得AreaName
+				String[] arraydoctorText=doctorText.split("\n");
+				String doctorName=arraydoctorText[2];
+				
+				String version=map.getVersion();
+				
+				ConnectDoctor doctor=doctormap.get(doctorId+doctorName);
+				if(doctor!=null){
+				
+					//记录医生信息
+					editor.putString("hospitalId", doctor.getHospitalid());
+					editor.putString("hospitalName", doctor.getHospitalname());
+					editor.putString("departmentId", doctor.getDepartmentid());
+					editor.putString("departmentName", doctor.getDepartmentname());
+				
+					editor.putString("doctorId", doctorId);
+					editor.putString("doctorName", doctorName);
+					
+					editor.commit();
+					startActivity(new Intent (ConnectListActivity.this, ScheduleListActivity.class));
+				}
+			}
+		});*/
+	}
+	  
+
+	
+	protected void onRestart(){
+		super.onRestart();
+		showlist();
+	}
+	
+	public void showlist(){
+		doctorlistView.removeAllViewsInLayout();
+		
 		DBManager mgr=new DBManager(ConnectListActivity.this);
 		doctors=mgr.queryConnectDoctors(sp.getString("username", ""));
 		mgr.closeDB();
 		
+		doctorList=new ArrayList<DoctorList>();	
 		
 		new AsyncTask<Void, Void, Boolean>()
 		{
@@ -266,75 +349,7 @@ public class ConnectListActivity extends FatherActivity {
 
 			
 		}.execute();
-		
-		
-		
-		
-//		for(ConnectDoctor doctor:doctors){
-//			DoctorList list=new DoctorList();
-//			list.setId(doctor.getHospitalid()+"|"+doctor.getDepartmentid()+"|"+doctor.getDoctorid());
-//			list.setImageUrl(doctor.getImageUrl());
-//			list.setLevel(doctor.getLevel());
-//			list.setText(doctor.getHospitalname()+"\n"+doctor.getDepartmentname()+"\n"+doctor.getDoctorname()+"\n"+doctor.getHospitalid());
-//			list.setVersion(doctor.getVersion());
-//			doctormap.put(doctor.getDoctorid()+doctor.getDoctorname(), doctor);
-//			doctorList.add(list);
-//		}	
-		
-		
 	}
-
-
-	public void showInList(){
-		 
-	
-		DoctorListAdapter adapter=new DoctorListAdapter(ConnectListActivity.this, doctorList);
-		
-		if (doctorList.size()==1)
-		{
-			//如果医生列表只有一个数据，就自定义设置高度
-			doctorlistView.getLayoutParams().height=(int)getResources().getDimension(R.dimen.booking_main_scroll_height);
-		}
-		
-		doctorlistView.setAdapter(adapter);
-		doctorlistView.setClickable(true);
-		doctorlistView.setFocusable(true);
-		
-		//doctorlistView.getLayoutParams().height=2000;
-		
-		/*doctorlistView.setOnItemClickListener(new OnItemClickListener(){
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3)
-			{
-				DoctorList map=(DoctorList)doctorlistView.getItemAtPosition(arg2);
-				
-				String doctorId=map.getId(); //获得Areaid		
-				String doctorText=map.getText(); //获得AreaName
-				String[] arraydoctorText=doctorText.split("\n");
-				String doctorName=arraydoctorText[2];
-				
-				String version=map.getVersion();
-				
-				ConnectDoctor doctor=doctormap.get(doctorId+doctorName);
-				if(doctor!=null){
-				
-					//记录医生信息
-					editor.putString("hospitalId", doctor.getHospitalid());
-					editor.putString("hospitalName", doctor.getHospitalname());
-					editor.putString("departmentId", doctor.getDepartmentid());
-					editor.putString("departmentName", doctor.getDepartmentname());
-				
-					editor.putString("doctorId", doctorId);
-					editor.putString("doctorName", doctorName);
-					
-					editor.commit();
-					startActivity(new Intent (ConnectListActivity.this, ScheduleListActivity.class));
-				}
-			}
-		});*/
-	}
-	  
-	
 	
 	
 	

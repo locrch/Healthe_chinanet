@@ -122,7 +122,7 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		booking_history_list.setAdapter(adapter);	
 		booking_history_list.setOnItemClickListener(item_click);
 		*/
-		mgr.closeDB();
+		
 		
 	}
 
@@ -181,8 +181,12 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		        }
 		        if(hist_array_temp.size()>0){
 			        adapter=new HistoryListAdapter(
-								this,hist_array_temp,R.layout.history_content,new String[]{"his_username","his_doctor","his_num","his_time","his_hospitalid","his_doctorid","type","his_cancle_id","his_department","his_hospital"},
-								new int[]{R.id.his_username,R.id.his_doctor,R.id.his_num,R.id.his_time,R.id.his_hospitalid,R.id.his_doctorid,R.id.his_state,R.id.his_cancle_id,R.id.his_department,R.id.his_hospital});
+								this,hist_array_temp,R.layout.history_content,new String[]
+
+{"his_username","his_doctor","his_num","his_time","his_hospitalid","his_doctorid","type","his_cancle_id","his_department","his_hospital"},
+								new int[]
+
+{R.id.his_username,R.id.his_doctor,R.id.his_num,R.id.his_time,R.id.his_hospitalid,R.id.his_doctorid,R.id.his_state,R.id.his_cancle_id,R.id.his_department,R.id.his_hospital});
 					
 					booking_history_list.setAdapter(adapter);	
 					//booking_history_list.setOnItemClickListener(item_click);
@@ -260,7 +264,7 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 			
 			@Override
 			public void run() {
-				refresh();
+				refreshs();
 				 //update();
 			}
 		},1000);
@@ -271,7 +275,7 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-				//取得默认卡号
+			
 				sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 				editor = sp.edit();
 				String cardname=Setting.getDefaultCardNumber(sp,editor);
@@ -293,8 +297,13 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 		//PushManager.resumeWork(getApplicationContext());
 	}
 	
+	@Override
+	protected void onRestart(){
+		super.onRestart();
+		refreshs();
+	}
 	
-	 public void refresh() {  
+	 public void refreshs() {  
 	         
 	        Intent intent = new Intent(ShowHistoryActivity.this, ShowHistoryActivity.class);  
 	        startActivity(intent);  

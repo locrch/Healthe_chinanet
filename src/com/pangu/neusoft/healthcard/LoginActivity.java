@@ -233,8 +233,13 @@ public class LoginActivity extends FatherActivity {
 								Log.e("IsLoginSuccess",IsLoginSuccess);
 								if(IsLoginSuccess.equals("true")){
 									if(!member.getUserName().equals(sp.getString("username", ""))){
-										
-										int totalcards=sp.getInt("total_cards", 0);
+										int totalcards=0;
+									
+										try{
+											totalcards=sp.getInt("total_cards", 0);
+										}catch(Exception ex){
+											totalcards=0;
+										}
 										for(int i=0;i<totalcards;i++){
 											editor.remove("card"+i+"_"+"owner");
 											editor.remove("card"+i+"_"+"cardnum");

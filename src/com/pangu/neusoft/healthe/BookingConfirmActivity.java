@@ -39,9 +39,9 @@ public class BookingConfirmActivity extends FatherActivity
 	    pay = (TextView)findViewById(R.id.booking_confirm_pay);
 	    healthcard.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
 	    if(Setting.bookingdata==null||Setting.bookingdata.getDoctorid()==null||Setting.bookingdata.getDoctorid().equals("")){
-	    	Intent intent = new Intent(BookingConfirmActivity.this,BookingMainActivity.class);
+	    	//Intent intent = new Intent(BookingConfirmActivity.this,BookingMainActivity.class);
 			Setting.state="booking";
-			startActivity(intent);
+			//startActivity(intent);
 			 finish();
 	    	return;
 	    }

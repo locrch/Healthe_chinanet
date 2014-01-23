@@ -19,4 +19,5 @@
 	<dimen name="tab_button_img_height">57dp</dimen><!-- tab按钮图片高度 -->
 	<dimen name="tab2_button_size">85dp</dimen><!-- 智能健康6个功能按钮大小,高度宽度一致 -->
 	<dimen name="detail_hospital_hospital_detail_intro_width">357dp</dimen>
+	<dimen name="tab_bg_height">468dp</dimen>
 </resources>

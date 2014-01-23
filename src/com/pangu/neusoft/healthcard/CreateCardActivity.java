@@ -43,13 +43,13 @@ public class CreateCardActivity extends FatherActivity {
 		    
 		    public void onPageFinished(WebView view, String url) { 
 		    	 super.onPageFinished(view, url); 
-		    	if(!url.contains("219.130.221.120")&&open){
-		    		 Intent intent=getIntent();
-		    		 intent.setClass(CreateCardActivity.this, ListCardActivity.class);
-		    		 startActivity(intent);
-		    		 finish();
-		    		 open=false;
-		    	}
+//		    	if(!url.contains("219.130.221.120")&&open){
+//		    		 Intent intent=getIntent();
+//		    		 intent.setClass(CreateCardActivity.this, ListCardActivity.class);
+//		    		 startActivity(intent);
+//		    		 finish();
+//		    		 open=false;
+//		    	}
             } 
 		});
 		

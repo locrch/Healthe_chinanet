@@ -58,7 +58,6 @@ public class DoctorListActivity extends FatherActivity
 	Editor editor;
 	private String who;
 	TextView infos_text;
-	
 
 	public final class ViewHolder
 	{
@@ -436,7 +435,7 @@ public class DoctorListActivity extends FatherActivity
 					}
 					
 					DoctorListAdapter adapter = new DoctorListAdapter(DoctorListActivity.this, doctorList);
-	
+					adapter.notifyDataSetChanged();
 					doctorlistView.setAdapter(adapter);
 					doctorlistView.setClickable(true);
 					doctorlistView.setFocusable(true);
@@ -460,6 +459,10 @@ public class DoctorListActivity extends FatherActivity
 							editor.commit();
 							// startActivity(new Intent (DoctorListActivity.this,
 							// ScheduleListActivity.class));
+							Intent intent=new Intent(DoctorListActivity.this,DoctorDetailActivity.class);
+							intent.putExtra("doctorId", doctorId);
+							intent.putExtra("doctorVersion", version);
+							startActivity(intent);
 	
 						}
 					});

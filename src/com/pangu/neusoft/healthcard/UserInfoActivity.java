@@ -89,7 +89,7 @@ public class UserInfoActivity extends FatherActivity {
 
 	public void getUserInfo(){
 		new AsyncTask<Void, Void, Boolean>(){
-			String msg="注册失败";
+			String msg="修改失败";
 		    @SuppressWarnings("deprecation")
 			@Override  
 	        protected void onPreExecute() {   
@@ -124,7 +124,7 @@ public class UserInfoActivity extends FatherActivity {
 					
 				}
 				else{
-					msg="注册失败";
+					msg="修改失败";
 					return false;
 				}
 					
@@ -142,10 +142,13 @@ public class UserInfoActivity extends FatherActivity {
 				if(result){
 					username.setText(UserName);
 					ArrayAdapter adapter=(ArrayAdapter) sex.getAdapter();
-					int position=adapter.getPosition(Sex);
-					sex.setSelection(position,true);
+					if(Sex.equals("0"))
+						sex.setSelection(1,true);
+					else 
+						sex.setSelection(0,true);
+					
 					card_num.setText(IDCardNo);
-					membername.setText(UserName);
+					membername.setText(MemberName);
 				}
 			}
 			@SuppressWarnings("deprecation")

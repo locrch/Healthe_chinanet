@@ -62,7 +62,7 @@ public class BookingAction {
 		req.setDoctorId(sp.getString("doctorId", ""));
 		req.setMemberId(sp.getString("username", ""));
 		req.setScheduleID(sp.getString("ScheduleID", ""));
-		req.setScheduleID("");
+		//req.setScheduleID("");
 		req.setSchState(sp.getString("SchState", ""));
 		req.setPhoneNumber(sp.getString("phonenumber", ""));
 		req.setRegId(sp.getString("RegId", ""));
@@ -177,7 +177,7 @@ public class BookingAction {
 							return false;
 						}
 					} else {
-						booking_msg = "预约失败";
+						booking_msg = "预约失败!";
 						return false;
 					}
 				}
@@ -207,10 +207,10 @@ public class BookingAction {
 						final Timer t = new Timer();
 						t.schedule(new TimerTask() {
 							public void run() {
-								Intent intent=new Intent();
-								intent.setClass(activity,BookingMainActivity.class);
-								intent.putExtra("error_message", "预约失败："+booking_msg);
-								activity.startActivity(intent);
+								//Intent intent=new Intent();
+								//intent.setClass(activity,BookingMainActivity.class);
+								//intent.putExtra("error_message", "预约失败："+booking_msg);
+								//activity.startActivity(intent);
 								
 								activity.finish();
 								t.cancel(); 
