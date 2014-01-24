@@ -284,10 +284,15 @@ public class SchedultLayout {
 	            scheduleText.setVisibility(View.GONE);
 		            
          } else{
-        	 	scheduleText.setTextColor(Color.RED);
+        	 if(!activity.getClass().toString().contains("ConnectListActivity")){
+        		scheduleText.setTextColor(Color.RED);
 	            scheduleText.setText("（暂无排班信息）");//没有排班
 	            scheduleText.setVisibility(View.VISIBLE);
 	          //  scheduleDetailLayout.setVisibility(View.GONE);
+        	 }else{
+        		 scheduleText.setText("");//没有排班
+ 	            scheduleText.setVisibility(View.GONE);
+        	 }
          }
 
 	}

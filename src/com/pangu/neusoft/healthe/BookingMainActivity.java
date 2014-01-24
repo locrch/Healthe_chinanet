@@ -394,7 +394,7 @@ public class BookingMainActivity extends FatherActivity {
 						}
 
 						DoctorList map = new DoctorList();
-						map.setId(doctorId);
+						map.setId(sp.getString("hospitalId", "")+"|"+sp.getString("departmentId", "")+"|"+doctorId);
 						map.setText(doctorName);
 						map.setImageUrl(imageUrl);
 						// 获取未知性别医生有错，返回值为"anyType{}"，下面判定为暂时解决办法，希望服务器端能解决

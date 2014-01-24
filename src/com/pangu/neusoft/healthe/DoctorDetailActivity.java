@@ -132,21 +132,16 @@ public class DoctorDetailActivity extends FatherActivity
 		// booking_btn = (Button)findViewById(R.id.doctor_detail_booking_btn);
 		connect = (Button) findViewById(R.id.connect);
 		connect.setOnClickListener(connect_click);
-		int width = sp.getInt("screen_width", 0);
-		int height = sp.getInt("screen_height", 0);
 
-		// pic.getLayoutParams().width=width;
-		// pic.getLayoutParams().height=height/3;
 
-		// booking_btn.setOnClickListener(booking);
-		
-		
-		//getDataFromInternet();
+
 	}
 	
 	
 	
 	public void checkConnected(){
+		
+		
 		ConnectDoctor conndoctor = new ConnectDoctor();
 		conndoctor.setHospitalid(sp.getString("hospitalId", ""));
 		conndoctor.setHospitalname(sp.getString("hospitalName", ""));

@@ -304,7 +304,6 @@ public class ShowHistoryActivity extends FatherActivity  implements OnHeaderRefr
 	}
 	
 	 public void refreshs() {  
-	         
 	        Intent intent = new Intent(ShowHistoryActivity.this, ShowHistoryActivity.class);  
 	        startActivity(intent);  
 	        finish();

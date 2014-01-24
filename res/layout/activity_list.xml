@@ -2,9 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AreaListActivity" 
     android:background="#FFFFFF"
-    >
+    tools:context=".AreaListActivity" >
 
     <ListView
         android:id="@+id/list"
@@ -15,7 +14,6 @@
         android:layout_below="@+id/infos_text"
         android:descendantFocusability="blocksDescendants"
         android:fastScrollEnabled="true" >
-
     </ListView>
 
     <TextView
@@ -27,7 +25,18 @@
         android:layout_alignParentTop="true"
         android:background="@color/darkgrey"
         android:gravity="center"
-        android:textSize="@dimen/button_textsize"
-        android:text="" />
+        android:text=""
+        android:textSize="@dimen/button_textsize" />
+
+    
+<TextView
+        android:id="@+id/infos_notext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infos_text"
+        android:text="没有收藏记录"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:visibility="gone" />
 
 </RelativeLayout>

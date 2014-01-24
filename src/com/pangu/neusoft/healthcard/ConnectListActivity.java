@@ -64,7 +64,7 @@ public class ConnectListActivity extends FatherActivity {
         TextView texta;  
     }
 	boolean connecting;
-	TextView infos_text;
+	TextView infos_text,infos_notext;
 	HashMap<String,ConnectDoctor> doctormap=new HashMap<String,ConnectDoctor>();
 	
 	@Override
@@ -73,6 +73,7 @@ public class ConnectListActivity extends FatherActivity {
 		setContentView(R.layout.activity_list);
 		setactivitytitle("个人收藏");
 		doctorlistView=(ListView)findViewById(R.id.list);
+		infos_notext=(TextView)findViewById(R.id.infos_notext);
 		service=new WebService();
 		
 		
@@ -227,67 +228,66 @@ public class ConnectListActivity extends FatherActivity {
 								imageUrl = Setting.TEST_url;
 							}
 	
-							SoapObject scheduleListObject = (SoapObject) areaObject
-									.getProperty("scheduleList");
-							List<Schedule> schedulelist = new ArrayList<Schedule>();
-							for (int j = 0; j < scheduleListObject.getPropertyCount(); j++)
-							{
-								SoapObject scheduleObject = (SoapObject) scheduleListObject.getProperty(j);
-								Schedule sch = new Schedule();
-								if (scheduleObject.getProperty("availableNum") != null)
-									sch.setAvailableNum(scheduleObject.getProperty(
-											"availableNum").toString());
-	
-								if (scheduleObject.getProperty("consultationFee") != null)
-									sch.setConsultationFee(scheduleObject
-											.getProperty("consultationFee")
-											.toString());
-	
-								if (scheduleObject.getProperty("dayOfWeek") != null)
-									sch.setDayOfWeek(scheduleObject.getProperty(
-											"dayOfWeek").toString());
-	
-								if (scheduleObject.getProperty("doctorId") != null)
-									sch.setDoctorId(scheduleObject.getProperty(
-											"doctorId").toString());
-	
-								if (scheduleObject.getProperty("doctorName") != null)
-									sch.setDoctorName(scheduleObject.getProperty(
-											"doctorName").toString());
-	
-								if (scheduleObject.getProperty("isSuspend") != null)
-									sch.setIsSuspend(scheduleObject.getProperty(
-											"isSuspend").toString());
-	
-								if (scheduleObject.getProperty("outcallDate") != null)
-									sch.setOutcallDate(scheduleObject.getProperty(
-											"outcallDate").toString());
-	
-								if (scheduleObject.getProperty("regId") != null)
-									sch.setRegId(scheduleObject
-											.getProperty("regId").toString());
-	
-								if (scheduleObject.getProperty("regName") != null)
-									sch.setRegName(scheduleObject.getProperty(
-											"regName").toString());
-	
-								if (scheduleObject.getProperty("scheduleID") != null)
-									sch.setScheduleID(scheduleObject.getProperty(
-											"scheduleID").toString());
-	
-								if (scheduleObject.getProperty("schState") != null)
-									sch.setSchState(scheduleObject.getProperty(
-											"schState").toString());
-	
-								if (scheduleObject.getProperty("timeRange") != null)
-									sch.setTimeRange(scheduleObject.getProperty(
-											"timeRange").toString());
-								schedulelist.add(sch);
-							}
-	
+//							SoapObject scheduleListObject = (SoapObject) areaObject.getProperty("scheduleList");
+//							List<Schedule> schedulelist = new ArrayList<Schedule>();
+//							for (int j = 0; j < scheduleListObject.getPropertyCount(); j++)
+//							{
+//								SoapObject scheduleObject = (SoapObject) scheduleListObject.getProperty(j);
+//								Schedule sch = new Schedule();
+//								if (scheduleObject.getProperty("availableNum") != null)
+//									sch.setAvailableNum(scheduleObject.getProperty(
+//											"availableNum").toString());
+//	
+//								if (scheduleObject.getProperty("consultationFee") != null)
+//									sch.setConsultationFee(scheduleObject
+//											.getProperty("consultationFee")
+//											.toString());
+//	
+//								if (scheduleObject.getProperty("dayOfWeek") != null)
+//									sch.setDayOfWeek(scheduleObject.getProperty(
+//											"dayOfWeek").toString());
+//	
+//								if (scheduleObject.getProperty("doctorId") != null)
+//									sch.setDoctorId(scheduleObject.getProperty(
+//											"doctorId").toString());
+//	
+//								if (scheduleObject.getProperty("doctorName") != null)
+//									sch.setDoctorName(scheduleObject.getProperty(
+//											"doctorName").toString());
+//	
+//								if (scheduleObject.getProperty("isSuspend") != null)
+//									sch.setIsSuspend(scheduleObject.getProperty(
+//											"isSuspend").toString());
+//	
+//								if (scheduleObject.getProperty("outcallDate") != null)
+//									sch.setOutcallDate(scheduleObject.getProperty(
+//											"outcallDate").toString());
+//	
+//								if (scheduleObject.getProperty("regId") != null)
+//									sch.setRegId(scheduleObject
+//											.getProperty("regId").toString());
+//	
+//								if (scheduleObject.getProperty("regName") != null)
+//									sch.setRegName(scheduleObject.getProperty(
+//											"regName").toString());
+//	
+//								if (scheduleObject.getProperty("scheduleID") != null)
+//									sch.setScheduleID(scheduleObject.getProperty(
+//											"scheduleID").toString());
+//	
+//								if (scheduleObject.getProperty("schState") != null)
+//									sch.setSchState(scheduleObject.getProperty(
+//											"schState").toString());
+//	
+//								if (scheduleObject.getProperty("timeRange") != null)
+//									sch.setTimeRange(scheduleObject.getProperty(
+//											"timeRange").toString());
+//								schedulelist.add(sch);
+//							}
+//	
 							DoctorList map = new DoctorList();
-							map.setId(doctorId);
-							map.setText(doctorName);
+							map.setId(doctor.getHospitalid()+"|"+doctor.getDepartmentid()+"|"+doctor.getDoctorid());
+							map.setText(doctor.getHospitalname()+"|"+doctor.getDepartmentname()+"|"+doctorName);
 							map.setImageUrl(imageUrl);
 							// 获取未知性别医生有错，返回值为"anyType{}"，下面判定为暂时解决办法，希望服务器端能解决
 							if (sex.equals("anyType{}"))
@@ -301,7 +301,7 @@ public class ConnectListActivity extends FatherActivity {
 							
 	
 							map.setVersion(version);
-							map.setScheduleList(schedulelist);
+							//map.setScheduleList(schedulelist);
 							doctorList.add(map);
 						//}
 						String resultCode = obj.getProperty("resultCode")
@@ -335,6 +335,10 @@ public class ConnectListActivity extends FatherActivity {
 					mProgressDialog.dismiss();
 				}
 				showInList();
+				if (doctorList.size()==0)
+				{
+					infos_notext.setVisibility(View.VISIBLE);
+				}
 			}
 
 			@Override

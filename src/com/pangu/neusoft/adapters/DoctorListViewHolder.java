@@ -24,6 +24,7 @@ public class DoctorListViewHolder {
         private TextView department_text;
         private ImageView moreInfoView;
         
+        
         public DoctorListViewHolder(View baseView) {  
             this.baseView = baseView;  
         }  

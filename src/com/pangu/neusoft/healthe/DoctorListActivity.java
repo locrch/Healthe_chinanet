@@ -368,7 +368,7 @@ public class DoctorListActivity extends FatherActivity
 						}
 
 						DoctorList map = new DoctorList();
-						map.setId(doctorId);
+						map.setId(sp.getString("hospitalId", "")+"|"+sp.getString("departmentId", "")+"|"+doctorId);
 						map.setText(doctorName);
 						map.setImageUrl(imageUrl);
 						// 获取未知性别医生有错，返回值为"anyType{}"，下面判定为暂时解决办法，希望服务器端能解决
@@ -447,7 +447,7 @@ public class DoctorListActivity extends FatherActivity
 						{
 							DoctorList map = (DoctorList) doctorlistView
 									.getItemAtPosition(arg2);
-	
+							
 							String doctorId = map.getId(); // 获得Areaid
 							String doctorName = map.getText(); // 获得AreaName
 							String version = map.getVersion();

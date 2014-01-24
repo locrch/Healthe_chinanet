@@ -149,33 +149,36 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             //imageView.getLayoutParams().height=width/4;
             // Set the text on the TextView  
             TextView textView = viewCache.getTextView();  
-            textView.setText(doctorlist.getText());
+            
+           
+            
             if (doctorlist.getText().equals(null)||doctorlist.getText().equals(""))
 			{
 				textView.setVisibility(View.GONE);
 			}
             //textView.setTextSize(width/Setting.fontsizex);
-            
             TextView idView = viewCache.getIdView();
-            idView.setText(doctorlist.getId());
-            
-          
-            
+            idView.setText(doctorlist.getId());        
             TextView levelView = viewCache.getLevelView();  
             levelView.setText(doctorlist.getLevel());  
             //levelView.setTextSize(width/Setting.fontsizes);
             levelView.setTextColor(Color.RED);
-            
-            
             TextView versionView = viewCache.getVersionView();  
             versionView.setText(doctorlist.getVersion());  
             
             TextView hospitalText = viewCache.getHospitalText();  
-            hospitalText.setText(sp.getString("hospitalName",""));
-            
-            TextView departmentText = viewCache.getDepartmentText();  
-            departmentText.setText(sp.getString("departmentName",""));
-            
+            TextView departmentText = viewCache.getDepartmentText();
+            String texts=doctorlist.getText();
+            String names[]=texts.split("\\|");
+            if(names.length==3){
+            	textView.setText(names[2]);
+                hospitalText.setText(names[0]);
+                departmentText.setText(names[1]);
+            }else{
+	            textView.setText(doctorlist.getText());
+	            hospitalText.setText(sp.getString("hospitalName",""));
+	            departmentText.setText(sp.getString("departmentName",""));
+            }
             ImageView moreInfo = viewCache.getMoreInfoView();
             //moreInfo.getLayoutParams().width=width/Setting.fontsizey;
             //moreInfo.getLayoutParams().height=height/Setting.fontsizey;
@@ -205,7 +208,26 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
 					// 显示详细内容
 //					if(activity.getLocalClassName().equals("DoctorListActivity")||activity.getLocalClassName().equals("BookingMainActivity")){
 						Intent intent=new Intent(activity,DoctorDetailActivity.class);
-						intent.putExtra("doctorId", doctorlist.getId());
+						String allid=doctorlist.getId();
+						String[] ids=allid.split("\\|");
+						if(ids.length==3){
+							editor.putString("hospitalId", ids[0]);
+							editor.putString("departmentId", ids[1]);
+							editor.commit();	
+							intent.putExtra("doctorId", ids[2]);
+						}else{
+							intent.putExtra("doctorVersion", doctorlist.getId());
+						}
+						
+						 String texts=doctorlist.getText();
+				            String names[]=texts.split("\\|");
+				            if(names.length==3){
+				            	editor.putString("hospitalName", names[0]);
+								editor.putString("departmentName", names[1]);
+								editor.commit();
+				            }
+		                
+						
 						intent.putExtra("doctorVersion", doctorlist.getVersion());
 						activity.startActivity(intent);
 //		            }else{
