@@ -100,19 +100,18 @@ public class HospitalListAdapter extends ArrayAdapter<HospitalList> {
             ImageView imageView = viewCache.getImageView();  
             imageView.setTag(imageUrl);  
             
+            
+            imageView.setImageResource(R.drawable.booking_hosp);
+            
             Bitmap bitmap=asyncImageLoader.loadBitmap(imageView, imageUrl, new ImageCallBack() {  
                 
                 @Override  
                 public void imageLoad(ImageView imageView, Bitmap bitmap) {  
                     // TODO Auto-generated method stub  
-                    imageView.setImageBitmap(bitmap);  
+                    //imageView.setImageBitmap(bitmap);  
                 }  
-            });  
-            
-      
-            if (bitmap == null) {  
-                imageView.setImageResource(R.drawable.booking_hosp);  
-            }else{  
+            }); 
+            if (bitmap != null) {                 
             	imageView.setImageBitmap(bitmap); 
             }  
             SharedPreferences sp = activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);

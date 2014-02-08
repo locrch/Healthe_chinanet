@@ -29,7 +29,14 @@
             android:gravity="center"
             android:text="版本信息"
             android:textSize="@dimen/button_textsize" />
-
+		<Button
+            android:id="@+id/more_disclaimer"
+            android:layout_width="@dimen/tab_button_width"
+            android:layout_height="@dimen/tab_button_height"
+            android:background="@layout/tab_btn_press"
+            android:gravity="center"
+            android:text="免责声明"
+            android:textSize="@dimen/button_textsize" />
         <Button
             android:id="@+id/more_update"
             android:layout_width="@dimen/tab_button_width"

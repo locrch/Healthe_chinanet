@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 
 public class TabActivity5 extends Activity  {	
-	Button more_help,more_info,more_update;
+	Button more_help,more_info,more_update,more_disclaimer;
 	
 	ProgressDialog pd;
 	
@@ -42,6 +42,7 @@ public class TabActivity5 extends Activity  {
 		setContentView(R.layout.tab5_more);
 		more_help = (Button)findViewById(R.id.more_help);
 		more_info = (Button)findViewById(R.id.more_info);
+		more_disclaimer = (Button)findViewById(R.id.more_disclaimer);
 		more_update = (Button)findViewById(R.id.more_update);
 		
 		
@@ -93,6 +94,17 @@ public class TabActivity5 extends Activity  {
 			{
 				// TODO Auto-generated method stub
 				startActivity(new Intent(TabActivity5.this,VersionInfoActivity.class));
+			}
+		});
+		
+		more_disclaimer.setOnClickListener(new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				// TODO Auto-generated method stub
+				startActivity(new Intent(TabActivity5.this,DisclaimerActivity.class));
 			}
 		});
 		

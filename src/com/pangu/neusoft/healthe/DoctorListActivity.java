@@ -448,7 +448,22 @@ public class DoctorListActivity extends FatherActivity
 							DoctorList map = (DoctorList) doctorlistView
 									.getItemAtPosition(arg2);
 							
-							String doctorId = map.getId(); // 获得Areaid
+							String doctorId;
+							
+							String allid=map.getId();
+							String[] ids=allid.split("\\|");
+							if(ids.length==3){
+								editor.putString("hospitalId", ids[0]);
+								editor.putString("departmentId", ids[1]);
+								editor.commit();	
+								doctorId = ids[2];
+							}else{
+								
+								doctorId = map.getId();
+							}
+							
+							
+							 // 获得doctorid
 							String doctorName = map.getText(); // 获得AreaName
 							String version = map.getVersion();
 	

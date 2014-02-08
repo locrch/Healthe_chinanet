@@ -117,27 +117,28 @@ public class DoctorListAdapter extends ArrayAdapter<DoctorList> {
             ImageView imageView = viewCache.getImageView();  
             imageView.setTag(imageUrl);  
             
-            Bitmap bitmap=asyncImageLoader.loadBitmap(imageView, imageUrl, new ImageCallBack() {  
-                
-                @Override  
-                public void imageLoad(ImageView imageView, Bitmap bitmap) {  
-                    // TODO Auto-generated method stub  
-                		imageView.setImageBitmap(bitmap);  
-                }  
-            });  
-            if (bitmap == null) {  
+           
+            //if (bitmap == null) {  
             	if(level.contains("(男)")){
             		imageView.setImageResource(R.drawable.doc_man_img);            		
             	}else if(level.contains("(女)")){
             		imageView.setImageResource(R.drawable.doc_women_img);
             	}else {
             		imageView.setImageResource(R.drawable.doc_def_img);
-            	}
+            	}   
+           // }else{  
             	
-                  
-            }else{  
-            	imageView.setImageBitmap(bitmap); 
-            }  
+            	 Bitmap bitmap=asyncImageLoader.loadBitmap(imageView, imageUrl, new ImageCallBack() {  
+                     
+                     @Override  
+                     public void imageLoad(ImageView imageView, Bitmap bitmap) {  
+                         // TODO Auto-generated method stub  
+                     		//imageView.setImageBitmap(bitmap);  
+                     }  
+                 });
+            	 if(bitmap!=null)
+            		 imageView.setImageBitmap(bitmap); 
+           //}  
             sp = activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
             editor=sp.edit();
             

@@ -34,14 +34,14 @@ public class AsyncBitmapLoader {
 		
 		final String imageURL_de=URLDecoder.decode(imageURL);
 		// 在内存缓存中，则返回Bitmap对象
-		if (imageCache.containsKey(imageURL_de)) {
-			SoftReference<Bitmap> reference = imageCache.get(imageURL_de);
-			Bitmap bitmap = reference.get();
-			if (bitmap != null) {
-				Log.e("Loging image ", " From Cache Map "+imageURL_de);
-				return bitmap;
-			}
-		} else {
+//		if (imageCache.containsKey(imageURL_de)) {
+//			SoftReference<Bitmap> reference = imageCache.get(imageURL_de);
+//			Bitmap bitmap = reference.get();
+//			if (bitmap != null) {
+//				Log.e("Loging image ", " From Cache Map "+imageURL_de);
+//				return bitmap;
+//			}
+//		} else {
 			/**
 			 * 加上一个对本地缓存的查找
 			 */
@@ -76,7 +76,7 @@ public class AsyncBitmapLoader {
 					}
 				}
 			}
-		}
+		//}
 
 		final Handler handler = new Handler() {
 			/*
