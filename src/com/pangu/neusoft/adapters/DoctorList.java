@@ -8,7 +8,20 @@ public class DoctorList {
 	  private String imageUrl;  
       private String text;
       private String id;
-
+      private String departmentname;
+      public String getDepartmentname() {
+		return departmentname;
+	}
+	public void setDepartmentname(String departmentname) {
+		this.departmentname = departmentname;
+	}
+	public String getHospitalname() {
+		return hospitalname;
+	}
+	public void setHospitalname(String hospitalname) {
+		this.hospitalname = hospitalname;
+	}
+	private String hospitalname;
 	  private String level;
 	  
 	  private String version;

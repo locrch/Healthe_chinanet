@@ -23,10 +23,10 @@ public class AsyncBitmapLoader {
 	/**
 	 * 内存图片软引用缓冲
 	 */
-	private HashMap<String, SoftReference<Bitmap>> imageCache = null;
+	private HashMap<String, Bitmap> imageCache = null;
 
 	public AsyncBitmapLoader() {
-		imageCache = new HashMap<String, SoftReference<Bitmap>>();
+		imageCache = new HashMap<String, Bitmap>();
 	}
 
 	public Bitmap loadBitmap(final ImageView imageView, final String imageURL,
@@ -34,14 +34,14 @@ public class AsyncBitmapLoader {
 		
 		final String imageURL_de=URLDecoder.decode(imageURL);
 		// 在内存缓存中，则返回Bitmap对象
-//		if (imageCache.containsKey(imageURL_de)) {
-//			SoftReference<Bitmap> reference = imageCache.get(imageURL_de);
-//			Bitmap bitmap = reference.get();
-//			if (bitmap != null) {
-//				Log.e("Loging image ", " From Cache Map "+imageURL_de);
-//				return bitmap;
-//			}
-//		} else {
+		if (imageCache.containsKey(imageURL_de)) {
+			//SoftReference<Bitmap> reference = imageCache.get(imageURL_de);
+			Bitmap bitmap = imageCache.get(imageURL_de);
+			if (bitmap != null) {
+				Log.e("Loging image ", " From Cache Map "+imageURL_de);
+				return bitmap;
+			}
+		} else {
 			/**
 			 * 加上一个对本地缓存的查找
 			 */
@@ -76,7 +76,7 @@ public class AsyncBitmapLoader {
 					}
 				}
 			}
-		//}
+		}
 
 		final Handler handler = new Handler() {
 			/*
@@ -106,9 +106,9 @@ public class AsyncBitmapLoader {
 				if(bitmapIs!=null){
 					//放到缓存中
 					Bitmap bitmap = BitmapFactory.decodeStream(bitmapIs);
-					imageCache.put(imageURL_de, new SoftReference<Bitmap>(bitmap));
-					Message msg = handler.obtainMessage(0, bitmap);
-					handler.sendMessage(msg);
+					imageCache.put(imageURL_de, bitmap);
+//					Message msg = handler.obtainMessage(0, bitmap);
+//					handler.sendMessage(msg);
 	
 					//放到文件中
 					if(hasSdcard()){
@@ -157,8 +157,14 @@ public class AsyncBitmapLoader {
 				}
 			}
 		}.start();
-
-		return null;
+		
+		InputStream bitmapIs = HttpUtils.getStreamFromURL(imageURL);
+		Bitmap bitmap=null;
+		if(bitmapIs!=null){
+			//放到缓存中
+			bitmap = BitmapFactory.decodeStream(bitmapIs);
+		}
+		return bitmap;
 	}
 
 	public static boolean hasSdcard() {

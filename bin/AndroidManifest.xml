@@ -235,6 +235,12 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name="com.pangu.neusoft.healthe.FindDoctorListActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_doctor_list"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="com.pangu.neusoft.healthe.DoctorDetailActivity"
             android:icon="@drawable/ic_launcher"
             android:label="@string/title_activity_doctor_detail"

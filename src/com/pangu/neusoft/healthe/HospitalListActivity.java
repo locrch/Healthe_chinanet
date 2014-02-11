@@ -260,7 +260,7 @@ public class HospitalListActivity extends FatherActivity {
 								
 								editor.commit();
 								startActivity(new Intent (HospitalListActivity.this, DepartmentListActivity.class));
-								finish();
+								//finish();
 							
 						}
 					});

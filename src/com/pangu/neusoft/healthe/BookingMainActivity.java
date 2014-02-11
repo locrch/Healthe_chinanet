@@ -279,6 +279,7 @@ public class BookingMainActivity extends FatherActivity {
 			protected void onPreExecute()
 			{
 				super.onPreExecute();
+				if(mProgressDialog!=null&&!mProgressDialog.isShowing())
 				mProgressDialog.show();
 			}
 
@@ -507,7 +508,7 @@ public class BookingMainActivity extends FatherActivity {
 			}else{
 				editor.putString("serach_doc", serachdoctorname);			
 				editor.commit();			
-				Intent intent = new Intent(BookingMainActivity.this,DoctorListActivity.class);			
+				Intent intent = new Intent(BookingMainActivity.this,FindDoctorListActivity.class);			
 				intent.setFlags(0);			
 				intent.putExtra("who", "serach");			
 				startActivity(intent);
@@ -752,6 +753,9 @@ public class BookingMainActivity extends FatherActivity {
 	@Override  
 	protected void onDestroy() {  
 	    super.onDestroy();  
+	    if (mProgressDialog!=null) {
+			mProgressDialog.dismiss();
+		}
 	    if (mgr  != null) {  
 	    	mgr.closeDB();  
 	    }  
