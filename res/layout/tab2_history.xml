@@ -9,7 +9,7 @@
     android:background="@drawable/background_black" >
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/linearLayout_top"
         android:layout_width="700dp"
         android:layout_height="900dp"
         android:layout_alignTop="@+id/infos_text"
@@ -52,7 +52,7 @@
         android:id="@+id/infos_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_alignLeft="@+id/linearLayout_top"
         android:layout_alignParentTop="true"
         android:layout_marginTop="44dp"
         android:textColor="@color/white"

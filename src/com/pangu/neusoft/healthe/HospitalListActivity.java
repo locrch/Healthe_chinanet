@@ -224,7 +224,7 @@ public class HospitalListActivity extends FatherActivity {
 			protected void onCancelled()
 			{
 				super.onCancelled();
-		
+				
 			}
 			public void showInList(){
 				if(mProgressDialog.isShowing()){

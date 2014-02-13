@@ -278,7 +278,7 @@ public class FindDoctorListActivity extends FatherActivity {
 			@Override
 			protected void onCancelled() {
 				super.onCancelled();
-
+				
 			}
 
 			public void showInList() {

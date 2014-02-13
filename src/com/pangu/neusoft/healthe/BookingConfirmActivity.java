@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -19,8 +20,9 @@ import android.widget.TextView;
 public class BookingConfirmActivity extends FatherActivity
 {
 	TextView username,healthcard,hospitalname,departmentname,doctorname,date,time,place,pay;
-	
-	Button conbbtn,cancelbtn,changecard;
+	LinearLayout linearLayout_1,linearLayout_2,linearLayout_3,linearLayout_4,linearLayout_5,linearLayout_6,
+	linearLayout_7,linearLayout_8,linearLayout_9;
+	Button conbbtn,cancelbtn;
 	BookingAction bookingaction; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -28,6 +30,7 @@ public class BookingConfirmActivity extends FatherActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_booking_confirm);
 		setactivitytitle("预约信息确认");
+		linearLayout_1 = (LinearLayout)findViewById(R.id.linearLayout_1);
 	    username = (TextView)findViewById(R.id.booking_confirm_username);
 	    healthcard = (TextView)findViewById(R.id.booking_confirm_healthcard);
 	    hospitalname = (TextView)findViewById(R.id.booking_confirm_hospitalname);
@@ -57,10 +60,11 @@ public class BookingConfirmActivity extends FatherActivity
 	    place.setText("现场挂号处");
 	    pay.setText("现场支付");
 	    
+	    
+	    
 	    conbbtn = (Button)findViewById(R.id.booking_confirm_conbbtn);
 	    cancelbtn = (Button)findViewById(R.id.booking_confirm_cancelbtn);
-	    changecard = (Button)findViewById(R.id.booking_confirm_changecard);
-	    changecard.setVisibility(View.GONE);
+	    
 	    bookingaction=new BookingAction(BookingConfirmActivity.this);
 	    
 	    conbbtn.setOnClickListener(new OnClickListener()
@@ -80,17 +84,7 @@ public class BookingConfirmActivity extends FatherActivity
 				finish();
 			}
 		});
-	    changecard.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View v)
-			{
-				Intent intent = new Intent(BookingConfirmActivity.this,ListCardActivity.class);
-				Setting.state="booking";
-				startActivity(intent);
-				finish();
-			}
-		});
+	    
 	    
 	    healthcard.setOnClickListener(new OnClickListener()
 		{
