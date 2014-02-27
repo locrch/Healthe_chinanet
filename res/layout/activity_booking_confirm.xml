@@ -48,7 +48,7 @@
                             android:id="@+id/booking_confirm_text1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="    就诊人："
+                            android:text="姓       名："
                             android:textSize="@dimen/detail_content_textsize" />
 
                         <TextView

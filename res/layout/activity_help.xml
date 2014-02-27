@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="1.“健康e园”客户端包含什么内容？"
+        android:text="1.“佛山健康e园”客户端包含什么内容？"
         android:textStyle="bold" />
 
     <TextView android:textSize="@dimen/button_textsize"
@@ -34,13 +34,13 @@
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
-        android:text="答：“健康e园”包括“智能健康”和“数字医院”两种模式。“智能健康”包括预约挂号、健康档案、电子病历、医问医答、健康大全和药房优惠；“数字医院”是属于医院的专属版本，里面将体现更多更详细的医院信息，包括预约挂号、医问医答、智能叫号、医院动态、医院服务。" />
+        android:text="答：“佛山健康e园”包括“智能健康”和“数字医院”两种模式。“智能健康”包括预约挂号、健康档案、电子病历、医问医答、健康大全和药房优惠；“数字医院”是属于医院的专属版本，里面将体现更多更详细的医院信息，包括预约挂号、医问医答、智能叫号、医院动态、医院服务。" />
 
     <TextView android:textSize="@dimen/button_textsize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="2.“健康e园”如何收费？"
+        android:text="2.“佛山健康e园”如何收费？"
         android:textStyle="bold" />
         <TextView android:textSize="@dimen/button_textsize"
         android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
         android:layout_below="@+id/zhinan_title"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
-        android:text="答：“健康e园”注册会员享有免费预约挂号服务（挂号费按医院实际情况到医院现场支付）。" />
+        android:text="答：“佛山健康e园”注册会员享有免费预约挂号服务（挂号费按医院实际情况到医院现场支付）。" />
        
         <TextView android:textSize="@dimen/button_textsize"
         android:layout_width="wrap_content"

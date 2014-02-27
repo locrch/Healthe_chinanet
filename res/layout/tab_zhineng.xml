@@ -50,7 +50,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_weight="1"
-                    android:background="@layout/tab2_file_press" />
+                    android:background="@layout/tab2_file_press"
+                    />
 
                 <ImageButton
                     android:id="@+id/tab2_moneycheck"
@@ -102,8 +103,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginRight="@dimen/tab2_icon_marginleftright"
                     android:layout_weight="1"
-                    android:background="@layout/tab2_offer_press"
-                    android:visibility="invisible"  />
+                    android:background="@layout/tab2_offer_press"/>
 
                 <ImageButton
                     android:id="@+id/tab2_eachother"
@@ -113,8 +113,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="@dimen/tab2_icon_marginleftright"
                     android:layout_weight="1"
-                    android:background="@layout/tab2_each_press"
-                    android:visibility="invisible" />
+                    android:background="@layout/tab2_each_press"/>
 
             </RelativeLayout>
         </TableRow>

@@ -242,8 +242,8 @@ public class DoctorListActivity extends FatherActivity
 							{
 								sex = "";
 							}
-
-							map.setLevel("(" + sex + ") " + title);
+							//map.setLevel("(" + sex + ") " + title);
+							map.setLevel(title);
 
 							map.setVersion(version);
 							map.setScheduleList(schedulelist);
@@ -377,8 +377,9 @@ public class DoctorListActivity extends FatherActivity
 							sex = "";
 						}
 
-						map.setLevel("(" + sex + ") " + title);
-
+						//map.setLevel("(" + sex + ") " + title);
+						map.setLevel(title);
+						
 						map.setVersion(version);
 						map.setScheduleList(schedulelist);
 						doctorList.add(map);

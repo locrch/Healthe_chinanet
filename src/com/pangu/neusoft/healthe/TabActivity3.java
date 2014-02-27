@@ -49,7 +49,7 @@ public class TabActivity3 extends Activity {
 	Button tab3_login;//登录
 	Button tab3_peopleinfo;//就诊人信息
 	Button tab3_bookinghist;//预约记录
-	Button tab3_showhist;//个人收藏
+	Button tab3_showhist;//名医收藏
 	Button user_info;//个人信息
 	Button change_pass;//个人信息
 	Button tab3_cleanDB;//清理缓存

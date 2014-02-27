@@ -79,7 +79,7 @@
             android:layout_width="@dimen/tab_button_width"
             android:layout_height="@dimen/tab_button_height"
             android:gravity="center"
-            android:text="个人收藏"
+            android:text="名医收藏"
             android:textSize="@dimen/button_textsize" />
 
         <Button android:background="@layout/tab_btn_press"

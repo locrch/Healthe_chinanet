@@ -51,7 +51,12 @@
         <TextView android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/activity_disclaimer_contentps"
+            android:text="@string/activity_disclaimer_contentp8"
+            android:textStyle="bold" />
+        <TextView android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_disclaimer_contentp9"
             android:textStyle="bold" />
     </LinearLayout>
 

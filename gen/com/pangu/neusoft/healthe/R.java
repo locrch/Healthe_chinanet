@@ -859,13 +859,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int TableRow4=0x7f050046;
         public static final int TextView02=0x7f050047;
         public static final int Top_Date=0x7f050142;
-        public static final int action_settings=0x7f05019f;
+        public static final int action_settings=0x7f0501a2;
         public static final int add_card_help=0x7f050073;
         public static final int areainfo=0x7f050088;
         public static final int auto_CheckBox=0x7f05011f;
-        public static final int back_back=0x7f050198;
-        public static final int back_index=0x7f05019a;
-        public static final int back_only_back=0x7f05019e;
+        public static final int back_back=0x7f05019b;
+        public static final int back_index=0x7f05019d;
+        public static final int back_only_back=0x7f0501a1;
         public static final int back_to_people_list=0x7f05004d;
         public static final int bmapsView=0x7f050077;
         public static final int booking_btn=0x7f05002d;
@@ -958,7 +958,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int dayam=0x7f05014e;
         public static final int daypm=0x7f050157;
         public static final int deleteCard=0x7f0500fc;
-        public static final int denglu=0x7f050066;
+        public static final int denglu=0x7f050068;
         public static final int department=0x7f050031;
         public static final int department_list_alpha=0x7f0500ff;
         public static final int department_list_name=0x7f050100;
@@ -1008,7 +1008,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int frist_menu_question_button=0x7f0500e8;
         public static final int frist_menu_reg_button=0x7f0500e4;
         public static final int frist_menu_user_button=0x7f0500e7;
-        public static final int frist_welcome_content=0x7f050069;
+        public static final int frist_welcome_content=0x7f050067;
         public static final int fullscreen=0x7f050003;
         public static final int get_ver=0x7f05005f;
         public static final int header=0x7f050144;
@@ -1077,6 +1077,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int hospital_text=0x7f05010c;
         public static final int hospitalinfo=0x7f050089;
         public static final int huoqu=0x7f050192;
+        public static final int huoqu_dep=0x7f050197;
         public static final int id_card=0x7f050048;
         public static final int imageButton1=0x7f05005a;
         public static final int imageButton2=0x7f050059;
@@ -1114,7 +1115,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int main_pull_refresh_view=0x7f05007d;
         public static final int margin=0x7f050002;
         public static final int member_CheckBox=0x7f05011c;
-        public static final int menu_action_exit=0x7f0501a0;
+        public static final int menu_action_exit=0x7f0501a3;
         public static final int menu_frame=0x7f0500b2;
         public static final int messages=0x7f05003c;
         public static final int more_disclaimer=0x7f05018a;
@@ -1126,7 +1127,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int new_card=0x7f0500af;
         public static final int new_card_btn=0x7f0500b0;
         public static final int new_pass=0x7f05005e;
-        public static final int notice=0x7f050197;
+        public static final int notice=0x7f05019a;
         public static final int notification_icon=0x7f050128;
         public static final int notification_text=0x7f05012a;
         public static final int notification_time=0x7f05012b;
@@ -1139,7 +1140,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int people_phone=0x7f050051;
         public static final int people_sex=0x7f05004f;
         public static final int person_info=0x7f050164;
-        public static final int phone=0x7f05019d;
+        public static final int phone=0x7f0501a0;
         public static final int pull_to_load_image=0x7f05012e;
         public static final int pull_to_load_progress=0x7f05012d;
         public static final int pull_to_load_text=0x7f05012f;
@@ -1189,11 +1190,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int selectdate=0x7f050160;
         public static final int selected_view=0x7f050004;
         public static final int seria_num=0x7f050041;
-        public static final int shuzi=0x7f050068;
+        public static final int shuzi=0x7f050065;
         public static final int slidingDrawer1=0x7f050039;
         public static final int slidingmenumain=0x7f050162;
         public static final int store_offer_button=0x7f0500df;
         public static final int tab2_booking=0x7f05018c;
+        public static final int tab2_booking_dep=0x7f050199;
         public static final int tab2_drugstore=0x7f050196;
         public static final int tab2_eachother=0x7f05018f;
         public static final int tab2_healthfoler=0x7f05018d;
@@ -1232,11 +1234,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int text_size_normal=0x7f050079;
         public static final int text_size_small=0x7f05007a;
         public static final int timetable=0x7f050161;
-        public static final int title_drug_back=0x7f05019b;
-        public static final int title_drug_map=0x7f05019c;
+        public static final int title_drug_back=0x7f05019e;
+        public static final int title_drug_map=0x7f05019f;
         public static final int title_shuzi=0x7f050193;
-        public static final int title_title=0x7f050199;
+        public static final int title_title=0x7f05019c;
         public static final int title_zhineng=0x7f050194;
+        public static final int title_zhineng_dep=0x7f050198;
         public static final int tv_hello=0x7f0500f9;
         public static final int tv_result=0x7f0500b4;
         public static final int tv_tab_activity=0x7f050122;
@@ -1259,8 +1262,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int xname=0x7f05004b;
         public static final int zhinan_content=0x7f05006d;
         public static final int zhinan_title=0x7f05006c;
-        public static final int zhineng=0x7f050067;
-        public static final int zhuce=0x7f050065;
+        public static final int zhineng=0x7f050066;
+        public static final int zhuce=0x7f050069;
     }
     public static final class layout {
         public static final int acitivty_tabhost=0x7f030000;
@@ -1371,13 +1374,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tab_btn_press=0x7f030069;
         public static final int tab_shuzi=0x7f03006a;
         public static final int tab_zhineng=0x7f03006b;
-        public static final int title_back=0x7f03006c;
-        public static final int title_drug=0x7f03006d;
-        public static final int title_frist=0x7f03006e;
-        public static final int title_only_back=0x7f03006f;
-        public static final int title_tabhost=0x7f030070;
-        public static final int welcome=0x7f030071;
-        public static final int zhineng_press=0x7f030072;
+        public static final int tab_zhineng_dep227=0x7f03006c;
+        public static final int title_back=0x7f03006d;
+        public static final int title_drug=0x7f03006e;
+        public static final int title_frist=0x7f03006f;
+        public static final int title_only_back=0x7f030070;
+        public static final int title_tabhost=0x7f030071;
+        public static final int welcome=0x7f030072;
+        public static final int zhineng_press=0x7f030073;
     }
     public static final class menu {
         public static final int disclaimer=0x7f0a0000;
@@ -1400,7 +1404,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_disclaimer_content5=0x7f080040;
         public static final int activity_disclaimer_content6=0x7f080041;
         public static final int activity_disclaimer_content7=0x7f080042;
-        public static final int activity_disclaimer_contentps=0x7f080043;
+        public static final int activity_disclaimer_contentp8=0x7f080043;
+        public static final int activity_disclaimer_contentp9=0x7f080044;
         public static final int app_name=0x7f080000;
         public static final int get_captcha=0x7f08002c;
         public static final int hello_world=0x7f080026;
@@ -1436,7 +1441,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_activity_father_son_drug=0x7f08003a;
         public static final int title_activity_favorite=0x7f080013;
         public static final int title_activity_health_activity_group=0x7f080014;
-        public static final int title_activity_health_info=0x7f080045;
+        public static final int title_activity_health_info=0x7f080046;
         public static final int title_activity_help=0x7f080017;
         public static final int title_activity_history_view=0x7f080018;
         public static final int title_activity_hospital_choose=0x7f080010;
@@ -1445,7 +1450,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_activity_list_people=0x7f08000d;
         public static final int title_activity_login=0x7f08000a;
         public static final int title_activity_map=0x7f08001a;
-        public static final int title_activity_my=0x7f080044;
+        public static final int title_activity_my=0x7f080045;
         public static final int title_activity_other_store=0x7f080037;
         public static final int title_activity_people_info=0x7f08000f;
         public static final int title_activity_register=0x7f08000b;

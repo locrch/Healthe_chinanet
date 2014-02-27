@@ -20,15 +20,15 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
         android:layout_toRightOf="@+id/imageView1"
-        android:text="健康e园"
+        android:text="佛山健康e园"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:src="@drawable/wsj_logo" />

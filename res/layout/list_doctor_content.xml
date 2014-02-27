@@ -60,7 +60,8 @@
         android:layout_toRightOf="@+id/doctor_list_image"
        	android:layout_alignLeft="@+id/doctor_list_title"
         android:text="TextView"
-        android:textSize="@dimen/list_small_textsize" />
+        android:textSize="@dimen/list_small_textsize"
+        />
 
 
     <ImageView

@@ -71,7 +71,7 @@ public class ConnectListActivity extends FatherActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
-		setactivitytitle("个人收藏");
+		setactivitytitle("名医收藏");
 		doctorlistView=(ListView)findViewById(R.id.list);
 		infos_notext=(TextView)findViewById(R.id.infos_notext);
 		service=new WebService();
@@ -307,7 +307,7 @@ public class ConnectListActivity extends FatherActivity {
 						String resultCode = obj.getProperty("resultCode")
 								.toString();// 0000成功1111报错
 						String msg = obj.getProperty("msg").toString();// 返回的信息
-	
+						
 						Log.e("error1", resultCode);
 						Log.e("error2", msg);
 						

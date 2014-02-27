@@ -306,7 +306,7 @@ public class FristActivity extends Activity {
 		if (keyCode == KeyEvent.KEYCODE_BACK
 				&& event.getAction() == KeyEvent.ACTION_DOWN) {
 			if ((System.currentTimeMillis() - exitTime) > 2000) {
-				Toast.makeText(getApplicationContext(), "再按一次退出健康e园",
+				Toast.makeText(getApplicationContext(), "再按一次退出佛山健康e园",
 						Toast.LENGTH_SHORT).show();
 				exitTime = System.currentTimeMillis();
 			} else {

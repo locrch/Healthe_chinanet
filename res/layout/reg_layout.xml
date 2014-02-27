@@ -109,7 +109,8 @@
                 android:background="@layout/edittext_style"
                 android:ems="10"
                 android:inputType="textPassword"
-                android:paddingLeft="5dp" />
+                android:paddingLeft="5dp"
+                android:hint="请输入六位数的密码" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -151,7 +152,8 @@
             android:id="@+id/reg_card_lay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp" >
+            android:layout_marginBottom="15dp"
+            android:visibility="gone" >
 
             <EditText
                 android:id="@+id/card_num"
@@ -170,7 +172,8 @@
                 android:layout_alignBaseline="@+id/card_num"
                 android:layout_alignBottom="@+id/card_num"
                 android:layout_alignParentLeft="true"
-                android:text="身份证号" />
+                android:text="身份证号"
+                 />
         </RelativeLayout>
 
         <RelativeLayout
