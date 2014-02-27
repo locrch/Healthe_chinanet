@@ -8,6 +8,7 @@ import com.baidu.mapapi.search.c;
 import com.pangu.neusoft.healthcard.ShowHistoryActivity;
 import com.pangu.neusoft.healthe.R.drawable;
 import com.pangu.neusoft.tools.SysApplication;
+import com.slidingmenu.lib.SlidingMenu;
 import com.baidu.mobstat.StatService;
 import com.hp.hpl.sparta.xpath.ThisNodeTest;
 
@@ -20,6 +21,7 @@ import android.R.anim;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.app.AlertDialog.Builder;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -39,6 +41,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +50,8 @@ public class FatherActivity extends Activity
 	Button back_index, back_back;
 	static TextView notice;
 	ActivityManager am ; 
+	
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -61,7 +66,9 @@ public class FatherActivity extends Activity
 		notice.setText(Setting.defaultnotice);
 		back_index = (Button) findViewById(R.id.back_index);
 		back_back = (Button) findViewById(R.id.back_back);
-
+		
+		
+		
 		back_index.setOnClickListener(new OnClickListener()
 		{
 
@@ -176,7 +183,7 @@ public class FatherActivity extends Activity
 			return false;
 		}
 	}
-
+	
 	public void NetWorkStatus(Context context)
 	{
 		/*
@@ -230,7 +237,17 @@ public class FatherActivity extends Activity
 		}
 
 	}
-
+	
+	public void CheckTimeOut(ProgressDialog ProgressDialog) {
+		if (ProgressDialog.isShowing()) {
+			try {
+				ProgressDialog.show();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+	
 	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{

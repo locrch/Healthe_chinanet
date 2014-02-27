@@ -144,7 +144,7 @@ public class PullToRefreshView extends LinearLayout {
 	 * init
 	 * 
 	 * @description
-	 * @param context
+	 * @param webview
 	 *            hylin 2012-7-26上午10:08:33
 	 */
 	private void init() {

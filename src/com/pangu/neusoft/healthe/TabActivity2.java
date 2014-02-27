@@ -2,6 +2,7 @@ package com.pangu.neusoft.healthe;
 
 
 import com.pangu.neusoft.drugstore.Drugstore_main_activity;
+import com.pangu.neusoft.healthinfo.HealthInfoActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -50,6 +51,7 @@ public class TabActivity2 extends Activity
 		
 		
 		
+		
 		OnClickListener development = new OnClickListener()
 		{
 			
@@ -60,10 +62,23 @@ public class TabActivity2 extends Activity
 				Toast.makeText(getApplicationContext(), "该功能正在建设中，敬请期待", Toast.LENGTH_SHORT).show();
 			}
 		};
+		
+		OnClickListener healthinfo = new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				// TODO Auto-generated method stub
+				startActivity(new Intent(TabActivity2.this,HealthInfoActivity.class));
+			}
+		};
+		
 		tab2_healthfoler.setOnClickListener(development);
 		tab2_moneycheck.setOnClickListener(development);
 		tab2_eachother.setOnClickListener(development);
-		tab2_healthinfo.setOnClickListener(development);
+		tab2_healthinfo.setOnClickListener(healthinfo);
+		//tab2_healthinfo.setOnClickListener(development);
 		
 		
 		tab2_booking.setOnClickListener(new OnClickListener()

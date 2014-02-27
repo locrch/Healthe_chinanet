@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frist_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+        >
+		<TextView
+            android:id="@+id/frist_menu_reg_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        <TextView
+            android:id="@+id/frist_menu_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        <TextView
+            android:id="@+id/frist_menu_index_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="首页"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        <TextView
+            android:id="@+id/frist_menu_user_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="个人中心"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        <TextView
+            android:id="@+id/frist_menu_question_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="医问医答"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        <TextView
+            android:id="@+id/frist_menu_drugstore_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="药房优惠"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+        <TextView
+            android:id="@+id/frist_menu_more_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更多"
+            android:textSize="@dimen/slidingmenu_textsize"
+            android:gravity="center"
+            android:layout_margin="10dp" />
+    </LinearLayout>
+    
+</FrameLayout>

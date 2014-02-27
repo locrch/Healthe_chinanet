@@ -61,28 +61,15 @@
     <string name="title_activity_faher_drug">FaherDrugActivity</string>
     <string name="title_activity_father_son_drug">FatherSonDrugActivity</string>
     <string name="title_activity_disclaimer">免责声明</string>
-    <string name="activity_disclaimer_content1">	 
-    1.健康e园致力于提供正确、完整的医院挂号信息，但不保证信息的正确性和完整性，且不对信息的不正确性或遗漏导致的任何损失或伤害承担责任。
-	</string>
-    <string name="activity_disclaimer_content2">	    
-    2.因为优质医疗资源的稀缺，医院每日的接诊能力有限，所以健康e园无法承诺所有用户都能随时预约到指定的专家号，请您能谅解并尽量做到提前预约。	</string>
-	<string name="activity_disclaimer_content3">	    
-    3.健康e园为了杜绝号贩倒号，您在就诊时请务必携带本人的身份证前往就诊，否则在就诊时您提供的信息与健康e园APP预约时提供的信息不一致，而造成工作人员对您的身份真实性存疑导致您挂号不成功，健康e园不予承担责任，一切后果用户自负。
-	</string>
-	<string name="activity_disclaimer_content4">	    
-    4.为了充分运用医疗资源，防止号贩倒号或用户随意爽约造成号源浪费，健康e园会对您近期内的预约行为进行判定，若您经常爽约或被系统判断有倒号行为，健康e园有权取消用户已经预约的号源，并冻结您的账号。
-	</string>
-	<string name="activity_disclaimer_content5">	    
-    5.为了更好的维护医院就诊秩序，请您按照预约时提示的候诊时间到医院候诊。若您迟到，医院有权另行安排就诊或取消本次就诊，健康e园不予承担任何责任。
-	</string>
-	<string name="activity_disclaimer_content6">	    
-    6.鉴于医生的临床工作具有很强的特殊性，医生在遇到抢救、急诊等特殊情况时，有可能会延后甚至取消门诊。健康e园在获知这种特殊情况后会将消息在第一时间内通知您。在此特殊情况下，您产生的交通、餐饮、住宿等费用，或因门诊延期而导致病情延误等其他问题，医生、医院不予负责。
-	</string>
-	<string name="activity_disclaimer_content7">	    
-    7.健康e园为您提供健康档案、电子病历的查询，若您由于丢失手机或泄露健康卡卡号及密码，而导致个人信息泄露，健康e园不予承担任何责任。
-	</string>
-	<string name="activity_disclaimer_contentps">	    
-    *您在进行注册过程中，则表示您完全接受本声明的全部条款，遵守本声明的所有条款。健康e园保留随时修改服务条款的权利。
-	</string>
-	
+    <string name="activity_disclaimer_content1">    1.健康e园致力于提供正确、完整的医院挂号信息，但不保证信息的正确性和完整性，且不对信息的不正确性或遗漏导致的任何损失或伤害承担责任。</string>
+    <string name="activity_disclaimer_content2">    2.因为优质医疗资源的稀缺，医院每日的接诊能力有限，所以健康e园无法承诺所有用户都能随时预约到指定的专家号，请您能谅解并尽量做到提前预约。	</string>
+    <string name="activity_disclaimer_content3">    3.健康e园为了杜绝号贩倒号，您在就诊时请务必携带本人的身份证前往就诊，否则在就诊时您提供的信息与健康e园APP预约时提供的信息不一致，而造成工作人员对您的身份真实性存疑导致您挂号不成功，健康e园不予承担责任，一切后果用户自负。</string>
+    <string name="activity_disclaimer_content4">    4.为了充分运用医疗资源，防止号贩倒号或用户随意爽约造成号源浪费，健康e园会对您近期内的预约行为进行判定，若您经常爽约或被系统判断有倒号行为，健康e园有权取消用户已经预约的号源，并冻结您的账号。</string>
+    <string name="activity_disclaimer_content5">    5.为了更好的维护医院就诊秩序，请您按照预约时提示的候诊时间到医院候诊。若您迟到，医院有权另行安排就诊或取消本次就诊，健康e园不予承担任何责任。</string>
+    <string name="activity_disclaimer_content6">    6.鉴于医生的临床工作具有很强的特殊性，医生在遇到抢救、急诊等特殊情况时，有可能会延后甚至取消门诊。健康e园在获知这种特殊情况后会将消息在第一时间内通知您。在此特殊情况下，您产生的交通、餐饮、住宿等费用，或因门诊延期而导致病情延误等其他问题，医生、医院不予负责。</string>
+    <string name="activity_disclaimer_content7">    7.健康e园为您提供健康档案、电子病历的查询，若您由于丢失手机或泄露健康卡卡号及密码，而导致个人信息泄露，健康e园不予承担任何责任。</string>
+    <string name="activity_disclaimer_contentps">    *您在进行注册过程中，则表示您完全接受本声明的全部条款，遵守本声明的所有条款。健康e园保留随时修改服务条款的权利。</string>
+    <string name="title_activity_my">My</string>
+    <string name="title_activity_health_info">健康大全</string>
+
 </resources>

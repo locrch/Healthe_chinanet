@@ -166,6 +166,10 @@ public class DoctorDetailActivity extends FatherActivity
 	{
 		// TODO Auto-generated method stub
 		super.onStart();
+		//schedule_list_layout.removeAllViews();
+		//scheduledetail.removeAllViews() ;
+		scheduledays.removeAllViews();
+		
 		getDataFromInternet();
 		
 	}
@@ -372,6 +376,7 @@ public class DoctorDetailActivity extends FatherActivity
 							DoctorDetailActivity.this,
 							doctor.getScheduleList(), scheduledetail,
 							scheduledays, doctor_detail_grade);
+					
 					schedule.getView();
 					checkConnected();
 				}

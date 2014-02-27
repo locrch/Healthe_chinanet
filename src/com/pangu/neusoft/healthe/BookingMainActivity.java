@@ -256,7 +256,7 @@ public class BookingMainActivity extends FatherActivity {
 
 	public void setHistory() {
 		doctorList.clear();
-
+		
 		mProgressDialog = new ProgressDialog(BookingMainActivity.this);
 		mProgressDialog.setMessage("正在加载数据...");
 		mProgressDialog.setIndeterminate(false);
@@ -518,7 +518,7 @@ public class BookingMainActivity extends FatherActivity {
 								.hideSoftInputFromWindow(BookingMainActivity.this
 										.getCurrentFocus().getWindowToken(),
 										InputMethodManager.HIDE_NOT_ALWAYS);
-						
+						 
 			String serachhospitalname = selecttext.getText().toString();
 			if (serachhospitalname.equals("")) {
 				Toast.makeText(BookingMainActivity.this, "请先输入医院姓名",

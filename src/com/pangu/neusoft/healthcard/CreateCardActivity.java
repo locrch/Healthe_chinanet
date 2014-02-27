@@ -15,6 +15,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Log;
 import android.view.Menu;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -33,7 +34,9 @@ public class CreateCardActivity extends FatherActivity {
 		WebView wv = (WebView)findViewById(R.id.word_web_view);  
 		wv.loadUrl(Setting.link+sp.getString("username", ""));
 		wv.getSettings().setJavaScriptEnabled(true);
-		
+		WebSettings set = wv.getSettings();
+        set.setSavePassword(false);
+        set.setSaveFormData(false);
 		wv.setWebViewClient(new WebViewClient(){  
 		    public boolean shouldOverrideUrlLoading(WebView view, String url) {
 		        view.loadUrl(url); 

@@ -27,7 +27,7 @@
 	<dimen name="booking_main_scroll_height">380dp</dimen><!-- 预约挂号首页可滚动高度 -->
 	<dimen name="slidingmenu_shadowWidth">5dp</dimen>
     <dimen name="slidingmenu_behindOffset">240dp</dimen>
-	<dimen name="slidingmenu_textsize">25dp</dimen>
+	<dimen name="slidingmenu_textsize">18dp</dimen>
 	<dimen name="tab2_icon_marginleftright">0dp</dimen>
 	<dimen name="tab2_title_margintop">0dp</dimen>
 	<dimen name="tab2_icon_tablelayout_margintop">100dp</dimen>

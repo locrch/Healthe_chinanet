@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pangu.neusoft.healthe"
-    android:versionCode="9"
+    android:versionCode="22014"
     android:versionName="1.00" >
 
     <supports-screens
@@ -91,19 +91,19 @@
         <meta-data
             android:name="BaiduMobAd_WIFI_LOCATION"
             android:value="true" />
-        push service client
+        push service client
         <receiver android:name="com.pangu.neusoft.baidu.MyPushMessageReceiver" >
             <intent-filter>
-                接收push消息
+                接收push消息
                 <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
-                接收bind、setTags等method的返回结果
+                接收bind、setTags等method的返回结果
                 <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
-                可选。接受通知点击事件，和通知自定义内容
+                可选。接受通知点击事件，和通知自定义内容
                 <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
             </intent-filter>
         </receiver>
         push service start
-        用于接收系统消息以保证PushService正常运行
+        用于接收系统消息以保证PushService正常运行
         <receiver
             android:name="com.baidu.android.pushservice.PushServiceReceiver"
             android:process=":bdservice_v1" >
@@ -115,7 +115,7 @@
             </intent-filter>
         </receiver>
         Push服务接收客户端发送的各种请求
-        注意：RegistrationReceiver 在2.1.1及之前版本有拼写失误，为RegistratonReceiver ，用新版本SDK时请更改为如下代码
+        注意：RegistrationReceiver 在2.1.1及之前版本有拼写失误，为RegistratonReceiver ，用新版本SDK时请更改为如下代码
         <receiver
             android:name="com.baidu.android.pushservice.RegistrationReceiver"
             android:process=":bdservice_v1" >
@@ -129,7 +129,7 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        Push 服务
+        Push 服务
         <service
             android:name="com.baidu.android.pushservice.PushService"
             android:exported="true"
@@ -139,7 +139,7 @@
             android:name="api_key"
             android:value="WUXMvjgF3megBkFlYiF9CVnq" />
         富媒体功能
-        push service rich media display
+        push service rich media display
         <activity
             android:name="com.baidu.android.pushservice.richmedia.MediaViewActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -409,6 +409,14 @@
         <activity
             android:name="com.pangu.neusoft.healthe.DisclaimerActivity"
             android:label="@string/title_activity_disclaimer" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthe.My"
+            android:label="@string/title_activity_my" >
+        </activity>
+        <activity
+            android:name="com.pangu.neusoft.healthinfo.HealthInfoActivity"
+            android:label="@string/title_activity_health_info" >
         </activity>
     </application>
 

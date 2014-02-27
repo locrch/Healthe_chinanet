@@ -10,14 +10,43 @@
     android:background="@drawable/first_bg"
     android:scaleType="matrix"
      ></ImageView>
+
+    <ImageButton
+        android:id="@+id/shuzi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/zhineng"
+        android:layout_below="@+id/zhineng"
+        android:layout_marginTop="45dp"
+        android:background="@layout/shuzi_press" />
+
+    <ImageButton
+        android:id="@+id/zhineng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frist_welcome_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:background="@layout/zhineng_press" />
+
+    <TextView
+        android:id="@+id/frist_welcome_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/zhineng"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="19dp"
+        android:text="尊敬的用户,您好！"
+        android:textSize="@dimen/button_textsize" />
+
     <Button
         android:id="@+id/zhuce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/denglu"
-        android:layout_alignBottom="@+id/denglu"
-        android:layout_alignRight="@+id/zhineng"
-        android:layout_marginRight="21dp"
+        android:layout_alignRight="@+id/shuzi"
+        android:layout_below="@+id/shuzi"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="22dp"
         android:background="@layout/button_style"
         android:text="注册"
         android:textSize="@dimen/button_textsize" />
@@ -26,41 +55,12 @@
         android:id="@+id/denglu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/zhineng"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="48dp"
+        android:layout_alignBaseline="@+id/zhuce"
+        android:layout_alignBottom="@+id/zhuce"
+        android:layout_alignLeft="@+id/shuzi"
+        android:layout_marginLeft="14dp"
         android:background="@layout/button_style"
         android:text="登录"
-        android:textSize="@dimen/button_textsize"
-         />
-
-    <ImageButton
-        android:id="@+id/zhineng"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/zhuce"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@layout/zhineng_press" />
-
-    <ImageButton
-        android:id="@+id/shuzi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/zhineng"
-        android:layout_below="@+id/zhineng"
-        android:layout_marginTop="27dp"
-        android:background="@layout/shuzi_press" />
-
-    <TextView
-        android:id="@+id/frist_welcome_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/zhuce"
-        android:layout_alignLeft="@+id/denglu"
-        android:layout_marginBottom="14dp"
-        android:text="尊敬的用户"
         android:textSize="@dimen/button_textsize" />
 
 </RelativeLayout>

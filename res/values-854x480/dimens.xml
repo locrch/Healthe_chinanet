@@ -24,7 +24,7 @@
 	<dimen name="booking_main_scroll_height">560dp</dimen><!-- 预约挂号首页可滚动高度 -->
 	<dimen name="slidingmenu_shadowWidth">5dp</dimen>
     <dimen name="slidingmenu_behindOffset">240dp</dimen>
-	<dimen name="slidingmenu_textsize">25dp</dimen>
+	
 	<dimen name="detail_hospital_hospital_detail_intro_width">192dp</dimen>
 	<dimen name="tab2_title_margintop">20dp</dimen>
 	<dimen name="tab2_icon_tablelayout_margintop">120dp</dimen>
