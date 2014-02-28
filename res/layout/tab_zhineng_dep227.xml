@@ -21,15 +21,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/tab2_title_margintop"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/first_zhinengbut_press" />
+        android:background="@drawable/first_zhinengbut_press1" />
 
     <ImageButton
         android:id="@+id/tab2_booking_dep"
-        android:layout_width="260dp"
-        android:layout_height="260dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/title_zhineng_dep"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
+        android:layout_marginTop="50dp"
         android:layout_weight="1"
         android:background="@layout/tab2_booking_press" />
 
