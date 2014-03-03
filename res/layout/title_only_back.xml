@@ -4,7 +4,7 @@
     android:layout_height="90dp"
     android:background="@drawable/title_frist_bg_black"
      >
-	<com.pangu.neusoft.healthe.MarqueeTextView 
+	<com.pangu.neusoft.CustomView.MarqueeTextView 
 	    android:id="@+id/notice"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"

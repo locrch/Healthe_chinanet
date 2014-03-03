@@ -9,31 +9,47 @@
 
         <TableRow
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             >
+
+            <ImageView
+                android:id="@+id/drugstore_jianmin"
+                android:layout_width="90dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/drugstore_jianmin_img" />
+
+            <ImageView
+                android:id="@+id/drugstore_dashenlin"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/drugstore_dashenlin_img"
+                android:layout_margin="8dp" 
+                />
+
+            <ImageView
+                android:id="@+id/drugstore_tongjitang"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/drugstore_tongjitang_img"
+               	/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageButton2"
-                android:layout_width="90dp"
-                android:layout_height="70dp"
+                android:id="@+id/drugstore_haiwang"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/drugstore_haiwang_img"
-                android:layout_margin="8dp" />
-
-            <ImageView
-                android:id="@+id/imageButton1"
-                android:layout_width="90dp"
-                android:layout_height="70dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/drugstore_dashenlin_img"
-                android:layout_margin="8dp" />
-
-            <ImageView
-                android:id="@+id/imageButton3"
-                android:layout_width="90dp"
-                android:layout_height="70dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/drugstore_tongjitang_img"
-                android:layout_margin="8dp" />
+                android:src="@drawable/drugstore_haiwang_img" />
 
         </TableRow>
     </TableLayout>

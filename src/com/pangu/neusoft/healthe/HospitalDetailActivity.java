@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.ksoap2.serialization.SoapObject;
 
+import com.geniusgithub.lazyloaddemo.cache.ImageLoader;
 import com.pangu.neusoft.adapters.HospitalList;
 import com.pangu.neusoft.adapters.HospitalListAdapter;
 import com.pangu.neusoft.core.GET;
@@ -18,8 +19,8 @@ import com.pangu.neusoft.healthe.R.drawable;
 import com.pangu.neusoft.healthe.R.id;
 import com.pangu.neusoft.healthe.R.layout;
 import com.pangu.neusoft.healthe.R.menu;
-import com.pangu.neusoft.tools.AsyncBitmapLoader;
-import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
 import com.pangu.neusoft.tools.StringMethods;
 
 import android.net.Uri;
@@ -66,7 +67,7 @@ public class HospitalDetailActivity extends FatherActivity {
 	private TextView hospitalTelephoneText;
 	private TextView hospitalFaxText;
 	private TextView hospitalWebSiteText;
-	private AsyncBitmapLoader asyncImageLoader; 
+	//private AsyncBitmapLoader asyncImageLoader; 
 	
 	private ImageButton call_btn;
 	private ImageButton location_btn;
@@ -100,7 +101,7 @@ public class HospitalDetailActivity extends FatherActivity {
 		hospitalFaxText=(TextView)findViewById(R.id.hospital_detail_fax);
 		hospitalWebSiteText=(TextView)findViewById(R.id.hospital_detail_website);
 		pic=(ImageView)findViewById(R.id.hospital_detail_pictureurl);
-		asyncImageLoader = new AsyncBitmapLoader();  
+		//asyncImageLoader = new AsyncBitmapLoader();  
 		
 		//call_btn = (Button)findViewById(R.id.hospital_detail_call_btn);
 		//call_btn.setVisibility(View.INVISIBLE);
@@ -327,22 +328,25 @@ public class HospitalDetailActivity extends FatherActivity {
 									startActivity(intent);
 								}
 							});
-							  Bitmap bitmap=asyncImageLoader.loadBitmap(pic, hospital.getPictureUrl(), new ImageCallBack() {  
-					                
-					                @Override  
-					                public void imageLoad(ImageView imageView, Bitmap bitmap) {  
-					                    // TODO Auto-generated method stub  
-					                    imageView.setImageBitmap(bitmap);  
-					                }  
-					            });  
-					            
-					      
-					            if (bitmap == null) {  
-					                pic.setImageResource(R.drawable.booking_hosp);  
-					            }else{  
-					            	pic.setImageBitmap(bitmap); 
-					            }  
-							
+//							  Bitmap bitmap=asyncImageLoader.loadBitmap(pic, hospital.getPictureUrl(), new ImageCallBack() {  
+//					                
+//					                @Override  
+//					                public void imageLoad(ImageView imageView, Bitmap bitmap) {  
+//					                    // TODO Auto-generated method stub  
+//					                    imageView.setImageBitmap(bitmap);  
+//					                }  
+//					            });  
+//					            
+//					      
+//					            if (bitmap == null) {  
+//					                pic.setImageResource(R.drawable.booking_hosp);  
+//					            }else{  
+//					            	pic.setImageBitmap(bitmap); 
+//					            }  
+							 pic.setImageResource(R.drawable.booking_hosp);  
+							 
+							ImageLoader mImageLoader = new ImageLoader(HospitalDetailActivity.this);
+				            mImageLoader.DisplayImage(hospital.getPictureUrl(), pic, false);
 						}
 						
 					}

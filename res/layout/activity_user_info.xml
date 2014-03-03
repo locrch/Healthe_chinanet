@@ -50,7 +50,8 @@
         android:background="@layout/edittext_style"
         android:ems="10"
         android:hint="请输入18位身份证号码"
-        android:paddingLeft="5dp" />
+        android:paddingLeft="5dp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/seria_num"
@@ -59,7 +60,8 @@
         android:layout_alignBaseline="@+id/card_num"
         android:layout_alignBottom="@+id/card_num"
         android:layout_alignParentLeft="true"
-        android:text="身份证号" />
+        android:text="身份证号"
+        android:visibility="gone" />
 
     <EditText
         android:id="@+id/reg_name"
@@ -68,7 +70,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/card_num"
         android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/seria_num"
+        android:layout_toRightOf="@+id/textView5"
         android:background="@layout/edittext_style"
         android:ems="10"
         android:hint="请输入完整姓名"
@@ -96,10 +98,10 @@
         android:id="@+id/reg_sex"
         android:layout_width="100dp"
         android:layout_height="33dp"
+        android:layout_alignLeft="@+id/reg_name"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/reg_name"
         android:layout_marginTop="16dp"
-        android:layout_toRightOf="@+id/seria_num"
         android:background="@layout/edittext_style"
         android:entries="@array/sex"
         android:paddingLeft="5dp" />

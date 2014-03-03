@@ -149,13 +149,13 @@ public class RegisterActivity extends FatherActivity {
 			confirm_password.setHintTextColor(Color.RED);
 			return msg;
 		}
-		if(card_num.getText().toString().equals("")||card_num.getText().length()!=18){
+		/*if(card_num.getText().toString().equals("")||card_num.getText().length()!=18){
 			msg+="身份证号码必须是18位\n";
 			card_num.setText("");
 			card_num.setHint(msg);
 			card_num.setHintTextColor(Color.RED);
 			return msg;
-		}
+		}*/
 		if(membername.getText().toString().equals("")){
 			msg+="姓名不能为空\n";
 			membername.setText("");

@@ -9,7 +9,19 @@ public class DoctorList {
       private String text;
       private String id;
       private String departmentname;
-      public String getDepartmentname() {
+      private String sex;
+      
+      
+      
+      public String getSex()
+	{
+		return sex;
+	}
+	public void setSex(String sex)
+	{
+		this.sex = sex;
+	}
+	public String getDepartmentname() {
 		return departmentname;
 	}
 	public void setDepartmentname(String departmentname) {

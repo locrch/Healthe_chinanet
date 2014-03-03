@@ -14,12 +14,13 @@ import java.util.List;
 
 
 
+import com.geniusgithub.lazyloaddemo.cache.ImageLoader;
 import com.pangu.neusoft.healthe.HospitalDetailActivity;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.Setting;
 import com.pangu.neusoft.healthe.R.color;
-import com.pangu.neusoft.tools.AsyncBitmapLoader;
-import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
   
   
   
@@ -57,13 +58,13 @@ import android.widget.TextView;
 public class HospitalListAdapter extends ArrayAdapter<HospitalList> {  
 		
           
-        private AsyncBitmapLoader asyncImageLoader;  
+        //private AsyncBitmapLoader asyncImageLoader;  
         
         
         public HospitalListAdapter(Activity activity, List<HospitalList> imageAndTexts) {  
             super(activity, 0, imageAndTexts);  
             
-            asyncImageLoader = new AsyncBitmapLoader();  
+            //asyncImageLoader = new AsyncBitmapLoader();  
         }  
   
         public View getView(int position, View convertView, ViewGroup parent) {  
@@ -103,17 +104,23 @@ public class HospitalListAdapter extends ArrayAdapter<HospitalList> {
             
             imageView.setImageResource(R.drawable.booking_hosp);
             
-            Bitmap bitmap=asyncImageLoader.loadBitmap(imageView, imageUrl, new ImageCallBack() {  
-                
-                @Override  
-                public void imageLoad(ImageView imageView, Bitmap bitmap) {  
-                    // TODO Auto-generated method stub  
-                    //imageView.setImageBitmap(bitmap);  
-                }  
-            }); 
-            if (bitmap != null) {                 
-            	imageView.setImageBitmap(bitmap); 
-            }  
+//            Bitmap bitmap=asyncImageLoader.loadBitmap(imageView, imageUrl, new ImageCallBack() {  
+//                
+//                @Override  
+//                public void imageLoad(ImageView imageView, Bitmap bitmap) {  
+//                    // TODO Auto-generated method stub  
+//                    imageView.setImageBitmap(bitmap);  
+//                }  
+//            }); 
+//           try{                
+//            	imageView.setImageBitmap(bitmap); 
+//            } catch(Exception ex){
+//            	Log.e("err",ex.toString());
+//            } 
+            
+            ImageLoader mImageLoader = new ImageLoader(activity);
+        	mImageLoader.DisplayImage(imageUrl, imageView, false);
+        	
             SharedPreferences sp = activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
             int width=sp.getInt("screen_width", 0);
             int height=sp.getInt("screen_height", 0);            

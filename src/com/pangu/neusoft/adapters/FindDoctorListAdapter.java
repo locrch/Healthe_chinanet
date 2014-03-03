@@ -18,6 +18,7 @@ import java.util.TreeMap;
 
 
 
+import com.geniusgithub.lazyloaddemo.cache.ImageLoader;
 import com.pangu.neusoft.core.models.ConnectDoctor;
 import com.pangu.neusoft.core.models.Schedule;
 import com.pangu.neusoft.core.models.ScheduleButton;
@@ -30,8 +31,8 @@ import com.pangu.neusoft.healthe.HospitalDetailActivity;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.SchedultLayout;
 import com.pangu.neusoft.healthe.Setting;
-import com.pangu.neusoft.tools.AsyncBitmapLoader;
-import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
 import com.pangu.neusoft.tools.SortListByItem;
   
   
@@ -80,14 +81,14 @@ public class FindDoctorListAdapter extends ArrayAdapter<DoctorList> {
 	 	 boolean showing=false;
 	    List<LinearLayout> alllayout=new ArrayList<LinearLayout>();
 	    
-        private AsyncBitmapLoader asyncImageLoader;
+       // private AsyncBitmapLoader asyncImageLoader;
       //  LinearLayout scheduleDetailLayout;
        // private List<Schedule> scheduleListx;
         
         public FindDoctorListAdapter(Activity activity, List<DoctorList> imageAndTexts) {  
             super(activity, 0, imageAndTexts);  
             
-            asyncImageLoader = new AsyncBitmapLoader();  
+            //asyncImageLoader = new AsyncBitmapLoader();  
         }  
   
         public View getView(int position, View convertView, ViewGroup parent) {  
@@ -128,17 +129,20 @@ public class FindDoctorListAdapter extends ArrayAdapter<DoctorList> {
             	}   
            // }else{  
             	
-            	 Bitmap bitmap=asyncImageLoader.loadBitmap(imageView, imageUrl, new ImageCallBack() {  
-                     
-                     @Override  
-                     public void imageLoad(ImageView imageView, Bitmap bitmap) {  
-                         // TODO Auto-generated method stub  
-                     		//imageView.setImageBitmap(bitmap);  
-                     }  
-                 });
-            	 if(bitmap!=null)
-            		 imageView.setImageBitmap(bitmap); 
+//            	 Bitmap bitmap=asyncImageLoader.loadBitmap(imageView, imageUrl, new ImageCallBack() {  
+//                     
+//                     @Override  
+//                     public void imageLoad(ImageView imageView, Bitmap bitmap) {  
+//                         // TODO Auto-generated method stub  
+//                     		//imageView.setImageBitmap(bitmap);  
+//                     }  
+//                 });
+//            	 if(bitmap!=null)
+//            		 imageView.setImageBitmap(bitmap); 
            //}  
+            	ImageLoader mImageLoader = new ImageLoader(activity);
+            	mImageLoader.DisplayImage(imageUrl, imageView, false);
+            	
             sp = activity.getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
             editor=sp.edit();
             

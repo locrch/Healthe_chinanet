@@ -24,8 +24,6 @@ import com.pangu.neusoft.healthe.FatherActivity;
 import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.ScheduleListActivity;
 import com.pangu.neusoft.healthe.Setting;
-import com.pangu.neusoft.tools.AsyncBitmapLoader;
-import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -292,10 +290,12 @@ public class ConnectListActivity extends FatherActivity {
 							// 获取未知性别医生有错，返回值为"anyType{}"，下面判定为暂时解决办法，希望服务器端能解决
 							if (sex.equals("anyType{}"))
 							{
+								map.setSex(sex);
 								sex = "";
 								map.setLevel(title);
 							}else {
-								map.setLevel("(" + sex + ") " + title);
+								map.setSex(sex);
+								map.setLevel(title);
 							}
 	
 							

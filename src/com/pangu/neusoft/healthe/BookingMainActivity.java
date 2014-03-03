@@ -392,8 +392,9 @@ public class BookingMainActivity extends FatherActivity {
 						sex = "";
 					}
 
-					map.setLevel("(" + sex + ") " + title);
-
+					//map.setLevel("(" + sex + ") " + title);
+					map.setLevel(title);
+					map.setSex(sex);
 					map.setVersion(version);
 					map.setScheduleList(schedulelist);
 					doctorList.add(map);

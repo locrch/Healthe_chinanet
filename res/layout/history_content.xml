@@ -31,7 +31,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:layout_weight="1"
-                    android:text="就诊人：" />
+                    android:text=" 姓名：" />
 
                 <TextView
                     android:id="@+id/his_username"

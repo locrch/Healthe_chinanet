@@ -21,8 +21,8 @@ import com.pangu.neusoft.healthe.R;
 import com.pangu.neusoft.healthe.R.id;
 import com.pangu.neusoft.healthe.R.layout;
 import com.pangu.neusoft.healthe.R.menu;
-import com.pangu.neusoft.tools.AsyncBitmapLoader;
-import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -244,7 +244,7 @@ public class DoctorListActivity extends FatherActivity
 							}
 							//map.setLevel("(" + sex + ") " + title);
 							map.setLevel(title);
-
+							map.setSex(sex);
 							map.setVersion(version);
 							map.setScheduleList(schedulelist);
 							doctorList.add(map);
@@ -379,7 +379,7 @@ public class DoctorListActivity extends FatherActivity
 
 						//map.setLevel("(" + sex + ") " + title);
 						map.setLevel(title);
-						
+						map.setSex(sex);
 						map.setVersion(version);
 						map.setScheduleList(schedulelist);
 						doctorList.add(map);

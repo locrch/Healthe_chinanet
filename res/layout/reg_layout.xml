@@ -108,7 +108,8 @@
                 android:layout_toRightOf="@+id/textView4"
                 android:background="@layout/edittext_style"
                 android:ems="10"
-                android:inputType="textPassword"
+                android:inputType="numberPassword"
+                android:maxLength="6"
                 android:paddingLeft="5dp"
                 android:hint="请输入六位数的密码" />
 
@@ -136,8 +137,10 @@
                 android:layout_toRightOf="@+id/infos_text"
                 android:background="@layout/edittext_style"
                 android:ems="10"
-                android:inputType="textPassword"
-                android:paddingLeft="5dp" />
+                android:maxLength="6"
+                android:paddingLeft="5dp"
+                android:inputType="numberPassword"
+                android:hint="请输入六位数的密码" />
 
             <TextView
                 android:id="@+id/infos_text"

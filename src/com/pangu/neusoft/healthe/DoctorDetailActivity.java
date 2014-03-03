@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.ksoap2.serialization.SoapObject;
 
+import com.geniusgithub.lazyloaddemo.cache.ImageLoader;
 import com.pangu.neusoft.adapters.DoctorList;
 import com.pangu.neusoft.adapters.HospitalList;
 import com.pangu.neusoft.adapters.HospitalListAdapter;
@@ -30,10 +31,9 @@ import com.pangu.neusoft.healthe.R.drawable;
 import com.pangu.neusoft.healthe.R.id;
 import com.pangu.neusoft.healthe.R.layout;
 import com.pangu.neusoft.healthe.R.menu;
-import com.pangu.neusoft.tools.AsyncBitmapLoader;
 import com.pangu.neusoft.tools.DialogShow;
 import com.pangu.neusoft.tools.SortListByItem;
-import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
+
 
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -86,7 +86,7 @@ public class DoctorDetailActivity extends FatherActivity
 	private LinearLayout scheduleTableLayout;
 	private TextView doctor_detail_department_grade,
 			doctor_detail_hospital_grade, doctor_detail_grade;
-	private AsyncBitmapLoader asyncImageLoader;
+	//private AsyncBitmapLoader asyncImageLoader;
 
 	private LinearLayout schedule_list_layout;
 	private LinearLayout scheduledetail;
@@ -125,7 +125,7 @@ public class DoctorDetailActivity extends FatherActivity
 				""));
 
 		pic = (ImageView) findViewById(R.id.doctor_detail_pictureurl);
-		asyncImageLoader = new AsyncBitmapLoader();
+		//asyncImageLoader = new AsyncBitmapLoader();
 
 		hosiptalId = sp.getString("hospitalId", "NG");
 
@@ -319,8 +319,8 @@ public class DoctorDetailActivity extends FatherActivity
 				{
 					doctorIdText.setText(doctor.getDoctorId());
 					doctorNameText.setText(doctor.getDoctorName());
-					doctorlevelText.setText("(" + doctor.getSex() + ")  "
-							+ doctor.getTitle());
+					//doctorlevelText.setText("(" + doctor.getSex() + ")  "+ doctor.getTitle());
+					doctorlevelText.setText(doctor.getTitle());
 					doctorInfoText.setText(doctor.getInfo());
 					doctorInfoText.setOnClickListener(new OnClickListener() {
 						
@@ -340,38 +340,42 @@ public class DoctorDetailActivity extends FatherActivity
 					// doctor.getScheduleList());
 					// scheduleTableLayout.addView(scheduleView);
 					Log.e("pic", doctor.getPictureUrl());
-					Bitmap bitmap = asyncImageLoader.loadBitmap(pic,
-							doctor.getPictureUrl(), new ImageCallBack()
-							{
-
-								@Override
-								public void imageLoad(ImageView imageView,
-										Bitmap bitmap)
-								{
-									// TODO Auto-generated method stub
-									imageView.setImageBitmap(bitmap);
-
-								}
-							});
-					if (bitmap == null)
+//					Bitmap bitmap = asyncImageLoader.loadBitmap(pic,
+//							doctor.getPictureUrl(), new ImageCallBack()
+//							{
+//
+//								@Override
+//								public void imageLoad(ImageView imageView,
+//										Bitmap bitmap)
+//								{
+//									// TODO Auto-generated method stub
+//									imageView.setImageBitmap(bitmap);
+//
+//								}
+//							});
+					if (doctor.getSex() != null
+							&& doctor.getSex().equals("男"))
 					{
-						if (doctor.getSex() != null
-								&& doctor.getSex().equals("男"))
-						{
-							pic.setImageResource(R.drawable.doc_man_img);
-						} else if (doctor.getSex() != null
-								&& doctor.getSex().equals("女"))
-						{
-							pic.setImageResource(R.drawable.doc_women_img);
-						} else
-						{
-							pic.setImageResource(R.drawable.doc_def_img);
-						}
-
+						pic.setImageResource(R.drawable.doc_man_img);
+					} else if (doctor.getSex() != null
+							&& doctor.getSex().equals("女"))
+					{
+						pic.setImageResource(R.drawable.doc_women_img);
 					} else
 					{
-						pic.setImageBitmap(bitmap);
+						pic.setImageResource(R.drawable.doc_def_img);
 					}
+					ImageLoader mImageLoader = new ImageLoader(DoctorDetailActivity.this);
+	            	mImageLoader.DisplayImage(doctor.getPictureUrl(), pic, false);
+	            	
+//					if (bitmap == null)
+//					{
+						
+
+//					} else
+//					{
+//						pic.setImageBitmap(bitmap);
+//					}
 					SchedultLayout schedule = new SchedultLayout(
 							DoctorDetailActivity.this,
 							doctor.getScheduleList(), scheduledetail,

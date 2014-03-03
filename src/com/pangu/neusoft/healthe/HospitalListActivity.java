@@ -19,8 +19,8 @@ import com.pangu.neusoft.healthe.R.color;
 import com.pangu.neusoft.healthe.R.id;
 import com.pangu.neusoft.healthe.R.layout;
 import com.pangu.neusoft.healthe.R.menu;
-import com.pangu.neusoft.tools.AsyncBitmapLoader;
-import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader;
+//import com.pangu.neusoft.tools.AsyncBitmapLoader.ImageCallBack;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class FaherDrugActivity extends FragmentActivity
 {
@@ -54,7 +56,16 @@ public class FaherDrugActivity extends FragmentActivity
 		});
 		
 	}
+	
+	public void setactivitytitle(String title)
+	{
 
+		TextView title_title = (TextView) findViewById(R.id.drug_title_title);
+
+		title_title.setTextColor(Color.WHITE);
+
+		title_title.setText(title);
+	}
 	
 
 }

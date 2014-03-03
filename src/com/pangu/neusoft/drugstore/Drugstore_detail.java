@@ -9,6 +9,7 @@ import com.pangu.neusoft.healthe.SetTextSizeActivity;
 import com.pangu.neusoft.healthe.TabActivity2;
 import com.slidingmenu.lib.SlidingMenu;
 import android.view.View.OnClickListener;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -30,9 +31,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+@SuppressLint("NewApi")
 public class Drugstore_detail extends FaherDrugActivity  {
     private static final String TAG = "MainActivity";
-    private ViewPager mPager;
+    private com.pangu.neusoft.CustomView.CustomViewPager mPager;
     private ArrayList<Fragment> fragmentsList;
     private ImageView ivBottomLine;
     private TextView tvTabActivity, tvTabGroups, tvTabFriends, tvTabChat;
@@ -51,11 +53,17 @@ public class Drugstore_detail extends FaherDrugActivity  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        setContentView(R.layout.main);
+        setContentView(R.layout.drugstore_detail_main);
         resources = getResources();
         InitWidth();
         InitTextView();
         InitViewPager();
+        
+        Intent intent = getIntent();
+        
+        String drugstorename = intent.getExtras().getString("drugstorename","药房优惠");
+        
+        setactivitytitle(drugstorename);
         
         //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         //MenuFragment menuFragment = new MenuFragment();
@@ -113,7 +121,7 @@ public class Drugstore_detail extends FaherDrugActivity  {
     }
 
     private void InitViewPager() {
-        mPager = (ViewPager) findViewById(R.id.vPager);
+        mPager = (com.pangu.neusoft.CustomView.CustomViewPager) findViewById(R.id.vPager);
         fragmentsList = new ArrayList<Fragment>();
         
         Fragment activityfragment = ShowFragment.newInstance();
