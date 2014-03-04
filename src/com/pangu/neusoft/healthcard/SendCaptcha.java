@@ -107,7 +107,7 @@ public class SendCaptcha {
 						timer.schedule(task,0,1000);
 					}
 					else{
-						DialogShow.showDialog(activity, "验证码获取失败，请重试！");
+						DialogShow.showDialog(activity, msg);
 					}
 											
 				}
