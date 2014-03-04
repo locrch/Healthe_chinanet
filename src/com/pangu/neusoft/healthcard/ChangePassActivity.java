@@ -113,7 +113,18 @@ public class ChangePassActivity extends FatherActivity{
 			ver_pass_text.setHintTextColor(Color.RED);
 			return msg;
 		}
+		int pass = Integer.valueOf(new_pass_text.getText().toString());
+		if (!(pass >= 000000) && (pass <= 999999)){
+			msg+="请输入六位数密码\n";
+			confirm_pass_text.setText("");
+			new_pass_text.setText("");
+			new_pass_text.setHint(msg);			
+			new_pass_text.setHintTextColor(Color.RED);
+			return msg;
+			}
+		
 		return msg;
+		
 	}
 	OnClickListener change_click=new OnClickListener(){
 		@Override

@@ -27,6 +27,7 @@ import com.pangu.neusoft.healthe.R.menu;
 import com.pangu.neusoft.tools.DialogShow;
 import com.pangu.neusoft.tools.StringMethods;
 
+import android.R.integer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -149,6 +150,15 @@ public class RegisterActivity extends FatherActivity {
 			confirm_password.setHintTextColor(Color.RED);
 			return msg;
 		}
+		int pass = Integer.valueOf(password.getText().toString());
+		if (!(pass >= 000000) && (pass <= 999999)){
+			msg+="请输入六位数密码\n";
+			confirm_password.setText("");
+			password.setText("");
+			password.setHint(msg);			
+			password.setHintTextColor(Color.RED);
+			return msg;
+			}
 		/*if(card_num.getText().toString().equals("")||card_num.getText().length()!=18){
 			msg+="身份证号码必须是18位\n";
 			card_num.setText("");
@@ -170,6 +180,7 @@ public class RegisterActivity extends FatherActivity {
 			ver_pass_text.setHintTextColor(Color.RED);
 			return msg;
 		}
+		
 		
 		return msg;
 	}
