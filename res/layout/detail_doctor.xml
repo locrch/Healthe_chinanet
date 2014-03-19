@@ -170,7 +170,7 @@
                 <TextView
                     android:id="@+id/doctor_detail_intro"
                     android:layout_width="wrap_content"
-                    android:layout_height="120dp"
+                    android:layout_height="150dp"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"

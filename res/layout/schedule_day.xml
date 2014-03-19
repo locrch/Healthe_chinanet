@@ -47,7 +47,7 @@
         android:textSize="@dimen/list_small_textsize" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/list_otherstore_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

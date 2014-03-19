@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/tab2_title_margintop"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/first_zhinengbut_press1" />
+        android:background="@drawable/first_zhinengbut_press2" />
 
     <ImageButton
         android:id="@+id/tab2_booking_dep"

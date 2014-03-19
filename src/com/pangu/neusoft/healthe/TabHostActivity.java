@@ -66,16 +66,17 @@ public class TabHostActivity extends ActivityGroup
 			public void onClick(View v)
 			{
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(TabHostActivity.this,
+				/*Intent intent = new Intent(TabHostActivity.this,
 						FristActivity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(intent);
+				startActivity(intent);*/
 				finish();
 
 			}
 		});
-
+		
 		intent = new Intent(this, TabActivity2.class);
+		//intent = new Intent(this, TabActivity2_dep227.class);
 
 		View tab2Spec = mInflater.inflate(R.layout.tab2_spec, null);
 		tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator(tab2Spec)

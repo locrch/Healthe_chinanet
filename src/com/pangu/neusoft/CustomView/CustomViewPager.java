@@ -16,14 +16,16 @@ public class CustomViewPager extends ViewPager {
 		super(context, attrs);
 	}
 	
-	public void setScanScroll(boolean isCanScroll) {
-		this.isCanScroll = isCanScroll;
-	}
+	public void setScanScroll(boolean isCanScroll){  
+        this.isCanScroll = isCanScroll;  
+    }  
 
-	@Override
-	public void scrollTo(int x, int y) {
-			super.scrollTo(x, y);
-	}
+	@Override  
+    public void scrollTo(int x, int y){  
+        if (isCanScroll){  
+            super.scrollTo(x, y);  
+        }  
+    }  
 
 	@Override
 	public boolean onTouchEvent(MotionEvent arg0) {

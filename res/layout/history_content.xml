@@ -31,7 +31,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:layout_weight="1"
-                    android:text=" 姓名：" />
+                    android:text="姓    名：" />
 
                 <TextView
                     android:id="@+id/his_username"
@@ -64,7 +64,7 @@
             android:layout_weight="1" >
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/list_otherstore_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -89,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="时间：" />
+                android:text="时    间：" />
 
             <TextView
                 android:id="@+id/his_time"
@@ -110,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.58"
-                android:text="医生：" />
+                android:text="医    生：" />
 
             <com.pangu.neusoft.tools.TextViewWithLine
                 android:id="@+id/his_doctor"
@@ -140,7 +140,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="医院：" />
+                android:text="医    院：" />
 
             <com.pangu.neusoft.tools.TextViewWithLine
                 android:id="@+id/his_hospital"
@@ -209,7 +209,8 @@
                     android:background="@drawable/history__detail_def_img"
                     android:text="详细"
                     android:textColor="@color/white"
-                    android:paddingTop="5dp"/>
+                    android:paddingTop="5dp"
+                    android:visibility="gone"/>
 
             </RelativeLayout>
 
@@ -228,7 +229,7 @@
         android:visibility="gone" >
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/list_otherstore_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="详细信息：" />
@@ -237,7 +238,7 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="此次预约为实名就诊，请携带您的佛山健康卡或居民健康卡，在预约时段前15分钟到达医院，若未在规定时间内确认，该预约单自动作废并记爽约1次。" />
+            android:text="本次预约为实名就诊，请携带您的佛山健康卡或居民健康卡，在预约时段前15分钟到达医院，若未在规定时间内到达就诊，该预约单自动作废并记录爽约1次。" />
 
     </LinearLayout>
 

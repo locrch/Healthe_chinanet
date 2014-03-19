@@ -14,7 +14,6 @@ import com.pangu.neusoft.service.ListenService;
 import com.pangu.neusoft.tools.DensityUtil;
 import com.pangu.neusoft.tools.SysApplication;
 import com.pangu.neusoft.tools.update.UpdateOperation;
-import com.slidingmenu.lib.SlidingMenu;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -24,6 +23,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -47,7 +47,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 @SuppressLint("NewApi")
-public class FristActivity extends Activity {
+public class FristActivity extends Activity
+{
 	ImageButton zhineng, shuzi, phone;
 
 	Button zhuce, denglu;
@@ -57,9 +58,11 @@ public class FristActivity extends Activity {
 			frist_menu_more_button;
 	private SharedPreferences sp;
 	private Editor editor;
+	SharedPreferences preferences;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
@@ -95,11 +98,7 @@ public class FristActivity extends Activity {
 		frist_menu_drugstore_button = (TextView) findViewById(R.id.frist_menu_drugstore_button);
 
 		frist_menu_more_button = (TextView) findViewById(R.id.frist_menu_more_button);
-		
-		
-		
-		
-		
+
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
 
@@ -114,39 +113,48 @@ public class FristActivity extends Activity {
 
 		sp = getSharedPreferences(Setting.spfile, Context.MODE_PRIVATE);
 		editor = sp.edit();
-		if (sp.getInt("fontsize", 0) == 0) {
+		if (sp.getInt("fontsize", 0) == 0)
+		{
 			editor.putInt("fontsize", 16);
 			editor.commit();
 		}
 
-		zhuce.setOnClickListener(new OnClickListener() {
+		zhuce.setOnClickListener(new OnClickListener()
+		{
 
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v)
+			{
 				startActivity(new Intent(FristActivity.this,
 						RegisterActivity.class));
 			}
 		});
 		Islogin();
-		denglu.setOnClickListener(new OnClickListener() {
+		denglu.setOnClickListener(new OnClickListener()
+		{
 
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v)
+			{
 
-				if (denglu.getText().toString().equals("登录")) {
+				if (denglu.getText().toString().equals("登录"))
+				{
 					Intent intent = new Intent();
 					intent.setClass(FristActivity.this, LoginActivity.class);
 					startActivity(intent);
-				} else {
+				} else
+				{
 					logoutDialog(FristActivity.this);
 				}
 			}
 		});
 
-		zhineng.setOnClickListener(new OnClickListener() {
+		zhineng.setOnClickListener(new OnClickListener()
+		{
 
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v)
+			{
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
 
@@ -158,10 +166,12 @@ public class FristActivity extends Activity {
 			}
 		});
 
-		shuzi.setOnClickListener(new OnClickListener() {
+		shuzi.setOnClickListener(new OnClickListener()
+		{
 
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v)
+			{
 				// TODO Auto-generated method stub
 
 				Toast.makeText(getApplicationContext(), "正在建设中，敬请期待",
@@ -179,18 +189,22 @@ public class FristActivity extends Activity {
 			}
 		});
 
-		phone.setOnClickListener(new OnClickListener() {
+		phone.setOnClickListener(new OnClickListener()
+		{
 
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v)
+			{
 				// TODO Auto-generated method stub
 
-				try {
+				try
+				{
 					Intent tell = new Intent(Intent.ACTION_CALL, Uri
 							.parse("tel:" + "12320"));
 
 					FristActivity.this.startActivity(tell);
-				} catch (Exception e) {
+				} catch (Exception e)
+				{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 					Toast.makeText(getApplicationContext(), "请允许拨打电话请求！",
@@ -198,8 +212,6 @@ public class FristActivity extends Activity {
 				}
 			}
 		});
-
-		
 
 		SysApplication.getInstance().addActivity(this);
 
@@ -211,17 +223,38 @@ public class FristActivity extends Activity {
 
 		startListener();
 		Setting.showupdate = true;
+
+		preferences = getSharedPreferences("count", MODE_WORLD_READABLE);
+		int count = preferences.getInt("count", 0);
+		// 判断程序与第几次运行，如果是第一次运行则跳转到引导页面
+		if (count == 0)
+		{
+			Dialog alertDialog = new AlertDialog.Builder(this)
+					.setTitle("健康e园，服务你我")
+					.setMessage("欢迎关注和使用佛山市卫生和计划生育局为您提供的数字医院健康服务").create();
+			alertDialog.show();
+
+		}
+		Editor ed = preferences.edit();
+        //存入数据
+        ed.putInt("count", ++count);
+        //提交修改
+        ed.commit();
+        
 	}
 
-	private void logoutDialog(Context context) {
+	private void logoutDialog(Context context)
+	{
 		AlertDialog.Builder builder = new Builder(context);
 		builder.setMessage("确认要注销吗？");
 		builder.setTitle("提示");
 
 		builder.setPositiveButton("确认",
-				new android.content.DialogInterface.OnClickListener() {
+				new android.content.DialogInterface.OnClickListener()
+				{
 					@Override
-					public void onClick(DialogInterface dialog, int which) {
+					public void onClick(DialogInterface dialog, int which)
+					{
 						dialog.dismiss();
 						// 注销
 						for (int i = 0; i < 5; i++)
@@ -237,21 +270,26 @@ public class FristActivity extends Activity {
 				});
 
 		builder.setNegativeButton("取消",
-				new android.content.DialogInterface.OnClickListener() {
+				new android.content.DialogInterface.OnClickListener()
+				{
 					@Override
-					public void onClick(DialogInterface dialog, int which) {
+					public void onClick(DialogInterface dialog, int which)
+					{
 						dialog.dismiss();
 					}
 				});
 		builder.create().show();
 	}
 
-	private void Islogin() {
+	private void Islogin()
+	{
 		// 判断登录状态
-		if (sp.getString("username", "").equals("")) {
+		if (sp.getString("username", "").equals(""))
+		{
 			denglu.setText("登录");
 			frist_welcome_content.setText("尊敬的用户,您好！");
-		} else {
+		} else
+		{
 			denglu.setText("注销");
 			frist_welcome_content.setText("尊敬的"
 					+ sp.getString("card" + sp.getString("defaultcardno", "")
@@ -260,21 +298,24 @@ public class FristActivity extends Activity {
 	}
 
 	@Override
-	protected void onStart() {
+	protected void onStart()
+	{
 		// TODO Auto-generated method stub
 		super.onStart();
 		Islogin();
 	}
 
 	@Override
-	protected void onRestart() {
+	protected void onRestart()
+	{
 		// TODO Auto-generated method stub
 		super.onRestart();
 		Islogin();
 	}
 
 	@Override
-	protected void onResume() {
+	protected void onResume()
+	{
 		// TODO Auto-generated method stub
 		super.onResume();
 		StatService.onResume(this);
@@ -283,7 +324,8 @@ public class FristActivity extends Activity {
 	}
 
 	@Override
-	protected void onPause() {
+	protected void onPause()
+	{
 		// TODO Auto-generated method stub
 		super.onPause();
 		StatService.onPause(this);
@@ -291,7 +333,8 @@ public class FristActivity extends Activity {
 	}
 
 	@Override
-	protected void onStop() {
+	protected void onStop()
+	{
 		// TODO Auto-generated method stub
 		super.onStop();
 
@@ -301,15 +344,19 @@ public class FristActivity extends Activity {
 	private long exitTime = 1;
 
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	public boolean onKeyDown(int keyCode, KeyEvent event)
+	{
 		// TODO Auto-generated method stub
 		if (keyCode == KeyEvent.KEYCODE_BACK
-				&& event.getAction() == KeyEvent.ACTION_DOWN) {
-			if ((System.currentTimeMillis() - exitTime) > 2000) {
+				&& event.getAction() == KeyEvent.ACTION_DOWN)
+		{
+			if ((System.currentTimeMillis() - exitTime) > 2000)
+			{
 				Toast.makeText(getApplicationContext(), "再按一次退出佛山健康e园",
 						Toast.LENGTH_SHORT).show();
 				exitTime = System.currentTimeMillis();
-			} else {
+			} else
+			{
 				finish();
 				System.exit(0);
 			}
@@ -319,7 +366,8 @@ public class FristActivity extends Activity {
 		return super.onKeyDown(keyCode, event);
 	}
 
-	public void NetWorkStatus(Context context) {
+	public void NetWorkStatus(Context context)
+	{
 		/*
 		 * 本方法实现判断网络连接功能，并可点击跳转到网络设置
 		 */
@@ -329,18 +377,23 @@ public class FristActivity extends Activity {
 		NetworkInfo wifiNetInfo = connectMgr
 				.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
-		if (!mobNetInfo.isConnected() && !wifiNetInfo.isConnected()) {
+		if (!mobNetInfo.isConnected() && !wifiNetInfo.isConnected())
+		{
 			Builder b = new AlertDialog.Builder(this).setTitle("没有可用的网络")
 					.setMessage("是否对网络进行设置？");
-			b.setPositiveButton("是", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int whichButton) {
+			b.setPositiveButton("是", new DialogInterface.OnClickListener()
+			{
+				public void onClick(DialogInterface dialog, int whichButton)
+				{
 
 					Intent intent = null;
 					// 判断手机系统的版本 即API大于10 就是3.0或以上版本
-					if (android.os.Build.VERSION.SDK_INT > 10) {
+					if (android.os.Build.VERSION.SDK_INT > 10)
+					{
 						intent = new Intent(
 								android.provider.Settings.ACTION_WIRELESS_SETTINGS);
-					} else {
+					} else
+					{
 						intent = new Intent();
 						ComponentName component = new ComponentName(
 								"com.android.settings",
@@ -350,24 +403,29 @@ public class FristActivity extends Activity {
 					}
 					startActivity(intent);
 				}
-			}).setNeutralButton("否", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int whichButton) {
+			}).setNeutralButton("否", new DialogInterface.OnClickListener()
+			{
+				public void onClick(DialogInterface dialog, int whichButton)
+				{
 					dialog.cancel();
 				}
 			}).show();
 			// unconnect network
-		} else {
+		} else
+		{
 			// connect network
 		}
 	}
 
 	@Override
-	protected void onDestroy() {
+	protected void onDestroy()
+	{
 		super.onDestroy();
 
 	}
 
-	public void startListener() {
+	public void startListener()
+	{
 		Intent i = new Intent();
 		i.setClass(FristActivity.this, ListenService.class);
 		this.startService(i);

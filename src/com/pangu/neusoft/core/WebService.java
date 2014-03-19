@@ -27,6 +27,8 @@ import com.pangu.neusoft.core.models.AreaResponse;
 import com.pangu.neusoft.core.models.BookingReq;
 import com.pangu.neusoft.core.models.CardListReq;
 import com.pangu.neusoft.core.models.ChangePassReq;
+import com.pangu.neusoft.core.models.DS_GetDrupShopReq;
+import com.pangu.neusoft.core.models.DS_GetPreferentialNewsReq;
 import com.pangu.neusoft.core.models.DeleteCardReq;
 import com.pangu.neusoft.core.models.DepartmentReq;
 import com.pangu.neusoft.core.models.DoctorInfoReq;
@@ -34,6 +36,7 @@ import com.pangu.neusoft.core.models.DoctorReq;
 import com.pangu.neusoft.core.models.FindDoctorListReq;
 import com.pangu.neusoft.core.models.FindHospitalListReq;
 import com.pangu.neusoft.core.models.GetCAPTCHAReg;
+import com.pangu.neusoft.core.models.DS_GetDrugCompanyReq;
 import com.pangu.neusoft.core.models.HandleBooking;
 import com.pangu.neusoft.core.models.HospitalInfoReq;
 import com.pangu.neusoft.core.models.HospitalReq;
@@ -210,6 +213,33 @@ public class WebService implements GET{
 		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 	     envelope.addMapping(NAMESPACE, "req", FindHospitalListReq.class);
 		 return getSoapObject(request,"findHospitalList",envelope);
+	}
+	
+	public SoapObject GetDrugCompany(DS_GetDrugCompanyReq req){		 
+		 //获取药房公司列表与公司详细信息
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName("GetDrugCompany"));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", DS_GetDrugCompanyReq.class);
+		 return getSoapObject(request,"GetDrugCompany",envelope);
+	}
+	
+	public SoapObject GetDrupShop(DS_GetDrupShopReq req){		 
+		 //通过药房公司获取药店列表或者公司详细信息
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName("GetDrupShop"));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", DS_GetDrupShopReq.class);
+		 return getSoapObject(request,"GetDrupShop",envelope);
+	}
+	
+	public SoapObject GetPreferentialNews(DS_GetPreferentialNewsReq req){		 
+		 //通过药房公司获取优惠资讯列表或者优惠资讯详细信息
+		 SoapObject request = new SoapObject(NAMESPACE, index.GetMethodName("GetPreferentialNews"));
+		 request.addProperty("req",req);
+		 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+	     envelope.addMapping(NAMESPACE, "req", DS_GetPreferentialNewsReq.class);
+		 return getSoapObject(request,"GetPreferentialNews",envelope);
 	}
 	
 	public SoapObject getSoapObject(SoapObject request,String method,SoapSerializationEnvelope envelope){	         

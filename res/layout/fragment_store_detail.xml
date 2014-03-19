@@ -7,16 +7,16 @@
     android:paddingRight="@dimen/activity_padding_width" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/fragment_store_detail_store_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/drugstore_haiwang_img"
         android:layout_marginBottom="10dp" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/fragment_store_detail_store_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="海王星辰是目前国内直营门店数最多的跨区域连锁药店。在中国医药零售行业，海王星辰率先引进国外先进的医药连锁经营管理技术，积极研究与开拓医药、健康等产品终端零售市场，创立了适合中国国情的现代零售药店“海王星辰健康药房”。多年来，海王星辰凭借自身丰富的市场营销经验、企业战略管理和人才优势，致力于推进中国现代医药零售事业的健康发展。" />
+        android:text="加载中...." />
 
 </LinearLayout>

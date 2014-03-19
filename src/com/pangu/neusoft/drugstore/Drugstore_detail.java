@@ -3,246 +3,241 @@ package com.pangu.neusoft.drugstore;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import com.pangu.neusoft.adapters.DS_DrugCompanyList;
 import com.pangu.neusoft.healthe.R;
-import com.pangu.neusoft.healthe.SetTextSizeActivity;
-import com.pangu.neusoft.healthe.TabActivity2;
-import com.slidingmenu.lib.SlidingMenu;
-import android.view.View.OnClickListener;
 import android.annotation.SuppressLint;
+import android.app.FragmentManager;
+import android.app.ListFragment;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.os.Bundle;
-import android.os.Parcelable;
+
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
+import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
-import android.widget.ImageButton;
+
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.viewpagerindicator.TabPageIndicator;
 
 @SuppressLint("NewApi")
-public class Drugstore_detail extends FaherDrugActivity  {
-    private static final String TAG = "MainActivity";
-    private com.pangu.neusoft.CustomView.CustomViewPager mPager;
-    private ArrayList<Fragment> fragmentsList;
-    private ImageView ivBottomLine;
-    private TextView tvTabActivity, tvTabGroups, tvTabFriends, tvTabChat;
-    
-    private int currIndex = 0;
-    private int bottomLineWidth;
-    private int offset = 0;
-    private int position_one;
-    private int position_two;
-    private int position_three;
-    private Resources resources;
-    private TextView detail,otherstore;
-    private SlidingMenu menu;
-	private Fragment showFragment;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        setContentView(R.layout.drugstore_detail_main);
-        resources = getResources();
-        InitWidth();
-        InitTextView();
-        InitViewPager();
-        
-        Intent intent = getIntent();
-        
-        String drugstorename = intent.getExtras().getString("drugstorename","药房优惠");
-        
-        setactivitytitle(drugstorename);
-        
-        //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        //MenuFragment menuFragment = new MenuFragment();
-        //fragmentTransaction.replace(R.id.menu, menuFragment);
-        //fragmentTransaction.replace(R.id.content, new ContentFragment());
-        //fragmentTransaction.commit();
-        
-        menu = new SlidingMenu(this);
-        menu.setMode(SlidingMenu.LEFT);	//设置菜单 滑动模式，左滑还是右滑
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
-        menu.setShadowWidthRes(R.dimen.slidingmenu_shadowWidth);
-        menu.setShadowDrawable(R.drawable.shadow);
-        menu.setBehindOffsetRes(R.dimen.slidingmenu_behindOffset);
-        menu.setFadeDegree(0.35f);
-        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        menu.setMenu(R.layout.frame_menu);
-        
-        detail = (TextView)findViewById(R.id.drugstore_menu_detail_button);
-        otherstore = (TextView)findViewById(R.id.drugstore_menu_otherstore_button);
-        detail.setOnClickListener(new OnClickListener()
+public class Drugstore_detail extends FaherDrugActivity
+{
+	private com.pangu.neusoft.CustomView.CustomViewPager viewPager;// 页卡内容
+	private ImageView viewpager_line;// 动画图片
+	private TextView textView1, textView2, textView3;
+	private List<View> views;// Tab页面列表
+	private int offset = 0;// 动画图片偏移量
+	private int currIndex = 0;// 当前页卡编号
+	private int bmpW;// 动画图片宽度
+	private View view1, view2, view3;// 各个页卡
+	private ArrayList<Fragment> fragmentsList;
+		
+
+	@Override
+	public void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.drugstore_detail_main);
+		
+		Intent intent = getIntent();
+
+		String drugstorename = intent.getExtras().getString("drugstorename",
+				"药房优惠");
+
+		setactivitytitle(drugstorename);
+
+		Init();
+		InitImageView();
+		InitViewPager();
+		//InitFragment();
+		DS_DrugCompanyList list = new DS_DrugCompanyList();
+		
+		//fragment_store_detail_store_detail.setText(list.getIntroduction());
+		/* 侧滑菜单 */
+		/*
+		 * menu = new SlidingMenu(this); menu.setMode(SlidingMenu.LEFT); //设置菜单
+		 * 滑动模式，左滑还是右滑 menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+		 * menu.setShadowWidthRes(R.dimen.slidingmenu_shadowWidth);
+		 * menu.setShadowDrawable(R.drawable.shadow);
+		 * menu.setBehindOffsetRes(R.dimen.slidingmenu_behindOffset);
+		 * menu.setFadeDegree(0.35f); menu.attachToActivity(this,
+		 * SlidingMenu.SLIDING_CONTENT); menu.setMenu(R.layout.frame_menu);
+		 */
+		
+	}
+
+	private void InitViewPager() {
+		viewPager=(com.pangu.neusoft.CustomView.CustomViewPager) findViewById(R.id.vPager);
+		views=new ArrayList<View>();
+		StoreDetailFragment storeDetailFragment = new StoreDetailFragment();
+		NewsFragment newsFragment = new NewsFragment();
+		OtherStoreFragment otherStoreFragment = new OtherStoreFragment();
+		fragmentsList = new ArrayList<Fragment>();
+		fragmentsList.add(newsFragment);
+		fragmentsList.add(storeDetailFragment);
+		fragmentsList.add(otherStoreFragment);
+		LayoutInflater inflater=getLayoutInflater();
+		view1=inflater.inflate(R.layout.lay1, null);
+		view2=inflater.inflate(R.layout.lay2, null);
+		view3=inflater.inflate(R.layout.lay3, null);
+		views.add(view1);
+		views.add(view2);
+		views.add(view3);
+		//viewPager.setAdapter(new MyViewPagerAdapter(views));
+		viewPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentsList));
+		viewPager.setCurrentItem(0);
+		viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
+		
+	}
+	
+	void InitFragment(){
+		StoreDetailFragment storeDetailFragment = new StoreDetailFragment();
+		
+		android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction(); 
+		
+		//transaction.replace(R.id.StoreDetailFragment, storeDetailFragment);
+		
+		transaction.addToBackStack(null);
+		
+		transaction.commit();
+	}
+	
+	private void Init()
+	{
+		
+		textView1 = (TextView) findViewById(R.id.text1);
+		textView2 = (TextView) findViewById(R.id.text2);
+		textView3 = (TextView) findViewById(R.id.text3);
+
+		
+		textView1.setOnClickListener(new MyOnClickListener(0));
+		textView2.setOnClickListener(new MyOnClickListener(1));
+		textView3.setOnClickListener(new MyOnClickListener(2));
+		
+		
+	}
+	
+	private void InitImageView()
+	{
+		viewpager_line = (ImageView) findViewById(R.id.cursor);
+		bmpW = BitmapFactory.decodeResource(getResources(), R.drawable.a)
+				.getWidth();// 获取图片宽度
+		DisplayMetrics dm = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(dm);
+		int screenW = dm.widthPixels;// 获取分辨率宽度
+		offset = (screenW / 3 - bmpW) / 2;// 计算偏移量
+		Matrix matrix = new Matrix();
+		matrix.postTranslate(offset, 0);
+		viewpager_line.setImageMatrix(matrix);// 设置动画初始位置
+	}
+
+	private class MyOnClickListener implements OnClickListener
+	{
+		private int index = 0;
+
+		public MyOnClickListener(int i)
 		{
-			
-			@Override
-			public void onClick(View v)
-			{
-				// TODO Auto-generated method stub
-				startActivity(new Intent(Drugstore_detail.this,StoreDetialActivity.class));
-				
-			}
-		});
-        
-        otherstore.setOnClickListener(new OnClickListener()
+			index = i;
+		}
+
+		public void onClick(View v)
 		{
+			viewPager.setCurrentItem(index);
+		}
+
+	}
+
+	public class MyViewPagerAdapter extends PagerAdapter
+	{
+		private List<View> mListViews;
+
+		public MyViewPagerAdapter(List<View> mListViews)
+		{
+			this.mListViews = mListViews;
+		}
+
+		@Override
+		public void destroyItem(ViewGroup container, int position, Object object)
+		{
+			container.removeView(mListViews.get(position));
+		}
+
+		@Override
+		public Object instantiateItem(ViewGroup container, int position)
+		{
+			container.addView(mListViews.get(position), 0);
+			return mListViews.get(position);
+		}
+
+		@Override
+		public int getCount()
+		{
+			return mListViews.size();
+		}
+
+		@Override
+		public boolean isViewFromObject(View arg0, Object arg1)
+		{
+			return arg0 == arg1;
+		}
+	}
+
+	
+	
+	public class MyOnPageChangeListener implements OnPageChangeListener
+	{
+
+		int one = offset * 2 + bmpW;// 页卡1 -> 页卡2 偏移量
+		int two = one * 2;// 页卡1 -> 页卡3 偏移量
+
+		public void onPageScrollStateChanged(int arg0)
+		{
+
+		}
+
+		public void onPageScrolled(int arg0, float arg1, int arg2)
+		{
+
+		}
+
+		public void onPageSelected(int arg0)
+		{
+			/*
+			 * Animation animation = null; switch (arg0) { case 0: if (currIndex
+			 * == 1) { animation = new TranslateAnimation(one, 0, 0, 0); } else
+			 * if (currIndex == 2) { animation = new TranslateAnimation(two, 0,
+			 * 0, 0); } break; case 1: if (currIndex == 0) { animation = new
+			 * TranslateAnimation(offset, one, 0, 0); } else if (currIndex == 2)
+			 * { animation = new TranslateAnimation(two, one, 0, 0); } break;
+			 * case 2: if (currIndex == 0) { animation = new
+			 * TranslateAnimation(offset, two, 0, 0); } else if (currIndex == 1)
+			 * { animation = new TranslateAnimation(one, two, 0, 0); } break;
+			 * 
+			 * }
+			 */
+			Animation animation = new TranslateAnimation(one * currIndex, one
+					* arg0, 0, 0);
+			currIndex = arg0;
+			animation.setFillAfter(true);// True:图片停在动画结束位置
+			animation.setDuration(300);
+			viewpager_line.startAnimation(animation);
 			
-			@Override
-			public void onClick(View v)
-			{
-				// TODO Auto-generated method stub
-				startActivity(new Intent(Drugstore_detail.this,OtherStoreActivity.class));
-				StoreDetailFragment.newInstance();
-			}
-		});
-    }
+		}
 
-    private void InitTextView() {
-        tvTabActivity = (TextView) findViewById(R.id.tv_tab_activity);
-        tvTabGroups = (TextView) findViewById(R.id.tv_tab_groups);
-        tvTabFriends = (TextView) findViewById(R.id.tv_tab_friends);
-        tvTabChat = (TextView) findViewById(R.id.tv_tab_chat);
+	}
 
-        tvTabActivity.setOnClickListener(new MyOnClickListener(0));
-        tvTabGroups.setOnClickListener(new MyOnClickListener(1));
-        tvTabFriends.setOnClickListener(new MyOnClickListener(2));
-        tvTabChat.setOnClickListener(new MyOnClickListener(3));
-    }
-
-    private void InitViewPager() {
-        mPager = (com.pangu.neusoft.CustomView.CustomViewPager) findViewById(R.id.vPager);
-        fragmentsList = new ArrayList<Fragment>();
-        
-        Fragment activityfragment = ShowFragment.newInstance();
-        Fragment groupFragment = TestFragment.newInstance("在线购药");
-        Fragment friendsFragment=TestFragment.newInstance("预约煎药");
-        Fragment chatFragment=TestFragment.newInstance("更多");
-        
-        
-        
-        fragmentsList.add(activityfragment);
-        fragmentsList.add(groupFragment);
-        fragmentsList.add(friendsFragment);
-        fragmentsList.add(chatFragment);
-        
-        mPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentsList));
-        mPager.setCurrentItem(0);
-        mPager.setOnPageChangeListener(new MyOnPageChangeListener());
-    }
-
-    private void InitWidth() {
-        ivBottomLine = (ImageView) findViewById(R.id.iv_bottom_line);
-        bottomLineWidth = ivBottomLine.getLayoutParams().width;
-        Log.d(TAG, "cursor imageview width=" + bottomLineWidth);
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int screenW = dm.widthPixels;
-        offset = (int) ((screenW / 4.0 - bottomLineWidth) / 2);
-        Log.i("MainActivity", "offset=" + offset);
-
-        position_one = (int) (screenW / 4.0);
-        position_two = position_one * 2;
-        position_three = position_one * 3;
-    }
-
-    public class MyOnClickListener implements View.OnClickListener {
-        private int index = 0;
-
-        public MyOnClickListener(int i) {
-            index = i;
-        }
-
-        @Override
-        public void onClick(View v) {
-            mPager.setCurrentItem(index);
-        }
-    };
-
-    public class MyOnPageChangeListener implements OnPageChangeListener {
-
-        @Override
-        public void onPageSelected(int arg0) {
-            Animation animation = null;
-            switch (arg0) {
-            case 0:
-                if (currIndex == 1) {
-                    animation = new TranslateAnimation(position_one, 0, 0, 0);
-                    tvTabGroups.setTextColor(resources.getColor(R.color.black));
-                } else if (currIndex == 2) {
-                    animation = new TranslateAnimation(position_two, 0, 0, 0);
-                    tvTabFriends.setTextColor(resources.getColor(R.color.black));
-                } else if (currIndex == 3) {
-                    animation = new TranslateAnimation(position_three, 0, 0, 0);
-                    tvTabChat.setTextColor(resources.getColor(R.color.black));
-                }
-                tvTabActivity.setTextColor(resources.getColor(R.color.black));
-                break;
-            case 1:
-                if (currIndex == 0) {
-                    animation = new TranslateAnimation(0, position_one, 0, 0);
-                    tvTabActivity.setTextColor(resources.getColor(R.color.black));
-                } else if (currIndex == 2) {
-                    animation = new TranslateAnimation(position_two, position_one, 0, 0);
-                    tvTabFriends.setTextColor(resources.getColor(R.color.black));
-                } else if (currIndex == 3) {
-                    animation = new TranslateAnimation(position_three, position_one, 0, 0);
-                    tvTabChat.setTextColor(resources.getColor(R.color.black));
-                }
-                tvTabGroups.setTextColor(resources.getColor(R.color.black));
-                break;
-            case 2:
-                if (currIndex == 0) {
-                    animation = new TranslateAnimation(0, position_two, 0, 0);
-                    tvTabActivity.setTextColor(resources.getColor(R.color.black));
-                } else if (currIndex == 1) {
-                    animation = new TranslateAnimation(position_one, position_two, 0, 0);
-                    tvTabGroups.setTextColor(resources.getColor(R.color.black));
-                } else if (currIndex == 3) {
-                    animation = new TranslateAnimation(position_three, position_two, 0, 0);
-                    tvTabChat.setTextColor(resources.getColor(R.color.black));
-                }
-                tvTabFriends.setTextColor(resources.getColor(R.color.black));
-                break;
-            case 3:
-                if (currIndex == 0) {
-                    animation = new TranslateAnimation(0, position_three, 0, 0);
-                    tvTabActivity.setTextColor(resources.getColor(R.color.black));
-                } else if (currIndex == 1) {
-                    animation = new TranslateAnimation(position_one, position_three, 0, 0);
-                    tvTabGroups.setTextColor(resources.getColor(R.color.black));
-                } else if (currIndex == 2) {
-                    animation = new TranslateAnimation(position_two, position_three, 0, 0);
-                    tvTabFriends.setTextColor(resources.getColor(R.color.black));
-                }
-                tvTabChat.setTextColor(resources.getColor(R.color.black));
-                break;
-            }
-            currIndex = arg0;
-            animation.setFillAfter(true);
-            animation.setDuration(300);
-            ivBottomLine.startAnimation(animation);
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-        }
-        
-    }
-    
-    
 }

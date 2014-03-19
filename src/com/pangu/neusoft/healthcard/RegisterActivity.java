@@ -95,6 +95,7 @@ public class RegisterActivity extends FatherActivity
 		ver_pass_text = (EditText) findViewById(R.id.ver_pass_text);
 		get_ver_btn = (Button) findViewById(R.id.get_ver);
 		get_ver_btn.setOnClickListener(getver);
+		
 		// Setting.bookingdata=null;//清除本次预约数据
 		// username.setText(sp.getString("username", ""));
 		// password.setText(sp.getString("password", ""));
@@ -136,14 +137,15 @@ public class RegisterActivity extends FatherActivity
 	{
 		String msg = "";
 		if (username.getText().toString().equals(""))
-		{
-			msg += "用户名不能为空\n";
+		{	
+			msg += "用户名不能为空";
 			username.setHint(msg);
 			username.setHintTextColor(Color.RED);
+			
 			return msg;
 		} else if (password.getText().toString().equals(""))
 		{
-			msg += "密码不能为空\n";
+			msg += "密码不能为空";
 			password.setHint(msg);
 			password.setHintTextColor(Color.RED);
 			return msg;
@@ -155,40 +157,42 @@ public class RegisterActivity extends FatherActivity
 			username.setHint(msg);
 			username.setHintTextColor(Color.RED);
 			return msg;
-		} else if (!password.getText().toString()
-				.equals(confirm_password.getText().toString()))
-		{
-			msg += "两次密码输入不同\n";
-			confirm_password.setText("");
-			password.setText("");
-			confirm_password.setHint(msg);
-			confirm_password.setHintTextColor(Color.RED);
-			return msg;
 		} else if (password.getText().toString().length() != 6)
 		{
-			msg += "请输入六位数密码\n";
+			msg += "请输入六位数密码";
 			confirm_password.setText("");
 			password.setText("");
 			password.setHint(msg);
 			password.setHintTextColor(Color.RED);
 			return msg;
-		} else
+		} else if (!password.getText().toString()
+				.equals(confirm_password.getText().toString()))
+		{
+			msg += "两次密码输入不同";
+			confirm_password.setText("");
+			password.setText("");
+			confirm_password.setHint(msg);
+			confirm_password.setHintTextColor(Color.RED);
+			return msg;
+		}
+
 		/*
+		 * else
 		 * if(card_num.getText().toString().equals("")||card_num.getText().length
-		 * ()!=18){ msg+="身份证号码必须是18位\n"; card_num.setText("");
+		 * ()!=18){ msg+="身份证号码必须是18位"; card_num.setText("");
 		 * card_num.setHint(msg); card_num.setHintTextColor(Color.RED); return
 		 * msg; }
 		 */
-		if (membername.getText().toString().equals(""))
+		else if (membername.getText().toString().equals(""))
 		{
-			msg += "姓名不能为空\n";
+			msg += "姓名不能为空";
 			membername.setText("");
 			membername.setHint(msg);
 			membername.setHintTextColor(Color.RED);
 			return msg;
 		} else if (ver_pass_text.getText().toString().equals(""))
 		{
-			msg += "请输入验证码\n";
+			msg += "请输入验证码";
 			ver_pass_text.setText("");
 			ver_pass_text.setHint(msg);
 			ver_pass_text.setHintTextColor(Color.RED);

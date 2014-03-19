@@ -26,7 +26,7 @@
         </ListView>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/list_otherstore_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -77,25 +77,25 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.要绑定健康卡，请选择添加健康卡；"
+                android:text="@string/activity_bookingknow_content1"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2.选择绑定居民健康卡，请输入您的身份证号和密码（初始密码为888888）进行绑定；"
+                android:text="@string/activity_bookingknow_content2"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3.选择绑定佛山健康卡，请输入您的身份证号和密码（初始密码为身份证后六位）进行绑定；"
+                android:text="@string/activity_bookingknow_content3"
                 android:textSize="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="4.绑定完成后，页面上方会出现您的名字和健康卡类型，点击前面的方框，则表示选中此健康卡为默认健康卡，可进行预约挂号、查询等操作。"
+                android:text="@string/activity_bookingknow_content4"
                 android:textSize="15dp" />
         </LinearLayout>
     </LinearLayout>

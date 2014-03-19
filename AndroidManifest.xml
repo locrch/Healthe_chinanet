@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pangu.neusoft.healthe"
-    android:versionCode="22014"
+    android:versionCode="31115"
     android:versionName="1.00" >
 
     <supports-screens

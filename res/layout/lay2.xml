@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FF8684" >
-    
+    android:paddingLeft="@dimen/activity_padding_width"
+    android:paddingRight="@dimen/activity_padding_width" >
+
+    <ImageView
+        android:id="@+id/fragment_store_detail_store_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/drugstore_haiwang_img"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/fragment_store_detail_store_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加载中...." />
 
 </LinearLayout>

@@ -11,7 +11,7 @@
     android:paddingRight="@dimen/activity_padding_width" >
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/list_otherstore_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/reg_username"
@@ -28,7 +28,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/textView3"
+        android:layout_toRightOf="@+id/list_otherstore_phone"
         android:background="@layout/edittext_style"
         android:digits="1234567890"
         android:ems="10"
@@ -80,18 +80,20 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/reg_name"
-        android:layout_alignBottom="@+id/reg_name"
+        android:layout_above="@+id/reg_sex"
         android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/reg_name"
+        android:gravity="center"
         android:text="姓        名" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/list_otherstore_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/reg_sex"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="14dp"
+        android:layout_alignTop="@+id/reg_sex"
+        android:gravity="center"
         android:text="性        别" />
 
     <Spinner

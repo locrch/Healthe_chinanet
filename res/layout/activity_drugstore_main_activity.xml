@@ -12,45 +12,84 @@
             android:layout_height="wrap_content"
              >
 
-            <ImageView
-                android:id="@+id/drugstore_jianmin"
-                android:layout_width="90dp"
-                android:layout_height="80dp"
-                android:layout_margin="8dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/drugstore_jianmin_img" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
 
-            <ImageView
-                android:id="@+id/drugstore_dashenlin"
-                android:layout_width="100dp"
-                android:layout_height="80dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/drugstore_dashenlin_img"
-                android:layout_margin="8dp" 
-                />
+                <ImageView
+                    android:id="@+id/drugstore_1_img"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/drugstore_jianmin_img" />
 
-            <ImageView
-                android:id="@+id/drugstore_tongjitang"
-                android:layout_width="100dp"
-                android:layout_height="80dp"
-                android:layout_margin="8dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/drugstore_tongjitang_img"
-               	/>
+                <TextView
+                    android:id="@+id/drugstore_1_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/drugstore_1_img"
+                    android:layout_centerHorizontal="true"
+                    android:text="药房" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/drugstore_2_img"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/drugstore_jianmin_img" />
+
+                <TextView
+                    android:id="@+id/drugstore_2_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/drugstore_2_img"
+                    android:layout_centerHorizontal="true"
+                    android:text="药房" />
+
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/drugstore_3_img"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/drugstore_jianmin_img" />
+
+                <TextView
+                    android:id="@+id/drugstore_3_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/drugstore_3_img"
+                    android:layout_centerHorizontal="true"
+                    android:text="药房" />
+
+            </RelativeLayout>
 
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
-
-            <ImageView
-                android:id="@+id/drugstore_haiwang"
-                android:layout_width="100dp"
-                android:layout_height="80dp"
-                android:layout_margin="8dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/drugstore_haiwang_img" />
-
+		
         </TableRow>
     </TableLayout>
 

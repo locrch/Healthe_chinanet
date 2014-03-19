@@ -19,7 +19,7 @@
             android:orientation="horizontal" >
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/list_otherstore_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/reg_username"
@@ -36,11 +36,11 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/textView3"
+                android:layout_toRightOf="@+id/list_otherstore_phone"
                 android:background="@layout/edittext_style"
                 android:digits="1234567890"
                 android:ems="10"
-                android:hint="请输入手机号码"
+                android:hint="请输入本人手机号码"
                 android:inputType="number"
                 android:paddingLeft="5dp" >
 
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toLeftOf="@+id/get_ver"
-                android:layout_toRightOf="@+id/textView1"
+                android:layout_toRightOf="@+id/list_otherstore_3"
                 android:layout_weight="1"
                 android:background="@layout/edittext_style"
                 android:digits="1234567890"
@@ -82,7 +82,7 @@
                 android:text="@string/get_captcha" />
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/list_otherstore_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/ver_pass_text"
@@ -111,7 +111,7 @@
                 android:inputType="numberPassword"
                 android:maxLength="6"
                 android:paddingLeft="5dp"
-                android:hint="请输入六位数的密码" />
+                android:hint="请输入6位数密码" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -140,7 +140,7 @@
                 android:maxLength="6"
                 android:paddingLeft="5dp"
                 android:inputType="numberPassword"
-                android:hint="请输入六位数的密码" />
+                android:hint="请重新输入6位数密码" />
 
             <TextView
                 android:id="@+id/infos_text"
@@ -193,7 +193,7 @@
                 android:layout_toRightOf="@+id/textView5"
                 android:background="@layout/edittext_style"
                 android:ems="10"
-                android:hint="请输入完整姓名"
+                android:hint="请输入真实姓名"
                 android:paddingLeft="5dp" />
 
             <TextView
@@ -218,13 +218,14 @@
                 android:layout_height="34dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/textView2"
+                android:layout_toRightOf="@+id/list_otherstore_1"
                 android:background="@layout/edittext_style"
                 android:entries="@array/sex"
-                android:paddingLeft="5dp" />
+                android:paddingLeft="5dp"
+                 />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/list_otherstore_1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"

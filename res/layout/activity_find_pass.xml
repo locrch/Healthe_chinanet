@@ -60,7 +60,7 @@
             android:text="@string/get_captcha" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/list_otherstore_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/ver_pass"
@@ -72,8 +72,8 @@
             android:id="@+id/new_pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView1"
-            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignBaseline="@+id/list_otherstore_3"
+            android:layout_alignBottom="@+id/list_otherstore_3"
             android:layout_alignLeft="@+id/confirm_pass"
             android:layout_alignParentRight="true"
             android:layout_marginTop="23dp"
@@ -85,7 +85,7 @@
             android:paddingLeft="5dp" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/list_otherstore_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -94,7 +94,7 @@
             android:text="新密码：" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/list_otherstore_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -107,8 +107,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/textView2"
-            android:layout_toRightOf="@+id/textView2"
+            android:layout_alignTop="@+id/list_otherstore_1"
+            android:layout_toRightOf="@+id/list_otherstore_1"
             android:background="@layout/edittext_style"
             android:ems="10"
             android:hint="请输入六位数密码"

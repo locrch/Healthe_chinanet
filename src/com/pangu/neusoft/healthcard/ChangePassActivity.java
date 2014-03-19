@@ -78,14 +78,14 @@ public class ChangePassActivity extends FatherActivity{
 	public String checkData(){
 		String msg="";
 		if(userphone_text.getText().toString().equals("")){
-			msg+="用户名不能为空\n";
+			msg+="用户名不能为空";
 			userphone_text.setHint(msg);
 			userphone_text.setHintTextColor(Color.RED);
 			return msg;
 		}		
 
 		if(new_pass_text.getText().toString().equals("")){
-			msg+="密码不能为空\n";
+			msg+="密码不能为空";
 			new_pass_text.setHint(msg);
 			new_pass_text.setHintTextColor(Color.RED);
 			return msg;
@@ -98,7 +98,7 @@ public class ChangePassActivity extends FatherActivity{
 			return msg;
 		}
 		if(!new_pass_text.getText().toString().equals(confirm_pass_text.getText().toString())){
-			msg+="两次密码输入不同\n";
+			msg+="两次密码输入不同";
 			confirm_pass_text.setText("");
 			new_pass_text.setText("");
 			confirm_pass_text.setHint(msg);			
@@ -107,14 +107,14 @@ public class ChangePassActivity extends FatherActivity{
 		}
 		
 		if(ver_pass_text.getText().toString().equals("")){
-			msg+="请输入验证码\n";
+			msg+="请输入验证码";
 			ver_pass_text.setText("");
 			ver_pass_text.setHint(msg);
 			ver_pass_text.setHintTextColor(Color.RED);
 			return msg;
 		}
 		if (new_pass_text.getText().toString().length()!=6){
-			msg+="请输入六位数密码\n";
+			msg+="请输入六位数密码";
 			confirm_pass_text.setText("");
 			new_pass_text.setText("");
 			new_pass_text.setHint(msg);			

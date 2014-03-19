@@ -8,7 +8,6 @@ import com.baidu.mapapi.search.c;
 import com.pangu.neusoft.healthcard.ShowHistoryActivity;
 import com.pangu.neusoft.healthe.R.drawable;
 import com.pangu.neusoft.tools.SysApplication;
-import com.slidingmenu.lib.SlidingMenu;
 import com.baidu.mobstat.StatService;
 import com.hp.hpl.sparta.xpath.ThisNodeTest;
 

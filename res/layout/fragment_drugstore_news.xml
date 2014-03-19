@@ -5,27 +5,43 @@
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_padding_width"
     android:paddingRight="@dimen/activity_padding_width" >
+	<ListView 
+	    android:id="@+id/fragment_drugstore_news_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></ListView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="106dp" >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/yaofangxinxi1"
-        android:scaleType="fitXY"
-        android:layout_margin="3dp" />
-	<ImageView
-        android:id="@+id/store_offer_button"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:src="@drawable/yaofangxinxi2"
-        android:scaleType="fitXY"
-        android:layout_margin="3dp" />
-	<ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:src="@drawable/yaofangxinxi3"
-        android:scaleType="fitXY"
-        android:layout_margin="3dp" />
+        <ImageView
+            android:id="@+id/fragment_drugstore_news_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/fragment_drugstore_news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/fragment_drugstore_news_img"
+            android:layout_alignLeft="@+id/fragment_drugstore_news_pastdate"
+            android:layout_marginBottom="22dp"
+            android:text="加载中...." />
+
+        <TextView
+            android:id="@+id/fragment_drugstore_news_pastdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fragment_drugstore_news_title"
+            android:layout_marginBottom="19dp"
+            android:layout_marginLeft="42dp"
+            android:layout_toRightOf="@+id/fragment_drugstore_news_img"
+            android:text="加载中...." />
+
+    </RelativeLayout>
+    
 </LinearLayout>
 	

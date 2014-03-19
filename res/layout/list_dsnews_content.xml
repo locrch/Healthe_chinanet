@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/list_otherstore_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/list_dsnews_img"
+        android:layout_alignLeft="@+id/list_otherstore_3"
+        android:layout_marginBottom="19dp"
+        android:text="加载中..." />
+
+    <ImageView
+        android:id="@+id/list_dsnews_img"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="27dp"
+        android:src="@drawable/booking_hosp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/list_otherstore_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/list_otherstore_1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="48dp"
+        android:text="加载中..." />
+
+</RelativeLayout>

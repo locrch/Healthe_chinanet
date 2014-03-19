@@ -6,14 +6,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context=".StoreOfferActivity" >
 
-	
     <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
+        android:id="@+id/offerdetail_dsnews_img"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
         android:src="@drawable/yaofangxinxi3" />
 
+    <TextView
+        android:id="@+id/offerdetail_dsnews_newscontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:text="加载中..." />
 
 </RelativeLayout>

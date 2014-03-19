@@ -53,7 +53,7 @@
 	    android:layout_alignBottom="@+id/title_title"
 	    android:layout_alignParentRight="true"
 	    android:layout_margin="2dp"
-	    android:background="@drawable/title_health_bg"
+	    android:background="@drawable/title_health_bg2"
 	    android:gravity="center"
 	    android:textSize="@dimen/button_textsize" />
 	    

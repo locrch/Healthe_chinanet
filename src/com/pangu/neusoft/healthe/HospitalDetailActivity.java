@@ -36,6 +36,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,6 +44,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
+import android.widget.Gallery;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -306,6 +308,7 @@ public class HospitalDetailActivity extends FatherActivity {
 							hospitalNameText.setText(hospital.getHospitalName());
 							hospitallevelText.setText(hospital.getLevel()+hospital.getGrade());
 							hospitalInfoText.setText(hospital.getIntro());
+							
 							hospitalAddressText.setText(hospital.getAddress());
 							hospitalZipCodeText.setText(hospital.getZipCode());
 							hospitalTelephoneText.setText(hospital.getTelephone());

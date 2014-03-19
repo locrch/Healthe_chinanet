@@ -189,13 +189,13 @@ public class LoginActivity extends FatherActivity {
 	public String checkData(){
 		String msg="";
 		if(username.getText().toString().equals("")){
-			msg+="用户名不能为空\n";
+			msg+="用户名不能为空";
 		}
 		if(password.getText().toString().equals("")){
-			msg+="密码不能为空\n";
+			msg+="密码不能为空";
 		}
 		if(!StringMethods.isMobileNO(username.getText().toString())){
-			msg+="请用手机号注册\n";
+			msg+="请用手机号注册";
 		}
 		return msg;
 	}

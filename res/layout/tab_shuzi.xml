@@ -79,7 +79,7 @@
         />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/list_otherstore_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -94,7 +94,7 @@
         android:id="@+id/tab2_healthinfo"
         android:layout_width="100sp"
         android:layout_height="100sp"
-        android:layout_above="@+id/textView3"
+        android:layout_above="@+id/list_otherstore_phone"
         android:layout_alignLeft="@+id/tab2_healthfoler"
          />
 
@@ -121,8 +121,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignBaseline="@+id/list_otherstore_phone"
+        android:layout_alignBottom="@+id/list_otherstore_phone"
         android:layout_alignLeft="@+id/imageButton6"
         android:layout_alignParentRight="true"
         android:gravity="center"

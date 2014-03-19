@@ -32,7 +32,7 @@ public class HealthInfoActivity extends FatherActivity {
 		Progress = (ProgressBar) findViewById(R.id.Progress);
 		webview = (WebView) findViewById(R.id.healthinfo_context);
 		
-		webview.loadUrl("http://192.168.2.236:8081/index.html");
+		webview.loadUrl("http://202.103.160.153:8081/MobileWebViewList.aspx");
 		//webview.loadUrl("file:///android_asset/index.html"); 
 		
 		webview.getSettings().setJavaScriptEnabled(true);

@@ -202,10 +202,10 @@ public class BookingMainActivity extends FatherActivity {
 		doctor.setOnClickListener(select_doctor_click);
 
 		message = (TextView) findViewById(R.id.messages);
-		message.setText("1.累计爽约超过3次，将被列入黑名单，限制挂号2个自然月。" + "\n" + "\n"
-				+ "2.每周累计主动取消次数超过3次，将被限制挂号2个自然月。" + "\n" + "\n"
-				+ "3.同一健康卡在同一就诊日、同一医院只能预约同一医生1次。" + "\n" + "\n"
-				+ "4.同一健康卡在同一就诊日、同一医院只能预约2次。");
+		message.setText(getString(R.string.activity_bookingmain_content1).toString() + "\n" + "\n"
+				+ getString(R.string.activity_bookingmain_content2).toString() + "\n" + "\n"
+				+ getString(R.string.activity_bookingmain_content3).toString() + "\n" + "\n"
+				+ getString(R.string.activity_bookingmain_content4).toString());
 		message.setTextColor(R.color.black);
 		message.setTextSize(15);
 		selecttext.clearFocus();

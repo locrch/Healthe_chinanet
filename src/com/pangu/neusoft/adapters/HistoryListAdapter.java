@@ -116,7 +116,7 @@ public class HistoryListAdapter extends SimpleAdapter{
 			his_state.setBackgroundResource(R.drawable.booking_info_status_effective_bg);
 			his_state.setTextColor(Color.WHITE);
 			his_cancle_btn.setVisibility(View.VISIBLE);
-			his_detail_btn.setVisibility(View.VISIBLE);
+			his_detail_btn.setVisibility(View.INVISIBLE);
 			his_cancle_btn.setOnClickListener(new OnClickListener(){
 				@Override
 				public void onClick(View arg0) {

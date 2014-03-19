@@ -14,19 +14,19 @@
         android:background="@drawable/phone_12320" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/list_otherstore_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/imageView1"
+        android:layout_toRightOf="@+id/offerdetail_dsnews_img"
         android:text="佛山健康e园"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/offerdetail_dsnews_img"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"

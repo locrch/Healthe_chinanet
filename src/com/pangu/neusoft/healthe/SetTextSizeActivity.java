@@ -1,6 +1,5 @@
 package com.pangu.neusoft.healthe;
 
-import com.pangu.neusoft.drugstore.ContentFragment;
 import com.pangu.neusoft.tools.DensityUtil;
 
 import android.os.Bundle;
