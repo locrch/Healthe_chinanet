@@ -2,60 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-     >
-
-    <TextView
-        android:id="@+id/list_otherstore_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="分店名："
-        android:textSize="10dp" />
-
-    <TextView
-        android:id="@+id/list_otherstore_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/list_otherstore_1"
-        android:layout_below="@+id/list_otherstore_1"
-        android:text="地址："
-        android:textSize="10dp" />
-
-    <TextView
-        android:id="@+id/list_otherstore_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/list_otherstore_2"
-        android:layout_below="@+id/list_otherstore_2"
-        android:text="联系电话："
-        android:textSize="10dp" />
-
-    <TextView
-        android:id="@+id/list_otherstore_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/list_otherstore_2"
-        android:layout_centerHorizontal="true"
-        android:text="加载中..."
-        android:textSize="10dp" />
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/list_otherstore_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/list_otherstore_2"
-        android:layout_alignBottom="@+id/list_otherstore_2"
-        android:layout_alignRight="@+id/list_otherstore_name"
+        android:layout_alignLeft="@+id/list_otherstore_phone"
+        android:layout_below="@+id/list_otherstore_name"
         android:text="加载中..."
-        android:textSize="10dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/list_otherstore_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/list_otherstore_3"
-        android:layout_alignLeft="@+id/list_otherstore_address"
+        android:layout_alignLeft="@+id/list_otherstore_name"
+        android:layout_below="@+id/list_otherstore_address"
         android:text="加载中..."
-        android:textSize="10dp" />
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/list_otherstore_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:text="加载中..."
+        android:textSize="15dp" />
 
 </RelativeLayout>

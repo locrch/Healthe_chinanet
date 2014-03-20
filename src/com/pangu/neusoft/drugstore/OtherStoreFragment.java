@@ -2,6 +2,7 @@ package com.pangu.neusoft.drugstore;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.ksoap2.serialization.SoapObject;
 
@@ -13,12 +14,18 @@ import com.pangu.neusoft.adapters.DS_GetPreferentialNewsList;
 import com.pangu.neusoft.core.WebService;
 import com.pangu.neusoft.core.models.DS_GetDrupShopReq;
 import com.pangu.neusoft.core.models.DS_GetPreferentialNewsReq;
+import com.pangu.neusoft.healthe.HospitalDetailActivity;
 import com.pangu.neusoft.healthe.R;
+import com.pangu.neusoft.tools.StringMethods;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.support.v4.app.Fragment;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -36,6 +43,7 @@ public class OtherStoreFragment extends Fragment
 	DS_GetDrupShopList list;
 	List<DS_GetDrupShopList> otherstorelist;
 	String DrupShopID,DrugCompanyID,DrupShopName,LogoUrl,Introduction,Address,Telephone;
+	
 	private void init(View view)
 	{
 		otherstore_listview = (ListView)view.findViewById(R.id.fragment_otherstore_listview);
@@ -119,10 +127,11 @@ public class OtherStoreFragment extends Fragment
 			protected void onPostExecute(Boolean result)
 			{
 				progressDialog.dismiss();
-				
 				DS_GetDrupShopAdapter adapter = new DS_GetDrupShopAdapter(getActivity(), otherstorelist);
 				adapter.notifyDataSetChanged();
 				otherstore_listview.setAdapter(adapter);
+				View rowView;
+				
 			};
 
 		}.execute();
@@ -131,6 +140,7 @@ public class OtherStoreFragment extends Fragment
 		
 		return view;
 	}
+	
 	
 	
 }
